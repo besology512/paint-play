@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Debug
+/.vs/CIE202-project/v17/Browse.VC.db-wal
+/.vs/CIE202-project/v17
+/.vs/CIE202-project/FileContentIndex
+/sshKey.txt
+/sshKey.txt.pub
