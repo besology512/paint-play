@@ -270,6 +270,30 @@ void GUI::DrawTriangle(Point P1, Point P2,Point P3 ,GfxInfo TriaGfxInfo) const
 
 }
 
+void GUI::DrawCircle(Point P1, Point P2,GfxInfo CirclGfxInfo) const
+{
+	color DrawingClr;
+	if (CirclGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = CirclGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, CirclGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (CirclGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(CirclGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+	
+	int radius = sqrt(pow(P1.x - P2.x, 2) + pow(P1.y - P2.y, 2));
+
+	pWind->DrawCircle(P1.x, P1.y,radius, style);
+
+}
 //////////////////////////////////////////////////////////////////////////////////////////
 GUI::~GUI()
 {
