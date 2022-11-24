@@ -167,9 +167,11 @@
     <ClCompile Include="controller.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="operations\opAddRect.cpp" />
+    <ClCompile Include="operations\opAddTriangle.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
     <ClCompile Include="Shapes\Shape.cpp" />
     <ClCompile Include="Shapes\Rect.cpp" />
+    <ClCompile Include="Shapes\Triangle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h" />
@@ -196,11 +198,13 @@
     <ClInclude Include="controller.h" />
     <ClInclude Include="DEFS.h" />
     <ClInclude Include="operations\opAddRect.h" />
+    <ClInclude Include="operations\opAddTriangle.h" />
     <ClInclude Include="operations\operation.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Shapes\Graph.h" />
     <ClInclude Include="Shapes\Shape.h" />
     <ClInclude Include="Shapes\Rect.h" />
+    <ClInclude Include="Shapes\Triangle.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="CIE202-project.rc" />
