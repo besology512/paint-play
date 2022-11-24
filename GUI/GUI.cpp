@@ -247,21 +247,21 @@ void GUI::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const
 
 }
 
-void GUI::DrawTriangle(Point P1, Point P2,Point P3 ,GfxInfo RectGfxInfo) const
+void GUI::DrawTriangle(Point P1, Point P2,Point P3 ,GfxInfo TriaGfxInfo) const
 {
 	color DrawingClr;
-	if (RectGfxInfo.isSelected)	//shape is selected
+	if (TriaGfxInfo.isSelected)	//shape is selected
 		DrawingClr = HighlightColor; //shape should be drawn highlighted
 	else
-		DrawingClr = RectGfxInfo.DrawClr;
+		DrawingClr = TriaGfxInfo.DrawClr;
 
-	pWind->SetPen(DrawingClr, RectGfxInfo.BorderWdth);	//Set Drawing color & width
+	pWind->SetPen(DrawingClr, TriaGfxInfo.BorderWdth);	//Set Drawing color & width
 
 	drawstyle style;
-	if (RectGfxInfo.isFilled)
+	if (TriaGfxInfo.isFilled)
 	{
 		style = FILLED;
-		pWind->SetBrush(RectGfxInfo.FillClr);
+		pWind->SetBrush(TriaGfxInfo.FillClr);
 	}
 	else
 		style = FRAME;
