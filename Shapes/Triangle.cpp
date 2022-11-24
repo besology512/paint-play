@@ -1,4 +1,4 @@
-#include ".//Triangler.h"
+#include ".//Triangle.h"
 
 Triangle::Triangle(Point P1, Point P2, Point P3, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 {
