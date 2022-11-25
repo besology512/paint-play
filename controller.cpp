@@ -3,6 +3,7 @@
 #include"operations/opAddTriangle.h"
 #include"operations/opAddCircle.h"
 #include"operations/opAddOval.h"
+#include"../paint-play/operations/opAddSquare.h"
 
 
 
@@ -49,6 +50,9 @@ operation* controller::createOperation(operationType OpType)
 
 		case DRAW_OVAL:
 			pOp = new opAddOval(this);
+			break;
+		case DRAW_SQUARE:
+			pOp = new opAddSquare(this);
 			break;
 
 		case EXIT:

@@ -91,6 +91,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_CIRC: return DRAW_CIRC;
 			case ICON_TRIANGLE: return DRAW_TRI;
 			case ICON_OVAL: return DRAW_OVAL;
+			case ICON_SQUARE: return DRAW_SQUARE;
 			case ICON_EXIT: return EXIT;
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
@@ -162,6 +163,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_CIRC] = "images\\MenuIcons\\Menu_Circ.jpg";
 	MenuIconImages[ICON_TRIANGLE] = "images\\MenuIcons\\Menu_Triangle.jpg";
 	MenuIconImages[ICON_OVAL] = "images\\MenuIcons\\Menu_Oval.jpg";
+	MenuIconImages[ICON_SQUARE] = "images\\MenuIcons\\Menu_Square.jpg";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 
 	//TODO: Prepare images for each menu icon and add it to the list
@@ -320,6 +322,31 @@ void GUI::DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const
 	pWind->DrawEllipse(P1.x, P1.y, P2.x, P2.y, style);
 }
 
+void GUI::DrawSquare(Point P1, Point P2, GfxInfo SquareGfxInfo) const {
+	color DrawingSqre;
+	
+	if (SquareGfxInfo.isSelected)
+		
+		DrawingSqre = HighlightColor;
+	else
+		
+		DrawingSqre = SquareGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingSqre, SquareGfxInfo.BorderWdth);
+
+	drawstyle style;
+	
+	if (SquareGfxInfo.isFilled) {
+		
+		style = FILLED;
+		
+		pWind->SetBrush(SquareGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
+}
 
 
 //////////////////////////////////////////////////////////////////////////////////////////
