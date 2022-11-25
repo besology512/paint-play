@@ -3,6 +3,7 @@
 #include"operations/opAddTriangle.h"
 #include"operations/opAddCircle.h"
 #include"operations/opAddOval.h"
+#include "opAddLine.h"
 
 
 
@@ -36,7 +37,8 @@ operation* controller::createOperation(operationType OpType)
 			break;
 
 		case DRAW_LINE:
-			///create AddLineoperation here
+			pOp = new opAddLine(this);
+			break;
 
 			break;
 		case DRAW_TRI:
@@ -50,6 +52,7 @@ operation* controller::createOperation(operationType OpType)
 		case DRAW_OVAL:
 			pOp = new opAddOval(this);
 			break;
+		
 
 		case EXIT:
 			///create Exitoperation here
