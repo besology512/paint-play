@@ -45,9 +45,11 @@ operation* controller::createOperation(operationType OpType)
 
 		case DRAW_CIRC:
 			pOp = new opAddCircle(this);
+			break;
 
 		case DRAW_OVAL:
 			pOp = new opAddOval(this);
+			break;
 
 		case EXIT:
 			///create Exitoperation here
