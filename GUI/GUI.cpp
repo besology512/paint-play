@@ -91,6 +91,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_CIRC: return DRAW_CIRC;
 			case ICON_TRIANGLE: return DRAW_TRI;
 			case ICON_OVAL: return DRAW_OVAL;
+			case ICON_IRR_POLYGON: return DRAW_IRR_POLYGON;
 			case ICON_EXIT: return EXIT;
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
@@ -162,6 +163,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_CIRC] = "images\\MenuIcons\\Menu_Circ.jpg";
 	MenuIconImages[ICON_TRIANGLE] = "images\\MenuIcons\\Menu_Triangle.jpg";
 	MenuIconImages[ICON_OVAL] = "images\\MenuIcons\\Menu_Oval.jpg";
+	MenuIconImages[ICON_IRR_POLYGON] = "images\\MenuIcons\\Menu_IrrPolygon.jpg";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 
 	//TODO: Prepare images for each menu icon and add it to the list

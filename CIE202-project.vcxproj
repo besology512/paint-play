@@ -172,6 +172,7 @@
     <ClCompile Include="operations\opAddTriangle.cpp" />
     <ClCompile Include="Shapes\Circle.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
+    <ClCompile Include="Shapes\IrrPolygon.cpp" />
     <ClCompile Include="Shapes\Oval.cpp" />
     <ClCompile Include="Shapes\Shape.cpp" />
     <ClCompile Include="Shapes\Rect.cpp" />
@@ -209,6 +210,7 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="Shapes\Circle.h" />
     <ClInclude Include="Shapes\Graph.h" />
+    <ClInclude Include="Shapes\IrrPolygon.h" />
     <ClInclude Include="Shapes\Oval.h" />
     <ClInclude Include="Shapes\Shape.h" />
     <ClInclude Include="Shapes\Rect.h" />

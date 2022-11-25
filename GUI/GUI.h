@@ -41,6 +41,7 @@ class GUI
 		ICON_CIRC,		//Circle icon in menu
 		ICON_TRIANGLE,
 		ICON_OVAL,
+		ICON_IRR_POLYGON,
 		//TODO: Add more icons names here
 
 		ICON_EXIT,		//Exit icon

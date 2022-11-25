@@ -51,6 +51,9 @@ operation* controller::createOperation(operationType OpType)
 			pOp = new opAddOval(this);
 			break;
 
+		case DRAW_IRR_POLYGON:
+			break;
+
 		case EXIT:
 			///create Exitoperation here
 			
