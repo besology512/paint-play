@@ -5,6 +5,7 @@
 #include "..\CMUgraphicsLib\CMUgraphics.h"
 #include "..\Defs.h"
 
+#include <vector>
 #include <string>
 using namespace std;
 
@@ -41,6 +42,7 @@ class GUI
 		ICON_CIRC,		//Circle icon in menu
 		ICON_TRIANGLE,
 		ICON_OVAL,
+		ICON_REGULAR_POLYGON,
 		//TODO: Add more icons names here
 
 		ICON_EXIT,		//Exit icon
@@ -90,6 +92,7 @@ public:
 
 	// Input Functions  ---------------------------
 	void GetPointClicked(int& x, int& y) const;//Get coordinate where user clicks
+	void GetKeyClicked(char& cKey) const;
 	string GetSrting() const;	 //Returns a string entered by the user
 	operationType GetUseroperation() const; //Read the user click and map to an operation
 
@@ -107,6 +110,7 @@ public:
 	void DrawTriangle(Point P1, Point P2,Point P3 ,GfxInfo TriaGfxInfo) const;
 	void DrawCircle(Point P1, Point P2,GfxInfo CirclGfxInfo) const;
 	void DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const;  //Draw an Oval
+	void DrawRegularPolygon(Point center, double numOfVertices, double radius, GfxInfo ShpGfxInfo) const; // Draw a regular Polygon
 
 	///Make similar functions for drawing all other shapes.
 
