@@ -2,6 +2,8 @@
 #include "operations\opAddRect.h"
 #include"operations/opAddTriangle.h"
 #include"operations/opAddCircle.h"
+#include"operations/opAddOval.h"
+
 
 
 
@@ -43,6 +45,10 @@ operation* controller::createOperation(operationType OpType)
 
 		case DRAW_CIRC:
 			pOp = new opAddCircle(this);
+
+		case DRAW_OVAL:
+			pOp = new opAddOval(this);
+
 		case EXIT:
 			///create Exitoperation here
 			
