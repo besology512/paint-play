@@ -43,6 +43,7 @@ class GUI
 		ICON_TRIANGLE,
 		ICON_OVAL,
 		ICON_REGULAR_POLYGON,
+		ICON_LINE,
 		//TODO: Add more icons names here
 
 		ICON_EXIT,		//Exit icon
@@ -110,7 +111,9 @@ public:
 	void DrawTriangle(Point P1, Point P2,Point P3 ,GfxInfo TriaGfxInfo) const;
 	void DrawCircle(Point P1, Point P2,GfxInfo CirclGfxInfo) const;
 	void DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const;  //Draw an Oval
+
 	void DrawRegularPolygon(Point center, double numOfVertices, double radius, GfxInfo ShpGfxInfo) const; // Draw a regular Polygon
+	void DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const;  // Draw a Line 
 
 	///Make similar functions for drawing all other shapes.
 

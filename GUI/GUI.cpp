@@ -97,7 +97,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_TRIANGLE: return DRAW_TRI;
 			case ICON_OVAL: return DRAW_OVAL;
 			case ICON_REGULAR_POLYGON: return DRAW_REGULAR_POLYGON;
-
+			case ICON_LINE: return DRAW_LINE;
 			case ICON_EXIT: return EXIT;
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
@@ -170,6 +170,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_TRIANGLE] = "images\\MenuIcons\\Menu_Triangle.jpg";
 	MenuIconImages[ICON_OVAL] = "images\\MenuIcons\\Menu_Oval.jpg";
 	MenuIconImages[ICON_REGULAR_POLYGON] = "images\\MenuIcons\\Menu_RegShape.jpg";
+	MenuIconImages[ICON_LINE] = "images\\MenuIcons\\Menu_Line.jpg";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 
 	//TODO: Prepare images for each menu icon and add it to the list
@@ -343,9 +344,6 @@ void GUI::DrawRegularPolygon(Point center, double numOfVertices, double radius, 
 	{
 		style = FILLED;
 		pWind->SetBrush(OvalGfxInfo.FillClr);
-	}
-	else
-		style = FRAME;
 
 	std::vector<int> xPointsV;
 	std::vector<int> yPointsV;
@@ -367,8 +365,30 @@ void GUI::DrawRegularPolygon(Point center, double numOfVertices, double radius, 
 	int* yPoints = &yPointsV[0];
 
 	pWind->DrawPolygon(xPoints, yPoints, int(numOfVertices), style);
+
 }
 
+void GUI::DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const
+{
+	color DrawingClr;
+	if (LineGfcInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = LineGfcInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, LineGfcInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (LineGfcInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(LineGfcInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+  pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
+  }
 
 
 //////////////////////////////////////////////////////////////////////////////////////////
