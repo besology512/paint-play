@@ -3,7 +3,7 @@
 #include"operations/opAddTriangle.h"
 #include"operations/opAddCircle.h"
 #include"operations/opAddOval.h"
-
+#include"operations/opAddIrrPolygon.h"
 
 
 
@@ -52,6 +52,7 @@ operation* controller::createOperation(operationType OpType)
 			break;
 
 		case DRAW_IRR_POLYGON:
+			pOp = new opAddIrrPolygon(this);
 			break;
 
 		case EXIT:
