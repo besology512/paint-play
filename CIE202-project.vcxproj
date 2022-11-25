@@ -171,10 +171,12 @@
     <ClCompile Include="operations\opAddCircle.cpp" />
     <ClCompile Include="operations\opAddOval.cpp" />
     <ClCompile Include="operations\opAddRect.cpp" />
+    <ClCompile Include="operations\opAddRegularPolygon.cpp" />
     <ClCompile Include="operations\opAddTriangle.cpp" />
     <ClCompile Include="Shapes\Circle.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
     <ClCompile Include="Shapes\Oval.cpp" />
+    <ClCompile Include="Shapes\RegularPolygon.cpp" />
     <ClCompile Include="Shapes\Shape.cpp" />
     <ClCompile Include="Shapes\Rect.cpp" />
     <ClCompile Include="Shapes\Triangle.cpp" />
@@ -208,12 +210,14 @@
     <ClInclude Include="operations\opAddCircle.h" />
     <ClInclude Include="operations\opAddOval.h" />
     <ClInclude Include="operations\opAddRect.h" />
+    <ClInclude Include="operations\opAddRegularPolygon.h" />
     <ClInclude Include="operations\opAddTriangle.h" />
     <ClInclude Include="operations\operation.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Shapes\Circle.h" />
     <ClInclude Include="Shapes\Graph.h" />
     <ClInclude Include="Shapes\Oval.h" />
+    <ClInclude Include="Shapes\RegularPolygon.h" />
     <ClInclude Include="Shapes\Shape.h" />
     <ClInclude Include="Shapes\Rect.h" />
     <ClInclude Include="Shapes\Triangle.h" />

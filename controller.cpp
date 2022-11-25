@@ -3,7 +3,9 @@
 #include"operations/opAddTriangle.h"
 #include"operations/opAddCircle.h"
 #include"operations/opAddOval.h"
+#include"operations/opAddRegularPolygon.h"
 #include "opAddLine.h"
+
 
 
 
@@ -53,6 +55,10 @@ operation* controller::createOperation(operationType OpType)
 			pOp = new opAddOval(this);
 			break;
 		
+
+		case DRAW_REGULAR_POLYGON:
+			pOp = new opAddRegularPolygon(this);
+			break;
 
 		case EXIT:
 			///create Exitoperation here

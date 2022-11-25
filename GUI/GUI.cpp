@@ -44,6 +44,11 @@ void GUI::GetPointClicked(int& x, int& y) const
 	pWind->WaitMouseClick(x, y);	//Wait for mouse click
 }
 
+void GUI::GetKeyClicked(char& Key) const
+{
+	pWind->WaitKeyPress(Key);	//Get the keyboard button clicked
+}
+
 string GUI::GetSrting() const
 {
 	string Label;
@@ -91,6 +96,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_CIRC: return DRAW_CIRC;
 			case ICON_TRIANGLE: return DRAW_TRI;
 			case ICON_OVAL: return DRAW_OVAL;
+			case ICON_REGULAR_POLYGON: return DRAW_REGULAR_POLYGON;
 			case ICON_LINE: return DRAW_LINE;
 			case ICON_EXIT: return EXIT;
 
@@ -163,6 +169,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_CIRC] = "images\\MenuIcons\\Menu_Circ.jpg";
 	MenuIconImages[ICON_TRIANGLE] = "images\\MenuIcons\\Menu_Triangle.jpg";
 	MenuIconImages[ICON_OVAL] = "images\\MenuIcons\\Menu_Oval.jpg";
+	MenuIconImages[ICON_REGULAR_POLYGON] = "images\\MenuIcons\\Menu_RegShape.jpg";
 	MenuIconImages[ICON_LINE] = "images\\MenuIcons\\Menu_Line.jpg";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 
@@ -322,6 +329,45 @@ void GUI::DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const
 	pWind->DrawEllipse(P1.x, P1.y, P2.x, P2.y, style);
 }
 
+void GUI::DrawRegularPolygon(Point center, double numOfVertices, double radius, GfxInfo OvalGfxInfo) const
+{
+	color DrawingClr;
+	if (OvalGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = OvalGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, OvalGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (OvalGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(OvalGfxInfo.FillClr);
+
+	std::vector<int> xPointsV;
+	std::vector<int> yPointsV;
+
+	
+	const double PI = 3.141592653589;			//Defining constant PI
+	double angle = (2 * PI) / numOfVertices;	//Defining the angle between two vertices
+
+	for (int i = 0; i < int(numOfVertices); i++)
+	{
+		int x = center.x + radius * sin(i * angle);
+		int y = center.y + radius * cos(i * angle);
+
+		xPointsV.push_back(x);
+		yPointsV.push_back(y);
+	}
+
+	int* xPoints = &xPointsV[0];
+	int* yPoints = &yPointsV[0];
+
+	pWind->DrawPolygon(xPoints, yPoints, int(numOfVertices), style);
+
+}
+
 void GUI::DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const
 {
 	color DrawingClr;
@@ -341,9 +387,8 @@ void GUI::DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const
 	else
 		style = FRAME;
 
-	pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
-}
-
+  pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
+  }
 
 
 //////////////////////////////////////////////////////////////////////////////////////////
