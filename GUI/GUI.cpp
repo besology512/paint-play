@@ -322,6 +322,40 @@ void GUI::DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const
 	pWind->DrawEllipse(P1.x, P1.y, P2.x, P2.y, style);
 }
 
+void GUI::DrawIrrPolygon(Point allPoints[],int vericies, GfxInfo IrrPolGfxInfo) const
+{
+	color DrawingClr;
+	if (IrrPolGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = IrrPolGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, IrrPolGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (IrrPolGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(IrrPolGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+	int *pointsX;
+	int* pointsY;
+	pointsX = new int[vericies];
+	pointsY = new int[vericies];
+	for (int i = 0; i < vericies; i++)
+	{
+		pointsX[i] = allPoints[i].x;
+		pointsY[i] = allPoints[i].y;
+	}
+
+	//pWind->DrawEllipse(P1.x, P1.y, P2.x, P2.y, style);
+	pWind->DrawPolygon(pointsX, pointsY, style);
+	delete[] pointsX;
+	delete[] pointsY;
+	delete[] allPoints;
+}
 
 
 //////////////////////////////////////////////////////////////////////////////////////////

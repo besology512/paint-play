@@ -108,6 +108,7 @@ public:
 	void DrawTriangle(Point P1, Point P2,Point P3 ,GfxInfo TriaGfxInfo) const;
 	void DrawCircle(Point P1, Point P2,GfxInfo CirclGfxInfo) const;
 	void DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const;  //Draw an Oval
+	void DrawIrrPolygon(Point allPoints[], int vericies, GfxInfo IrrPolGfxInfo) const;
 
 	///Make similar functions for drawing all other shapes.
 
