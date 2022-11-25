@@ -30,17 +30,14 @@ void opAddRegularPolygon::Execute()
 	pUI->PrintMessage(msg);
 
 	//Get the number of vertices from the user
-	//pUI->GetKeyClicked(numOfVertices);
-
 	pUI->GetKeyClicked(numOfVertices);
 
-	while((int(numOfVertices) - 48 < 3) && int(numOfVertices) - 48 > 9)
+	while((int(numOfVertices) - 48 < 3) || (int(numOfVertices) - 48 > 9))
 	{
-		msg = "Please Enter a number for the vertices between 3 and 9";
+		msg = "Error! Please Enter a number of the vertices between 3 and 9";
 		pUI->PrintMessage(msg);
+		pUI->GetKeyClicked(numOfVertices);
 	}
-
-
 
 	//Get the radius
 	msg = "Enter the size of the regular polygon";
@@ -48,9 +45,9 @@ void opAddRegularPolygon::Execute()
 
 	pUI->GetKeyClicked(radius);
 
-	while ((int(radius) - 48 < 0) && int(radius) - 48 > 9)
+	while ((int(radius) - 48 <= 0) || (int(radius) - 48 > 9))
 	{
-		msg = " Please Enter a number for the radius between 1 and 9";
+		msg = " Error! Please Enter a number of the radius between 1 and 9";
 		pUI->PrintMessage(msg);
 		pUI->GetKeyClicked(radius);
 	}
@@ -71,7 +68,7 @@ void opAddRegularPolygon::Execute()
 
 
 	//Create a regular polygon with the above parameters
-	RegularPolygon* RP = new RegularPolygon(center, int((int(numOfVertices) - 48)), int((int(radius) - 48)) * 10, RectGfxInfo);
+	RegularPolygon* RP = new RegularPolygon(center, int((int(numOfVertices) - 48)), int((int(radius) - 48)) * 15, RectGfxInfo); //Multiplied the radius to make it bigger
 
 	//Get a pointer to the graph
 	Graph* pGr = pControl->getGraph();
