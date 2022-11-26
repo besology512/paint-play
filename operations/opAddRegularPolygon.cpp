@@ -56,20 +56,20 @@ void opAddRegularPolygon::Execute()
 	pUI->ClearStatusBar();
 
 	//Preapre all regular polygon parameters
-	GfxInfo RectGfxInfo;
+	GfxInfo RegularPolygonGfxInfo;
 
 	//get drawing, filling colors and pen width from the interface
-	RectGfxInfo.DrawClr = pUI->getCrntDrawColor();
-	RectGfxInfo.FillClr = pUI->getCrntFillColor();
-	RectGfxInfo.BorderWdth = pUI->getCrntPenWidth();
+	RegularPolygonGfxInfo.DrawClr = pUI->getCrntDrawColor();
+	RegularPolygonGfxInfo.FillClr = pUI->getCrntFillColor();
+	RegularPolygonGfxInfo.BorderWdth = pUI->getCrntPenWidth();
 
 
-	RectGfxInfo.isFilled = false;	//default is not filled
-	RectGfxInfo.isSelected = false;	//defualt is not selected
+	RegularPolygonGfxInfo.isFilled = false;	//default is not filled
+	RegularPolygonGfxInfo.isSelected = false;	//defualt is not selected
 
 
 	//Create a regular polygon with the above parameters
-	RegularPolygon* RP = new RegularPolygon(center, int((int(numOfVertices) - 48)), int((int(radius) - 48)) * 15, RectGfxInfo); //Multiplied the radius to make it bigger
+	RegularPolygon* RP = new RegularPolygon(center, int((int(numOfVertices) - 48)), int((int(radius) - 48)) * 15, RegularPolygonGfxInfo); //Multiplied the radius to make it bigger
 
 	//Get a pointer to the graph
 	Graph* pGr = pControl->getGraph();

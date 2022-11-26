@@ -329,42 +329,45 @@ void GUI::DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const
 	pWind->DrawEllipse(P1.x, P1.y, P2.x, P2.y, style);
 }
 
-void GUI::DrawRegularPolygon(Point center, double numOfVertices, double radius, GfxInfo OvalGfxInfo) const
+void GUI::DrawRegularPolygon(Point center, double numOfVertices, double radius, GfxInfo RegularPolygonGfxInfo) const
 {
 	color DrawingClr;
-	if (OvalGfxInfo.isSelected)	//shape is selected
+	if (RegularPolygonGfxInfo.isSelected)	//shape is selected
 		DrawingClr = HighlightColor; //shape should be drawn highlighted
 	else
-		DrawingClr = OvalGfxInfo.DrawClr;
+		DrawingClr = RegularPolygonGfxInfo.DrawClr;
 
-	pWind->SetPen(DrawingClr, OvalGfxInfo.BorderWdth);	//Set Drawing color & width
+	pWind->SetPen(DrawingClr, RegularPolygonGfxInfo.BorderWdth);	//Set Drawing color & width
 
 	drawstyle style;
-	if (OvalGfxInfo.isFilled)
+	if (RegularPolygonGfxInfo.isFilled)
 	{
 		style = FILLED;
-		pWind->SetBrush(OvalGfxInfo.FillClr);
-
-	std::vector<int> xPointsV;
-	std::vector<int> yPointsV;
-
-	
-	const double PI = 3.141592653589;			//Defining constant PI
-	double angle = (2 * PI) / numOfVertices;	//Defining the angle between two vertices
-
-	for (int i = 0; i < int(numOfVertices); i++)
-	{
-		int x = center.x + radius * sin(i * angle);
-		int y = center.y + radius * cos(i * angle);
-
-		xPointsV.push_back(x);
-		yPointsV.push_back(y);
+		pWind->SetBrush(RegularPolygonGfxInfo.FillClr);
 	}
+	else
+		style = FRAME;
 
-	int* xPoints = &xPointsV[0];
-	int* yPoints = &yPointsV[0];
 
-	pWind->DrawPolygon(xPoints, yPoints, int(numOfVertices), style);
+		std::vector<int> xPointsV;
+		std::vector<int> yPointsV;
+
+		const double PI = 3.141592653589;			//Defining constant PI
+		double angle = (2 * PI) / numOfVertices;	//Defining the angle between two vertices
+
+		for (int i = 0; i < int(numOfVertices); i++)
+		{
+			int x = center.x + radius * sin(i * angle);
+			int y = center.y + radius * cos(i * angle);
+
+			xPointsV.push_back(x);
+			yPointsV.push_back(y);
+		}
+
+		int* xPoints = &xPointsV[0];
+		int* yPoints = &yPointsV[0];
+
+		pWind->DrawPolygon(xPoints, yPoints, int(numOfVertices), style);
 
 }
 
@@ -391,7 +394,6 @@ void GUI::DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const
   }
 
 
-//////////////////////////////////////////////////////////////////////////////////////////
 GUI::~GUI()
 {
 	delete pWind;

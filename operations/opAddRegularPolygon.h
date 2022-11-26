@@ -14,6 +14,5 @@ public:
 	//Add Triangle to the controller
 	virtual void Execute();
 
-
 };
 

@@ -42,7 +42,6 @@ operation* controller::createOperation(operationType OpType)
 			pOp = new opAddLine(this);
 			break;
 
-			break;
 		case DRAW_TRI:
 			pOp = new opAddTriangle(this);
 			break;
@@ -54,7 +53,6 @@ operation* controller::createOperation(operationType OpType)
 		case DRAW_OVAL:
 			pOp = new opAddOval(this);
 			break;
-		
 
 		case DRAW_REGULAR_POLYGON:
 			pOp = new opAddRegularPolygon(this);
