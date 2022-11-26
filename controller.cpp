@@ -4,6 +4,9 @@
 #include"operations/opAddCircle.h"
 #include"operations/opAddOval.h"
 #include"operations/opAddIrrPolygon.h"
+#include"operations/opAddRegularPolygon.h"
+#include "opAddLine.h"
+
 
 
 
@@ -36,9 +39,9 @@ operation* controller::createOperation(operationType OpType)
 			break;
 
 		case DRAW_LINE:
-			///create AddLineoperation here
-
+			pOp = new opAddLine(this);
 			break;
+
 		case DRAW_TRI:
 			pOp = new opAddTriangle(this);
 			break;
@@ -53,6 +56,9 @@ operation* controller::createOperation(operationType OpType)
 
 		case DRAW_IRR_POLYGON:
 			pOp = new opAddIrrPolygon(this);
+      
+		case DRAW_REGULAR_POLYGON:
+			pOp = new opAddRegularPolygon(this);
 			break;
 
 		case EXIT:

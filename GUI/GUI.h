@@ -4,6 +4,7 @@
 #include "..\CMUgraphicsLib\CMUgraphics.h"
 #include "..\Defs.h"
 
+#include <vector>
 #include <string>
 using namespace std;
 
@@ -37,8 +38,11 @@ class GUI
 		ICON_CIRC, // Circle icon in menu
 		ICON_TRIANGLE,
 		ICON_OVAL,
+
 		ICON_IRR_POLYGON,
-		// TODO: Add more icons names here
+		ICON_REGULAR_POLYGON,
+		ICON_LINE,
+		//TODO: Add more icons names here
 
 		ICON_EXIT, // Exit icon
 
@@ -81,11 +85,12 @@ public:
 	GUI();
 
 	// Input Functions  ---------------------------
-	void GetPointClicked(int &x, int &y) const; // Get coordinate where user clicks
-	string GetSrting() const;					// Returns a string entered by the user
-	void GetKeyClicked(char &cKey) const;
-	operationType GetUseroperation() const; // Read the user click and map to an operation
 
+	void GetPointClicked(int& x, int& y) const;//Get coordinate where user clicks
+	void GetKeyClicked(char& cKey) const;
+	string GetSrting() const;	 //Returns a string entered by the user
+	operationType GetUseroperation() const; //Read the user click and map to an operation
+  
 	// Output Functions  ---------------------------
 	window *CreateWind(int, int, int, int) const; // creates the application window
 	void CreateDrawToolBar();					  // creates Draw mode toolbar & menu
@@ -96,11 +101,16 @@ public:
 	void ClearDrawArea() const;	 // Clears the drawing area
 
 	// -- shapes Drawing functions
-	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const; // Draw a rectangle
-	void DrawTriangle(Point P1, Point P2, Point P3, GfxInfo TriaGfxInfo) const;
-	void DrawCircle(Point P1, Point P2, GfxInfo CirclGfxInfo) const;
-	void DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const; // Draw an Oval
-	void DrawIrrPolygon(vector<Point> allPoints, int vericies, GfxInfo IrrPolGfxInfo) const;
+
+	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const;  //Draw a rectangle
+	void DrawTriangle(Point P1, Point P2,Point P3 ,GfxInfo TriaGfxInfo) const;
+	void DrawCircle(Point P1, Point P2,GfxInfo CirclGfxInfo) const;
+	void DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const;  //Draw an Oval
+	void DrawRegularPolygon(Point center, double numOfVertices, double radius, GfxInfo RegularPolygonGfxInfo) const; // Draw a regular Polygon
+	void DrawIrrPolygon(vector<Point> allPoints, int vericies, GfxInfo IrrPolGfxInfo) const; //Draw Irregular Polygon
+  void DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const;  // Draw a Line 
+
+	///Make similar functions for drawing all other shapes.
 
 	/// Make similar functions for drawing all other shapes.
 

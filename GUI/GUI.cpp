@@ -45,6 +45,11 @@ void GUI::GetKeyClicked(char &Key) const
 	pWind->WaitKeyPress(Key); // Get the keyboard button clicked
 }
 
+void GUI::GetKeyClicked(char& Key) const
+{
+	pWind->WaitKeyPress(Key);	//Get the keyboard button clicked
+}
+
 string GUI::GetSrting() const
 {
 	string Label;
@@ -88,21 +93,16 @@ operationType GUI::GetUseroperation() const
 
 			switch (ClickedIconOrder)
 			{
-			case ICON_RECT:
-				return DRAW_RECT;
-			case ICON_CIRC:
-				return DRAW_CIRC;
-			case ICON_TRIANGLE:
-				return DRAW_TRI;
-			case ICON_OVAL:
-				return DRAW_OVAL;
-			case ICON_IRR_POLYGON:
-				return DRAW_IRR_POLYGON;
-			case ICON_EXIT:
-				return EXIT;
+			case ICON_RECT: return DRAW_RECT;
+			case ICON_CIRC: return DRAW_CIRC;
+			case ICON_TRIANGLE: return DRAW_TRI;
+			case ICON_OVAL: return DRAW_OVAL;
+			case ICON_REGULAR_POLYGON: return DRAW_REGULAR_POLYGON;
+      case ICON_IRR_POLYGON: return DRAW_IRR_POLYGON;
+			case ICON_LINE: return DRAW_LINE;
+			case ICON_EXIT: return EXIT;
 
-			default:
-				return EMPTY; // A click on empty place in desgin toolbar
+			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
 		}
 
@@ -168,7 +168,11 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_CIRC] = "images\\MenuIcons\\Menu_Circ.jpg";
 	MenuIconImages[ICON_TRIANGLE] = "images\\MenuIcons\\Menu_Triangle.jpg";
 	MenuIconImages[ICON_OVAL] = "images\\MenuIcons\\Menu_Oval.jpg";
+
 	MenuIconImages[ICON_IRR_POLYGON] = "images\\MenuIcons\\Menu_IrrPolygon.jpg";
+	MenuIconImages[ICON_REGULAR_POLYGON] = "images\\MenuIcons\\Menu_RegShape.jpg";
+	MenuIconImages[ICON_LINE] = "images\\MenuIcons\\Menu_Line.jpg";
+
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 
 	// TODO: Prepare images for each menu icon and add it to the list
@@ -319,6 +323,70 @@ void GUI::DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const
 	pWind->DrawEllipse(P1.x, P1.y, P2.x, P2.y, style);
 }
 
+void GUI::DrawRegularPolygon(Point center, double numOfVertices, double radius, GfxInfo RegularPolygonGfxInfo) const
+{
+	color DrawingClr;
+	if (RegularPolygonGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = RegularPolygonGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, RegularPolygonGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (RegularPolygonGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(RegularPolygonGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+
+		std::vector<int> xPointsV;
+		std::vector<int> yPointsV;
+
+		const double PI = 3.141592653589;			//Defining constant PI
+		double angle = (2 * PI) / numOfVertices;	//Defining the angle between two vertices
+
+		for (int i = 0; i < int(numOfVertices); i++)
+		{
+			int x = center.x + radius * sin(i * angle);
+			int y = center.y + radius * cos(i * angle);
+
+			xPointsV.push_back(x);
+			yPointsV.push_back(y);
+		}
+
+		int* xPoints = &xPointsV[0];
+		int* yPoints = &yPointsV[0];
+
+		pWind->DrawPolygon(xPoints, yPoints, int(numOfVertices), style);
+
+}
+
+void GUI::DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const
+{
+	color DrawingClr;
+	if (LineGfcInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = LineGfcInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, LineGfcInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (LineGfcInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(LineGfcInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+  pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
+  }
+  
 void GUI::DrawIrrPolygon(vector<Point> allPoints, int verticies, GfxInfo IrrPolGfxInfo) const
 {
 	color DrawingClr;
@@ -326,7 +394,6 @@ void GUI::DrawIrrPolygon(vector<Point> allPoints, int verticies, GfxInfo IrrPolG
 		DrawingClr = HighlightColor; // shape should be drawn highlighted
 	else
 		DrawingClr = IrrPolGfxInfo.DrawClr;
-
 	pWind->SetPen(DrawingClr, IrrPolGfxInfo.BorderWdth); // Set Drawing color & width
 
 	drawstyle style;
@@ -349,7 +416,6 @@ void GUI::DrawIrrPolygon(vector<Point> allPoints, int verticies, GfxInfo IrrPolG
 	pWind->DrawPolygon(xPoints, yPoints, verticies, style);
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////
 GUI::~GUI()
 {
 	delete pWind;
