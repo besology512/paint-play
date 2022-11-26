@@ -42,6 +42,7 @@ void GUI::GetPointClicked(int &x, int &y) const
 
 void GUI::GetKeyClicked(char &Key) const
 {
+	pWind->FlushKeyQueue();
 	pWind->WaitKeyPress(Key); // Get the keyboard button clicked
 }
 
@@ -357,7 +358,6 @@ void GUI::DrawRegularPolygon(Point center, double numOfVertices, double radius, 
 		int* yPoints = &yPointsV[0];
 
 		pWind->DrawPolygon(xPoints, yPoints, int(numOfVertices), style);
-
 }
 
 void GUI::DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const
@@ -409,6 +409,7 @@ void GUI::DrawIrrPolygon(vector<Point> allPoints, int verticies, GfxInfo IrrPolG
 	int *xPoints = &xPointsV[0];
 	int *yPoints = &yPointsV[0];
 	pWind->DrawPolygon(xPoints, yPoints, verticies, style);
+
 }
 
 GUI::~GUI()
