@@ -45,11 +45,6 @@ void GUI::GetKeyClicked(char &Key) const
 	pWind->WaitKeyPress(Key); // Get the keyboard button clicked
 }
 
-void GUI::GetKeyClicked(char& Key) const
-{
-	pWind->WaitKeyPress(Key);	//Get the keyboard button clicked
-}
-
 string GUI::GetSrting() const
 {
 	string Label;

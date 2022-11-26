@@ -56,6 +56,7 @@ operation* controller::createOperation(operationType OpType)
 
 		case DRAW_IRR_POLYGON:
 			pOp = new opAddIrrPolygon(this);
+			break;
       
 		case DRAW_REGULAR_POLYGON:
 			pOp = new opAddRegularPolygon(this);
