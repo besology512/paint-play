@@ -13,7 +13,7 @@ opAddIrrPolygon::~opAddIrrPolygon()
 //Execute the operation
 void opAddIrrPolygon::Execute()
 {
-	Point* allPoints;
+	std::vector<Point> allPoints;
 	int verticies;
 
 
@@ -21,26 +21,31 @@ void opAddIrrPolygon::Execute()
 	GUI* pUI = pControl->GetUI();
 
 	pUI->PrintMessage("New Irrigular Polygon: type in number of verticies from 4 to 9");
-	string inputChar = pUI->GetSrting();
+	char inputChar;
+	pUI->GetKeyClicked(inputChar);
 	while (1)
 	{
-		if (inputChar == "4") { verticies = 4; break; }
-		else if (inputChar == "5") { verticies = 5; break; }
-		else if (inputChar == "6") { verticies = 6; break; }
-		else if (inputChar == "7") { verticies = 7; break; }
-		else if (inputChar == "8") { verticies = 8; break; }
-		else if (inputChar == "9") { verticies = 9; break; }
+		if (inputChar == '4') { verticies = 4; break; }
+		else if (inputChar == '5') { verticies = 5; break; }
+		else if (inputChar == '6') { verticies = 6; break; }
+		else if (inputChar == '7') { verticies = 7; break; }
+		else if (inputChar == '8') { verticies = 8; break; }
+		else if (inputChar == '9') { verticies = 9; break; }
 		else { pUI->PrintMessage("You should type only numbers from 4 to 9 try again..."); }
 	}
-
+	pUI->PrintMessage(to_string(verticies)+" verticies.... just click them");
 	//Read center and store in point P1
-	allPoints = new Point[verticies];
-
+	int x;
+	int y;
 	for (int i = 0; i < verticies; i++)
 	{
-		pUI->GetPointClicked(allPoints[i].x, allPoints[i].y);
-		string msg = "Point " + to_string(i + 1) + " is at " +"(" + to_string(allPoints[i].x) + ", " + to_string(allPoints[i].y) + ")";
-		msg += " ... Click at Point "+ to_string(i + 1);
+		pUI->GetPointClicked(x, y);
+		Point iPoint;
+		iPoint.x = x;
+		iPoint.y = y;
+		allPoints.push_back(iPoint);
+		string msg = "Point " + to_string(i + 1) + " is at " +"(" + to_string(x) + ", " + to_string(y) + ")";
+		msg += " ... Click at Point "+ to_string(i + 2);
 		pUI->PrintMessage(msg);
 	}
 	
@@ -61,7 +66,6 @@ void opAddIrrPolygon::Execute()
 
 	//Create a Circle with the above parameters
 	IrrPolygon* R = new IrrPolygon(allPoints,verticies, IrrPolGfxInfo);
-	delete[] allPoints;
 	//Get a pointer to the graph
 	Graph* pGr = pControl->getGraph();
 

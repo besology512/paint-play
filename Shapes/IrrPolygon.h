@@ -1,15 +1,14 @@
 #pragma once
-
+#include <vector>
 #include "../Shapes/Shape.h"
 
 class IrrPolygon : public shape
 {
 private:
 	int verticies;
-	Point* allPoints;
-	//allPoints = new Point[verticies];
+	std::vector<Point> allPoints;
 public:
-	IrrPolygon(Point*,int verticies, GfxInfo shapeGfxInfo);
+	IrrPolygon(std::vector<Point> allPoints,int verticies, GfxInfo shapeGfxInfo);
 	virtual ~IrrPolygon();
 	virtual void Draw(GUI* pUI) const;
 };

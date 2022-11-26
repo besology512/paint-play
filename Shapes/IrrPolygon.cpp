@@ -1,9 +1,9 @@
 #include ".//IrrPolygon.h"
 
-IrrPolygon::IrrPolygon(Point* allPoints, int verticies, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
+IrrPolygon::IrrPolygon(std::vector<Point> allPoints, int verticies, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 {
 	this->verticies = verticies;
-	this->allPoints = new Point[this->verticies];
+	this->allPoints = allPoints;
 }
 
 IrrPolygon::~IrrPolygon()
