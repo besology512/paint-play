@@ -11,6 +11,6 @@ IrrPolygon::~IrrPolygon()
 
 void IrrPolygon::Draw(GUI* pUI) const
 {
-	//Call Output::Draw Triangle to draw a Triangle on the screen	
+	//Call Output::DrawIrrPolygon polygon to draw an irrigular polygon on the screen	
 	pUI->DrawIrrPolygon(allPoints, verticies, ShpGfxInfo);
 }

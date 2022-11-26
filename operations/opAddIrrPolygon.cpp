@@ -64,12 +64,12 @@ void opAddIrrPolygon::Execute()
 	IrrPolGfxInfo.isSelected = false;	//defualt is not selected
 
 
-	//Create a Circle with the above parameters
+	//Create a Polygon with the above parameters
 	IrrPolygon* R = new IrrPolygon(allPoints,verticies, IrrPolGfxInfo);
 	//Get a pointer to the graph
 	Graph* pGr = pControl->getGraph();
 
-	//Add the rectangle to the list of shapes
+	//Add the irregular Polygon to the list of shapes
 	pGr->Addshape(R);
 
 }

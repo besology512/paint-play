@@ -2,14 +2,14 @@
 
 #include "operation.h"
 
-//Add Circle operation class
+//Add Irrigular Polygon operation class
 class opAddIrrPolygon: public operation
 {
 public:
 	opAddIrrPolygon(controller* pCont);
 	virtual ~opAddIrrPolygon();
 
-	//Add Circle to the controller
+	//Add IrrPolygon to the controller
 	virtual void Execute();
 
 };

@@ -1,4 +1,5 @@
 #include "GUI.h"
+#include<iostream>
 
 GUI::GUI()
 {
@@ -318,7 +319,7 @@ void GUI::DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const
 	pWind->DrawEllipse(P1.x, P1.y, P2.x, P2.y, style);
 }
 
-void GUI::DrawIrrPolygon(vector<Point> allPoints, int vericies, GfxInfo IrrPolGfxInfo) const
+void GUI::DrawIrrPolygon(vector<Point> allPoints, int verticies, GfxInfo IrrPolGfxInfo) const
 {
 	color DrawingClr;
 	if (IrrPolGfxInfo.isSelected)	 // shape is selected
@@ -338,14 +339,14 @@ void GUI::DrawIrrPolygon(vector<Point> allPoints, int vericies, GfxInfo IrrPolGf
 		style = FRAME;
 	vector<int> xPointsV;
 	vector<int> yPointsV;
-	for (int i = 0; i < vericies; i++)
+	for (int i = 0; i < verticies; i++)
 	{
-		xPointsV.push_back(allPoints.at(i).x);
-		yPointsV.push_back(allPoints.at(i).y);
+		xPointsV.push_back(allPoints[i].x);
+		yPointsV.push_back(allPoints[i].y);
 	}
 	int *xPoints = &xPointsV[0];
 	int *yPoints = &yPointsV[0];
-	pWind->DrawPolygon(xPoints, yPoints, style);
+	pWind->DrawPolygon(xPoints, yPoints, verticies, style);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
