@@ -42,6 +42,7 @@ class GUI
 		ICON_IRR_POLYGON,
 		ICON_REGULAR_POLYGON,
 		ICON_LINE,
+		ICON_PICKER,
 		//TODO: Add more icons names here
 
 		ICON_EXIT, // Exit icon

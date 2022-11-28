@@ -94,8 +94,9 @@ operationType GUI::GetUseroperation() const
 			case ICON_TRIANGLE: return DRAW_TRI;
 			case ICON_OVAL: return DRAW_OVAL;
 			case ICON_REGULAR_POLYGON: return DRAW_REGULAR_POLYGON;
-      case ICON_IRR_POLYGON: return DRAW_IRR_POLYGON;
+			case ICON_IRR_POLYGON: return DRAW_IRR_POLYGON;
 			case ICON_LINE: return DRAW_LINE;
+			case ICON_PICKER: return PICK_COLOR;
 			case ICON_EXIT: return EXIT;
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
@@ -168,6 +169,8 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_IRR_POLYGON] = "images\\MenuIcons\\Menu_IrrPolygon.jpg";
 	MenuIconImages[ICON_REGULAR_POLYGON] = "images\\MenuIcons\\Menu_RegShape.jpg";
 	MenuIconImages[ICON_LINE] = "images\\MenuIcons\\Menu_Line.jpg";
+	MenuIconImages[ICON_PICKER] = "images\\MenuIcons\\Menu_ColorPicker.jpg";
+	
 
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 
