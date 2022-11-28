@@ -43,7 +43,7 @@ void opAddSquare::Execute() {
 	SquareGfxInfo.isSelected = false;	//defualt is not selected
 
 
-	//Create a oval with the above parameters
+	//Create a square with the above parameters
 	Square* S = new Square(P1, P2, SquareGfxInfo);
 
 	//Get a pointer to the graph
