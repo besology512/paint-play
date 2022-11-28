@@ -40,7 +40,7 @@ void opAddSquare::Execute() {
 
 
 	SquareGfxInfo.isFilled = false;	//default is not filled
-	SquareGfxInfo.isSelected = false;	//defualt is not selected
+	SquareGfxInfo.isSelected = true;	//defualt is not selected
 
 
 	//Create a square with the above parameters

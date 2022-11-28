@@ -25,7 +25,7 @@ struct GfxInfo	//Graphical info common for all shapes (you may add more members)
 
 
 
-double getCoordinateforSqre(double x1, double y1, double x2, int dd){ //function to get the remain coordinate to complete 4lines to draw a square
+double getCoordinateforSqre(double x1, double y1, double x2, double dd){ //function to get the remain coordinate to complete 4lines to draw a square
  
 	//double dd = sqrt(pow((x1 - x2), 2) + pow((y1 - y2), 2));
 	if (x1 == x2) {

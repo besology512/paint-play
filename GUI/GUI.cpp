@@ -345,13 +345,13 @@ void GUI::DrawSquare(Point P1, Point P2, GfxInfo SquareGfxInfo) const {
 	else {
 		style = FRAME;
 		double dd = sqrt(pow((P1.x - P2.x), 2) + pow((P1.y - P2.y), 2));
-		/*pWind->DrawLine(P1.x, P1.y, P2.x, P1.y, style);
+		pWind->DrawLine(P1.x, P1.y, P2.x, P1.y, style);
 		pWind->DrawLine(P2.x, P2.y, P2.x, getCoordinateforSqre(P2.x,P2.y,P2.x,dd), style);
 		pWind->DrawLine(P2.x, getCoordinateforSqre(P2.x, P2.y, P2.x, dd), P1.x, getCoordinateforSqre(P2.x, P2.y, P2.x, dd), style);
-		pWind->DrawLine(P1.x, getCoordinateforSqre(P2.x, P2.y, P2.x, dd), P1.x, P1.y, style);*/
+		pWind->DrawLine(P1.x, getCoordinateforSqre(P2.x, P2.y, P2.x, dd), P1.x, P1.y, style);
 
 
-		pWind->DrawRectangle(P1.x, P1.y, P2.x, getCoordinateforSqre(P2.x, P2.y, P2.x, dd), style);
+		//pWind->DrawRectangle(P1.x, P1.y, P2.x, getCoordinateforSqre(P2.x, P2.y, P2.x, dd), style);
 	}
 
 }
