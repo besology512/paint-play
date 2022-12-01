@@ -17,6 +17,11 @@ void Circle::Draw(GUI* pUI) const
 
 bool Circle::inShape(int x, int y) const
 {
+	double radius = sqrt(pow(Center.x - PointOnCircle.x,2) + pow(Center.y - PointOnCircle.y,2));
+	double d = sqrt(pow(x - Center.x, 2) + pow(y - Center.y, 2));	 //distance formula for the circle
 
-	return false; //Temp
+	if (d <= radius)
+		return true;
+	else
+		return false;
 }
