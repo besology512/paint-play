@@ -25,17 +25,18 @@ struct GfxInfo	//Graphical info common for all shapes (you may add more members)
 
 
 
-double getCoordinateforSqre(double x1, double y1, double x2, double dd){ //function to get the remain coordinate to complete 4lines to draw a square
- 
-	//double dd = sqrt(pow((x1 - x2), 2) + pow((y1 - y2), 2));
-	if (x1 == x2) {
-		double b = -y1 * 2;
-		double c = (y1 * y1) - (dd * dd);
-		double y2 = (-b - sqrt((b * b) - 4 * 1 * c)) / (2 * 1);
-		return y2;
-	}
-	
-}
+//double getCoordinateforSqre(double x1, double y1, double x2, double y2){ //function to get the remain coordinate to complete 4lines to draw a square
+// 
+//	//double dd = sqrt(pow((x1 - x2), 2) + pow((y1 - y2), 2));
+//	if (x1 == x2) {
+//		/*double b = -y1 * 2;
+//		double c = (y1 * y1) - (dd * dd);
+//		double y2 = (-b - sqrt((b * b) - 4 * 1 * c)) / (2 * 1);
+//		return y2;*/
+//		//pWind->DrawLine(x1, y1, x2, y2, style);
+//	}
+//	
+//}
 
 
 
