@@ -5,6 +5,7 @@
 #include"operations/opAddOval.h"
 #include"operations/opAddIrrPolygon.h"
 #include"operations/opAddRegularPolygon.h"
+#include"operations/opSelectUnselect.h"
 #include "opAddLine.h"
 
 
@@ -65,6 +66,11 @@ operation* controller::createOperation(operationType OpType)
 		case EXIT:
 			///create Exitoperation here
 			
+			break;
+
+		case DRAWING_AREA:
+			//select and unselect operation here//
+			pOp = new opSelectUnselect(this);
 			break;
 		
 		case STATUS:	//a click on the status bar ==> no operation

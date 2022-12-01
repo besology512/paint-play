@@ -29,11 +29,21 @@ void Graph::Draw(GUI* pUI) const
 		shapePointer->Draw(pUI);
 }
 
+//Unselect all the shapes in the shapelist
+void Graph::UnselectAll()
+{
+	for (auto shapePointer : shapesList)
+		shapePointer->SetSelected(false);
+}
+
 
 shape* Graph::Getshape(int x, int y) const
 {
 	//If a shape is found return a pointer to it.
 	//if this point (x,y) does not belong to any shape return NULL
+	// I might loop in the shape list and check every element if this coordinates is in that shape or not.
+	// If true I will make the selectedShape = that shape and return selectedShape	
+	// If false I will return null
 
 
 	///Add your code here to search for a shape given a point x,y	
