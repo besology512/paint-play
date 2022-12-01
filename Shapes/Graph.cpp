@@ -40,3 +40,17 @@ shape* Graph::Getshape(int x, int y) const
 
 	return nullptr;
 }
+
+void Graph::Save(ofstream& outfile)
+{
+
+	
+	outfile.open("files\\test1"); // open file and store it in folder in working directory 
+
+	for(auto i = shapesList.begin(); i != shapesList.end();i++) // Loop on each shape in vector list 
+	{ 
+
+		outfile << *i; // Put data into file
+	}
+
+}
