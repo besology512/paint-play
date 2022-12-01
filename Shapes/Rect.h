@@ -11,5 +11,8 @@ public:
 	Rect(Point , Point, GfxInfo shapeGfxInfo );
 	virtual ~Rect();
 	virtual void Draw(GUI* pUI) const;
+	virtual bool inShape(int, int) const;		 //check whether a point in the shape or not
+
+
 };
 

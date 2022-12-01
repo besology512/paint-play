@@ -14,3 +14,9 @@ void RegularPolygon::Draw(GUI* pUI) const
 	//Call Output::Draw Triangle to draw a Triangle on the screen	
 	pUI->DrawRegularPolygon(center, numOfVertices, radius, ShpGfxInfo);
 }
+
+bool RegularPolygon::inShape(int x, int y) const
+{
+
+	return false; //Temp
+}

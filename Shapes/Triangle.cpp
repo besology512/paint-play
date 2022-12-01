@@ -15,3 +15,9 @@ void Triangle::Draw(GUI* pUI) const
 	//Call Output::Draw Triangle to draw a Triangle on the screen	
 	pUI->DrawTriangle(Corner1, Corner2, Corner3,ShpGfxInfo);
 }
+
+bool Triangle::inShape(int x, int y) const
+{
+
+	return false; //Temp
+}

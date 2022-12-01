@@ -37,16 +37,18 @@ void Graph::UnselectAll()
 }
 
 
-shape* Graph::Getshape(int x, int y) const
+shape* Graph::Getshape(int x, int y)
 {
-	//If a shape is found return a pointer to it.
-	//if this point (x,y) does not belong to any shape return NULL
-	// I might loop in the shape list and check every element if this coordinates is in that shape or not.
-	// If true I will make the selectedShape = that shape and return selectedShape	
-	// If false I will return null
-
-
-	///Add your code here to search for a shape given a point x,y	
+	for (auto shapePointer = shapesList.rbegin(); shapePointer != shapesList.rend(); ++shapePointer)
+	{
+		if ((*shapePointer)->inShape(x, y))
+		{
+			//I may unselect all here
+			selectedShape = (*shapePointer);
+			return selectedShape;
+			break; // I may comment that
+		}
+	}
 
 	return nullptr;
 }

@@ -14,3 +14,9 @@ void Oval::Draw(GUI* pUI) const
 	//Call Output::DrawRect to draw a rectangle on the screen	
 	pUI->DrawOval(Corner1, Corner2, ShpGfxInfo);
 }
+
+bool Oval::inShape(int x, int y) const
+{
+
+	return false; //Temp
+}

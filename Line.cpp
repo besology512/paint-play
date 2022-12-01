@@ -14,3 +14,9 @@ void Line::Draw(GUI* pUI) const
 {
 	pUI->DrawLine(point1, point2, ShpGfxInfo);
 }
+
+bool Line::inShape(int x, int y) const
+{
+
+	return false; //Temp
+}

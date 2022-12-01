@@ -86,8 +86,9 @@ public:
 
 	// Input Functions  ---------------------------
 
-	void GetPointClicked(int& x, int& y) const;//Get coordinate where user clicks
-	void GetKeyClicked(char& cKey) const;
+	void GetPointClicked(int& , int&) const;//Get coordinate where user clicks
+	void GetMousCoord(int& , int&) const;//Get the current mouse Coord
+	void GetKeyClicked(char& cKey) const; //Get the keyboard buttons where user clicks
 	string GetSrting() const;	 //Returns a string entered by the user
 	operationType GetUseroperation() const; //Read the user click and map to an operation
   

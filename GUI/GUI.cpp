@@ -38,7 +38,13 @@ GUI::GUI()
 void GUI::GetPointClicked(int &x, int &y) const
 {
 	pWind->FlushMouseQueue();
-	pWind->WaitMouseClick(x, y); // Wait for mouse click
+	pWind->WaitMouseClick(x, y); // Wait for mouse click	
+}
+
+void GUI::GetMousCoord(int &x, int &y) const
+{
+	pWind->FlushMouseQueue();
+	pWind->GetMouseCoord(x,y);
 }
 
 void GUI::GetKeyClicked(char &Key) const

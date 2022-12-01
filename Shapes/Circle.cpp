@@ -14,3 +14,9 @@ void Circle::Draw(GUI* pUI) const
 	//Call Output::Draw Triangle to draw a Triangle on the screen	
 	pUI->DrawCircle(Center, PointOnCircle, ShpGfxInfo);
 }
+
+bool Circle::inShape(int x, int y) const
+{
+
+	return false; //Temp
+}
