@@ -34,7 +34,7 @@ void opPickColor::Execute()
 	pGr->Addshape(R);
 	pUI->GetPointClicked(P1.x, P1.y);
 	pUI->PickColor(P1.x, P1.y, dRed, dGreen, dBlue);
-	if (P1.x >= 400 && P1.x <= 400 + 400 && P1.y >= 50 && P1.y <= 50 + 500) {
+	if (P1.x >= 400 && P1.x <= 400 + 610 && P1.y >= 50 && P1.y <= 50 + 500) {
 		ostringstream output;
 		output << "Red: " << dRed << "  Green: " << dGreen << "  Blue: " << dBlue;
 		pUI->PrintMessage(output.str());

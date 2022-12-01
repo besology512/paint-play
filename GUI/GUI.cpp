@@ -217,7 +217,7 @@ color GUI::getCrntDrawColor() const // get current drwawing color
 //////////////////////////////////////////////////////////////////////////////////////////
 void GUI::DrawColorPicker() {
 	string path = "images\\MenuIcons\\Menu_Pellet.jpg";
-	pWind->DrawImage(path, 400, 50, 400, 500);
+	pWind->DrawImage(path, 400, 50, 610, 500);
 }
 
 void GUI::PickColor(int x,int y,double &dRed, double& dGreen, double& dBlue) {
