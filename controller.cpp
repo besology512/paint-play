@@ -6,6 +6,7 @@
 #include"operations/opAddIrrPolygon.h"
 #include"operations/opAddRegularPolygon.h"
 #include "opAddLine.h"
+#include "operations/opPickColor.h"
 
 
 
@@ -61,7 +62,9 @@ operation* controller::createOperation(operationType OpType)
 		case DRAW_REGULAR_POLYGON:
 			pOp = new opAddRegularPolygon(this);
 			break;
-
+		case PICK_COLOR:
+			pOp = new opPickColor(this);
+			break;
 		case EXIT:
 			///create Exitoperation here
 			

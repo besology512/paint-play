@@ -12,10 +12,11 @@ enum operationType //The operations supported (you can add more if needed)
 	DRAW_CIRC,		//Draw Circle
 	DRAW_OVAL,		//Draw Oval
 	DRAW_IRR_POLYGON, //Draw Irregular Polygon
-  DRAW_REGULAR_POLYGON,	//Draw Regular Polygon
+	DRAW_REGULAR_POLYGON,	//Draw Regular Polygon
 	CHNG_DRAW_CLR,	//Change the drawing color
 	CHNG_FILL_CLR,	//Change the filling color
 	CHNG_BK_CLR,	//Change background color
+	PICK_COLOR,
 	DEL,			//Delete a shape(s)
 	MOVE,			//Move a shape(s)
 	RESIZE,			//Resize a shape(s)
