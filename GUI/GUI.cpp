@@ -346,13 +346,13 @@ void GUI::DrawSquare(Point P1, Point P2, GfxInfo SquareGfxInfo) const {
 	}
 	else {
 		style = FRAME;
-		int diffx = P1.x - P2.x;
-		int diffy = P1.y - P2.y;
+		int diffx = P1.x - P2.x;						//get difference between X coordinates
+		int diffy = P1.y - P2.y;						//get difference between X coordinates
 		Point p3;
 		p3.x = P1.x + diffy;
 		p3.y = P1.y - diffx;
 		Point p4;
-		p4.x = P2.x + diffy;
+		p4.x = P2.x + diffy;						//add differences of y to x to get p4
 		p4.y = P2.y - diffx;
 		pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
 		pWind->DrawLine(P1.x, P1.y, p3.x, p3.y, style);
