@@ -1,4 +1,6 @@
+#include<cmath>
 #include "GUI.h"
+#include<cmath>
 
 GUI::GUI()
 {
@@ -344,13 +346,18 @@ void GUI::DrawSquare(Point P1, Point P2, GfxInfo SquareGfxInfo) const {
 	}
 	else {
 		style = FRAME;
-		
-		if (P1.x == P2.x) {
-			pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
-			pWind->DrawLine(P2.x, P2.y, P2.x + P2.y - P1.y, P2.y, style);
-			pWind->DrawLine(P2.x + P2.y - P1.y, P2.y, P2.x + P2.y - P1.y,P1.y, style);
-			pWind->DrawLine(P2.x + P2.y - P1.y, P1.y, P1.x, P1.y, style);
-		}
+		int diffx = P1.x - P2.x;
+		int diffy = P1.y - P2.y;
+		Point p3;
+		p3.x = P1.x + diffy;
+		p3.y = P1.y - diffx;
+		Point p4;
+		p4.x = P2.x + diffy;
+		p4.y = P2.y - diffx;
+		pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
+		pWind->DrawLine(P1.x, P1.y, p3.x, p3.y, style);
+		pWind->DrawLine(P2.x, P2.y, p4.x, p4.y, style);
+		pWind->DrawLine(p3.x, p3.y, p4.x, p4.y, style);
 
 		
 	}
