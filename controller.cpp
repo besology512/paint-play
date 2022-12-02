@@ -9,6 +9,7 @@
 #include"operations/opSelectUnselect.h"
 #include "opAddLine.h"
 #include "operations/opPickColor.h"
+#include"operations/opChangeFill.h"
 
 
 
@@ -69,6 +70,9 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case PICK_COLOR:
 			pOp = new opPickColor(this);
+			break;
+		case CHNG_FILL_CLR:
+			pOp = new opChangeFill(this);
 			break;
 		case EXIT:
 			///create Exitoperation here

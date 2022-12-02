@@ -53,5 +53,3 @@ void opAddSquare::Execute() {
 	pGr->Addshape(S);
 
 }
-
-
