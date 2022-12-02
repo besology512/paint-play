@@ -45,6 +45,7 @@ class GUI
 		ICON_REGULAR_POLYGON,
 		ICON_IRR_POLYGON,
 		ICON_PICKER,
+		ICON_SWITCH,
 		//TODO: Add more icons names here
 
 		ICON_EXIT, // Exit icon
@@ -58,7 +59,11 @@ class GUI
 		// Note: Icons are ordered here as they appear in menu
 		// If you want to change the menu icons order, change the order here
 
+		ICON_START,
+		ICON_RESTART,
 		// TODO: Add more icons names here
+		//ICON_EXIT,
+		
 
 		PLAY_ICON_COUNT // no. of menu icons ==> This should be the last line in this enum
 

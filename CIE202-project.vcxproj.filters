@@ -175,6 +175,7 @@
     <ClCompile Include="Shapes\Source.cpp">
       <Filter>Shapes&amp;Graph</Filter>
     </ClCompile>
+    <ClCompile Include="OpSwitch.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -305,6 +306,7 @@
       <Filter>Operations</Filter>
     </ClInclude>
     <ClInclude Include="Shapes\ColorPallet.h" />
+    <ClInclude Include="OpSwitch.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Operations">
