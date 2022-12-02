@@ -177,7 +177,7 @@
     <ClCompile Include="operations\opAddTriangle.cpp" />
     <ClCompile Include="operations\opSelectUnselect.cpp" />
     <ClCompile Include="operations\opPickColor.cpp" />
-    <ClCompile Include="OpSwitch.cpp" />
+    <ClCompile Include="operations\OpSwitch.cpp" />
     <ClCompile Include="Shapes\Circle.cpp" />
     <ClCompile Include="Shapes\ColorPallet.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
@@ -215,7 +215,7 @@
     <ClInclude Include="controller.h" />
     <ClInclude Include="DEFS.h" />
     <ClInclude Include="operations\opAddSquare.h" />
-    <ClInclude Include="OpSwitch.h" />
+    <ClInclude Include="operations\OpSwitch.h" />
     <ClInclude Include="Shapes\Square.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="opAddLine.h" />

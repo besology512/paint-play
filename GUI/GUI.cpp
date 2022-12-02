@@ -35,9 +35,9 @@ GUI::GUI()
 		CreateStatusBar();
 	}
 
-	else {
-
-		InterfaceMode = MODE_PLAY;
+	
+	else if(InterfaceMode = MODE_PLAY) {
+		//InterfaceMode = MODE_PLAY;
 
 		width = 900;
 		height = 770;
@@ -60,6 +60,7 @@ GUI::GUI()
 		CreatePlayToolBar();
 		CreateStatusBar();
 	}
+	
 }
 
 //======================================================================================//
