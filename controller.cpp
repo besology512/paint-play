@@ -61,7 +61,9 @@ operation* controller::createOperation(operationType OpType)
 		case DRAW_REGULAR_POLYGON:
 			pOp = new opAddRegularPolygon(this);
 			break;
-
+		case SAVE:
+			pOp = new opSave(this);
+			break;
 		case EXIT:
 			///create Exitoperation here
 			

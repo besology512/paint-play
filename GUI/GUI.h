@@ -111,6 +111,7 @@ public:
 	void DrawIrrPolygon(vector<Point> allPoints, int vericies, GfxInfo IrrPolGfxInfo) const; //Draw Irregular Polygon
 	void DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const;  // Draw a Line 
 	
+	
 
 	///Make similar functions for drawing all other shapes.
 
