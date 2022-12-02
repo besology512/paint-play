@@ -15,5 +15,5 @@ public:
 	virtual void Draw(GUI* pUI) const;
 	bool inShape(int x, int y) const;
 	string shapeInfo();
-
+	double getTriangleArea(int,int,int,int,int,int) const;
 };
