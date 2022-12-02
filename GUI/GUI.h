@@ -3,6 +3,7 @@
 
 #include "..\CMUgraphicsLib\CMUgraphics.h"
 #include "..\Defs.h"
+#include<cmath>
 
 #include <vector>
 #include <string>
@@ -22,6 +23,7 @@ struct GfxInfo // Graphical info common for all shapes (you may add more members
 	bool isSelected; // true if the shape is selected.
 };
 
+
 class GUI
 {
 	enum GUI_MODE // Graphical user interface mode
@@ -38,7 +40,7 @@ class GUI
 		ICON_CIRC, // Circle icon in menu
 		ICON_TRIANGLE,
 		ICON_OVAL,
-
+		ICON_SQUARE,	//Square icon in menu
 		ICON_IRR_POLYGON,
 		ICON_REGULAR_POLYGON,
 		ICON_LINE,
@@ -109,9 +111,11 @@ public:
 	void DrawTriangle(Point P1, Point P2,Point P3 ,GfxInfo TriaGfxInfo) const;
 	void DrawCircle(Point P1, Point P2,GfxInfo CirclGfxInfo) const;
 	void DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const;  //Draw an Oval
+	void DrawSquare(Point P1, Point P2, GfxInfo SquareGfxInfo) const;  //Draw a Square
 	void DrawRegularPolygon(Point center, double numOfVertices, double radius, GfxInfo RegularPolygonGfxInfo) const; // Draw a regular Polygon
 	void DrawIrrPolygon(vector<Point> allPoints, int vericies, GfxInfo IrrPolGfxInfo) const; //Draw Irregular Polygon
   void DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const;  // Draw a Line 
+
 
 	///Make similar functions for drawing all other shapes.
 

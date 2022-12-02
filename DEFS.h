@@ -11,6 +11,7 @@ enum operationType //The operations supported (you can add more if needed)
 	DRAW_TRI,		//Draw Triangle
 	DRAW_CIRC,		//Draw Circle
 	DRAW_OVAL,		//Draw Oval
+	DRAW_SQUARE,	//Draw Square
 	DRAW_IRR_POLYGON, //Draw Irregular Polygon
 	DRAW_REGULAR_POLYGON,	//Draw Regular Polygon
 	CHNG_DRAW_CLR,	//Change the drawing color
