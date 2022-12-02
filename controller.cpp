@@ -4,6 +4,11 @@
 #include"operations/opAddCircle.h"
 #include"operations/opAddOval.h"
 #include"../paint-play/operations/opAddSquare.h"
+#include"operations/opAddIrrPolygon.h"
+#include"operations/opAddRegularPolygon.h"
+#include"operations/opSelectUnselect.h"
+#include "opAddLine.h"
+#include "operations/opPickColor.h"
 
 
 
@@ -37,9 +42,9 @@ operation* controller::createOperation(operationType OpType)
 			break;
 
 		case DRAW_LINE:
-			///create AddLineoperation here
-
+			pOp = new opAddLine(this);
 			break;
+
 		case DRAW_TRI:
 			pOp = new opAddTriangle(this);
 			break;
@@ -55,9 +60,24 @@ operation* controller::createOperation(operationType OpType)
 			pOp = new opAddSquare(this);
 			break;
 
+		case DRAW_IRR_POLYGON:
+			pOp = new opAddIrrPolygon(this);
+			break;
+      
+		case DRAW_REGULAR_POLYGON:
+			pOp = new opAddRegularPolygon(this);
+			break;
+		case PICK_COLOR:
+			pOp = new opPickColor(this);
+			break;
 		case EXIT:
 			///create Exitoperation here
 			
+			break;
+
+		case DRAWING_AREA:
+			//select and unselect operation here//
+			pOp = new opSelectUnselect(this);
 			break;
 		
 		case STATUS:	//a click on the status bar ==> no operation
