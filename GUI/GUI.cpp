@@ -180,6 +180,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_REGULAR_POLYGON] = "images\\MenuIcons\\Menu_RegShape.jpg";
 	MenuIconImages[ICON_IRR_POLYGON] = "images\\MenuIcons\\Menu_IrrPolygon.jpg";
 	MenuIconImages[ICON_PICKER] = "images\\MenuIcons\\Menu_ColorPicker.jpg";
+	MenuIconImages[ICON_FILL] = "images\\MenuIcons\\Menu_Fill.jpg";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 
 	// TODO: Prepare images for each menu icon and add it to the list

@@ -59,7 +59,7 @@ shape* Graph::Getshape(int x, int y)
 
 	return nullptr;
 }
-
+ 
 //this function is used to get the color of drawing and filling, etc from the color pallet
 //default color is black
 color Graph::getPickedClr() {
