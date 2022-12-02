@@ -174,7 +174,11 @@
     <ClCompile Include="operations\opAddRect.cpp" />
     <ClCompile Include="operations\opAddRegularPolygon.cpp" />
     <ClCompile Include="operations\opAddTriangle.cpp" />
+
+    <ClCompile Include="operations\opSelectUnselect.cpp" />
+
     <ClCompile Include="operations\opPickColor.cpp" />
+
     <ClCompile Include="Shapes\Circle.cpp" />
     <ClCompile Include="Shapes\ColorPallet.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
@@ -218,7 +222,11 @@
     <ClInclude Include="operations\opAddRegularPolygon.h" />
     <ClInclude Include="operations\opAddTriangle.h" />
     <ClInclude Include="operations\operation.h" />
+
+    <ClInclude Include="operations\opSelectUnselect.h" />
+
     <ClInclude Include="operations\opPickColor.h" />
+
     <ClInclude Include="resource.h" />
     <ClInclude Include="Shapes\Circle.h" />
     <ClInclude Include="Shapes\ColorPallet.h" />
