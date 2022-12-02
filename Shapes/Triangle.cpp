@@ -22,7 +22,6 @@ double Triangle::getArea(int x1, int y1, int x2, int y2, int x3, int y3) const
 	return area;
 }
 
-
 bool Triangle::inShape(int x, int y) const
 {
 	// Get the area of our Triangle 
