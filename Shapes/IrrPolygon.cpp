@@ -18,5 +18,15 @@ void IrrPolygon::Draw(GUI* pUI) const
 bool IrrPolygon::inShape(int x, int y) const
 {
 
-	return false; //Temp
+	int i, j, c = 0;
+	for (i = 0, j = verticies - 1; i < verticies; j = i++)
+	{
+		if (((allPoints[i].y > y) != (allPoints[j].y > y)) && (x < (allPoints[j].x - allPoints[i].x) * (y - allPoints[i].y) / (allPoints[j].y - allPoints[i].y) + allPoints[i].x))
+			c = !c;
+	}
+
+	if (c)
+		return true;
+	else
+		return false;
 }
