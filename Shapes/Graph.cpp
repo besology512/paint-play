@@ -44,7 +44,7 @@ void Graph::UnselectAll()
 }
 
 
-shape* Graph::Getshape(int x, int y)
+shape* Graph::Getshape(int x, int y) 
 {
 	for (auto shapePointer = shapesList.rbegin(); shapePointer != shapesList.rend(); ++shapePointer)
 	{

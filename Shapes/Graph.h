@@ -27,12 +27,10 @@ public:
 
 	void Draw(GUI* pUI) const;			//Draw the graph (draw all shapes)
 	void UnselectAll();          // Unselect all the shapes
-	shape* Getshape(int , int ); //Search for a shape given a point inside the shape
 	string getShapeInfo();
 
 	void RemoveShape(shape* pShp);
-	void Draw(GUI* pUI) const;		//Draw the graph (draw all shapes)
-	shape* Getshape(int x, int y) const; //Search for a shape given a point inside the shape
+	shape* Getshape(int x, int y); //Search for a shape given a point inside the shape
 
 
 	void Save(ofstream& outfile);	//Save all shapes to a file
