@@ -42,6 +42,7 @@ class GUI
 		ICON_IRR_POLYGON,
 		ICON_REGULAR_POLYGON,
 		ICON_LINE,
+		ICON_SAVE,
 		//TODO: Add more icons names here
 
 		ICON_EXIT, // Exit icon
@@ -108,7 +109,8 @@ public:
 	void DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const;  //Draw an Oval
 	void DrawRegularPolygon(Point center, double numOfVertices, double radius, GfxInfo RegularPolygonGfxInfo) const; // Draw a regular Polygon
 	void DrawIrrPolygon(vector<Point> allPoints, int vericies, GfxInfo IrrPolGfxInfo) const; //Draw Irregular Polygon
-  void DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const;  // Draw a Line 
+	void DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const;  // Draw a Line 
+	
 
 	///Make similar functions for drawing all other shapes.
 
