@@ -13,5 +13,7 @@ public:
 	Square(Point, Point, GfxInfo shapeGfxInfo);
 	virtual ~Square();
 	virtual void Draw(GUI* pUI) const;
+	bool inShape(int x, int y) const;
+	string shapeInfo();
 
 };

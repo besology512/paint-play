@@ -13,3 +13,6 @@ void Square::Draw(GUI* pUI) const
 	//Call Output::DrawSquare to draw a square on the screen	
 	pUI->DrawSquare(corner1, corner2, ShpGfxInfo);
 }
+
+bool Square::inShape(int x, int y) const { return false; }
+string Square::shapeInfo() { return ""; }
