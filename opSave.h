@@ -7,7 +7,7 @@ class opSave : public operation
 {
 //private :
 	//Graph OGraph; // make compostion of graph to use function in it (object form graph)
-	//ofstream outfile; // make output file to use in Save function 
+	ofstream outfile; // make output file to use in Save function 
 public:
 	opSave(controller* pCont);
 	virtual ~opSave();
