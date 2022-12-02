@@ -20,3 +20,7 @@ void shape::ChngFillClr(color Fclr)
 	ShpGfxInfo.FillClr = Fclr; 
 }
 
+void shape::Save(ofstream& OutFile)
+{
+}
+
