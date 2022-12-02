@@ -20,6 +20,7 @@ void shape::ChngFillClr(color Fclr)
 	ShpGfxInfo.FillClr = Fclr;
 }
 
+//May Be DELETED
 void shape::setIsfilled(bool a) {
 	ShpGfxInfo.isFilled = a;
 }

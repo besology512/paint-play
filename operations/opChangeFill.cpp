@@ -14,9 +14,6 @@ opChangeFill::~opChangeFill(){}
 void opChangeFill::Execute() {
 	GUI* pUI = pControl->GetUI();
 	Graph* pGr = pControl->getGraph();
-	if (pGr->counting) {
-		pGr->counter = pGr->getShapesList().size();
-	}
 
 	if (pGr->getSelectedShape()) {
 		//change the fill color of the selected shape
@@ -24,11 +21,11 @@ void opChangeFill::Execute() {
 	}
 	else {
 		//change the general fill color of the next drawings or shapes
+		
+		pGr->setFilled(true);
+		pUI->setFillcolor(pGr->getPickedClr());
 
-		pGr->counting = false;
-		cout << pGr->counter<<"this is from opChange"<<endl;
-		std::cout << "works";
-		pGr->changeUnselcFillClr();
+		//pGr->changeUnselcFillClr();
 		//pUI->setFillcolor(pGr->getPickedClr());
 		//int numberofShapes = pGr->getShapesList().size();
 		/*for (auto shapePointer = begin(pGr->getShapesList()); shapePointer!= end(pGr->getShapesList()); ++shapePointer) {

@@ -21,8 +21,9 @@ private:
 	vector <shape*> shapesList; //a container to hold all shapes							   
 	shape* selectedShape;	//pointer to the currently selected shape
 public:
-	bool counting = true;
-	int counter = 0;
+	//bool counting = true;
+	//int counter = 0;
+	bool isFilled = false;
 	Graph();
 	~Graph();
 	void Addshape(shape* pFig); //Adds a new shape to the shapesList
@@ -30,6 +31,7 @@ public:
 	void Draw(GUI* pUI) const;			//Draw the graph (draw all shapes)
 	void UnselectAll();          // Unselect all the shapes
 	string getShapeInfo();
+	void setFilled(bool);
 
 	void RemoveShape(shape* pShp);
 	shape* Getshape(int x, int y); //Search for a shape given a point inside the shape
@@ -40,5 +42,6 @@ public:
 	color getPickedClr(); //get the current color
 	void setPickedClr(double&,double&,double&); //set color using color picker
 	vector <shape*> getShapesList() const;
-	void changeUnselcFillClr();
+
+	//void changeUnselcFillClr(); //Nay be DELETED
 };

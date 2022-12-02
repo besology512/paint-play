@@ -21,6 +21,9 @@ void opAddRegularPolygon::Execute()
 	//Get a Pointer to the Input / Output Interfaces
 	GUI* pUI = pControl->GetUI();
 
+	//Get a pointer to the graph
+	Graph* pGr = pControl->getGraph();
+
 	pUI->PrintMessage("New Regular Polygon: Click at the Center of the Polygon");
 
 	//Read the center and store in point center
@@ -64,15 +67,12 @@ void opAddRegularPolygon::Execute()
 	RegularPolygonGfxInfo.BorderWdth = pUI->getCrntPenWidth();
 
 
-	RegularPolygonGfxInfo.isFilled = false;	//default is not filled
+	RegularPolygonGfxInfo.isFilled = pGr->isFilled;	//default is not filled
 	RegularPolygonGfxInfo.isSelected = false;	//defualt is not selected
 
 
 	//Create a regular polygon with the above parameters
 	RegularPolygon* RP = new RegularPolygon(center, int((int(numOfVertices) - 48)), int((int(radius) - 48)) * 15, RegularPolygonGfxInfo); //Multiplied the radius to make it bigger
-
-	//Get a pointer to the graph
-	Graph* pGr = pControl->getGraph();
 
 	//Add the rectangle to the list of shapes
 	pGr->Addshape(RP);

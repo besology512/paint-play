@@ -18,6 +18,9 @@ void opAddOval::Execute()
 	//Get a Pointer to the Input / Output Interfaces
 	GUI* pUI = pControl->GetUI();
 
+	//Get a pointer to the graph
+	Graph* pGr = pControl->getGraph();
+
 	pUI->PrintMessage("New Oval: Click at first corner");
 	//Read 1st corner and store in point P1
 	pUI->GetPointClicked(P1.x, P1.y);
@@ -38,15 +41,13 @@ void opAddOval::Execute()
 	OvalGfxInfo.BorderWdth = pUI->getCrntPenWidth();
 
 
-	OvalGfxInfo.isFilled = false;	//default is not filled
+	OvalGfxInfo.isFilled = pGr->isFilled;	//default is not filled
 	OvalGfxInfo.isSelected = false;	//defualt is not selected
 
 
 	//Create a oval with the above parameters
 	Oval* O = new Oval(P1, P2, OvalGfxInfo);
 
-	//Get a pointer to the graph
-	Graph* pGr = pControl->getGraph();
 
 	//Add the Oval to the list of shapes
 	pGr->Addshape(O);

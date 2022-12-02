@@ -83,9 +83,14 @@ vector <shape*> Graph::getShapesList() const {
 	return shapesList;
 }
 
-void Graph::changeUnselcFillClr() {
-	for (auto shapePointer = begin(shapesList)+counter; shapePointer != end(shapesList); ++shapePointer) {
-		(*shapePointer)->ChngFillClr(getPickedClr());
-	}
-	cout << counter;
+void Graph::setFilled(bool a)
+{
+	isFilled = a;
 }
+
+//void Graph::changeUnselcFillClr() {
+//	for (auto shapePointer = begin(shapesList)+counter; shapePointer != end(shapesList); ++shapePointer) {
+//		(*shapePointer)->ChngFillClr(getPickedClr());
+//	}
+//	cout << counter;
+//}

@@ -247,6 +247,12 @@ int GUI::getCrntPenWidth() const // get current pen width
 	return PenWidth;
 }
 
+void GUI::setFillcolor(color newColor)
+{
+	FillColor = newColor;
+	pWind->SetBrush(newColor);
+}
+
 //======================================================================================//
 //								shapes Drawing Functions								//
 //======================================================================================//

@@ -107,6 +107,7 @@ public:
 	void DrawColorPicker();
 	void PickColor(int, int, double&, double&, double&);
 	void setFillcolor(color);
+
 	// -- shapes Drawing functions
 
 	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const;  //Draw a rectangle

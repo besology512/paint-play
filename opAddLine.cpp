@@ -19,6 +19,9 @@ void opAddLine::Execute()
 	// Get User input
 	GUI* pUI = pControl->GetUI();
 
+	//Get a pointer to the graph
+	Graph* pGr = pControl->getGraph();
+
 	pUI->PrintMessage("New Line: Click at First Point");
 	//Read First Point and store in point P1
 	pUI->GetPointClicked(P1.x, P1.y);
@@ -42,15 +45,13 @@ void opAddLine::Execute()
 	LineGfxInfo.BorderWdth = pUI->getCrntPenWidth();
 
 
-	LineGfxInfo.isFilled = false;	//default is not filled
+	LineGfxInfo.isFilled = pGr->isFilled;	//default is not filled
 	LineGfxInfo.isSelected = false;	//defualt is not selected
 
 
 	//Create a Line with the above parameters
 	Line* L = new Line(P1, P2, LineGfxInfo);
 
-	//Get a pointer to the graph
-	Graph* pGr = pControl->getGraph();
 
 	//Add the Line to the list of shapes
 	pGr->Addshape(L);
