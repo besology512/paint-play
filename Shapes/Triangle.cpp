@@ -38,3 +38,10 @@ bool Triangle::inShape(int x, int y) const
 	else
 		return false;
 }
+
+string Triangle::shapeInfo()
+{
+	int area = getArea(Corner1.x, Corner1.y, Corner2.x, Corner2.y, Corner3.x, Corner3.y);
+	string msg = "The Triangle Area is " + to_string(area);
+	return  msg;
+}

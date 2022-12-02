@@ -30,3 +30,9 @@ bool IrrPolygon::inShape(int x, int y) const
 	else
 		return false;
 }
+
+string IrrPolygon::shapeInfo()
+{
+	string msg = "The number of vertices is " + to_string(verticies);
+	return  msg;
+}

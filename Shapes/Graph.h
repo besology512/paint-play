@@ -20,6 +20,7 @@ public:
 	void Draw(GUI* pUI) const;			//Draw the graph (draw all shapes)
 	void UnselectAll();          // Unselect all the shapes
 	shape* Getshape(int , int ); //Search for a shape given a point inside the shape
+	string getShapeInfo();
 
 	void Save(ofstream& outfile);	//Save all shapes to a file
 	void load(ifstream& inputfile);	//Load all shapes from a file

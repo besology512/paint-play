@@ -50,3 +50,9 @@ bool RegularPolygon::inShape(int x, int y) const
 	else
 		return false;
 }
+
+string RegularPolygon::shapeInfo()
+{
+	string msg = "The number of vertices is " + to_string(int(numOfVertices)) + " The center is at (" + to_string(center.x) + "," + to_string(center.y) + ")";
+	return  msg;
+}

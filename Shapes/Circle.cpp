@@ -25,3 +25,12 @@ bool Circle::inShape(int x, int y) const
 	else
 		return false;
 }
+
+string Circle::shapeInfo()
+{
+	double radius = sqrt(pow(Center.x - PointOnCircle.x, 2) + pow(Center.y - PointOnCircle.y, 2));
+	int area = 3.14159 * radius * radius;
+	string msg = "The Circle Area is " + to_string(area) + " The center is at (" + to_string(Center.x) + "," + to_string(Center.y) + ")";
+
+	return msg ;
+}

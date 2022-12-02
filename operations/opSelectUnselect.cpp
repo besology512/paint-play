@@ -1,5 +1,6 @@
 #include "opSelectUnselect.h"
 
+#include "../Shapes/Shape.h"
 #include "..\controller.h"
 #include "..\GUI\GUI.h"
 
@@ -27,12 +28,11 @@ void opSelectUnselect::Execute()
 	{
 		pGr->UnselectAll(); 							//unselect everything 
 		pGr->Getshape(P.x, P.y)->SetSelected(true);		//make this shape is selected
-		
-		// To Do (Update the status bar with info about the selected shape)
+		pUI->PrintMessage(pGr->Getshape(P.x,P.y)->shapeInfo()); //Update the status bar with the shape info	
 	}
 	else
 	{
 		pGr->UnselectAll();
-		//Clear the status bar
+		pUI->ClearStatusBar();
 	}
 }

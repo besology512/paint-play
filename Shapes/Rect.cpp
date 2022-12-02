@@ -36,3 +36,17 @@ bool Rect::inShape(int x, int y) const
 	}
 	else return false;
 }
+
+string Rect::shapeInfo()
+{
+	int area;
+	Point center;
+	string msg;
+
+	area = sqrt(pow(Corner1.x - Corner2.x, 2)) * sqrt(pow(Corner1.y - Corner2.y, 2));
+	center.x = sqrt(pow(Corner1.x - Corner2.x,2)) / 2;
+	center.y = sqrt(pow(Corner1.y - Corner2.y, 2)) / 2;
+
+	msg = "The Rectangle Area is " + to_string(area) + " The center is at (" + to_string(center.x) + "," + to_string(center.y) + ")";
+	return msg;
+}

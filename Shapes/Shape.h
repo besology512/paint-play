@@ -18,6 +18,7 @@ public:
 	void SetSelected(bool s);	//select/unselect the shape
 	bool IsSelected() const;	//check whether fig is selected
 	virtual bool inShape(int, int) const = 0;		 //check whether a point in the shape or not
+	virtual string shapeInfo() = 0;						//give some info about the shape
 
 
 	virtual void Draw(GUI* pUI) const  = 0 ;		//Draw the shape

@@ -43,3 +43,12 @@ bool Oval::inShape(int x, int y) const
 	else 
 		return false;
 }
+
+
+string Oval::shapeInfo()
+{
+	int h = (Corner1.x + Corner2.x) / 2;
+	int k = (Corner1.y + Corner2.y) / 2;
+	string msg = "The Oval center is at (" + to_string(h) + "," + to_string(k) + ")";
+	return  msg;
+}
