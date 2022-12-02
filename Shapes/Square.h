@@ -5,7 +5,7 @@
 class Square : public shape {
 
 private:
-	
+
 	Point corner1;
 	Point corner2;
 

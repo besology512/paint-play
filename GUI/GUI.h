@@ -36,14 +36,14 @@ class GUI
 	{
 		// Note: Icons are ordered here as they appear in menu
 		// If you want to change the menu icons order, change the order here
-		ICON_RECT, // Recangle icon in menu
-		ICON_CIRC, // Circle icon in menu
-		ICON_TRIANGLE,
-		ICON_OVAL,
-		ICON_SQUARE,	//Square icon in menu
-		ICON_IRR_POLYGON,
-		ICON_REGULAR_POLYGON,
 		ICON_LINE,
+		ICON_SQUARE,	//Square icon in menu
+		ICON_RECT, // Recangle icon in menu
+		ICON_TRIANGLE,
+		ICON_CIRC, // Circle icon in menu
+		ICON_OVAL,
+		ICON_REGULAR_POLYGON,
+		ICON_IRR_POLYGON,
 		ICON_PICKER,
 		//TODO: Add more icons names here
 

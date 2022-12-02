@@ -15,7 +15,7 @@ GUI::GUI()
 
 	StatusBarHeight = 50;
 	ToolBarHeight = 50;
-	MenuIconWidth = 80;
+	MenuIconWidth = 50;
 
 	DrawColor = BLUE;		  // default Drawing color
 	FillColor = GREEN;		  // default Filling color
@@ -171,14 +171,14 @@ void GUI::CreateDrawToolBar()
 	// To control the order of these images in the menu,
 	// reoder them in UI_Info.h ==> enum DrawMenuIcon
 	string MenuIconImages[DRAW_ICON_COUNT];
-	MenuIconImages[ICON_RECT] = "images\\MenuIcons\\Menu_Rect.jpg";
-	MenuIconImages[ICON_CIRC] = "images\\MenuIcons\\Menu_Circ.jpg";
-	MenuIconImages[ICON_TRIANGLE] = "images\\MenuIcons\\Menu_Triangle.jpg";
-	MenuIconImages[ICON_OVAL] = "images\\MenuIcons\\Menu_Oval.jpg";
-	MenuIconImages[ICON_SQUARE] = "images\\MenuIcons\\Menu_Square.jpg";
-	MenuIconImages[ICON_IRR_POLYGON] = "images\\MenuIcons\\Menu_IrrPolygon.jpg";
-	MenuIconImages[ICON_REGULAR_POLYGON] = "images\\MenuIcons\\Menu_RegShape.jpg";
 	MenuIconImages[ICON_LINE] = "images\\MenuIcons\\Menu_Line.jpg";
+	MenuIconImages[ICON_SQUARE] = "images\\MenuIcons\\Menu_Square.jpg";
+	MenuIconImages[ICON_RECT] = "images\\MenuIcons\\Menu_Rect.jpg";
+	MenuIconImages[ICON_TRIANGLE] = "images\\MenuIcons\\Menu_Triangle.jpg";
+	MenuIconImages[ICON_CIRC] = "images\\MenuIcons\\Menu_Circ.jpg";
+	MenuIconImages[ICON_OVAL] = "images\\MenuIcons\\Menu_Oval.jpg";
+	MenuIconImages[ICON_REGULAR_POLYGON] = "images\\MenuIcons\\Menu_RegShape.jpg";
+	MenuIconImages[ICON_IRR_POLYGON] = "images\\MenuIcons\\Menu_IrrPolygon.jpg";
 	MenuIconImages[ICON_PICKER] = "images\\MenuIcons\\Menu_ColorPicker.jpg";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 
