@@ -38,6 +38,6 @@ string Line::shapeInfo()
 	length = sqrt(pow(point1.y - point2.y, 2) + pow(point1.x - point2.x, 2));
 		
 
-	msg = "The line slope is " + to_string(slope) + " The line length is " + to_string(length);
+	msg = "The line slope is " + to_string(int(slope)) + " The line length is " + to_string(length);
 	return msg;
 }
