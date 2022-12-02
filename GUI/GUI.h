@@ -42,6 +42,7 @@ class GUI
 		ICON_IRR_POLYGON,
 		ICON_REGULAR_POLYGON,
 		ICON_LINE,
+		ICON_PICKER,
 		//TODO: Add more icons names here
 
 		ICON_EXIT, // Exit icon
@@ -100,7 +101,8 @@ public:
 
 	void ClearStatusBar() const; // Clears the status bar
 	void ClearDrawArea() const;	 // Clears the drawing area
-
+	void DrawColorPicker();
+	void PickColor(int, int, double&, double&, double&);
 	// -- shapes Drawing functions
 
 	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const;  //Draw a rectangle
