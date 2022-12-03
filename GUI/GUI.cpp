@@ -397,11 +397,6 @@ void GUI::DrawSquare(Point P1, Point P2, GfxInfo SquareGfxInfo) const {
 	int xPoints[] = {P1.x,P3.x,P4.x,P2.x};
 	int yPoints[] = {P1.y,P3.y,P4.y,P2.y};
 
-	//pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
-	//pWind->DrawLine(P1.x, P1.y, P3.x, P3.y, style);
-	//pWind->DrawLine(P2.x, P2.y, P4.x, P4.y, style);
-	//pWind->DrawLine(P3.x, P3.y, P4.x, P4.y, style);
-
 	pWind->DrawPolygon(xPoints, yPoints, 4, style);
 
 }
