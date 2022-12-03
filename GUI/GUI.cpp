@@ -108,7 +108,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_LINE: return DRAW_LINE;
 			case ICON_PICKER: return PICK_COLOR;
 			case ICON_FILL: return CHNG_FILL_CLR;
-			case ICON_BORDER: return CHNG_BORDER_CLR;
+			case ICON_BORDER_CLR: return CHNG_BORDER_CLR;
 			case ICON_EXIT: return EXIT;
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
@@ -183,7 +183,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_IRR_POLYGON] = "images\\MenuIcons\\Menu_IrrPolygon.jpg";
 	MenuIconImages[ICON_PICKER] = "images\\MenuIcons\\Menu_ColorPicker.jpg";
 	MenuIconImages[ICON_FILL] = "images\\MenuIcons\\Menu_Fill.jpg";
-	MenuIconImages[ICON_BORDER] = "images\\MenuIcons\\Menu_ChangeBorder.jpg";
+	MenuIconImages[ICON_BORDER_CLR] = "images\\MenuIcons\\Menu_changePenColor.jpg";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 
 	// TODO: Prepare images for each menu icon and add it to the list
