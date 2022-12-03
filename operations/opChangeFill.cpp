@@ -5,7 +5,6 @@
 #include"../controller.h"
 
 #include"../GUI/GUI.h"
-#include<iostream>
 
 opChangeFill::opChangeFill(controller* pCont) :operation(pCont){}
 
@@ -24,26 +23,5 @@ void opChangeFill::Execute() {
 		
 		pGr->setFilled(true);
 		pUI->setFillcolor(pGr->getPickedClr());
-
-		//pGr->changeUnselcFillClr();
-		//pUI->setFillcolor(pGr->getPickedClr());
-		//int numberofShapes = pGr->getShapesList().size();
-		/*for (auto shapePointer = begin(pGr->getShapesList()); shapePointer!= end(pGr->getShapesList()); ++shapePointer) {
-			(*shapePointer)->ChngFillClr(pGr->getPickedClr());
-		}*/
-		//pGr->changeUnselcFillClr();
 	}
-	
-
-	//GfxInfo SquareGfxInfo;
-
-	//get drawing, filling colors and pen width from the interface
-	//SquareGfxInfo.DrawClr = pUI->getCrntDrawColor();
-	//SquareGfxInfo.FillClr = pUI->getCrntFillColor();
-	//SquareGfxInfo.BorderWdth = pUI->getCrntPenWidth();
-
-
-	//SquareGfxInfo.isFilled = false;	//default is not filled
-	//SquareGfxInfo.isSelected = false;	//defualt is not selected
-	//Add the Square to the list of shapes
 }
