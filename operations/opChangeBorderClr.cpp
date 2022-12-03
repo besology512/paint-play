@@ -20,7 +20,6 @@ void opChangeBorderClr::Execute() {
 	}
 	else {
 		//change the general border color of the next drawings or shapes
-		//pGr->setFilled(true);
 		pUI->setDrawColor(pGr->getPickedClr());
 	}
 }

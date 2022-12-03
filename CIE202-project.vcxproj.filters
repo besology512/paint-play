@@ -183,6 +183,9 @@
     <ClCompile Include="operations\opChangeBorderClr.cpp">
       <Filter>Operations</Filter>
     </ClCompile>
+    <ClCompile Include="operations\opChangeBorderWidth.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -321,6 +324,9 @@
       <Filter>Operations</Filter>
     </ClInclude>
     <ClInclude Include="operations\opChangeBorderClr.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="operations\opChangeBorderWidth.h">
       <Filter>Operations</Filter>
     </ClInclude>
   </ItemGroup>

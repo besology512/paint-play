@@ -20,6 +20,12 @@ void shape::ChngFillClr(color Fclr)
 	ShpGfxInfo.FillClr = Fclr;
 }
 
+void shape::ChngBorderWidth(int w)
+{	
+	ShpGfxInfo.BorderWdth = w;
+}
+
+
 void shape::setIsfilled(bool a) {
 	ShpGfxInfo.isFilled = a;
 }

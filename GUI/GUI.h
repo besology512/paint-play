@@ -47,6 +47,7 @@ class GUI
 		ICON_PICKER,
 		ICON_FILL,
 		ICON_BORDER_CLR,
+		ICON_BORDER_WIDTH,
 		//TODO: Add more icons names here
 
 		ICON_EXIT, // Exit icon
@@ -109,6 +110,7 @@ public:
 	void PickColor(int, int, double&, double&, double&);
 	void setFillcolor(color);
 	void setDrawColor(color);
+	void setBorderWidth(int);
 
 
 	// -- shapes Drawing functions
