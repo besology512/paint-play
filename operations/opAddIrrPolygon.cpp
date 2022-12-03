@@ -20,6 +20,9 @@ void opAddIrrPolygon::Execute()
 	//Get a Pointer to the Input / Output Interfaces
 	GUI* pUI = pControl->GetUI();
 
+	//Get a pointer to the graph
+	Graph* pGr = pControl->getGraph();
+
 	pUI->PrintMessage("New Irrigular Polygon: type in number of verticies from 4 to 9");
 	char inputChar;
 	pUI->GetKeyClicked(inputChar);
@@ -60,14 +63,12 @@ void opAddIrrPolygon::Execute()
 	IrrPolGfxInfo.BorderWdth = pUI->getCrntPenWidth();
 
 
-	IrrPolGfxInfo.isFilled = false;	//default is not filled
+	IrrPolGfxInfo.isFilled = pGr->isFilled;	//default is not filled
 	IrrPolGfxInfo.isSelected = false;	//defualt is not selected
 
 
 	//Create a Polygon with the above parameters
 	IrrPolygon* R = new IrrPolygon(allPoints,verticies, IrrPolGfxInfo);
-	//Get a pointer to the graph
-	Graph* pGr = pControl->getGraph();
 
 	//Add the irregular Polygon to the list of shapes
 	pGr->Addshape(R);
