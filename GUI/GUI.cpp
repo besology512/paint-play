@@ -7,8 +7,8 @@ GUI::GUI()
 {
 	// Initialize user interface parameters
 	
-	if (InterfaceMode = MODE_DRAW) {
-
+	//InterfaceMode = MODE_DRAW
+	if (InterfaceMode == MODE_DRAW) {
 		width = 1200;
 		height = 600;
 		wx = 5;
@@ -36,7 +36,7 @@ GUI::GUI()
 	}
 
 	
-	else if(InterfaceMode = MODE_PLAY) {
+	else{
 		//InterfaceMode = MODE_PLAY;
 
 		width = 900;
@@ -214,6 +214,15 @@ void GUI::ClearStatusBar() const
 	pWind->DrawRectangle(0, height - StatusBarHeight, width, height);
 }
 //////////////////////////////////////////////////////////////////////////////////////////
+void GUI::ClearToolBar() const
+{
+	// Clear Status bar by drawing a filled white rectangle
+	pWind->SetPen(BkGrndColor, 1);
+	pWind->SetBrush(BkGrndColor);
+	pWind->DrawRectangle(600, height - StatusBarHeight, width, height);
+}
+/////////////////////////////////////////////////////////////////////////////////////////
+
 void GUI::CreateDrawToolBar()
 {
 	InterfaceMode = MODE_DRAW;
@@ -252,7 +261,7 @@ void GUI::CreateDrawToolBar()
 void GUI::CreatePlayToolBar()
 {
 	InterfaceMode = MODE_PLAY;
-
+	//ClearToolBar();
 	string MenuIconImages[PLAY_ICON_COUNT];
 	MenuIconImages[ICON_START] = "images\\MenuIcons\\Menu_Start.jpg";
 	MenuIconImages[ICON_RESTART] = "images\\MenuIcons\\Menu_Restart.jpg";
