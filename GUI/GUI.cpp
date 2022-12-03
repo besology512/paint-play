@@ -109,6 +109,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_PICKER: return PICK_COLOR;
 			case ICON_FILL: return CHNG_FILL_CLR;
 			case ICON_BORDER_CLR: return CHNG_BORDER_CLR;
+			case ICON_BORDER_WIDTH: return CHNG_BORDER_WIDTH;
 			case ICON_EXIT: return EXIT;
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
@@ -184,6 +185,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_PICKER] = "images\\MenuIcons\\Menu_ColorPicker.jpg";
 	MenuIconImages[ICON_FILL] = "images\\MenuIcons\\Menu_Fill.jpg";
 	MenuIconImages[ICON_BORDER_CLR] = "images\\MenuIcons\\Menu_changePenColor.jpg";
+	MenuIconImages[ICON_BORDER_WIDTH] = "images\\MenuIcons\\Menu_ChangeBorderWidth.jpg";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 
 	// TODO: Prepare images for each menu icon and add it to the list
@@ -260,6 +262,10 @@ void GUI::setDrawColor(color newColor)
 	DrawColor = newColor;
 }
 
+void GUI::setBorderWidth(int w)
+{
+	PenWidth = w;
+}
 
 //======================================================================================//
 //								shapes Drawing Functions								//
