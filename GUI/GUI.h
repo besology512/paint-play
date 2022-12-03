@@ -46,6 +46,7 @@ class GUI
 		ICON_IRR_POLYGON,
 		ICON_PICKER,
 		ICON_FILL,
+		ICON_BORDER,
 		//TODO: Add more icons names here
 
 		ICON_EXIT, // Exit icon
@@ -107,6 +108,8 @@ public:
 	void DrawColorPicker();
 	void PickColor(int, int, double&, double&, double&);
 	void setFillcolor(color);
+	void setDrawColor(color);
+
 
 	// -- shapes Drawing functions
 

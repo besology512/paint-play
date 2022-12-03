@@ -10,6 +10,7 @@
 #include "opAddLine.h"
 #include "operations/opPickColor.h"
 #include"operations/opChangeFill.h"
+#include"operations/opChangeBorderClr.h"
 
 
 
@@ -73,6 +74,9 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case CHNG_FILL_CLR:
 			pOp = new opChangeFill(this);
+			break;
+		case CHNG_BORDER_CLR:
+			pOp = new opChangeBorderClr(this);
 			break;
 		case EXIT:
 			///create Exitoperation here
