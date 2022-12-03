@@ -440,8 +440,7 @@ void GUI::DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const
 	drawstyle style;
 	if (LineGfcInfo.isFilled)
 	{
-		style = FILLED;
-		pWind->SetBrush(LineGfcInfo.FillClr);
+		style = FRAME;
 	}
 	else
 		style = FRAME;

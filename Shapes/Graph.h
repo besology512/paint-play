@@ -41,7 +41,5 @@ public:
 	void load(ifstream& inputfile);	//Load all shapes from a file
 	color getPickedClr(); //get the current color
 	void setPickedClr(double&,double&,double&); //set color using color picker
-	vector <shape*> getShapesList() const;
 
-	//void changeUnselcFillClr(); //Nay be DELETED
 };
