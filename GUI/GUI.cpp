@@ -1,12 +1,12 @@
 #include<cmath>
 #include "GUI.h"
-#include<cmath>
+#include<ctime>
 #include<iostream>
 
 GUI::GUI()
 {
 	// Initialize user interface parameters
-	
+	InterfaceMode = MODE_DRAW;
 	//InterfaceMode = MODE_DRAW
 	if (InterfaceMode == MODE_DRAW) {
 		width = 1200;
@@ -216,10 +216,10 @@ void GUI::ClearStatusBar() const
 //////////////////////////////////////////////////////////////////////////////////////////
 void GUI::ClearToolBar() const
 {
-	// Clear Status bar by drawing a filled white rectangle
+	// Clear Tool bar by drawing a filled white rectangle
 	pWind->SetPen(BkGrndColor, 1);
 	pWind->SetBrush(BkGrndColor);
-	pWind->DrawRectangle(600, height - StatusBarHeight, width, height);
+	pWind->DrawRectangle(5, 5, width, ToolBarHeight);
 }
 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -261,6 +261,7 @@ void GUI::CreateDrawToolBar()
 void GUI::CreatePlayToolBar()
 {
 	InterfaceMode = MODE_PLAY;
+	
 	//ClearToolBar();
 	string MenuIconImages[PLAY_ICON_COUNT];
 	MenuIconImages[ICON_START] = "images\\MenuIcons\\Menu_Start.jpg";

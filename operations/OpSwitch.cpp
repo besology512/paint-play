@@ -15,7 +15,9 @@ void opSwitch::Execute() {
 	//Get a Pointer to the Input / Output Interfaces
 	GUI* pUI = pControl->GetUI();
 	
-	//pUI->ClearToolBar();
+	pUI->ClearToolBar();
+
+	pUI->ClearDrawArea();
 	
 	pUI->CreatePlayToolBar();
 }
