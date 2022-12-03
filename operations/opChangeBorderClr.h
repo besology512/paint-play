@@ -1,11 +1,11 @@
 #pragma once
 #include"../operations/operation.h"
 
-class opChangeFill :public operation {
+class opChangeBorderClr :public operation {
 public:
 
-	opChangeFill(controller* pCont);
-	virtual ~opChangeFill();
+	opChangeBorderClr(controller* pCont);
+	virtual ~opChangeBorderClr();
 
 	//Add the operation to the controller
 	virtual void Execute();
