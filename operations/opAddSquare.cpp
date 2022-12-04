@@ -19,6 +19,9 @@ void opAddSquare::Execute() {
 	//Get a Pointer to the Input / Output Interfaces
 	GUI* pUI = pControl->GetUI();
 
+	//Get a pointer to the graph
+	Graph* pGr = pControl->getGraph();
+
 	pUI->PrintMessage("New Square: Click at first corner");
 	//Read 1st corner and store in point P1
 	pUI->GetPointClicked(P1.x, P1.y);
@@ -39,19 +42,14 @@ void opAddSquare::Execute() {
 	SquareGfxInfo.BorderWdth = pUI->getCrntPenWidth();
 
 
-	SquareGfxInfo.isFilled = false;	//default is not filled
+	SquareGfxInfo.isFilled = pGr->isFilled;	//default is not filled
 	SquareGfxInfo.isSelected = false;	//defualt is not selected
 
 
 	//Create a square with the above parameters
 	Square *S = new Square(P1, P2, SquareGfxInfo);
 
-	//Get a pointer to the graph
-	Graph* pGr = pControl->getGraph();
-
 	//Add the Square to the list of shapes
 	pGr->Addshape(S);
 
 }
-
-

@@ -45,8 +45,11 @@ class GUI
 		ICON_REGULAR_POLYGON,
 		ICON_IRR_POLYGON,
 		ICON_PICKER,
-		ICON_SWITCH,
-		ICON_DELETE,
+		ICON_FILL,
+		ICON_BORDER_CLR,
+		ICON_BORDER_WIDTH,
+    ICON_DELETE,
+    ICON_SWITCH,
 		//TODO: Add more icons names here
 
 		ICON_EXIT, // Exit icon
@@ -113,6 +116,11 @@ public:
 	void ClearDrawArea() const;	 // Clears the drawing area
 	void DrawColorPicker();
 	void PickColor(int, int, double&, double&, double&);
+	void setFillcolor(color);
+	void setDrawColor(color);
+	void setBorderWidth(int);
+
+
 	// -- shapes Drawing functions
 
 	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const;  //Draw a rectangle

@@ -11,6 +11,10 @@
 #include "operations/opPickColor.h"
 #include"operations/OpSwitch.h"
 #include"operations/opDelete.h"
+#include"operations/opChangeFill.h"
+#include"operations/opChangeBorderClr.h"
+#include"operations/opChangeBorderWidth.h"
+
 
 
 
@@ -78,7 +82,16 @@ operation* controller::createOperation(operationType OpType)
 		case DEL:
 			pOp = new opDelete(this);
 			break;
-		
+		case CHNG_FILL_CLR:
+			pOp = new opChangeFill(this);
+			break;
+		case CHNG_BORDER_CLR:
+			pOp = new opChangeBorderClr(this);
+			break;
+		case CHNG_BORDER_WIDTH:
+			pOp = new opChangeBorderWidth(this);
+			break;
+      
 		case EXIT:
 			///create Exitoperation here
 			

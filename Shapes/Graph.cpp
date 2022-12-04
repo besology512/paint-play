@@ -1,6 +1,7 @@
 #include "Graph.h"
 #include "../GUI/GUI.h"
-
+#include<iostream>
+using namespace std;
 Graph::Graph()
 {
 	selectedShape = nullptr;
@@ -77,15 +78,26 @@ shape* Graph::Getshape(int x, int y)
 
 	return nullptr;
 }
-
+ 
 //this function is used to get the color of drawing and filling, etc from the color pallet
 //default color is black
 color Graph::getPickedClr() {
 	return color(pickedClr.dRed, pickedClr.dGreen, pickedClr.dBlue);
 }
 //this function sets the color and it is called by opPickColor only
-void Graph::setPickedClr(double dRed, double dGreen, double dBlue) {
+void Graph::setPickedClr(double &dRed, double &dGreen, double &dBlue) {
 	pickedClr.dRed = dRed;
 	pickedClr.dGreen = dGreen;
 	pickedClr.dBlue = dBlue;
 }
+
+//get the pointer to the selected shape
+shape* Graph::getSelectedShape() const{
+	return selectedShape;
+}
+
+void Graph::setFilled(bool a)
+{
+	isFilled = a;
+}
+
