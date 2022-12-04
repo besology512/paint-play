@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../Shapes/Shape.h"
+#include <fstream>
 
 class Triangle : public shape
 {
@@ -12,4 +13,5 @@ public:
 	Triangle(Point, Point, Point, GfxInfo shapeGfxInfo);
 	virtual ~Triangle();
 	virtual void Draw(GUI* pUI) const;
+	void SAVE(ofstream& OutFile);
 };

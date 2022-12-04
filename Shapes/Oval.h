@@ -1,6 +1,7 @@
 #pragma once
 
 #include "shape.h"
+#include <fstream>
 
 class Oval : public shape
 {
@@ -12,5 +13,5 @@ public:
 	Oval(Point, Point, GfxInfo shapeGfxInfo);
 	virtual ~Oval();
 	virtual void Draw(GUI* pUI) const;
-
+	void SAVE(ofstream& OutFile);
 };

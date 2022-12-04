@@ -62,24 +62,24 @@ void opAddLine::Execute()
 
 }
 
-void opAddLine::Save(ofstream& OutFile)
-{
-	
-	// Get User input
-	GUI* pUI = pControl->GetUI();
-
-	pUI->PrintMessage("Enter File Name");
-
-	string fileName = pUI->GetSrting();
-
-	
-
-	OutFile.open("files\\" +fileName); // open file and store it in folder in working directory 
-
-	OutFile << "Line (" << P1.x << " , " << P1.y << ") ("
-		<< P2.x << " , " << P2.y << ")" ; // Put data into file
-	OutFile.close();
-
-	pUI->PrintMessage("Saved Succussfully");
-	//sfa
-}
+//void opAddLine::Save(ofstream& OutFile)
+//{
+//	
+//	// Get User input
+//	GUI* pUI = pControl->GetUI();
+//
+//	pUI->PrintMessage("Enter File Name");
+//
+//	string fileName = pUI->GetSrting();
+//
+//	
+//
+//	OutFile.open(fileName +".txt"); // open file and store it in folder in working directory 
+//
+//	OutFile << "Line (" << P1.x << " , " << P1.y << ") ("
+//		<< P2.x << " , " << P2.y << ")" ; // Put data into file
+//	OutFile.close();
+//
+//	pUI->PrintMessage("Saved Succussfully");
+//	//sfa
+//}

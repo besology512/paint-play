@@ -12,7 +12,6 @@ public:
 
 	//Add Circle to the controller
 	virtual void Execute();
-	void Save(ofstream& OutFile);
 };
 
 
