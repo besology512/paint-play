@@ -49,6 +49,7 @@ class GUI
 		ICON_BORDER_CLR,
 		ICON_BORDER_WIDTH,
     ICON_DELETE,
+    ICON_SAVE,
     ICON_SWITCH,
 		//TODO: Add more icons names here
 
@@ -130,7 +131,9 @@ public:
 	void DrawSquare(Point P1, Point P2, GfxInfo SquareGfxInfo) const;  //Draw a Square
 	void DrawRegularPolygon(Point center, double numOfVertices, double radius, GfxInfo RegularPolygonGfxInfo) const; // Draw a regular Polygon
 	void DrawIrrPolygon(vector<Point> allPoints, int vericies, GfxInfo IrrPolGfxInfo) const; //Draw Irregular Polygon
-  void DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const;  // Draw a Line 
+	void DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const;  // Draw a Line 
+	
+	
 
 
 	///Make similar functions for drawing all other shapes.

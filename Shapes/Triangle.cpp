@@ -16,6 +16,20 @@ void Triangle::Draw(GUI* pUI) const
 	pUI->DrawTriangle(Corner1, Corner2, Corner3,ShpGfxInfo);
 }
 
+
+void Triangle::SAVE(ofstream& OutFile)
+{
+	OutFile << "Triangle\n"
+		<< "p1 (" << Corner1.x << " , " << Corner1.y << ")\n"
+		<< "p2 (" << Corner2.x << " , " << Corner2.y << ")\n"
+		<< "p3 (" << Corner3.x << " , " << Corner3.y << ")\n"
+		<< "BorderWdth : " << ShpGfxInfo.BorderWdth << "\n"
+		<< "isFilled : " << ShpGfxInfo.isFilled << "\n"
+		<< "isSelected : " << ShpGfxInfo.isSelected << "\n"
+		<< "DrawClr : (" << ShpGfxInfo.DrawClr.ucBlue << " , " << ShpGfxInfo.DrawClr.ucGreen << " , " << ShpGfxInfo.DrawClr.ucRed << ")\n"
+		<< "FillClr : (" << ShpGfxInfo.FillClr.ucBlue << " , " << ShpGfxInfo.FillClr.ucGreen << " , " << ShpGfxInfo.FillClr.ucRed << ")\n\n";//color ; // Put data into file
+}
+
 double Triangle::getArea(int x1, int y1, int x2, int y2, int x3, int y3) const
 {
 	double area = abs((x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2)) / 2.0);

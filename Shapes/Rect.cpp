@@ -15,6 +15,20 @@ void Rect::Draw(GUI* pUI) const
 	pUI->DrawRect(Corner1, Corner2, ShpGfxInfo);
 }
 
+
+void Rect::SAVE(ofstream& OutFile)
+{
+	OutFile << "Rectangle\n"
+		<< "p1 (" << Corner1.x << " , " << Corner1.y << ")\n"
+		"p2 (" << Corner2.x << " , " << Corner2.y << ")\n"
+		<< "BorderWdth : " << ShpGfxInfo.BorderWdth << "\n"
+		<< "isFilled : " << ShpGfxInfo.isFilled << "\n"
+		<< "isSelected : " << ShpGfxInfo.isSelected << "\n"
+		<< "DrawClr : (" << ShpGfxInfo.DrawClr.ucBlue << " , " << ShpGfxInfo.DrawClr.ucGreen << " , " << ShpGfxInfo.DrawClr.ucRed << ")\n"
+		<< "FillClr : (" << ShpGfxInfo.FillClr.ucBlue << " , " << ShpGfxInfo.FillClr.ucGreen << " , " << ShpGfxInfo.FillClr.ucRed << ")\n\n";//color ; // Put data into file
+
+}
+
 bool Rect::inShape(int x, int y) const
 {
 

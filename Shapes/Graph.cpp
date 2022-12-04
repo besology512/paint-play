@@ -1,7 +1,14 @@
 #include "Graph.h"
+
+#include "..//opAddLine.h"  //WHY INCLUDING OP LINE HERE??
+#include <iostream>
+using namespace std;
+
 #include "../GUI/GUI.h"
 #include<iostream>
 using namespace std;
+
+
 Graph::Graph()
 {
 	selectedShape = nullptr;
@@ -77,6 +84,19 @@ shape* Graph::Getshape(int x, int y)
 	}
 
 	return nullptr;
+}
+
+void Graph::Save(ofstream& outfile)
+{
+
+
+	for(auto shapesList:shapesList) // Loop on each shape in vector list 
+	{
+		
+
+		shapesList->SAVE(outfile);
+	}
+
 }
  
 //this function is used to get the color of drawing and filling, etc from the color pallet

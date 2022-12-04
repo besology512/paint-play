@@ -1,3 +1,5 @@
+#include <iostream>
+using namespace std;
 #include "opAddLine.h"
 
 #include "Line.h"
@@ -5,6 +7,9 @@
 #include "controller.h"
 
 #include "GUI/GUI.h"
+
+
+using namespace std;
 
 opAddLine::opAddLine(controller* pCont) :operation(pCont)
 {}
@@ -14,7 +19,7 @@ opAddLine::~opAddLine()
 //Execute the operation
 void opAddLine::Execute()
 {
-	Point P1, P2;
+
 
 	// Get User input
 	GUI* pUI = pControl->GetUI();
@@ -57,3 +62,25 @@ void opAddLine::Execute()
 	pGr->Addshape(L);
 
 }
+
+//void opAddLine::Save(ofstream& OutFile)
+//{
+//	
+//	// Get User input
+//	GUI* pUI = pControl->GetUI();
+//
+//	pUI->PrintMessage("Enter File Name");
+//
+//	string fileName = pUI->GetSrting();
+//
+//	
+//
+//	OutFile.open(fileName +".txt"); // open file and store it in folder in working directory 
+//
+//	OutFile << "Line (" << P1.x << " , " << P1.y << ") ("
+//		<< P2.x << " , " << P2.y << ")" ; // Put data into file
+//	OutFile.close();
+//
+//	pUI->PrintMessage("Saved Succussfully");
+//	//sfa
+//}

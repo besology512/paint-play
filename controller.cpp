@@ -8,13 +8,13 @@
 #include"operations/opAddRegularPolygon.h"
 #include"operations/opSelectUnselect.h"
 #include "opAddLine.h"
+#include "opSave.h"
 #include "operations/opPickColor.h"
 #include"operations/OpSwitch.h"
 #include"operations/opDelete.h"
 #include"operations/opChangeFill.h"
 #include"operations/opChangeBorderClr.h"
 #include"operations/opChangeBorderWidth.h"
-
 
 
 
@@ -72,6 +72,9 @@ operation* controller::createOperation(operationType OpType)
       
 		case DRAW_REGULAR_POLYGON:
 			pOp = new opAddRegularPolygon(this);
+			break;
+		case SAVE:
+			pOp = new opSave(this);
 			break;
 		case PICK_COLOR:
 			pOp = new opPickColor(this);

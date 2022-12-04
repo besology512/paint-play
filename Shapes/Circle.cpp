@@ -15,6 +15,20 @@ void Circle::Draw(GUI* pUI) const
 	pUI->DrawCircle(Center, PointOnCircle, ShpGfxInfo);
 }
 
+
+void Circle::SAVE(ofstream& OutFile)
+{
+	OutFile << "Circle\n"
+		<< "Center (" << Center.x << " , " << Center.y << ")\n"
+		"PointOnCircle (" << PointOnCircle.x << " , " << PointOnCircle.y << ")\n"
+		<< "BorderWdth : " << ShpGfxInfo.BorderWdth << "\n"
+		<< "isFilled : " << ShpGfxInfo.isFilled << "\n"
+		<< "isSelected : " << ShpGfxInfo.isSelected << "\n"
+		<< "DrawClr : (" << ShpGfxInfo.DrawClr.ucBlue << " , " << ShpGfxInfo.DrawClr.ucGreen << " , " << ShpGfxInfo.DrawClr.ucRed << ")\n"
+		<< "FillClr : (" << ShpGfxInfo.FillClr.ucBlue << " , " << ShpGfxInfo.FillClr.ucGreen << " , " << ShpGfxInfo.FillClr.ucRed << ")\n\n";//color ; // Put data into file
+
+}
+
 bool Circle::inShape(int x, int y) const
 {
 	double radius = sqrt(pow(Center.x - PointOnCircle.x,2) + pow(Center.y - PointOnCircle.y,2));

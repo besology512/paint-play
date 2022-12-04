@@ -175,6 +175,7 @@
     <ClCompile Include="operations\opAddSquare.cpp" />
     <ClCompile Include="operations\opAddRegularPolygon.cpp" />
     <ClCompile Include="operations\opAddTriangle.cpp" />
+    <ClCompile Include="opSave.cpp" />
     <ClCompile Include="operations\opDelete.cpp" />
     <ClCompile Include="operations\opChangeBorderClr.cpp" />
     <ClCompile Include="operations\opChangeBorderWidth.cpp" />
@@ -234,6 +235,7 @@
     <ClInclude Include="operations\opAddRegularPolygon.h" />
     <ClInclude Include="operations\opAddTriangle.h" />
     <ClInclude Include="operations\operation.h" />
+    <ClInclude Include="opSave.h" />
     <ClInclude Include="operations\opSelectUnselect.h" />
     <ClInclude Include="operations\opPickColor.h" />
     <ClInclude Include="resource.h" />
