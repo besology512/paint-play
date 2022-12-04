@@ -23,12 +23,29 @@ void Graph::Addshape(shape* pShp)
 
 }
 ////////////////////////////////////////////////////////////////////////////////////
+// get slected shape
+shape* Graph::getselectedshape()const {
+	return selectedShape;
+}
 // Remove a shape from list of shapes
 void Graph::RemoveShape(shape* pShp) {
 	shapesList.pop_back(); //this removes the last added shape
 	//next step is to make a function that removes the shape by value in Remove shape feature
 	//remove(shapesList.begin(), shapesList.end(), pShp);
 }
+///////////////////////////////////////////////////////////////////////////////////
+
+// Delete a single shape from list of shape
+void Graph::DeleteShape(shape* pShp) {
+	std::vector<shape*>::iterator it;
+	// std::find function call
+	it = std::find(shapesList.begin(), shapesList.end(), pShp);
+	shapesList.erase(it);
+
+	
+
+}
+
 //Draw all shapes on the user interface
 void Graph::Draw(GUI* pUI) const
 {

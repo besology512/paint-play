@@ -139,6 +139,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_FILL: return CHNG_FILL_CLR;
 			case ICON_BORDER_CLR: return CHNG_BORDER_CLR;
 			case ICON_BORDER_WIDTH: return CHNG_BORDER_WIDTH;
+      case ICON_DELETE: return DEL;
       case ICON_SWITCH: return SWITCH;
 			case ICON_EXIT: return EXIT;
 
@@ -251,6 +252,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_BORDER_CLR] = "images\\MenuIcons\\Menu_changePenColor.jpg";
 	MenuIconImages[ICON_BORDER_WIDTH] = "images\\MenuIcons\\Menu_ChangeBorderWidth.jpg";
 	MenuIconImages[ICON_SWITCH] = "images\\MenuIcons\\Menu_Switch.jpg";
+	MenuIconImages[ICON_DELETE] = "images\\MenuIcons\\Menu_Delete.jpg";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 
 	// TODO: Prepare images for each menu icon and add it to the list
@@ -289,7 +291,6 @@ void GUI::ClearDrawArea() const
 	pWind->SetPen(BkGrndColor, 1);
 	pWind->SetBrush(BkGrndColor);
 	pWind->DrawRectangle(0, ToolBarHeight, width, height - StatusBarHeight);
-	//pWind->DrawRectangle(0, ToolBarHeight, width, height + StatusBarHeight);
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
