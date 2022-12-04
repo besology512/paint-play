@@ -48,6 +48,7 @@ class GUI
 		ICON_FILL,
 		ICON_BORDER_CLR,
 		ICON_BORDER_WIDTH,
+    ICON_SWITCH,
 		//TODO: Add more icons names here
 
 		ICON_EXIT, // Exit icon
@@ -56,18 +57,23 @@ class GUI
 
 	};
 
+	
 	enum PlayMenuIcon // The icons of the Play menu (you should add more icons)
 	{
 		// Note: Icons are ordered here as they appear in menu
 		// If you want to change the menu icons order, change the order here
 
+		ICON_START,
+		ICON_RESTART,
 		// TODO: Add more icons names here
+		//ICON_EXIT,
+		
 
 		PLAY_ICON_COUNT // no. of menu icons ==> This should be the last line in this enum
 
 	};
 
-	GUI_MODE InterfaceMode;
+	GUI_MODE InterfaceMode = MODE_DRAW;
 
 	int width, height,	 // Window width and height
 		wx, wy,			 // Window starting coordinates
@@ -105,6 +111,7 @@ public:
 	void CreateStatusBar() const;				  // create the status bar
 
 	void ClearStatusBar() const; // Clears the status bar
+	void ClearToolBar() const;	// clear the toolbar
 	void ClearDrawArea() const;	 // Clears the drawing area
 	void DrawColorPicker();
 	void PickColor(int, int, double&, double&, double&);
