@@ -28,8 +28,10 @@ public:
 	void Draw(GUI* pUI) const;			//Draw the graph (draw all shapes)
 	void UnselectAll();          // Unselect all the shapes
 	string getShapeInfo();
+	shape* getselectedshape() const;
 
 	void RemoveShape(shape* pShp);
+	void DeleteShape(shape* pShp);			   // Delete a single shape from shape of list	
 	shape* Getshape(int x, int y); //Search for a shape given a point inside the shape
 
 

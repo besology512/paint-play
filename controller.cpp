@@ -10,6 +10,7 @@
 #include "opAddLine.h"
 #include "operations/opPickColor.h"
 #include"operations/OpSwitch.h"
+#include"operations/opDelete.h"
 
 
 
@@ -73,6 +74,9 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case SWITCH:
 			pOp = new opSwitch(this);
+			break;
+		case DEL:
+			pOp = new opDelete(this);
 			break;
 		
 		case EXIT:
