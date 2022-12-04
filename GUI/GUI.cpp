@@ -136,7 +136,10 @@ operationType GUI::GetUseroperation() const
 			case ICON_IRR_POLYGON: return DRAW_IRR_POLYGON;
 			case ICON_LINE: return DRAW_LINE;
 			case ICON_PICKER: return PICK_COLOR;
-			case ICON_SWITCH: return SWITCH;
+			case ICON_FILL: return CHNG_FILL_CLR;
+			case ICON_BORDER_CLR: return CHNG_BORDER_CLR;
+			case ICON_BORDER_WIDTH: return CHNG_BORDER_WIDTH;
+      case ICON_SWITCH: return SWITCH;
 			case ICON_EXIT: return EXIT;
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
@@ -244,6 +247,9 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_REGULAR_POLYGON] = "images\\MenuIcons\\Menu_RegShape.jpg";
 	MenuIconImages[ICON_IRR_POLYGON] = "images\\MenuIcons\\Menu_IrrPolygon.jpg";
 	MenuIconImages[ICON_PICKER] = "images\\MenuIcons\\Menu_ColorPicker.jpg";
+	MenuIconImages[ICON_FILL] = "images\\MenuIcons\\Menu_Fill.jpg";
+	MenuIconImages[ICON_BORDER_CLR] = "images\\MenuIcons\\Menu_changePenColor.jpg";
+	MenuIconImages[ICON_BORDER_WIDTH] = "images\\MenuIcons\\Menu_ChangeBorderWidth.jpg";
 	MenuIconImages[ICON_SWITCH] = "images\\MenuIcons\\Menu_Switch.jpg";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 
@@ -320,6 +326,22 @@ color GUI::getCrntFillColor() const // get current filling color
 int GUI::getCrntPenWidth() const // get current pen width
 {
 	return PenWidth;
+}
+
+void GUI::setFillcolor(color newColor)
+{
+	FillColor = newColor;
+	pWind->SetBrush(newColor);
+}
+
+void GUI::setDrawColor(color newColor)
+{
+	DrawColor = newColor;
+}
+
+void GUI::setBorderWidth(int w)
+{
+	PenWidth = w;
 }
 
 //======================================================================================//
@@ -417,42 +439,42 @@ void GUI::DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const
 }
 
 void GUI::DrawSquare(Point P1, Point P2, GfxInfo SquareGfxInfo) const {
-	color DrawingSqre;
+	color DrawingClr;
 	
 	if (SquareGfxInfo.isSelected)
 		
-		DrawingSqre = HighlightColor;
+		DrawingClr = HighlightColor;
 	else
 		
-		DrawingSqre = SquareGfxInfo.DrawClr;
+		DrawingClr = SquareGfxInfo.DrawClr;
 
-	pWind->SetPen(DrawingSqre, SquareGfxInfo.BorderWdth);
+	pWind->SetPen(DrawingClr, SquareGfxInfo.BorderWdth);
 
 	drawstyle style;
 	
-	if (SquareGfxInfo.isFilled) {
-		
+	if (SquareGfxInfo.isFilled)
+	{	
 		style = FILLED;
-		
 		pWind->SetBrush(SquareGfxInfo.FillClr);
 	}
-	else {
+	else 
+	{
 		style = FRAME;
-		int diffx = P1.x - P2.x;						//get difference between X coordinates
-		int diffy = P1.y - P2.y;						//get difference between X coordinates
-		Point p3;
-		p3.x = P1.x + diffy;
-		p3.y = P1.y - diffx;
-		Point p4;
-		p4.x = P2.x + diffy;						//add differences of y to x to get p4
-		p4.y = P2.y - diffx;
-		pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
-		pWind->DrawLine(P1.x, P1.y, p3.x, p3.y, style);
-		pWind->DrawLine(P2.x, P2.y, p4.x, p4.y, style);
-		pWind->DrawLine(p3.x, p3.y, p4.x, p4.y, style);
-
-		
 	}
+
+	int diffx = P1.x - P2.x;						//get difference between X coordinates
+	int diffy = P1.y - P2.y;						//get difference between Y coordinates
+	Point P3;
+	P3.x = P1.x + diffy;
+	P3.y = P1.y - diffx;
+	Point P4;
+	P4.x = P2.x + diffy;						//add differences of y to x to get p4
+	P4.y = P2.y - diffx;
+
+	int xPoints[] = {P1.x,P3.x,P4.x,P2.x};
+	int yPoints[] = {P1.y,P3.y,P4.y,P2.y};
+
+	pWind->DrawPolygon(xPoints, yPoints, 4, style);
 
 }
 
@@ -510,8 +532,7 @@ void GUI::DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const
 	drawstyle style;
 	if (LineGfcInfo.isFilled)
 	{
-		style = FILLED;
-		pWind->SetBrush(LineGfcInfo.FillClr);
+		style = FRAME;
 	}
 	else
 		style = FRAME;

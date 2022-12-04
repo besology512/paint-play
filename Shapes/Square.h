@@ -1,6 +1,6 @@
 #pragma once
 
-#include"../Shapes/Shape.h"
+#include"shape.h"
 
 class Square : public shape {
 
@@ -15,5 +15,5 @@ public:
 	virtual void Draw(GUI* pUI) const;
 	bool inShape(int x, int y) const;
 	string shapeInfo();
-
+	double getTriangleArea(int,int,int,int,int,int) const;
 };
