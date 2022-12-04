@@ -16,6 +16,9 @@ class Line : public shape
 		virtual ~Line();
 		virtual void Draw(GUI* pUI) const;
 		void SAVE(ofstream& OutFile);
+		virtual bool inShape(int, int) const;		 //check whether a point in the shape or not
+		virtual string shapeInfo();					// give some info about the shape
+
 
 };
 

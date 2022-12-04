@@ -18,6 +18,9 @@ void opAddRect::Execute()
 	//Get a Pointer to the Input / Output Interfaces
 	GUI* pUI = pControl->GetUI();
 
+	//Get a pointer to the graph
+	Graph* pGr = pControl->getGraph();
+
 	pUI->PrintMessage("New Rectangle: Click at first corner");
 	//Read 1st corner and store in point P1
 	pUI->GetPointClicked(P1.x, P1.y);
@@ -38,15 +41,13 @@ void opAddRect::Execute()
 	RectGfxInfo.BorderWdth = pUI->getCrntPenWidth();
 
 
-	RectGfxInfo.isFilled = false;	//default is not filled
+	RectGfxInfo.isFilled = pGr->isFilled;	//default is not filled
 	RectGfxInfo.isSelected = false;	//defualt is not selected
 
 
 	//Create a rectangle with the above parameters
 	Rect *R=new Rect(P1, P2, RectGfxInfo);
 
-	//Get a pointer to the graph
-	Graph* pGr = pControl->getGraph();
 
 	//Add the rectangle to the list of shapes
 	pGr->Addshape(R);

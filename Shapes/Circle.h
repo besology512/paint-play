@@ -14,4 +14,7 @@ public:
 	virtual ~Circle();
 	virtual void Draw(GUI* pUI) const;
 	void SAVE(ofstream& OutFile);
+	virtual bool inShape(int, int) const;
+	virtual string shapeInfo();					// give some info about the shape
+
 };

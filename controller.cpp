@@ -3,10 +3,18 @@
 #include"operations/opAddTriangle.h"
 #include"operations/opAddCircle.h"
 #include"operations/opAddOval.h"
+#include"operations/opAddSquare.h"
 #include"operations/opAddIrrPolygon.h"
 #include"operations/opAddRegularPolygon.h"
+#include"operations/opSelectUnselect.h"
 #include "opAddLine.h"
 #include "opSave.h"
+#include "operations/opPickColor.h"
+#include"operations/OpSwitch.h"
+#include"operations/opDelete.h"
+#include"operations/opChangeFill.h"
+#include"operations/opChangeBorderClr.h"
+#include"operations/opChangeBorderWidth.h"
 
 
 
@@ -54,6 +62,9 @@ operation* controller::createOperation(operationType OpType)
 		case DRAW_OVAL:
 			pOp = new opAddOval(this);
 			break;
+		case DRAW_SQUARE:
+			pOp = new opAddSquare(this);
+			break;
 
 		case DRAW_IRR_POLYGON:
 			pOp = new opAddIrrPolygon(this);
@@ -65,9 +76,33 @@ operation* controller::createOperation(operationType OpType)
 		case SAVE:
 			pOp = new opSave(this);
 			break;
+		case PICK_COLOR:
+			pOp = new opPickColor(this);
+			break;
+		case SWITCH:
+			pOp = new opSwitch(this);
+			break;
+		case DEL:
+			pOp = new opDelete(this);
+			break;
+		case CHNG_FILL_CLR:
+			pOp = new opChangeFill(this);
+			break;
+		case CHNG_BORDER_CLR:
+			pOp = new opChangeBorderClr(this);
+			break;
+		case CHNG_BORDER_WIDTH:
+			pOp = new opChangeBorderWidth(this);
+			break;
+      
 		case EXIT:
 			///create Exitoperation here
 			
+			break;
+
+		case DRAWING_AREA:
+			//select and unselect operation here//
+			pOp = new opSelectUnselect(this);
 			break;
 		
 		case STATUS:	//a click on the status bar ==> no operation

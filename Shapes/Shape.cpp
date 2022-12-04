@@ -17,7 +17,17 @@ void shape::ChngDrawClr(color Dclr)
 void shape::ChngFillClr(color Fclr)
 {	
 	ShpGfxInfo.isFilled = true;
-	ShpGfxInfo.FillClr = Fclr; 
+	ShpGfxInfo.FillClr = Fclr;
+}
+
+void shape::ChngBorderWidth(int w)
+{	
+	ShpGfxInfo.BorderWdth = w;
+}
+
+
+void shape::setIsfilled(bool a) {
+	ShpGfxInfo.isFilled = a;
 }
 
 void shape::Save(ofstream& OutFile)

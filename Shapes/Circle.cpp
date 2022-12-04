@@ -15,6 +15,7 @@ void Circle::Draw(GUI* pUI) const
 	pUI->DrawCircle(Center, PointOnCircle, ShpGfxInfo);
 }
 
+
 void Circle::SAVE(ofstream& OutFile)
 {
 	OutFile << "Circle\n"
@@ -26,4 +27,24 @@ void Circle::SAVE(ofstream& OutFile)
 		<< "DrawClr : (" << ShpGfxInfo.DrawClr.ucBlue << " , " << ShpGfxInfo.DrawClr.ucGreen << " , " << ShpGfxInfo.DrawClr.ucRed << ")\n"
 		<< "FillClr : (" << ShpGfxInfo.FillClr.ucBlue << " , " << ShpGfxInfo.FillClr.ucGreen << " , " << ShpGfxInfo.FillClr.ucRed << ")\n\n";//color ; // Put data into file
 
+}
+
+bool Circle::inShape(int x, int y) const
+{
+	double radius = sqrt(pow(Center.x - PointOnCircle.x,2) + pow(Center.y - PointOnCircle.y,2));
+	double d = sqrt(pow(x - Center.x, 2) + pow(y - Center.y, 2));	 //distance formula for the circle
+
+	if (d <= radius)
+		return true;
+	else
+		return false;
+}
+
+string Circle::shapeInfo()
+{
+	double radius = sqrt(pow(Center.x - PointOnCircle.x, 2) + pow(Center.y - PointOnCircle.y, 2));
+	int area = 3.14159 * radius * radius;
+	string msg = "The Circle Area is " + to_string(area) + " The center is at (" + to_string(Center.x) + "," + to_string(Center.y) + ")";
+
+	return msg ;
 }

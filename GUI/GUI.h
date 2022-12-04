@@ -3,6 +3,7 @@
 
 #include "..\CMUgraphicsLib\CMUgraphics.h"
 #include "..\Defs.h"
+#include<cmath>
 
 #include <vector>
 #include <string>
@@ -22,6 +23,7 @@ struct GfxInfo // Graphical info common for all shapes (you may add more members
 	bool isSelected; // true if the shape is selected.
 };
 
+
 class GUI
 {
 	enum GUI_MODE // Graphical user interface mode
@@ -34,15 +36,21 @@ class GUI
 	{
 		// Note: Icons are ordered here as they appear in menu
 		// If you want to change the menu icons order, change the order here
-		ICON_RECT, // Recangle icon in menu
-		ICON_CIRC, // Circle icon in menu
-		ICON_TRIANGLE,
-		ICON_OVAL,
-
-		ICON_IRR_POLYGON,
-		ICON_REGULAR_POLYGON,
 		ICON_LINE,
-		ICON_SAVE,
+		ICON_SQUARE,	//Square icon in menu
+		ICON_RECT, // Recangle icon in menu
+		ICON_TRIANGLE,
+		ICON_CIRC, // Circle icon in menu
+		ICON_OVAL,
+		ICON_REGULAR_POLYGON,
+		ICON_IRR_POLYGON,
+		ICON_PICKER,
+		ICON_FILL,
+		ICON_BORDER_CLR,
+		ICON_BORDER_WIDTH,
+    ICON_DELETE,
+    ICON_SAVE,
+    ICON_SWITCH,
 		//TODO: Add more icons names here
 
 		ICON_EXIT, // Exit icon
@@ -51,18 +59,23 @@ class GUI
 
 	};
 
+	
 	enum PlayMenuIcon // The icons of the Play menu (you should add more icons)
 	{
 		// Note: Icons are ordered here as they appear in menu
 		// If you want to change the menu icons order, change the order here
 
+		ICON_START,
+		ICON_RESTART,
 		// TODO: Add more icons names here
+		//ICON_EXIT,
+		
 
 		PLAY_ICON_COUNT // no. of menu icons ==> This should be the last line in this enum
 
 	};
 
-	GUI_MODE InterfaceMode;
+	GUI_MODE InterfaceMode = MODE_DRAW;
 
 	int width, height,	 // Window width and height
 		wx, wy,			 // Window starting coordinates
@@ -87,8 +100,9 @@ public:
 
 	// Input Functions  ---------------------------
 
-	void GetPointClicked(int& x, int& y) const;//Get coordinate where user clicks
-	void GetKeyClicked(char& cKey) const;
+	void GetPointClicked(int& , int&) const;//Get coordinate where user clicks
+	void GetMousCoord(int& , int&) const;//Get the current mouse Coord
+	void GetKeyClicked(char& cKey) const; //Get the keyboard buttons where user clicks
 	string GetSrting() const;	 //Returns a string entered by the user
 	operationType GetUseroperation() const; //Read the user click and map to an operation
   
@@ -99,7 +113,14 @@ public:
 	void CreateStatusBar() const;				  // create the status bar
 
 	void ClearStatusBar() const; // Clears the status bar
+	void ClearToolBar() const;	// clear the toolbar
 	void ClearDrawArea() const;	 // Clears the drawing area
+	void DrawColorPicker();
+	void PickColor(int, int, double&, double&, double&);
+	void setFillcolor(color);
+	void setDrawColor(color);
+	void setBorderWidth(int);
+
 
 	// -- shapes Drawing functions
 
@@ -107,11 +128,13 @@ public:
 	void DrawTriangle(Point P1, Point P2,Point P3 ,GfxInfo TriaGfxInfo) const;
 	void DrawCircle(Point P1, Point P2,GfxInfo CirclGfxInfo) const;
 	void DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const;  //Draw an Oval
+	void DrawSquare(Point P1, Point P2, GfxInfo SquareGfxInfo) const;  //Draw a Square
 	void DrawRegularPolygon(Point center, double numOfVertices, double radius, GfxInfo RegularPolygonGfxInfo) const; // Draw a regular Polygon
 	void DrawIrrPolygon(vector<Point> allPoints, int vericies, GfxInfo IrrPolGfxInfo) const; //Draw Irregular Polygon
 	void DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const;  // Draw a Line 
 	
 	
+
 
 	///Make similar functions for drawing all other shapes.
 

@@ -14,4 +14,8 @@ public:
 	virtual ~Triangle();
 	virtual void Draw(GUI* pUI) const;
 	void SAVE(ofstream& OutFile);
+	virtual bool inShape(int, int) const;		//check whether a point in the shape or not
+	double getArea(int,int,int,int,int,int) const;						// Get the area of the triagnle 
+	virtual string shapeInfo();					// give some info about the shape
+
 };
