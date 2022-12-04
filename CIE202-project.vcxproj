@@ -175,11 +175,10 @@
     <ClCompile Include="operations\opAddSquare.cpp" />
     <ClCompile Include="operations\opAddRegularPolygon.cpp" />
     <ClCompile Include="operations\opAddTriangle.cpp" />
-    <ClCompile Include="opSave.cpp" />
-    <ClCompile Include="operations\opDelete.cpp" />
     <ClCompile Include="operations\opChangeBorderClr.cpp" />
     <ClCompile Include="operations\opChangeBorderWidth.cpp" />
     <ClCompile Include="operations\opChangeFill.cpp" />
+    <ClCompile Include="operations\opDelete.cpp" />
     <ClCompile Include="operations\opSelectUnselect.cpp" />
     <ClCompile Include="operations\opPickColor.cpp" />
     <ClCompile Include="operations\OpSwitch.cpp" />
@@ -220,11 +219,11 @@
     <ClInclude Include="controller.h" />
     <ClInclude Include="DEFS.h" />
     <ClInclude Include="operations\opAddSquare.h" />
-    <ClInclude Include="operations\opDelete.h" />
-    <ClInclude Include="operations\OpSwitch.h" />
     <ClInclude Include="operations\opChangeBorderClr.h" />
     <ClInclude Include="operations\opChangeBorderWidth.h" />
     <ClInclude Include="operations\opChangeFill.h" />
+    <ClInclude Include="operations\opDelete.h" />
+    <ClInclude Include="operations\OpSwitch.h" />
     <ClInclude Include="Shapes\Square.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="opAddLine.h" />
@@ -235,7 +234,6 @@
     <ClInclude Include="operations\opAddRegularPolygon.h" />
     <ClInclude Include="operations\opAddTriangle.h" />
     <ClInclude Include="operations\operation.h" />
-    <ClInclude Include="opSave.h" />
     <ClInclude Include="operations\opSelectUnselect.h" />
     <ClInclude Include="operations\opPickColor.h" />
     <ClInclude Include="resource.h" />
