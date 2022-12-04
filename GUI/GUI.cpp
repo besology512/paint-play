@@ -219,6 +219,7 @@ void GUI::ClearToolBar() const
 	// Clear Tool bar by drawing a filled white rectangle
 	pWind->SetPen(BkGrndColor, 1);
 	pWind->SetBrush(BkGrndColor);
+	pWind->DrawRectangle(5, 5, width, -ToolBarHeight);
 	pWind->DrawRectangle(5, 5, width, ToolBarHeight);
 }
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -282,13 +283,13 @@ void GUI::ClearDrawArea() const
 	pWind->SetPen(BkGrndColor, 1);
 	pWind->SetBrush(BkGrndColor);
 	pWind->DrawRectangle(0, ToolBarHeight, width, height - StatusBarHeight);
+	//pWind->DrawRectangle(0, ToolBarHeight, width, height + StatusBarHeight);
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
 void GUI::PrintMessage(string msg) const // Prints a message on status bar
 {
 	ClearStatusBar(); // First clear the status bar
-
 	pWind->SetPen(MsgColor, 50);
 	pWind->SetFont(24, BOLD, BY_NAME, "Arial");
 	pWind->DrawString(10, height - (int)(0.75 * StatusBarHeight), msg);
