@@ -47,10 +47,11 @@ void Graph::Save(ofstream& outfile)
 {
 
 
-	for(auto i = shapesList.begin(); i != shapesList.end();i++) // Loop on each shape in vector list 
-	{ 
+	for(auto shapesList:shapesList) // Loop on each shape in vector list 
+	{
+		
 
-		selectedShape->Save(outfile); 
+		shapesList->SAVE(outfile);
 	}
 
 }
