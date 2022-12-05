@@ -1,6 +1,7 @@
 #pragma once
 
 #include"shape.h"
+#include <fstream>
 
 class Square : public shape {
 
@@ -16,4 +17,5 @@ public:
 	bool inShape(int x, int y) const;
 	string shapeInfo();
 	double getTriangleArea(int,int,int,int,int,int) const;
+	void SAVE(ofstream& OutFile);
 };
