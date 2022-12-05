@@ -33,7 +33,9 @@ void opExit::Execute() {
 			pGr->Save(outfile);
 			exit(0);
 		}
-
+		
+		else if(choice == "No" || choice == "no")
+			exit(0);
 
 	}
 	else
