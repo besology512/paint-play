@@ -179,9 +179,11 @@
     <ClCompile Include="operations\opChangeBorderWidth.cpp" />
     <ClCompile Include="operations\opChangeFill.cpp" />
     <ClCompile Include="operations\opDelete.cpp" />
+    <ClCompile Include="operations\opExit.cpp" />
     <ClCompile Include="operations\opSelectUnselect.cpp" />
     <ClCompile Include="operations\opPickColor.cpp" />
     <ClCompile Include="operations\OpSwitch.cpp" />
+    <ClCompile Include="opExit.cpp" />
     <ClCompile Include="opSave.cpp" />
     <ClCompile Include="Shapes\Circle.cpp" />
     <ClCompile Include="Shapes\ColorPallet.cpp" />
@@ -224,7 +226,9 @@
     <ClInclude Include="operations\opChangeBorderWidth.h" />
     <ClInclude Include="operations\opChangeFill.h" />
     <ClInclude Include="operations\opDelete.h" />
+    <ClInclude Include="operations\opExit.h" />
     <ClInclude Include="operations\OpSwitch.h" />
+    <ClInclude Include="opExit.h" />
     <ClInclude Include="opSave.h" />
     <ClInclude Include="Shapes\Square.h" />
     <ClInclude Include="Line.h" />

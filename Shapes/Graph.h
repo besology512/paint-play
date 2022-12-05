@@ -26,6 +26,7 @@ public:
 	bool isFilled = false;
 	Graph();
 	~Graph();
+	bool isSaved = false;		//boolean to check save & unsave shapes
 	void Addshape(shape* pFig); //Adds a new shape to the shapesList
 	shape* getSelectedShape() const;
 	void Draw(GUI* pUI) const;			//Draw the graph (draw all shapes)

@@ -15,6 +15,7 @@
 #include"operations/opChangeFill.h"
 #include"operations/opChangeBorderClr.h"
 #include"operations/opChangeBorderWidth.h"
+#include"operations/opExit.h"
 
 
 
@@ -96,7 +97,7 @@ operation* controller::createOperation(operationType OpType)
 			break;
       
 		case EXIT:
-			///create Exitoperation here
+			pOp = new opExit(this);										///create Exitoperation here
 			
 			break;
 

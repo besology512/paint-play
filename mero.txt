@@ -1,0 +1,9 @@
+Rectangle
+p1 (258 , 235)
+p2 (386 , 301)
+BorderWdth : 3
+isFilled : 1
+isSelected : 0
+DrawClr : (³ , ; , ™)
+FillClr : (³ , ; , ™)
+

@@ -95,6 +95,7 @@ void Graph::Save(ofstream& outfile)
 		
 
 		shapesList->SAVE(outfile);
+		isSaved = true;
 	}
 
 }

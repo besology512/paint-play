@@ -13,7 +13,7 @@ opDelete::~opDelete()
 //Execute the operation
 void opDelete::Execute() {
 
-	Point P;
+	//Point P;
 
 	//Get a Pointer to the Input / Output Interfaces
 	GUI* pUI = pControl->GetUI();

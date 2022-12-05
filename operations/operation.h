@@ -8,6 +8,7 @@ class controller; //forward class declaration
 //Base class for all possible operations
 class operation
 {
+	
 protected:
 	controller *pControl;	//operations needs control to do their job
 
@@ -18,6 +19,9 @@ public:
 
 	//Execute operation (code depends on operation type)
 	virtual void Execute() =0;
+
+	//bool to check the shapes saved or not
+	bool isSaved = false;
 
 	//To undo this operation (code depends on operation type)
 	//virtual void Undo()=0;

@@ -5,6 +5,7 @@
 #include "controller.h"
 
 
+
 opSave::opSave(controller* pCont): operation(pCont)
 {
 }
@@ -21,6 +22,7 @@ void opSave::Execute()
 	pUI->PrintMessage("Enter File Name");
 
 	string fileName = pUI->GetSrting();
+
 
 	outfile.open( fileName + ".txt"); // open file and store it in folder in working directory 
 
