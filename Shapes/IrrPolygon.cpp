@@ -19,11 +19,11 @@ void IrrPolygon::Draw(GUI* pUI) const
 void IrrPolygon::SAVE(ofstream& OutFile)
 {
 	OutFile << "IrrPolygon\n"
-		<< "verticies : " << verticies;
+		<< "verticies : " << verticies << endl;
 
-	for (auto allPoints : allPoints)
+	for (unsigned i = 0; i < allPoints.size(); i++) 
 	{
-		OutFile << "p" <<counter++ <<" (" << allPoints.x << " , " << allPoints.y << ")\n";
+		OutFile << "p" << i+1 <<" (" << allPoints[i].x << " , " << allPoints[i].y << ")\n";
 
 			
 	}

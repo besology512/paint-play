@@ -18,3 +18,7 @@ string ColorPallet::shapeInfo()
 {
 	return "";
 }
+
+void ColorPallet::SAVE(ofstream& OutFile)
+{
+}
