@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -180,11 +180,10 @@
     <ClCompile Include="operations\opChangeFill.cpp" />
     <ClCompile Include="operations\opDelete.cpp" />
     <ClCompile Include="operations\opExit.cpp" />
+    <ClCompile Include="operations\opSave.cpp" />
     <ClCompile Include="operations\opSelectUnselect.cpp" />
     <ClCompile Include="operations\opPickColor.cpp" />
     <ClCompile Include="operations\OpSwitch.cpp" />
-    <ClCompile Include="opExit.cpp" />
-    <ClCompile Include="opSave.cpp" />
     <ClCompile Include="Shapes\Circle.cpp" />
     <ClCompile Include="Shapes\ColorPallet.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
@@ -227,9 +226,8 @@
     <ClInclude Include="operations\opChangeFill.h" />
     <ClInclude Include="operations\opDelete.h" />
     <ClInclude Include="operations\opExit.h" />
+    <ClInclude Include="operations\opSave.h" />
     <ClInclude Include="operations\OpSwitch.h" />
-    <ClInclude Include="opExit.h" />
-    <ClInclude Include="opSave.h" />
     <ClInclude Include="Shapes\Square.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="opAddLine.h" />
