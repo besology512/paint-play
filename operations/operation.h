@@ -21,7 +21,7 @@ public:
 	virtual void Execute() =0;
 
 	//bool to check the shapes saved or not
-	bool isSaved = false;
+	//bool isSaved = false;
 
 	//To undo this operation (code depends on operation type)
 	//virtual void Undo()=0;
