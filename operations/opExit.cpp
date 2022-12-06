@@ -29,8 +29,17 @@ void opExit::Execute() {
 		string choice = pUI->GetSrting();
 
 		if (choice == "Yes" || choice == "yes") {
+			
+			pUI->PrintMessage("Enter File Name");
+
+			string fileName = pUI->GetSrting();
+			
+			outfile.open(fileName + ".txt"); // open file and store it in folder in working directory
 
 			pGr->Save(outfile);
+
+			outfile.close();
+
 			exit(0);
 		}
 		

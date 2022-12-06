@@ -27,12 +27,15 @@ void opDelete::Execute() {
 	if (pGr->getselectedshape()) {
 		pGr->DeleteShape(pGr->getselectedshape());
 		pGr->UnselectAll();
-		pUI->PrintMessage("The Shape has been deleted sucessfully"); //Update the status bar with the shape info
+		pUI->PrintMessage("The Shape has been deleted sucessfully"); 
+		//Set the save status is false
+		pGr->isSaved = false;
 	}
 	else {
 		pUI->PrintMessage("Please select a shape to delete it");
 	}
 	
+
 	////If there is a shape in the selected point
 	//if (pGr->Getshape(P.x, P.y))
 	//{

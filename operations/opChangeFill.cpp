@@ -17,6 +17,9 @@ void opChangeFill::Execute() {
 	if (pGr->getSelectedShape()) {
 		//change the fill color of the selected shape
 		pGr->getSelectedShape()->ChngFillClr(pGr->getPickedClr());
+
+		//Set the save status is false
+		pGr->isSaved = false;
 	}
 	else {
 		//change the general fill color of the next drawings or shapes

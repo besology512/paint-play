@@ -53,6 +53,8 @@ void opAddLine::Execute()
 	LineGfxInfo.isFilled = false;	//default is not filled
 	LineGfxInfo.isSelected = false;	//defualt is not selected
 
+	//Set the save status is false
+	pGr->isSaved = false;
 
 	//Create a Line with the above parameters
 	Line* L = new Line(P1, P2, LineGfxInfo);

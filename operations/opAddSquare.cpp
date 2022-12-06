@@ -45,6 +45,9 @@ void opAddSquare::Execute() {
 	SquareGfxInfo.isFilled = pGr->isFilled;	//default is not filled
 	SquareGfxInfo.isSelected = false;	//defualt is not selected
 
+	//Set the save status is false
+	pGr->isSaved = false;
+
 
 	//Create a square with the above parameters
 	Square *S = new Square(P1, P2, SquareGfxInfo);
