@@ -16,6 +16,8 @@
 #include"operations/opChangeBorderClr.h"
 #include"operations/opChangeBorderWidth.h"
 #include"operations/opExit.h"
+#include"operations/opRestart.h"
+#include"operations/opstart.h"
 
 
 
@@ -95,6 +97,12 @@ operation* controller::createOperation(operationType OpType)
 		case CHNG_BORDER_WIDTH:
 			pOp = new opChangeBorderWidth(this);
 			break;
+		case START:
+			pOp = new opStart(this);
+			break;
+		case RESTART:
+			pOp = new opRestart(this);
+			break;
       
 		case EXIT:
 			pOp = new opExit(this);										///create Exitoperation here
@@ -111,6 +119,7 @@ operation* controller::createOperation(operationType OpType)
 	}
 
 	return pOp;
+	delete pOp;
 	
 }
 //==================================================================================//
