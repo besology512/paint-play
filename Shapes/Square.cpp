@@ -22,7 +22,7 @@ double Square::getTriangleArea(int x1, int y1, int x2, int y2, int x3, int y3) c
 
 void Square::SAVE(ofstream& OutFile)
 {
-	OutFile << "Triangle\n"
+	OutFile << "Square\n"
 		<< "p1 (" << corner1.x << " , " << corner1.y << ")\n"
 		<< "p2 (" << corner2.x << " , " << corner2.y << ")\n"
 		<< "BorderWdth : " << ShpGfxInfo.BorderWdth << "\n"
