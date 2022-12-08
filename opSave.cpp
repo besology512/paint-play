@@ -5,7 +5,7 @@
 #include "controller.h"
 
 
-opSave::opSave(controller* pCont): operation(pCont)
+opSave::opSave(controller* pCont) : operation(pCont)
 {
 }
 
@@ -22,7 +22,7 @@ void opSave::Execute()
 
 	string fileName = pUI->GetSrting();
 
-	outfile.open( fileName + ".txt"); // open file and store it in folder in working directory 
+	outfile.open(fileName + ".txt"); // open file and store it in folder in working directory 
 
 
 
@@ -34,9 +34,9 @@ void opSave::Execute()
 	outfile.close();
 
 	pUI->PrintMessage("Saved Succussfully");
-	
-	
 
-	
+
+
+
 }
 

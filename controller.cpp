@@ -107,6 +107,9 @@ operation* controller::createOperation(operationType OpType)
 		
 		case STATUS:	//a click on the status bar ==> no operation
 			break;
+		case LOAD:
+			pOp = new opLoad(this);
+			break;
 	}
 
 	return pOp;

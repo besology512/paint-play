@@ -20,15 +20,52 @@ void Line::Draw(GUI* pUI) const
 void Line::SAVE(ofstream& OutFile)
 {
 
-	OutFile << "Line\n"
-		<< "p1 (" << point1.x << " , " << point1.y << ")\n"
-		"p2 (" << point2.x << " , " << point2.y << ")\n"
-		<< "BorderWdth : " << ShpGfxInfo.BorderWdth << "\n"
-		<< "isFilled : " << ShpGfxInfo.isFilled << "\n"
-		<< "isSelected : " << ShpGfxInfo.isSelected << "\n"
-		<< "DrawClr : (" << ShpGfxInfo.DrawClr.ucBlue << " , " << ShpGfxInfo.DrawClr.ucGreen << " , " << ShpGfxInfo.DrawClr.ucRed << ")\n"
-		<< "FillClr : (" << ShpGfxInfo.FillClr.ucBlue << " , " << ShpGfxInfo.FillClr.ucGreen << " , " << ShpGfxInfo.FillClr.ucRed << ")\n\n";//color ; // Put data into file
+	//OutFile << "Line\n"
+	//	<< "p1 (" << point1.x << " , " << point1.y << ")\n"
+	//	"p2 (" << point2.x << " , " << point2.y << ")\n"
+	//	<< "BorderWdth : " << ShpGfxInfo.BorderWdth << "\n"
+	//	<< "isFilled : " << ShpGfxInfo.isFilled << "\n"
+	//	<< "isSelected : " << ShpGfxInfo.isSelected << "\n"
+	//	<< "DrawClr : (" << ShpGfxInfo.DrawClr.ucBlue << " , " << ShpGfxInfo.DrawClr.ucGreen << " , " << ShpGfxInfo.DrawClr.ucRed << ")\n"
+	//	<< "FillClr : (" << ShpGfxInfo.FillClr.ucBlue << " , " << ShpGfxInfo.FillClr.ucGreen << " , " << ShpGfxInfo.FillClr.ucRed << ")\n\n";//color ; // Put data into file
+	OutFile << "Line" << "\n"
+		<< point1.x << "\n"
+		<< point1.y << "\n"
+		<< point2.x << "\n"
+		<< point2.y << "\n"
+		<< ShpGfxInfo.BorderWdth << "\n"
+		<< ShpGfxInfo.isFilled << "\n"
+		<< ShpGfxInfo.isSelected << "\n"
+		<< (int)ShpGfxInfo.DrawClr.ucBlue << "\n"
+		<< (int)ShpGfxInfo.DrawClr.ucGreen << "\n"
+		<< (int)ShpGfxInfo.DrawClr.ucRed << "\n"
+		<< ShpGfxInfo.FillClr.ucBlue << "\n"
+		<< ShpGfxInfo.FillClr.ucGreen << "\n"
+		<< ShpGfxInfo.FillClr.ucRed << "\n"
+		<< "X\n";//color ; // Put data into file
+}
 
+void Line::LOAD(ifstream& InputFile)
+{
+	//Graph* pGr = new Graph;
+	
+	GfxInfo LineGfxInfo;
+	Point l1,l2;
+	l1.x = arrayL[0];
+	l1.y = pGr->arrayL[1];
+	l2.x = pGr->arrayL[3];
+	l2.y = pGr->arrayL[4];
+	LineGfxInfo.BorderWdth = pGr->arrayL[5];
+	LineGfxInfo.isFilled = pGr->arrayL[6];
+	LineGfxInfo.isSelected = pGr->arrayL[7];
+	/*LineGfxInfo.DrawClr.ucBlue = pGr->arrayL[8];
+	LineGfxInfo.BorderWdth = pGr->arrayL[9];
+	LineGfxInfo.BorderWdth = pGr->arrayL[5];
+	LineGfxInfo.BorderWdth = pGr->arrayL[5];*/
+
+	Line* L = new Line(l1, l2, LineGfxInfo);
+	pGr->Addshape(L);
+	
 }
 	
 bool Line::inShape(int x, int y) const

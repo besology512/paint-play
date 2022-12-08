@@ -50,6 +50,7 @@ class GUI
 		ICON_BORDER_WIDTH,
     ICON_DELETE,
     ICON_SAVE,
+	ICON_LOAD,
     ICON_SWITCH,
 		//TODO: Add more icons names here
 

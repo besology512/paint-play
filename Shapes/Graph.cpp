@@ -2,11 +2,10 @@
 
 #include "..//opAddLine.h"  //WHY INCLUDING OP LINE HERE??
 #include <iostream>
+#include "../GUI/GUI.h"
 using namespace std;
 
-#include "../GUI/GUI.h"
-#include<iostream>
-using namespace std;
+
 
 
 Graph::Graph()
@@ -97,6 +96,26 @@ void Graph::Save(ofstream& outfile)
 		shapesList->SAVE(outfile);
 	}
 
+}
+
+void Graph::Load(ifstream& inputfile)
+{
+
+	arrayL = new int(size);
+	i = 0;
+	while (getline(inputfile, str))
+	{
+		data = stoi(str);
+		arrayL[i] = data;
+		i++;
+	}
+
+	//for (auto shapesList : shapesList) // Loop on each shape in vector list 
+	//{
+
+
+	//	shapesList->LOAD(inputfile); // LOAD captial function that exist in each shape 
+	//}
 }
  
 //this function is used to get the color of drawing and filling, etc from the color pallet

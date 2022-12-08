@@ -2,6 +2,9 @@
 #include "Shape.h"
 #include <fstream>
 #include <vector>
+#include "../operations/operation.h"
+#include "../controller.h"
+
 using namespace std;
 
 //forward decl
@@ -20,6 +23,7 @@ private:
 	PickedColor pickedClr;
 	vector <shape*> shapesList; //a container to hold all shapes							   
 	shape* selectedShape;	//pointer to the currently selected shape
+
 public:
 	//bool counting = true;
 	//int counter = 0;
@@ -40,8 +44,14 @@ public:
 
 
 	void Save(ofstream& outfile);	//Save all shapes to a file
-	void load(ifstream& inputfile);	//Load all shapes from a file
+	void Load(ifstream& inputfile);	//Load all shapes from a file
 	color getPickedClr(); //get the current color
 	void setPickedClr(double&,double&,double&); //set color using color picker
-
+	// for load
+	ifstream inputfile; // make output file to use in Save function
+	string str; // variable that take data from getline function 
+	int data;
+	int* arrayL;
+	int size;
+	int i;
 };
