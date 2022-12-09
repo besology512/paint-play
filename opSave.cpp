@@ -28,6 +28,14 @@ void opSave::Execute()
 
 	Graph* pGr = pControl->getGraph();
 
+	outfile << (int)pUI->getCrntDrawColor().ucBlue << " "
+			<< (int)pUI->getCrntDrawColor().ucGreen << " "
+			<< (int)pUI->getCrntDrawColor().ucRed << " "
+			<< (int)pUI->getCrntFillColor().ucBlue << " "
+			<< (int)pUI->getCrntFillColor().ucGreen << " "
+			<< (int)pUI->getCrntFillColor().ucRed << " "
+			<< pUI->getCrntPenWidth() << "\n";
+
 	pGr->Save(outfile);
 
 

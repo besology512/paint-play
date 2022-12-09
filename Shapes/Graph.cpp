@@ -88,15 +88,15 @@ shape* Graph::Getshape(int x, int y)
 
 void Graph::Save(ofstream& outfile)
 {
-
-
+	
+	outfile << sizeof(shapesList) << "\n";
 	for(auto shapesList:shapesList) // Loop on each shape in vector list 
 	{
 		
 
 		shapesList->SAVE(outfile);
 	}
-
+	shapesList.clear();
 }
  
 //this function is used to get the color of drawing and filling, etc from the color pallet

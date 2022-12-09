@@ -18,8 +18,9 @@ void Circle::Draw(GUI* pUI) const
 
 void Circle::SAVE(ofstream& OutFile)
 {
+	ID = 1;
 	OutFile << "Circle " << " "
-		//<< ID << " "
+		<< ID << " "
 		<< Center.x << " "
 		<< Center.y << " "
 		<< PointOnCircle.x << " "
