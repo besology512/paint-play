@@ -18,16 +18,26 @@ void RegularPolygon::Draw(GUI* pUI) const
 
 void RegularPolygon::SAVE(ofstream& OutFile)
 {
-	OutFile << "RegularPolygon\n"
-		<< "Center (" << center.x << " , " << center.y << ")\n"
-		<< "NumOfVertices : " << numOfVertices << "\n"
-		<< "Radius : " << radius << "\n"
-		<< "BorderWdth : " << ShpGfxInfo.BorderWdth << "\n"
-		<< "isFilled : " << ShpGfxInfo.isFilled << "\n"
-		<< "isSelected : " << ShpGfxInfo.isSelected << "\n"
-		<< "DrawClr : (" << ShpGfxInfo.DrawClr.ucBlue << " , " << ShpGfxInfo.DrawClr.ucGreen << " , " << ShpGfxInfo.DrawClr.ucRed << ")\n"
-		<< "FillClr : (" << ShpGfxInfo.FillClr.ucBlue << " , " << ShpGfxInfo.FillClr.ucGreen << " , " << ShpGfxInfo.FillClr.ucRed << ")\n\n";//color ; // Put data into file
-
+	OutFile << "RegularPolygon " << " "
+		//<< ID << " "
+		<< center.x << " "
+		<< center.y << " "
+		<< numOfVertices << " "
+		<< radius << " "
+		<< (int)ShpGfxInfo.DrawClr.ucBlue << " "
+		<< (int)ShpGfxInfo.DrawClr.ucGreen << " "
+		<< (int)ShpGfxInfo.DrawClr.ucRed << " ";
+	if (ShpGfxInfo.isFilled)
+	{
+		OutFile << (int)ShpGfxInfo.FillClr.ucBlue << " "
+			<< (int)ShpGfxInfo.FillClr.ucGreen << " "
+			<< (int)ShpGfxInfo.FillClr.ucRed << " ";
+	}
+	else
+	{
+		OutFile << "NO_FILL ";
+	}
+	OutFile << ShpGfxInfo.BorderWdth << "\n";//color ; // Put data into file
 }
 bool RegularPolygon::inShape(int x, int y) const
 {

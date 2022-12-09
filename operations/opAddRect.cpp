@@ -3,7 +3,7 @@
 
 #include "..\controller.h"
 
-#include "..\GUI\GUI.h"
+
 
 opAddRect::opAddRect(controller * pCont):operation(pCont)
 {}

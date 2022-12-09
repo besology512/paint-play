@@ -18,21 +18,33 @@ void IrrPolygon::Draw(GUI* pUI) const
 
 void IrrPolygon::SAVE(ofstream& OutFile)
 {
-	OutFile << "IrrPolygon\n"
-		<< "verticies : " << verticies << endl;
+	
+	
+	OutFile << "IrrPolygon " << " "
+		//<< ID << " "
+		<< verticies << " ";
+		for (unsigned i = 0; i < allPoints.size(); i++)
+		{
+			OutFile << allPoints[i].x << " "
+					<< allPoints[i].y << " ";
 
-	for (unsigned i = 0; i < allPoints.size(); i++) 
+		}
+
+	OutFile << (int)ShpGfxInfo.DrawClr.ucBlue << " "
+			<< (int)ShpGfxInfo.DrawClr.ucGreen << " "
+			<< (int)ShpGfxInfo.DrawClr.ucRed << " ";
+	if (ShpGfxInfo.isFilled)
 	{
-		OutFile << "p" << i+1 <<" (" << allPoints[i].x << " , " << allPoints[i].y << ")\n";
-
-			
+		OutFile << (int)ShpGfxInfo.FillClr.ucBlue << " "
+				<< (int)ShpGfxInfo.FillClr.ucGreen << " "
+				<< (int)ShpGfxInfo.FillClr.ucRed << " ";
 	}
+	else
+	{
+		OutFile << "NO_FILL ";
+	}
+	OutFile << ShpGfxInfo.BorderWdth << "\n";
 
-		OutFile << "BorderWdth : " << ShpGfxInfo.BorderWdth << "\n"
-		<< "isFilled : " << ShpGfxInfo.isFilled << "\n"
-		<< "isSelected : " << ShpGfxInfo.isSelected << "\n"
-		<< "DrawClr : (" << ShpGfxInfo.DrawClr.ucBlue << " , " << ShpGfxInfo.DrawClr.ucGreen << " , " << ShpGfxInfo.DrawClr.ucRed << ")\n"
-		<< "FillClr : (" << ShpGfxInfo.FillClr.ucBlue << " , " << ShpGfxInfo.FillClr.ucGreen << " , " << ShpGfxInfo.FillClr.ucRed << ")\n\n";
 }
 
 bool IrrPolygon::inShape(int x, int y) const

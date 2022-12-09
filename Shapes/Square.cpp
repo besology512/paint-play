@@ -22,14 +22,26 @@ double Square::getTriangleArea(int x1, int y1, int x2, int y2, int x3, int y3) c
 
 void Square::SAVE(ofstream& OutFile)
 {
-	OutFile << "Triangle\n"
-		<< "p1 (" << corner1.x << " , " << corner1.y << ")\n"
-		<< "p2 (" << corner2.x << " , " << corner2.y << ")\n"
-		<< "BorderWdth : " << ShpGfxInfo.BorderWdth << "\n"
-		<< "isFilled : " << ShpGfxInfo.isFilled << "\n"
-		<< "isSelected : " << ShpGfxInfo.isSelected << "\n"
-		<< "DrawClr : (" << ShpGfxInfo.DrawClr.ucBlue << " , " << ShpGfxInfo.DrawClr.ucGreen << " , " << ShpGfxInfo.DrawClr.ucRed << ")\n"
-		<< "FillClr : (" << ShpGfxInfo.FillClr.ucBlue << " , " << ShpGfxInfo.FillClr.ucGreen << " , " << ShpGfxInfo.FillClr.ucRed << ")\n\n";//color ; // Put data into file
+	OutFile << "Square " << " "
+		//<< ID << " "
+		<< corner1.x << " "
+		<< corner1.y << " "
+		<< corner2.x << " "
+		<< corner2.y << " "
+		<< (int)ShpGfxInfo.DrawClr.ucBlue << " "
+		<< (int)ShpGfxInfo.DrawClr.ucGreen << " "
+		<< (int)ShpGfxInfo.DrawClr.ucRed << " ";
+	if (ShpGfxInfo.isFilled)
+	{
+		OutFile << (int)ShpGfxInfo.FillClr.ucBlue << " "
+			<< (int)ShpGfxInfo.FillClr.ucGreen << " "
+			<< (int)ShpGfxInfo.FillClr.ucRed << " ";
+	}
+	else
+	{
+		OutFile << "NO_FILL ";
+	}
+	OutFile << ShpGfxInfo.BorderWdth << "\n";//color ; // Put data into file
 }
 
 bool Square::inShape(int x, int y) const 

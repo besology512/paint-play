@@ -18,14 +18,26 @@ void Circle::Draw(GUI* pUI) const
 
 void Circle::SAVE(ofstream& OutFile)
 {
-	OutFile << "Circle\n"
-		<< "Center (" << Center.x << " , " << Center.y << ")\n"
-		"PointOnCircle (" << PointOnCircle.x << " , " << PointOnCircle.y << ")\n"
-		<< "BorderWdth : " << ShpGfxInfo.BorderWdth << "\n"
-		<< "isFilled : " << ShpGfxInfo.isFilled << "\n"
-		<< "isSelected : " << ShpGfxInfo.isSelected << "\n"
-		<< "DrawClr : (" << ShpGfxInfo.DrawClr.ucBlue << " , " << ShpGfxInfo.DrawClr.ucGreen << " , " << ShpGfxInfo.DrawClr.ucRed << ")\n"
-		<< "FillClr : (" << ShpGfxInfo.FillClr.ucBlue << " , " << ShpGfxInfo.FillClr.ucGreen << " , " << ShpGfxInfo.FillClr.ucRed << ")\n\n";//color ; // Put data into file
+	OutFile << "Circle " << " "
+		//<< ID << " "
+		<< Center.x << " "
+		<< Center.y << " "
+		<< PointOnCircle.x << " "
+		<< PointOnCircle.y << " "
+		<< (int)ShpGfxInfo.DrawClr.ucBlue << " "
+		<< (int)ShpGfxInfo.DrawClr.ucGreen << " "
+		<< (int)ShpGfxInfo.DrawClr.ucRed << " ";
+	if (ShpGfxInfo.isFilled)
+	{
+		OutFile << (int)ShpGfxInfo.FillClr.ucBlue << " "
+			<< (int)ShpGfxInfo.FillClr.ucGreen << " "
+			<< (int)ShpGfxInfo.FillClr.ucRed << " ";
+	}
+	else
+	{
+		OutFile << "NO_FILL ";
+	}
+	OutFile << ShpGfxInfo.BorderWdth << "\n";
 
 }
 
