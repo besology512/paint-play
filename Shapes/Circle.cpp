@@ -18,7 +18,7 @@ void Circle::Draw(GUI* pUI) const
 
 void Circle::SAVE(ofstream& OutFile)
 {
-	ID = 1;
+	ID = 7;
 	OutFile << "Circle " << " "
 		<< ID << " "
 		<< Center.x << " "
@@ -41,6 +41,16 @@ void Circle::SAVE(ofstream& OutFile)
 	OutFile << ShpGfxInfo.BorderWdth << "\n";
 
 }
+
+void Circle::LOAD(ifstream& Infile)
+{
+	//Infile >> Center.x;
+
+
+}
+
+
+
 
 bool Circle::inShape(int x, int y) const
 {

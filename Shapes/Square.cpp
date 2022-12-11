@@ -22,8 +22,9 @@ double Square::getTriangleArea(int x1, int y1, int x2, int y2, int x3, int y3) c
 
 void Square::SAVE(ofstream& OutFile)
 {
+	ID = 2;
 	OutFile << "Square " << " "
-		//<< ID << " "
+		<< ID << " "
 		<< corner1.x << " "
 		<< corner1.y << " "
 		<< corner2.x << " "
@@ -42,6 +43,10 @@ void Square::SAVE(ofstream& OutFile)
 		OutFile << "NO_FILL ";
 	}
 	OutFile << ShpGfxInfo.BorderWdth << "\n";//color ; // Put data into file
+}
+
+void Square::LOAD(ifstream& Infile)
+{
 }
 
 bool Square::inShape(int x, int y) const 

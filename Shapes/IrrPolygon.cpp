@@ -19,9 +19,9 @@ void IrrPolygon::Draw(GUI* pUI) const
 void IrrPolygon::SAVE(ofstream& OutFile)
 {
 	
-	
+	ID = 6;
 	OutFile << "IrrPolygon " << " "
-		//<< ID << " "
+		<< ID << " "
 		<< verticies << " ";
 		for (unsigned i = 0; i < allPoints.size(); i++)
 		{
@@ -67,4 +67,8 @@ string IrrPolygon::shapeInfo()
 {
 	string msg = "The number of vertices is " + to_string(verticies);
 	return  msg;
+}
+
+void IrrPolygon::LOAD(ifstream& Infile)
+{
 }

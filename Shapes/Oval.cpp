@@ -18,8 +18,9 @@ void Oval::Draw(GUI* pUI) const
 
 void Oval::SAVE(ofstream& OutFile)
 {
+	ID = 8;
 	OutFile << "Oval " << " "
-		//<< ID << " "
+		<< ID << " "
 		<< Corner1.x << " "
 		<< Corner1.y << " "
 		<< Corner2.x << " "
@@ -76,5 +77,9 @@ string Oval::shapeInfo()
 	int k = (Corner1.y + Corner2.y) / 2;
 	string msg = "The Oval center is at (" + to_string(h) + "," + to_string(k) + ")";
 	return  msg;
+}
+
+void Oval::LOAD(ifstream& Infile)
+{
 }
 

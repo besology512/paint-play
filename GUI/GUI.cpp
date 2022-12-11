@@ -255,7 +255,8 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_BORDER_WIDTH] = "images\\MenuIcons\\Menu_ChangeBorderWidth.jpg";
 	MenuIconImages[ICON_SWITCH] = "images\\MenuIcons\\Menu_Switch.jpg";
 	MenuIconImages[ICON_DELETE] = "images\\MenuIcons\\Menu_Delete.jpg";
-  MenuIconImages[ICON_SAVE] = "images\\MenuIcons\\Menu_Save.jpg";
+	MenuIconImages[ICON_SAVE] = "images\\MenuIcons\\Menu_Save.jpg";
+	MenuIconImages[ICON_LOAD] = "images\\MenuIcons\\Menu_Load.jpg";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 	
 

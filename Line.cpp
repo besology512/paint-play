@@ -19,9 +19,9 @@ void Line::Draw(GUI* pUI) const
 
 void Line::SAVE(ofstream& OutFile)
 {
-
+	ID = 1;
 	OutFile << "Line " << " "
-		//<< ID << " "
+		<< ID << " "
 		<< point1.x << " "
 		<< point1.y << " "
 		<< point2.x << " "
@@ -61,4 +61,8 @@ string Line::shapeInfo()
 
 	msg = "The line slope is " + to_string(int(slope)) + " The line length is " + to_string(length);
 	return msg;
+}
+
+void Line::LOAD(ifstream& Infile)
+{
 }

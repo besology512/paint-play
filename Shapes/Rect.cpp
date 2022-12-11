@@ -18,8 +18,9 @@ void Rect::Draw(GUI* pUI) const
 
 void Rect::SAVE(ofstream& OutFile)
 {
+	ID = 3;
 	OutFile << "Rect " << " "
-		//<< ID << " "
+		<< ID << " "
 		<< Corner1.x << " "
 		<< Corner1.y << " "
 		<< Corner2.x << " "
@@ -74,4 +75,9 @@ string Rect::shapeInfo()
 
 	msg = "The Rectangle Area is " + to_string(area) + " The center is at (" + to_string(center.x) + "," + to_string(center.y) + ")";
 	return msg;
+}
+
+void Rect::LOAD(ifstream& Infile)
+{
+
 }

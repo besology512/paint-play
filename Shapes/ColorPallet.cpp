@@ -22,3 +22,7 @@ string ColorPallet::shapeInfo()
 void ColorPallet::SAVE(ofstream& OutFile)
 {
 }
+
+void ColorPallet::LOAD(ifstream& Infile)
+{
+}

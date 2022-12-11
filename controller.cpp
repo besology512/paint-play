@@ -120,6 +120,7 @@ operation* controller::createOperation(operationType OpType)
 void controller::UpdateInterface() const
 {	
 	pGraph->Draw(pGUI);
+	
 }
 ////////////////////////////////////////////////////////////////////////////////////
 //Return a pointer to the UI

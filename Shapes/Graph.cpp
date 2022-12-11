@@ -2,10 +2,9 @@
 
 #include "..//opAddLine.h"  //WHY INCLUDING OP LINE HERE??
 #include <iostream>
-using namespace std;
-
+#include"../CMUgraphicsLib/colors.h"
+#include"../Shapes/Rect.h"
 #include "../GUI/GUI.h"
-#include<iostream>
 using namespace std;
 
 
@@ -88,16 +87,70 @@ shape* Graph::Getshape(int x, int y)
 
 void Graph::Save(ofstream& outfile)
 {
-	
-	outfile << sizeof(shapesList) << "\n";
+	//shapesList.clear(); // where and when clear list ??
+	outfile << size(shapesList) << "\n";
 	for(auto shapesList:shapesList) // Loop on each shape in vector list 
 	{
 		
 
 		shapesList->SAVE(outfile);
 	}
-	shapesList.clear();
 }
+void Graph::load(ifstream& inputfile)
+{
+
+
+
+
+
+
+
+
+
+
+
+
+
+	//string array[4];
+	//
+	//getline(inputfile, array[0]);
+	////getline(inputfile, array[1], ' ');
+	////getline(inputfile, array[2], ' ');
+	//getline(inputfile, array[1]);
+	//string * arr2 = new string[stoi(array[1])*10];
+	//for (int i = 0;i < stoi(array[1])*10;i++)
+	//{
+	//	getline(inputfile, arr2[i], ' ');
+	//}
+	//for (int i = 0;i < stoi(array[1]) * 10;i++)
+	//{
+	//	if (arr2[i] == "RECT") {
+	//		Point p1, p2;
+	//		GfxInfo info;
+
+	//		p1.x = stoi(arr2[i + 2]);
+	//		p1.y = stoi(arr2[i + 3]);
+	//		p2.x = stoi(arr2[i + 4]);
+	//		p2.y = stoi(arr2[i + 5]);
+	//		color c = (0,0,0);
+	//		info.DrawClr = c; // to initialize the draw color
+	//		if (arr2[i + 7] == "NO_FILL") {
+	//			info.FillClr = changestringtoints("white"); // to make the fillcolor white
+	//		}
+	//		else
+	//			info.FillClr = changestringtoints(arr2[i + 7]); //to initialize the fill color
+	//		info.BorderWdth = stoi(arr2[i + 8]);
+	//		Rect* R = new Rect(p1, p2, info);
+	//		R->setid(stoi(arr2[i + 1])); // setting the id of the rectagle
+	//		Addshape(R);
+
+	//	}
+	//}
+	
+
+}
+
+
  
 //this function is used to get the color of drawing and filling, etc from the color pallet
 //default color is black

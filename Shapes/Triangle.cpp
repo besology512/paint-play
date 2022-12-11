@@ -19,8 +19,9 @@ void Triangle::Draw(GUI* pUI) const
 
 void Triangle::SAVE(ofstream& OutFile)
 {
+	ID = 4;
 	OutFile << "Triangle " << " "
-		//<< ID << " "
+		<< ID << " "
 		<< Corner1.x << " "
 		<< Corner1.y << " "
 		<< Corner2.x << " "
@@ -70,4 +71,8 @@ string Triangle::shapeInfo()
 	int area = getArea(Corner1.x, Corner1.y, Corner2.x, Corner2.y, Corner3.x, Corner3.y);
 	string msg = "The Triangle Area is " + to_string(area);
 	return  msg;
+}
+
+void Triangle::LOAD(ifstream& Infile)
+{
 }

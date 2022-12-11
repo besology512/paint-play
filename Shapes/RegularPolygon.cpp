@@ -18,8 +18,9 @@ void RegularPolygon::Draw(GUI* pUI) const
 
 void RegularPolygon::SAVE(ofstream& OutFile)
 {
+	ID = 5;
 	OutFile << "RegularPolygon " << " "
-		//<< ID << " "
+		<< ID << " "
 		<< center.x << " "
 		<< center.y << " "
 		<< numOfVertices << " "
@@ -79,4 +80,8 @@ string RegularPolygon::shapeInfo()
 {
 	string msg = "The number of vertices is " + to_string(int(numOfVertices)) + " The center is at (" + to_string(center.x) + "," + to_string(center.y) + ")";
 	return  msg;
+}
+
+void RegularPolygon::LOAD(ifstream& Infile)
+{
 }
