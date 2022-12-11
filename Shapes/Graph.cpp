@@ -1,9 +1,6 @@
 #include "Graph.h"
-
-#include "..//opAddLine.h"  //WHY INCLUDING OP LINE HERE??
 #include <iostream>
 #include"../CMUgraphicsLib/colors.h"
-#include"../Shapes/Rect.h"
 #include "../GUI/GUI.h"
 using namespace std;
 
@@ -98,84 +95,250 @@ void Graph::Save(ofstream& outfile)
 }
 void Graph::load(ifstream& inputfile)
 {
+	string s;
 	int size;
 	string shapeName;
 	shape* newShape;
 	inputfile >> size;
-	//for (int i = 0; i < size; i++)
+	
 	while(inputfile)
 	{
 		inputfile >> shapeName;
-		if (shapeName == "Rect")
+		if (shapeName == "Line")
 		{
 			string isFilled;
+			int ID;
+			int x, y, z, a, b, c;
+			bool k;
 			Point P1, P2;
-			GfxInfo RectGfxInfo;
-			inputfile >> P1.x >> P1.y >> P2.x >> P2.y
-				>> RectGfxInfo.DrawClr.ucBlue >> RectGfxInfo.DrawClr.ucGreen >> RectGfxInfo.DrawClr.ucRed >> isFilled;
-			cout << (int)RectGfxInfo.DrawClr.ucBlue;
-			//RectGfxInfo.DrawClr = color((int)RectGfxInfo.DrawClr.ucBlue, (int)RectGfxInfo.DrawClr.ucGreen,(int)RectGfxInfo.DrawClr.ucRed);
+			GfxInfo LineGfxInfo;
+			inputfile >> ID >> P1.x >> P1.y >> P2.x >> P2.y >> x >> y >> z >> isFilled;
+			LineGfxInfo.DrawClr.ucBlue = x;
+			LineGfxInfo.DrawClr.ucGreen = y;
+			LineGfxInfo.DrawClr.ucRed = z;
 			if (isFilled == "FILL")
 			{
-				inputfile >> RectGfxInfo.FillClr.ucBlue >> RectGfxInfo.FillClr.ucGreen >> RectGfxInfo.FillClr.ucRed;
+				inputfile >> a >> b >> c;
+				LineGfxInfo.FillClr.ucBlue = a;
+				LineGfxInfo.FillClr.ucGreen = b;
+				LineGfxInfo.FillClr.ucRed = c;
 			}
 			else
 			{
-				inputfile >> isFilled;
+				LineGfxInfo.isFilled = 0;
+			}
+			inputfile >> LineGfxInfo.BorderWdth;
+			newShape = new Line(P1, P2, LineGfxInfo);
+			Addshape(newShape);
+		}
+		if (shapeName == "Triangle")
+		{
+			string isFilled;
+			int ID;
+			int x, y, z, a, b, c;
+			bool k;
+			Point P1, P2, P3;
+			GfxInfo TriangleGfxInfo;
+			inputfile >> ID >> P1.x >> P1.y >> P2.x >> P2.y >>P3.x >> P3.y >> x >> y >> z >> isFilled;
+			TriangleGfxInfo.DrawClr.ucBlue = x;
+			TriangleGfxInfo.DrawClr.ucGreen = y;
+			TriangleGfxInfo.DrawClr.ucRed = z;
+			if (isFilled == "FILL")
+			{
+				inputfile >> a >> b >> c;
+				TriangleGfxInfo.FillClr.ucBlue = a;
+				TriangleGfxInfo.FillClr.ucGreen = b;
+				TriangleGfxInfo.FillClr.ucRed = c;
+			}
+			else
+			{
+				TriangleGfxInfo.isFilled = 0;
+			}
+			inputfile >> TriangleGfxInfo.BorderWdth;
+			newShape = new Triangle(P1, P2, P3, TriangleGfxInfo);
+			Addshape(newShape);
+		}
+
+		if (shapeName == "Square")
+		{
+			string isFilled;
+			int ID;
+			int x, y, z, a, b, c;
+			bool k;
+			Point P1, P2;
+			GfxInfo SquareGfxInfo;
+			inputfile >> ID >> P1.x >> P1.y >> P2.x >> P2.y >> x >> y >> z >> isFilled;
+			SquareGfxInfo.DrawClr.ucBlue = x;
+			SquareGfxInfo.DrawClr.ucGreen = y;
+			SquareGfxInfo.DrawClr.ucRed = z;
+			if (isFilled == "FILL")
+			{
+				inputfile >> a >> b >> c;
+				SquareGfxInfo.FillClr.ucBlue = a;
+				SquareGfxInfo.FillClr.ucGreen = b;
+				SquareGfxInfo.FillClr.ucRed = c;
+			}
+			else
+			{
+				SquareGfxInfo.isFilled = 0;
+			}
+			inputfile >> SquareGfxInfo.BorderWdth;
+			newShape = new Square(P1, P2, SquareGfxInfo);
+			Addshape(newShape);
+		}
+
+		if (shapeName == "Rect")
+		{
+			string isFilled;
+			int ID;
+			int x, y, z, a, b, c;
+			bool k;
+			Point P1, P2;
+			GfxInfo RectGfxInfo;
+			inputfile >> ID >> P1.x >> P1.y >> P2.x >> P2.y >> x >> y >> z >> isFilled;
+			RectGfxInfo.DrawClr.ucBlue = x;
+			RectGfxInfo.DrawClr.ucGreen = y;
+			RectGfxInfo.DrawClr.ucRed = z;
+			//cout << P1.x << " " << P1.y << " " << P2.x << " " << P2.y << " " << x << " " << y << " " << z << " " << isFilled << " ";
+			if (isFilled == "FILL")
+			{
+				inputfile >> a >> b >> c;
+				RectGfxInfo.FillClr.ucBlue = a;
+				RectGfxInfo.FillClr.ucGreen = b;
+				RectGfxInfo.FillClr.ucRed = c;
+			}
+			else
+			{
+				RectGfxInfo.isFilled = 0;
 			}
 			inputfile >> RectGfxInfo.BorderWdth;
+			//cout << RectGfxInfo.BorderWdth;
 			newShape = new Rect(P1, P2, RectGfxInfo);
 			//newShape->LOAD(inputfile);
 			Addshape(newShape);
 		}
+
+		if (shapeName == "IrrPolygon")
+		{
+			string isFilled;
+			int ID;
+			int x, y, z, a, b, c;
+			bool k;
+			vector<Point> allPoints;
+			int verticies;
+			GfxInfo IrrPolygonGfxInfo;
+			inputfile >> ID >> verticies;
+			for (unsigned i = 0; i <= verticies; ++i)
+			{
+				inputfile >> allPoints[i].x
+					>> allPoints[i].y ;
+
+			}
+			
+			inputfile >> x >> y >> z >> isFilled;
+			IrrPolygonGfxInfo.DrawClr.ucBlue = x;
+			IrrPolygonGfxInfo.DrawClr.ucGreen = y;
+			IrrPolygonGfxInfo.DrawClr.ucRed = z;
+			if (isFilled == "FILL")
+			{
+				inputfile >> a >> b >> c;
+				IrrPolygonGfxInfo.FillClr.ucBlue = a;
+				IrrPolygonGfxInfo.FillClr.ucGreen = b;
+				IrrPolygonGfxInfo.FillClr.ucRed = c;
+			}
+			else
+			{
+				IrrPolygonGfxInfo.isFilled = 0;
+			}
+			inputfile >> IrrPolygonGfxInfo.BorderWdth;
+			newShape = new IrrPolygon(allPoints, verticies, IrrPolygonGfxInfo);
+			Addshape(newShape);
+		}
+		if (shapeName == "RegularPolygon")
+		{
+			string isFilled;
+			int ID;
+			int x, y, z, a, b, c;
+			bool k;
+			Point center;
+			char numOfVertices;
+			char radius;
+			GfxInfo RegularPolygonGfxInfo;
+			inputfile >> ID >> center.x >> center.y >> numOfVertices >> radius >> x >> y >> z >> isFilled;
+			RegularPolygonGfxInfo.DrawClr.ucBlue = x;
+			RegularPolygonGfxInfo.DrawClr.ucGreen = y;
+			RegularPolygonGfxInfo.DrawClr.ucRed = z;
+			if (isFilled == "FILL")
+			{
+				inputfile >> a >> b >> c;
+				RegularPolygonGfxInfo.FillClr.ucBlue = a;
+				RegularPolygonGfxInfo.FillClr.ucGreen = b;
+				RegularPolygonGfxInfo.FillClr.ucRed = c;
+			}
+			else
+			{
+				RegularPolygonGfxInfo.isFilled = 0;
+			}
+			inputfile >> RegularPolygonGfxInfo.BorderWdth;
+			newShape = new RegularPolygon(center, int((int(numOfVertices) - 48)), int((int(radius) - 48)) * 15, RegularPolygonGfxInfo);
+			Addshape(newShape);
+		}
+		if (shapeName == "Circle")
+		{
+			string isFilled;
+			int ID;
+			int x, y, z, a, b, c;
+			bool k;
+			Point P1, P2;
+			GfxInfo CircleGfxInfo;
+			inputfile >> ID >> P1.x >> P1.y >> P2.x >> P2.y >> x >> y >> z >> isFilled;
+			CircleGfxInfo.DrawClr.ucBlue = x;
+			CircleGfxInfo.DrawClr.ucGreen = y;
+			CircleGfxInfo.DrawClr.ucRed = z;
+			if (isFilled == "FILL")
+			{
+				inputfile >> a >> b >> c;
+				CircleGfxInfo.FillClr.ucBlue = a;
+				CircleGfxInfo.FillClr.ucGreen = b;
+				CircleGfxInfo.FillClr.ucRed = c;
+			}
+			else
+			{
+				CircleGfxInfo.isFilled = 0;
+			}
+			inputfile >> CircleGfxInfo.BorderWdth;
+			newShape = new Circle(P1, P2, CircleGfxInfo);
+			Addshape(newShape);
+		}
+		if (shapeName == "Oval")
+		{
+			string isFilled;
+			int ID;
+			int x, y, z, a, b, c;
+			bool k;
+			Point P1, P2;
+			GfxInfo OvalGfxInfo;
+			inputfile >> ID >> P1.x >> P1.y >> P2.x >> P2.y >> x >> y >> z >> isFilled;
+			OvalGfxInfo.DrawClr.ucBlue = x;
+			OvalGfxInfo.DrawClr.ucGreen = y;
+			OvalGfxInfo.DrawClr.ucRed = z;
+			if (isFilled == "FILL")
+			{
+				inputfile >> a >> b >> c;
+				OvalGfxInfo.FillClr.ucBlue = a;
+				OvalGfxInfo.FillClr.ucGreen = b;
+				OvalGfxInfo.FillClr.ucRed = c;
+			}
+			else
+			{
+				OvalGfxInfo.isFilled = 0;
+			}
+			inputfile >> OvalGfxInfo.BorderWdth;
+			newShape = new Oval(P1, P2, OvalGfxInfo);
+			Addshape(newShape);
+		}
+
 	}
-	
-
-
-
-
-
-
-
-
-
-
-
-	//string array[4];
-	//
-	//getline(inputfile, array[0]);
-	////getline(inputfile, array[1], ' ');
-	////getline(inputfile, array[2], ' ');
-	//getline(inputfile, array[1]);
-	//string * arr2 = new string[stoi(array[1])*10];
-	//for (int i = 0;i < stoi(array[1])*10;i++)
-	//{
-	//	getline(inputfile, arr2[i], ' ');
-	//}
-	//for (int i = 0;i < stoi(array[1]) * 10;i++)
-	//{
-	//	if (arr2[i] == "RECT") {
-	//		Point p1, p2;
-	//		GfxInfo info;
-
-	//		p1.x = stoi(arr2[i + 2]);
-	//		p1.y = stoi(arr2[i + 3]);
-	//		p2.x = stoi(arr2[i + 4]);
-	//		p2.y = stoi(arr2[i + 5]);
-	//		color c = (0,0,0);
-	//		info.DrawClr = c; // to initialize the draw color
-	//		if (arr2[i + 7] == "NO_FILL") {
-	//			info.FillClr = changestringtoints("white"); // to make the fillcolor white
-	//		}
-	//		else
-	//			info.FillClr = changestringtoints(arr2[i + 7]); //to initialize the fill color
-	//		info.BorderWdth = stoi(arr2[i + 8]);
-	//		Rect* R = new Rect(p1, p2, info);
-	//		R->setid(stoi(arr2[i + 1])); // setting the id of the rectagle
-	//		Addshape(R);
-
-	//	}
-	//}
 	
 
 }
