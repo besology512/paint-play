@@ -4,6 +4,7 @@ Rect::Rect(Point P1, Point P2, GfxInfo shapeGfxInfo):shape(shapeGfxInfo)
 {
 	Corner1 = P1;
 	Corner2 = P2;
+
 }
 
 Rect::~Rect()
@@ -30,7 +31,8 @@ void Rect::SAVE(ofstream& OutFile)
 		<< (int)ShpGfxInfo.DrawClr.ucRed << " ";
 	if (ShpGfxInfo.isFilled)
 	{
-		OutFile << (int)ShpGfxInfo.FillClr.ucBlue << " "
+		OutFile << "FILL"
+			<< (int)ShpGfxInfo.FillClr.ucBlue << " "
 			<< (int)ShpGfxInfo.FillClr.ucGreen << " "
 			<< (int)ShpGfxInfo.FillClr.ucRed << " ";
 	}
@@ -39,6 +41,20 @@ void Rect::SAVE(ofstream& OutFile)
 		OutFile << "NO_FILL ";
 	}
 	OutFile << ShpGfxInfo.BorderWdth << "\n";//color ; // Put data into file
+}
+void Rect::LOAD(ifstream& Infile)
+{
+	/*Infile >> Corner1.x >> Corner1.y >> Corner2.x >> Corner2.y
+		>> ShpGfxInfo.DrawClr.ucBlue >> ShpGfxInfo.DrawClr.ucGreen >> ShpGfxInfo.DrawClr.ucRed >> isFilled;
+	if(isFilled == "FILL")
+	{
+		Infile >> ShpGfxInfo.FillClr.ucBlue >> ShpGfxInfo.FillClr.ucGreen >> ShpGfxInfo.FillClr.ucRed;
+	}
+	else
+	{
+		Infile >> isFilled;
+	}*/
+	
 }
 
 bool Rect::inShape(int x, int y) const
@@ -77,7 +93,4 @@ string Rect::shapeInfo()
 	return msg;
 }
 
-void Rect::LOAD(ifstream& Infile)
-{
 
-}

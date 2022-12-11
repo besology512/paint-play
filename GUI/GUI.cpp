@@ -136,6 +136,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_IRR_POLYGON: return DRAW_IRR_POLYGON;
 			case ICON_LINE: return DRAW_LINE;
 			case ICON_SAVE: return SAVE;
+			case ICON_LOAD: return LOAD;
 			case ICON_PICKER: return PICK_COLOR;
 			case ICON_FILL: return CHNG_FILL_CLR;
 			case ICON_BORDER_CLR: return CHNG_BORDER_CLR;

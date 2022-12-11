@@ -98,8 +98,38 @@ void Graph::Save(ofstream& outfile)
 }
 void Graph::load(ifstream& inputfile)
 {
-
-
+	int size;
+	string shapeName;
+	shape* newShape;
+	inputfile >> size;
+	//for (int i = 0; i < size; i++)
+	while(inputfile)
+	{
+		inputfile >> shapeName;
+		if (shapeName == "Rect")
+		{
+			string isFilled;
+			Point P1, P2;
+			GfxInfo RectGfxInfo;
+			inputfile >> P1.x >> P1.y >> P2.x >> P2.y
+				>> RectGfxInfo.DrawClr.ucBlue >> RectGfxInfo.DrawClr.ucGreen >> RectGfxInfo.DrawClr.ucRed >> isFilled;
+			cout << (int)RectGfxInfo.DrawClr.ucBlue;
+			//RectGfxInfo.DrawClr = color((int)RectGfxInfo.DrawClr.ucBlue, (int)RectGfxInfo.DrawClr.ucGreen,(int)RectGfxInfo.DrawClr.ucRed);
+			if (isFilled == "FILL")
+			{
+				inputfile >> RectGfxInfo.FillClr.ucBlue >> RectGfxInfo.FillClr.ucGreen >> RectGfxInfo.FillClr.ucRed;
+			}
+			else
+			{
+				inputfile >> isFilled;
+			}
+			inputfile >> RectGfxInfo.BorderWdth;
+			newShape = new Rect(P1, P2, RectGfxInfo);
+			//newShape->LOAD(inputfile);
+			Addshape(newShape);
+		}
+	}
+	
 
 
 

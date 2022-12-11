@@ -15,6 +15,7 @@
 #include"operations/opChangeFill.h"
 #include"operations/opChangeBorderClr.h"
 #include"operations/opChangeBorderWidth.h"
+#include "opLoad.h"
 
 
 
@@ -75,6 +76,9 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case SAVE:
 			pOp = new opSave(this);
+			break;
+		case LOAD:
+			pOp = new opLoad(this);
 			break;
 		case PICK_COLOR:
 			pOp = new opPickColor(this);
