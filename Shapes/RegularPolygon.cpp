@@ -30,7 +30,8 @@ void RegularPolygon::SAVE(ofstream& OutFile)
 		<< (int)ShpGfxInfo.DrawClr.ucRed << " ";
 	if (ShpGfxInfo.isFilled)
 	{
-		OutFile << (int)ShpGfxInfo.FillClr.ucBlue << " "
+		OutFile << "FILL" << " "
+			<< (int)ShpGfxInfo.FillClr.ucBlue << " "
 			<< (int)ShpGfxInfo.FillClr.ucGreen << " "
 			<< (int)ShpGfxInfo.FillClr.ucRed << " ";
 	}

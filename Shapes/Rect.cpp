@@ -31,7 +31,7 @@ void Rect::SAVE(ofstream& OutFile)
 		<< (int)ShpGfxInfo.DrawClr.ucRed << " ";
 	if (ShpGfxInfo.isFilled)
 	{
-		OutFile << "FILL"
+		OutFile << "FILL" << " "
 			<< (int)ShpGfxInfo.FillClr.ucBlue << " "
 			<< (int)ShpGfxInfo.FillClr.ucGreen << " "
 			<< (int)ShpGfxInfo.FillClr.ucRed << " ";

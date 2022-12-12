@@ -33,9 +33,10 @@ void Triangle::SAVE(ofstream& OutFile)
 		<< (int)ShpGfxInfo.DrawClr.ucRed << " ";
 		if (ShpGfxInfo.isFilled)
 		{
-			OutFile << (int)ShpGfxInfo.FillClr.ucBlue << " "
-			<< (int)ShpGfxInfo.FillClr.ucGreen << " "
-			<< (int)ShpGfxInfo.FillClr.ucRed << " ";
+			OutFile << "FILL" << " "
+				<< (int)ShpGfxInfo.FillClr.ucBlue << " "
+				<< (int)ShpGfxInfo.FillClr.ucGreen << " "
+				<< (int)ShpGfxInfo.FillClr.ucRed << " ";
 		}
 		else
 		{
