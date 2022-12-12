@@ -29,9 +29,6 @@ void Line::SAVE(ofstream& OutFile)
 		<< (int)ShpGfxInfo.DrawClr.ucBlue << " "
 		<< (int)ShpGfxInfo.DrawClr.ucGreen << " "
 		<< (int)ShpGfxInfo.DrawClr.ucRed << " "
-		<< (int)ShpGfxInfo.FillClr.ucBlue << " "
-		<< (int)ShpGfxInfo.FillClr.ucGreen << " "
-		<< (int)ShpGfxInfo.FillClr.ucRed << " "
 		<< ShpGfxInfo.BorderWdth << "\n";
 
 }

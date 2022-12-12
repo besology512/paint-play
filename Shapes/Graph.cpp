@@ -106,27 +106,15 @@ void Graph::load(ifstream& inputfile)
 		inputfile >> shapeName;
 		if (shapeName == "Line")
 		{
-			string isFilled;
 			int ID;
 			int x, y, z, a, b, c;
 			bool k;
 			Point P1, P2;
 			GfxInfo LineGfxInfo;
-			inputfile >> ID >> P1.x >> P1.y >> P2.x >> P2.y >> x >> y >> z >> isFilled;
+			inputfile >> ID >> P1.x >> P1.y >> P2.x >> P2.y >> x >> y >> z ;
 			LineGfxInfo.DrawClr.ucBlue = x;
 			LineGfxInfo.DrawClr.ucGreen = y;
 			LineGfxInfo.DrawClr.ucRed = z;
-			if (isFilled == "FILL")
-			{
-				inputfile >> a >> b >> c;
-				LineGfxInfo.FillClr.ucBlue = a;
-				LineGfxInfo.FillClr.ucGreen = b;
-				LineGfxInfo.FillClr.ucRed = c;
-			}
-			else
-			{
-				LineGfxInfo.isFilled = 0;
-			}
 			inputfile >> LineGfxInfo.BorderWdth;
 			newShape = new Line(P1, P2, LineGfxInfo);
 			Addshape(newShape);
