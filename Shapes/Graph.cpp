@@ -34,6 +34,14 @@ void Graph::Addshape(shape* pShp)
 shape* Graph::getselectedshape()const {
 	return selectedShape;
 }
+////////////////////////////////////////////////////////////////////////////////////////////
+
+//check if the vector is empty for the first time
+bool Graph :: getEmptyVector()const{
+	return shapesList.empty();
+}
+///////////////////////////////////////////////////////////////////////////////////////
+
 // Remove a shape from list of shapes
 void Graph::RemoveShape(shape* pShp) {
 	shapesList.pop_back(); //this removes the last added shape

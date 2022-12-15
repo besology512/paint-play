@@ -33,6 +33,7 @@ public:
 	void UnselectAll();          // Unselect all the shapes
 	string getShapeInfo();
 	shape* getselectedshape() const;
+	bool getEmptyVector() const;
 	void setFilled(bool);
 
 	void RemoveShape(shape* pShp);
