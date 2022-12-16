@@ -22,20 +22,16 @@ void opExit::Execute() {
 	//Get a pointer to the graph
 	Graph* pGr = pControl->getGraph();
 	
-	if (pGr->getEmptyVector())
+	if (pGr->getEmptyVector())			//check if the vector shape is empty to exit directly
 		exit(0);
 	
 	else {
-		if (pGr->isSaved == false) {
+		if (pGr->isSaved == false) {			//check by flag is there were changes unsaved
 
-			pUI->PrintMessage("There is changes unsaved ...Do you want to save is?(Yes/No)");
+			pUI->PrintMessage("There are changes unsaved ...Do you want to save it?(Yes/No)");
 			while (true) {
 				string choice = pUI->GetSrting();
 
-
-				/*while (choice != "Yes" || choice != "yes" || choice != "No" || choice != "no") {
-					pUI->PrintMessage("Please enter yes / no");
-				}*/
 
 				if (choice == "Yes" || choice == "yes") {
 
