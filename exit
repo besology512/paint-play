@@ -1,0 +1,747 @@
+[33mcommit c49f67e09a3fc93eb3796f6447d4fb990c3be13e[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Khaled <s-khaled.mousa@zewailcity.edu.eg>
+Date:   Fri Dec 9 00:18:30 2022 +0200
+
+    Garbadge
+
+[33mcommit b9499a8c5553dd1022aee730f66bc22775796bda[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Khaled <s-khaled.mousa@zewailcity.edu.eg>
+Date:   Fri Dec 9 00:02:48 2022 +0200
+
+    garbade
+
+[33mcommit ff4f9f3f5ce342645ac500bb708dca509f7a8d8d[m
+Merge: 2477c9f 9df9497
+Author: Ahmed Bassam <55919957+besology512@users.noreply.github.com>
+Date:   Mon Dec 5 13:59:27 2022 +0200
+
+    Merge pull request #20 from KhaledAshraf10/main
+    
+    add save option to Square & colorpallet
+
+[33mcommit 9df94971307cd39bfdd7decd18cd6573ee25945d[m[33m ([m[1;32mfix_save[m[33m)[m
+Author: Khaled <s-khaled.mousa@zewailcity.edu.eg>
+Date:   Mon Dec 5 13:37:40 2022 +0200
+
+    add save option to Square & colorpallet
+
+[33mcommit 2477c9f705ce12738cc11f8ecee8ed3354095db8[m
+Merge: 1d66de0 14192dc
+Author: Ahmed Bassam <55919957+besology512@users.noreply.github.com>
+Date:   Sun Dec 4 23:53:32 2022 +0200
+
+    Merge pull request #19 from besology512/working
+    
+    fixing files issue in main branch and reseting to pull request (delet…
+
+[33mcommit 14192dc0d90d1f43c1a89dc88e66159d0c861550[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Sun Dec 4 23:47:38 2022 +0200
+
+    fixing files issue in main branch and reseting to pull request (delete shape)
+
+[33mcommit 1d66de036baaf5f7cc04774f2273109c0cd49f8b[m
+Author: Mohamed Elsayed <65646207+modi161@users.noreply.github.com>
+Date:   Sun Dec 4 23:32:07 2022 +0200
+
+    fixing small issue in the line file
+
+[33mcommit 810fa9cb5095f1f49be90d0d9a88c77c84686954[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Sun Dec 4 23:20:16 2022 +0200
+
+    fixed the file inclue issue: there is an error here khaled should solve
+
+[33mcommit 1d2d18e783b14270664b549a718562415d2df6a2[m
+Merge: 9c4acb4 e13efd5
+Author: Mohamed Elsayed <65646207+modi161@users.noreply.github.com>
+Date:   Sun Dec 4 21:43:16 2022 +0200
+
+    Merge pull request #18 from KhaledAshraf10/main
+    
+    Last Update Save
+
+[33mcommit e13efd5d6830cc6a98e6613820209bfcdf1f23ed[m
+Merge: a8b950e 9c4acb4
+Author: Mohamed Elsayed <65646207+modi161@users.noreply.github.com>
+Date:   Sun Dec 4 21:42:51 2022 +0200
+
+    Merge branch 'main' into main
+
+[33mcommit a8b950e8379a2a0907e9a6074f4d6f0f0e64d515[m[33m ([m[1;32mSave[m[33m)[m
+Author: Khaled <s-khaled.mousa@zewailcity.edu.eg>
+Date:   Sun Dec 4 20:39:56 2022 +0200
+
+    implement sutiable format save for each shape
+
+[33mcommit 423f66fa210f01f415d97ace52706406ee78fa26[m
+Author: Khaled <s-khaled.mousa@zewailcity.edu.eg>
+Date:   Sun Dec 4 20:39:00 2022 +0200
+
+    Edit graph to access each shape
+
+[33mcommit 4f16672dce40535b3ed1f127bd50eedc4e2a8945[m
+Author: Khaled <s-khaled.mousa@zewailcity.edu.eg>
+Date:   Sun Dec 4 20:35:36 2022 +0200
+
+    Edit in save operation to fit all shapes
+
+[33mcommit 9c4acb41bfc68e77d92f0573747f1561e22f8249[m
+Merge: 45567eb 81806da
+Author: Mohamed Elsayed <65646207+modi161@users.noreply.github.com>
+Date:   Sun Dec 4 20:13:44 2022 +0200
+
+    Merge pull request #17 from marwan-hamzawy/deleteshape
+    
+    Add Delete single shape feature complete 100%
+
+[33mcommit 81806dab03c3da474b51cafa639fab7aa6c36681[m
+Merge: 4477429 45567eb
+Author: Mohamed Elsayed <65646207+modi161@users.noreply.github.com>
+Date:   Sun Dec 4 20:13:24 2022 +0200
+
+    Merge branch 'main' into deleteshape
+
+[33mcommit 4477429af0fc9e69995c29421213efa537930172[m
+Author: Marwan Ahmed <s-marwan.mohamed@zewailcity.edu.eg>
+Date:   Sun Dec 4 20:01:26 2022 +0200
+
+    Add Delete single shape feature complete 100%
+
+[33mcommit 45567eb82ab915b5c7456181a16872f98f6f1047[m
+Merge: 18e62dd 3c5f0d4
+Author: Ahmed Bassam <55919957+besology512@users.noreply.github.com>
+Date:   Sun Dec 4 15:32:55 2022 +0200
+
+    Merge pull request #16 from marwan-hamzawy/playtoolbar
+    
+    Playtoolbar
+
+[33mcommit 3c5f0d48b8704f4a9b653216acb11a59c286c7a9[m
+Merge: d2d8261 18e62dd
+Author: Ahmed Bassam <55919957+besology512@users.noreply.github.com>
+Date:   Sun Dec 4 15:32:32 2022 +0200
+
+    Merge branch 'main' into playtoolbar
+
+[33mcommit d2d826133d4ce99b2c6035d1e0a1982ef54ebddc[m
+Author: Marwan Ahmed <s-marwan.mohamed@zewailcity.edu.eg>
+Date:   Sun Dec 4 09:04:08 2022 +0200
+
+    final modify & clear old toolbar completely
+
+[33mcommit ff145edff183a2f1bdaa346707e20f49b242a546[m
+Author: Marwan Ahmed <s-marwan.mohamed@zewailcity.edu.eg>
+Date:   Sun Dec 4 01:49:56 2022 +0200
+
+    clear the tool bar in play mode
+
+[33mcommit 18e62dd8a152a5d6c760477fd6f9b849a6ae6c6f[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Sat Dec 3 14:52:56 2022 +0200
+
+    removing unnecassary comments
+
+[33mcommit 8cb082e29c2ba0c00914f918626c479c2bdff1b2[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Sat Dec 3 14:51:12 2022 +0200
+
+    Drawing the square from polygon instead of lines (fixing issue)
+
+[33mcommit cbd0ac234e1e705d81ab018a9d06313eff007a37[m
+Author: Marwan Ahmed <s-marwan.mohamed@zewailcity.edu.eg>
+Date:   Sat Dec 3 13:27:21 2022 +0200
+
+    Make the draw mode as a startup mode
+
+[33mcommit 9183d4744911a4cb842130563d65c37d3ab476d0[m
+Merge: 106228b d723033
+Author: Mohamed Elsayed <65646207+modi161@users.noreply.github.com>
+Date:   Sat Dec 3 04:01:52 2022 +0200
+
+    Merge pull request #15 from besology512/changeBorderWidth
+    
+    Changing the general and selected border width is added
+
+[33mcommit d723033d2402c8f4a418052b3fee6056622031d1[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Sat Dec 3 04:01:16 2022 +0200
+
+    Changing the general and selected border width is added
+
+[33mcommit 106228ba0e1f38cd82dd4199a92432e143a83cff[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Sat Dec 3 03:38:03 2022 +0200
+
+    Changin the icon image for the border color
+
+[33mcommit 772a7106bf15ffdf75d36f42ed75bcbc26aaa05a[m
+Merge: 8be07ac 88f5fe0
+Author: Mohamed Elsayed <65646207+modi161@users.noreply.github.com>
+Date:   Sat Dec 3 03:31:28 2022 +0200
+
+    Merge pull request #14 from besology512/changeBorderColor
+    
+    Changing border color (general and selected shape) is added
+
+[33mcommit 88f5fe07db9adba9f1266641dcc342951ce0b011[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Sat Dec 3 03:30:47 2022 +0200
+
+    Changing border color (general and selected shape) is added
+
+[33mcommit 8be07ac976f074f244cd2ee1e6e75b315408f5bd[m
+Merge: 1f64749 9a52f19
+Author: Mohamed Elsayed <65646207+modi161@users.noreply.github.com>
+Date:   Sat Dec 3 03:04:50 2022 +0200
+
+    Merge pull request #13 from besology512/chSelected_fillColor
+    
+    Ch selected fill color
+
+[33mcommit 9a52f194427d778f0b4fb29e6905ece214ada9f7[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Sat Dec 3 02:11:00 2022 +0200
+
+    Removing unnecessary functinos and fixing that the line can never be filled
+
+[33mcommit dbe0434a17707219f1de20a82538ccff184ec931[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Sat Dec 3 02:02:59 2022 +0200
+
+    The change filling color is now working properly the issue of the square is because the way the square is created itself
+
+[33mcommit ada0cdf390d6193adf1830d4db9ffddc93e7d577[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Sat Dec 3 01:35:25 2022 +0200
+
+    now change general fill is working but there is a general problem with the square
+
+[33mcommit 6cce5d499ef36e7dff0e5341d82941e8ad44a856[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Sat Dec 3 00:36:40 2022 +0200
+
+    change fill color to selected shape
+
+[33mcommit 4a9da7207ec0e029d77b2dd09bcfd205ba81f24a[m
+Author: Marwan Ahmed <s-marwan.mohamed@zewailcity.edu.eg>
+Date:   Sat Dec 3 00:04:22 2022 +0200
+
+    Add 2 files for switch to operations...still not working
+
+[33mcommit 49bd8313fd127803aae5d555dfff813c8480d553[m
+Author: Khaled <s-khaled.mousa@zewailcity.edu.eg>
+Date:   Fri Dec 2 23:39:25 2022 +0200
+
+    Edit save function in Graph
+
+[33mcommit d8990e32e54a9b6809d8550c373f7458b13a3852[m
+Author: Khaled <s-khaled.mousa@zewailcity.edu.eg>
+Date:   Fri Dec 2 23:38:17 2022 +0200
+
+    Edit Operation of Line
+
+[33mcommit be2ee358d7a1e5051885428c989f5560971c8893[m
+Author: Khaled <s-khaled.mousa@zewailcity.edu.eg>
+Date:   Fri Dec 2 23:14:15 2022 +0200
+
+    Make save function in OpLine
+
+[33mcommit 06e1aa7e8a019df79aebeb359bd4cedb731ded4c[m
+Author: Marwan Ahmed <s-marwan.mohamed@zewailcity.edu.eg>
+Date:   Fri Dec 2 22:36:04 2022 +0200
+
+    Add create playtoolBar & switch need modify
+
+[33mcommit 6fcae14e3280d3c1ee135523b48413c07e0693c2[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Fri Dec 2 16:40:05 2022 +0200
+
+    Adding icons
+
+[33mcommit 1f64749138412eba97019f97c47cd961d775f789[m
+Merge: 912d3d5 418bca5
+Author: Mohamed Elsayed <65646207+modi161@users.noreply.github.com>
+Date:   Fri Dec 2 14:08:32 2022 +0200
+
+    Merge pull request #12 from besology512/select/unselect
+    
+    The select/unselect is now working with the square
+
+[33mcommit 418bca5a3eac213afd3bd40d446860e76701825a[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Fri Dec 2 14:07:34 2022 +0200
+
+    The select/unselect is now working with the square
+
+[33mcommit ad4560523fb81d11a63aed28cec2a2cd97b8c87f[m
+Author: Khaled <s-khaled.mousa@zewailcity.edu.eg>
+Date:   Fri Dec 2 13:13:31 2022 +0200
+
+    Put opSave class in operation folder
+
+[33mcommit f9920502a8aac151eadf3aa7dbcdd2f08ecefc62[m
+Author: Khaled <s-khaled.mousa@zewailcity.edu.eg>
+Date:   Fri Dec 2 13:11:50 2022 +0200
+
+    Put message to user that shapes saved sucessfully
+
+[33mcommit be4e3d0f5717466040b6c23f88d19772c34554fb[m
+Author: Khaled <s-khaled.mousa@zewailcity.edu.eg>
+Date:   Fri Dec 2 13:10:33 2022 +0200
+
+    edit size of image
+
+[33mcommit 7de5b36df46e8d77412ea5ac4312a50d4b104f6c[m
+Author: Khaled <s-khaled.mousa@zewailcity.edu.eg>
+Date:   Fri Dec 2 13:02:12 2022 +0200
+
+    add operation save in controler
+
+[33mcommit b9e48846f5feafc4e12907b0d2b77d463137c843[m
+Author: Khaled <s-khaled.mousa@zewailcity.edu.eg>
+Date:   Fri Dec 2 12:59:20 2022 +0200
+
+    make save operation to connect controler with Graph and GUI
+
+[33mcommit 9080e6dffbeb9d4890eb0400fef74bfff8b9656c[m
+Author: Khaled <s-khaled.mousa@zewailcity.edu.eg>
+Date:   Fri Dec 2 09:28:26 2022 +0200
+
+    insert save icon in GUI class
+
+[33mcommit 912d3d527510ad3bd04477a8e9bd83a8c8cb75db[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Fri Dec 2 07:52:33 2022 +0200
+
+    changed the menu bar into more sylish layout
+
+[33mcommit efb94b9c5f5e742d572619d45d002dc736eb5be1[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Fri Dec 2 06:40:42 2022 +0200
+
+    fixing errors after merge
+
+[33mcommit ef4a639250e5cf46d470201021ee0a16306b8cda[m
+Merge: 23ea370 930021e
+Author: Ahmed Bassam <55919957+besology512@users.noreply.github.com>
+Date:   Fri Dec 2 06:17:45 2022 +0200
+
+    Merge pull request #9 from marwan-hamzawy/addsquare
+    
+    Addsquare
+
+[33mcommit 930021e67d1624a011aa4f63c8997e97c0c0d2ab[m
+Merge: b39539d 23ea370
+Author: Ahmed Bassam <55919957+besology512@users.noreply.github.com>
+Date:   Fri Dec 2 06:15:31 2022 +0200
+
+    Merge branch 'main' into addsquare
+
+[33mcommit 23ea370410effad959f445fc2f4fdb67dffa16ce[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Fri Dec 2 05:53:13 2022 +0200
+
+    Fixing all the merging issues
+
+[33mcommit e5c3f81c70c8e869f5bc6e81a13aa4fdd2dd8225[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Fri Dec 2 05:23:08 2022 +0200
+
+    fixing some mergin errors (we still have an error)
+
+[33mcommit 561a16c567d07ea569dd3472087a544062826442[m
+Merge: fed4106 20d12f5
+Author: Mohamed Elsayed <65646207+modi161@users.noreply.github.com>
+Date:   Fri Dec 2 05:10:09 2022 +0200
+
+    Merge pull request #10 from besology512/select/unselect
+    
+    Select/unselect
+
+[33mcommit 20d12f55015308dd01426f2284643b5b17b2b515[m
+Merge: fdf21b5 fed4106
+Author: Mohamed Elsayed <65646207+modi161@users.noreply.github.com>
+Date:   Fri Dec 2 05:09:47 2022 +0200
+
+    Merge branch 'main' into select/unselect
+
+[33mcommit fdf21b539a038c383e226e648e5c225d44947900[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Fri Dec 2 05:05:59 2022 +0200
+
+    updating the staus bar with some info about the selected shapes
+
+[33mcommit f8c3a7d714b975460202dcbd3571ecc9e032c151[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Fri Dec 2 04:20:12 2022 +0200
+
+    The select and unselecet is working with the irregular polygon
+
+[33mcommit bdfd8fa7e88cc89603654fa7c15d79b5255eb2b3[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Fri Dec 2 04:13:47 2022 +0200
+
+    The select and unselecet is working with the regular polygon
+
+[33mcommit 75b45d2ec257a92a51a15f0285317b17b4da52a8[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Fri Dec 2 03:10:48 2022 +0200
+
+    The select and unselecet is working with line
+
+[33mcommit d4ab3e723508be004d9bb971f10bc7f7294e1968[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Fri Dec 2 02:39:39 2022 +0200
+
+    The select is workign with oval and Triangle
+
+[33mcommit 39d07c1001d60d2d19a4f50e6b89862078e0b07d[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Fri Dec 2 01:53:19 2022 +0200
+
+    The select/unselect is working for the circle
+
+[33mcommit c958acb42c531ba9632dfa363c9ab22d70a76548[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Fri Dec 2 01:32:11 2022 +0200
+
+    now the selece/unselect is working for the rectangle, I should make the feature work in another shapes, in addition to adding info function at each shape to appear in the status bar
+
+[33mcommit b39539d7c5bfaa4057ee171de96b485878686921[m
+Author: Marwan Ahmed <s-marwan.mohamed@zewailcity.edu.eg>
+Date:   Thu Dec 1 23:55:23 2022 +0200
+
+    Add square final final modify
+
+[33mcommit 8596024a7f847aea383f23a43abac9f4f92c5098[m
+Author: Marwan Ahmed <s-marwan.mohamed@zewailcity.edu.eg>
+Date:   Thu Dec 1 23:51:28 2022 +0200
+
+    Add Square final moifying ,issues are fixed
+
+[33mcommit fed41068be359a647eda0e199fd7a210b3268307[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Thu Dec 1 21:06:29 2022 +0200
+
+    Changed the pallet size to more stylish look
+
+[33mcommit 792e0e49c29a71210d91282873b6ab5f59730064[m
+Merge: 0328852 1c307c1
+Author: Ahmed Bassam <55919957+besology512@users.noreply.github.com>
+Date:   Thu Dec 1 20:54:14 2022 +0200
+
+    Merge pull request #8 from besology512/color_picker
+    
+    Color picker
+
+[33mcommit 1c307c19f4a70a7af75a95f475e9157915fdf58c[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Thu Dec 1 20:53:12 2022 +0200
+
+    Finished the color Pallet operation and shape
+
+[33mcommit a8611b4ffa155848acdc31ccdf4152237adf7a1b[m
+Author: Khaled <s-khaled.mousa@zewailcity.edu.eg>
+Date:   Thu Dec 1 20:26:22 2022 +0200
+
+    Make save function in Graph class
+
+[33mcommit 16f8ebde2f697a8c6c1b6376364d0f4681af6719[m
+Author: Marwan Ahmed <s-marwan.mohamed@zewailcity.edu.eg>
+Date:   Thu Dec 1 09:44:52 2022 +0200
+
+    Drawing a square with 2verticies same x
+
+[33mcommit b1c333ef22b55e06bb443b530a48b0e799fd2940[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Thu Dec 1 05:36:06 2022 +0200
+
+    I added select/unselect operation when the user click on the drawing area, I completed it's execute function. Then, I added an unselect function in the graph class. I am still want to write the GetShape function in the graph to complete the select/unselect task
+
+[33mcommit 0328852467653fbb9014bcdf72ddc14a092b2000[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Mon Nov 28 23:17:17 2022 +0200
+
+    Solving small issue with the irregular polygon (The user can select the vertices before adding the number of vertices)
+
+[33mcommit e98cb6fd85fad708620d3e8eb19efaa29b7ed80d[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Mon Nov 28 22:26:58 2022 +0200
+
+    Added color Picker Icon to menu bar
+
+[33mcommit 4ed1f187b5017a5b216643ed68361a725ccf585f[m
+Author: Marwan Ahmed <s-marwan.mohamed@zewailcity.edu.eg>
+Date:   Mon Nov 28 16:35:58 2022 +0200
+
+    first trying to fix the issue
+
+[33mcommit 2f592ce65c81abb4fc64e1e1eadbfd445d1f4630[m
+Author: Marwan Ahmed <s-marwan.mohamed@zewailcity.edu.eg>
+Date:   Mon Nov 28 15:31:13 2022 +0200
+
+    fixing problem of square by DrwaRectangle but doesn't work
+
+[33mcommit 105164a356a40e01e551139f3f33ba0815c480bf[m
+Author: Marwan Ahmed <s-marwan.mohamed@zewailcity.edu.eg>
+Date:   Mon Nov 28 12:43:02 2022 +0200
+
+    Adding square with whole files and an issue in drawing
+
+[33mcommit 16d000c4e6a23075813547a712a1573604a34b7f[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Sat Nov 26 13:24:58 2022 +0200
+
+    flush the previous input
+
+[33mcommit 2f473b4ecfdae7f6afe4c1ab1c059b3d07bc07cb[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Sat Nov 26 10:50:31 2022 +0200
+
+    fixing merge issue and then all set
+
+[33mcommit 613d6a4e50184f46922932c0b89c14b3b46774b6[m
+Merge: 6fa63f9 5692525
+Author: Ahmed Bassam <55919957+besology512@users.noreply.github.com>
+Date:   Sat Nov 26 10:45:44 2022 +0200
+
+    Merge pull request #7 from besology512/add_irr_polygon
+    
+    Merged conflicts of add irregular polygon
+
+[33mcommit 569252569a1b41e030742336d3dacbf29dd09c16[m
+Merge: dce17cb 6fa63f9
+Author: Ahmed Bassam <55919957+besology512@users.noreply.github.com>
+Date:   Sat Nov 26 10:45:02 2022 +0200
+
+    Merge branch 'main' into add_irr_polygon
+
+[33mcommit dce17cbe1797024654ca1d41080e9c3a6f2a7580[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Sat Nov 26 10:09:29 2022 +0200
+
+    fixed the error and now it's all done
+
+[33mcommit b361dd3809ba76b14f0f39d6b8a2ffb421f74e74[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Sat Nov 26 09:55:52 2022 +0200
+
+    all functions fixed of add_irr_Polygon but an erro(draws a line between first two point) is there
+
+[33mcommit 6fa63f99505ed109fc41c3f1386413141c66158c[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Sat Nov 26 02:16:27 2022 +0200
+
+    Fixing the merging issue and modifying some names in the opRegularPolygon file
+
+[33mcommit 8d0d0b3408986a0cfd378e8005310e9baf5326a2[m
+Merge: 3ea8440 689694c
+Author: Mohamed Elsayed <65646207+modi161@users.noreply.github.com>
+Date:   Sat Nov 26 01:50:45 2022 +0200
+
+    Merge pull request #6 from besology512/regular-polygen
+    
+    Adding and Drawing Regular Polygon task
+
+[33mcommit 689694c2b2cbf9b5a0ce053edbae71207ced1a15[m
+Merge: 02f89c5 3ea8440
+Author: Mohamed Elsayed <65646207+modi161@users.noreply.github.com>
+Date:   Sat Nov 26 01:50:09 2022 +0200
+
+    Merge branch 'main' into regular-polygen
+
+[33mcommit 02f89c55e51b5f78505adfb0826208c7ceb346c5[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Sat Nov 26 01:24:01 2022 +0200
+
+    Small changes in the status bar messages
+
+[33mcommit 0db5053c7ba0d37632a9700d0d32a60fce521795[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Sat Nov 26 01:18:03 2022 +0200
+
+    The previous issue is solved by changing the and to or in the while loop in the opAddRegularPolygon file
+
+[33mcommit 338f1492c512c448f5251e32004c305bfcccac37[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Sat Nov 26 01:05:28 2022 +0200
+
+    Adding and drawing the regular polygen but with small issue which is the user can write any number of vertices he is not limited with range
+
+[33mcommit 10e6beb4aa08bf02b17dd52bd0b54c520dc3351f[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Sat Nov 26 00:08:52 2022 +0200
+
+    added the opAddIrrPolygon class and changed the switch in controller (this commit has an error related to pointers)
+
+[33mcommit a8b77e068c289156c211dd049646e567a0e65a94[m
+Author: Marwan Ahmed <s-marwan.mohamed@zewailcity.edu.eg>
+Date:   Fri Nov 25 23:50:44 2022 +0200
+
+    Add Square
+
+[33mcommit 1d9352655f5ceb3c564e85a611e219b6406e50a1[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Fri Nov 25 23:16:00 2022 +0200
+
+    Added the irregular polygon function in gui and shape class
+
+[33mcommit 3ea84405f357b5daf61917359db3d29878786967[m
+Merge: add3411 068eab1
+Author: Ahmed Bassam <55919957+besology512@users.noreply.github.com>
+Date:   Fri Nov 25 22:27:40 2022 +0200
+
+    Merge pull request #5 from KhaledAshraf10/main
+    
+    Adding Line
+
+[33mcommit 068eab16e6ed6f46a47f9908d37d72e02f8791db[m[33m ([m[1;32madd_Line[m[33m)[m
+Author: Khaled <s-khaled.mousa@zewailcity.edu.eg>
+Date:   Fri Nov 25 22:07:49 2022 +0200
+
+    Adding Line
+
+[33mcommit 42da1ce76183c45c65d22ade7972231a1a7f319f[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Fri Nov 25 18:25:58 2022 +0200
+
+    added the irregular polygon icon to the menu bar
+
+[33mcommit add3411b3753efbe3c4955957248efa9641e3959[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Fri Nov 25 04:49:17 2022 +0200
+
+    Fixing small issue
+
+[33mcommit cc3a21b1a2b043001b104b27b43d4ac23a7d7676[m
+Merge: 5594b81 1cf6f6e
+Author: Mohamed Elsayed <65646207+modi161@users.noreply.github.com>
+Date:   Fri Nov 25 04:27:07 2022 +0200
+
+    Merge pull request #4 from besology512/oval
+    
+    Adding Oval and Drawing Oval tasks (2 tasks are done)
+
+[33mcommit 1cf6f6e6e3478db34d08bd5bbef48388d7431ab6[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Fri Nov 25 04:23:45 2022 +0200
+
+    Adding Oval and Drawing Oval tasks
+
+[33mcommit 5594b8160a7fad0ee3be4deebc523c6adbd868bc[m
+Merge: 5158ebf 7f9a95f
+Author: Ahmed Bassam <55919957+besology512@users.noreply.github.com>
+Date:   Thu Nov 24 22:44:54 2022 +0200
+
+    Merge pull request #3 from besology512/add_circle
+    
+    Add circle
+
+[33mcommit 7f9a95f2c20b6d4b1ed4f65a4f6b08cdf7f6f94e[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Thu Nov 24 22:42:47 2022 +0200
+
+    Finished circle (added the controller switch case and the opAddCircle class and file)
+
+[33mcommit 3a6fc696a87c9498cecf6f29d201683216e8e0e5[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Thu Nov 24 22:27:47 2022 +0200
+
+    Adding the circle in shapes and GUI function
+
+[33mcommit fd725d00ac2ef3e38fc23e4f7b754a36bf20ed53[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Thu Nov 24 22:10:15 2022 +0200
+
+    changing the naming of GfxRect to GfxTria
+
+[33mcommit 3be98d5bb33a5c58a474ae2eebff24b2e9a13288[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Thu Nov 24 22:06:51 2022 +0200
+
+    fixing the error by adding existing items to the project
+
+[33mcommit 5158ebf85d9a233974260a0fb39bb978aa093612[m
+Merge: 10b084c c10da46
+Author: Ahmed Bassam <55919957+besology512@users.noreply.github.com>
+Date:   Thu Nov 24 11:03:28 2022 +0200
+
+    Merge pull request #2 from besology512/add_triangle
+    
+    Add triangle
+
+[33mcommit c10da46bc94badbc4a454173808450c97bd53904[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Thu Nov 24 10:59:56 2022 +0200
+
+    Finishing and connecting triangle in the controller.cpp file
+
+[33mcommit 740899914c8b9e63d03ad3659682cb1a9622b49f[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Thu Nov 24 10:58:00 2022 +0200
+
+    added triangle in operations
+
+[33mcommit 4bb35cc0549ae867169bfd88ecbfa5e3d2106cdd[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Thu Nov 24 10:53:46 2022 +0200
+
+    changed name of the file because of typo
+
+[33mcommit fbc4750c89519daaacb2f466c9a25b8808f0b4e8[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Thu Nov 24 10:44:55 2022 +0200
+
+    Modified the GUI files and added triangle image and functions
+
+[33mcommit 62150d628097476751432cee3daa3aa5c128439a[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Thu Nov 24 10:43:25 2022 +0200
+
+    Added Triangle.cpp and Triangle.h files and implemented code of Triangle shape
+
+[33mcommit 10b084c0d832656cea001f0645e2afbb43e708ce[m
+Merge: ea28362 97d6848
+Author: Mohamed Elsayed <65646207+modi161@users.noreply.github.com>
+Date:   Thu Nov 24 01:43:59 2022 +0200
+
+    Merge pull request #1 from besology512/editing
+    
+    Changing the window dimensions to a smaller dimension
+
+[33mcommit 97d68483415d9b08521dee8549f24765a345bd75[m
+Author: Mohamed Elsayed <modimamado161@gmail.com>
+Date:   Thu Nov 24 01:39:44 2022 +0200
+
+    Changing the window dimensions to a smaller dimension
+
+[33mcommit ea283624234edd941dcc4e192314e6d1f757e3ae[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Wed Nov 23 20:43:17 2022 +0200
+
+    Ignored .aps file unwanted
+
+[33mcommit 4cb7a16fdf0ecc3d550fb0beb740f1880b4b767f[m[33m ([m[1;32maddLine[m[33m)[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Fri Nov 11 22:24:44 2022 +0200
+
+    ignoring all unwanted files
+
+[33mcommit ece899f0cddba2ca7843664f6227c11a79b34fe2[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Fri Nov 11 22:24:02 2022 +0200
+
+    retargeting soloution
+
+[33mcommit 74650c412f63a4505a34f7055c80e87b2c117f15[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Fri Nov 11 22:15:00 2022 +0200
+
+    Solving .rc file error
+
+[33mcommit 08ef0f5251a9bf04886d2bd0d4bb1c2f347d3c4e[m
+Author: Ahmed Bassam <ahmedbassam513@gmail.com>
+Date:   Fri Nov 11 03:03:52 2022 +0200
+
+    Ïnitial commit: all starting files

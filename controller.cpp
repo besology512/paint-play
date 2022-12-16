@@ -15,6 +15,7 @@
 #include"operations/opChangeFill.h"
 #include"operations/opChangeBorderClr.h"
 #include"operations/opChangeBorderWidth.h"
+#include "opLoad.h"
 
 
 
@@ -76,6 +77,9 @@ operation* controller::createOperation(operationType OpType)
 		case SAVE:
 			pOp = new opSave(this);
 			break;
+		case LOAD:
+			pOp = new opLoad(this);
+			break;
 		case PICK_COLOR:
 			pOp = new opPickColor(this);
 			break;
@@ -120,6 +124,7 @@ operation* controller::createOperation(operationType OpType)
 void controller::UpdateInterface() const
 {	
 	pGraph->Draw(pGUI);
+	
 }
 ////////////////////////////////////////////////////////////////////////////////////
 //Return a pointer to the UI

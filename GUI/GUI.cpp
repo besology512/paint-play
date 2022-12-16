@@ -136,6 +136,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_IRR_POLYGON: return DRAW_IRR_POLYGON;
 			case ICON_LINE: return DRAW_LINE;
 			case ICON_SAVE: return SAVE;
+			case ICON_LOAD: return LOAD;
 			case ICON_PICKER: return PICK_COLOR;
 			case ICON_FILL: return CHNG_FILL_CLR;
 			case ICON_BORDER_CLR: return CHNG_BORDER_CLR;
@@ -255,7 +256,8 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_BORDER_WIDTH] = "images\\MenuIcons\\Menu_ChangeBorderWidth.jpg";
 	MenuIconImages[ICON_SWITCH] = "images\\MenuIcons\\Menu_Switch.jpg";
 	MenuIconImages[ICON_DELETE] = "images\\MenuIcons\\Menu_Delete.jpg";
-  MenuIconImages[ICON_SAVE] = "images\\MenuIcons\\Menu_Save.jpg";
+	MenuIconImages[ICON_SAVE] = "images\\MenuIcons\\Menu_Save.jpg";
+	MenuIconImages[ICON_LOAD] = "images\\MenuIcons\\Menu_Load.jpg";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 	
 
