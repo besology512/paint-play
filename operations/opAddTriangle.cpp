@@ -39,20 +39,20 @@ void opAddTriangle::Execute()
 	pUI->ClearStatusBar();
 
 	//Preapre all rectangle parameters
-	GfxInfo RectGfxInfo;
+	GfxInfo TriangleGfxInfo;
 
 	//get drawing, filling colors and pen width from the interface
-	RectGfxInfo.DrawClr = pUI->getCrntDrawColor();
-	RectGfxInfo.FillClr = pUI->getCrntFillColor();
-	RectGfxInfo.BorderWdth = pUI->getCrntPenWidth();
+	TriangleGfxInfo.DrawClr = pUI->getCrntDrawColor();
+	TriangleGfxInfo.FillClr = pUI->getCrntFillColor();
+	TriangleGfxInfo.BorderWdth = pUI->getCrntPenWidth();
 
 
-	RectGfxInfo.isFilled = pGr->isFilled;	//default is not filled
-	RectGfxInfo.isSelected = false;	//defualt is not selected
+	TriangleGfxInfo.isFilled = pGr->isFilled;	//default is not filled
+	TriangleGfxInfo.isSelected = false;	//defualt is not selected
 
 
 	//Create a rectangle with the above parameters
-	Triangle* R = new Triangle(P1, P2,P3, RectGfxInfo);
+	Triangle* R = new Triangle(P1, P2,P3, TriangleGfxInfo);
 
 
 	//Add the rectangle to the list of shapes

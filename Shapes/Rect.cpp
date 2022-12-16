@@ -4,6 +4,7 @@ Rect::Rect(Point P1, Point P2, GfxInfo shapeGfxInfo):shape(shapeGfxInfo)
 {
 	Corner1 = P1;
 	Corner2 = P2;
+
 }
 
 Rect::~Rect()
@@ -18,15 +19,42 @@ void Rect::Draw(GUI* pUI) const
 
 void Rect::SAVE(ofstream& OutFile)
 {
-	OutFile << "Rectangle\n"
-		<< "p1 (" << Corner1.x << " , " << Corner1.y << ")\n"
-		"p2 (" << Corner2.x << " , " << Corner2.y << ")\n"
-		<< "BorderWdth : " << ShpGfxInfo.BorderWdth << "\n"
-		<< "isFilled : " << ShpGfxInfo.isFilled << "\n"
-		<< "isSelected : " << ShpGfxInfo.isSelected << "\n"
-		<< "DrawClr : (" << ShpGfxInfo.DrawClr.ucBlue << " , " << ShpGfxInfo.DrawClr.ucGreen << " , " << ShpGfxInfo.DrawClr.ucRed << ")\n"
-		<< "FillClr : (" << ShpGfxInfo.FillClr.ucBlue << " , " << ShpGfxInfo.FillClr.ucGreen << " , " << ShpGfxInfo.FillClr.ucRed << ")\n\n";//color ; // Put data into file
-
+	ID = 3;
+	OutFile << "Rect " << " "
+		<< ID << " "
+		<< Corner1.x << " "
+		<< Corner1.y << " "
+		<< Corner2.x << " "
+		<< Corner2.y << " "
+		<< (int)ShpGfxInfo.DrawClr.ucBlue << " "
+		<< (int)ShpGfxInfo.DrawClr.ucGreen << " "
+		<< (int)ShpGfxInfo.DrawClr.ucRed << " ";
+	if (ShpGfxInfo.isFilled)
+	{
+		OutFile << "FILL" << " "
+			<< (int)ShpGfxInfo.FillClr.ucBlue << " "
+			<< (int)ShpGfxInfo.FillClr.ucGreen << " "
+			<< (int)ShpGfxInfo.FillClr.ucRed << " ";
+	}
+	else
+	{
+		OutFile << "NO_FILL ";
+	}
+	OutFile << ShpGfxInfo.BorderWdth << "\n";//color ; // Put data into file
+}
+void Rect::LOAD(ifstream& Infile)
+{
+	/*Infile >> Corner1.x >> Corner1.y >> Corner2.x >> Corner2.y
+		>> ShpGfxInfo.DrawClr.ucBlue >> ShpGfxInfo.DrawClr.ucGreen >> ShpGfxInfo.DrawClr.ucRed >> isFilled;
+	if(isFilled == "FILL")
+	{
+		Infile >> ShpGfxInfo.FillClr.ucBlue >> ShpGfxInfo.FillClr.ucGreen >> ShpGfxInfo.FillClr.ucRed;
+	}
+	else
+	{
+		Infile >> isFilled;
+	}*/
+	
 }
 
 bool Rect::inShape(int x, int y) const
@@ -64,3 +92,5 @@ string Rect::shapeInfo()
 	msg = "The Rectangle Area is " + to_string(area) + " The center is at (" + to_string(center.x) + "," + to_string(center.y) + ")";
 	return msg;
 }
+
+

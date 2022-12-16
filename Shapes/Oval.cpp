@@ -18,15 +18,28 @@ void Oval::Draw(GUI* pUI) const
 
 void Oval::SAVE(ofstream& OutFile)
 {
-	OutFile << "Oval\n"
-		<< "p1 (" << Corner1.x << " , " << Corner1.y << ")\n"
-		"p2 (" << Corner2.x << " , " << Corner2.y << ")\n"
-		<< "BorderWdth : " << ShpGfxInfo.BorderWdth << "\n"
-		<< "isFilled : " << ShpGfxInfo.isFilled << "\n"
-		<< "isSelected : " << ShpGfxInfo.isSelected << "\n"
-		<< "DrawClr : (" << ShpGfxInfo.DrawClr.ucBlue << " , " << ShpGfxInfo.DrawClr.ucGreen << " , " << ShpGfxInfo.DrawClr.ucRed << ")\n"
-		<< "FillClr : (" << ShpGfxInfo.FillClr.ucBlue << " , " << ShpGfxInfo.FillClr.ucGreen << " , " << ShpGfxInfo.FillClr.ucRed << ")\n\n";//color ; // Put data into file
-
+	ID = 8;
+	OutFile << "Oval " << " "
+		<< ID << " "
+		<< Corner1.x << " "
+		<< Corner1.y << " "
+		<< Corner2.x << " "
+		<< Corner2.y << " "
+		<< (int)ShpGfxInfo.DrawClr.ucBlue << " "
+		<< (int)ShpGfxInfo.DrawClr.ucGreen << " "
+		<< (int)ShpGfxInfo.DrawClr.ucRed << " ";
+	if (ShpGfxInfo.isFilled)
+	{
+		OutFile << "FILL" << " "
+			<< (int)ShpGfxInfo.FillClr.ucBlue << " "
+			<< (int)ShpGfxInfo.FillClr.ucGreen << " "
+			<< (int)ShpGfxInfo.FillClr.ucRed << " ";
+	}
+	else
+	{
+		OutFile << "NO_FILL ";
+	}
+	OutFile << ShpGfxInfo.BorderWdth << "\n";//color ; // Put data into file
 }
 
 bool Oval::inShape(int x, int y) const
@@ -65,5 +78,9 @@ string Oval::shapeInfo()
 	int k = (Corner1.y + Corner2.y) / 2;
 	string msg = "The Oval center is at (" + to_string(h) + "," + to_string(k) + ")";
 	return  msg;
+}
+
+void Oval::LOAD(ifstream& Infile)
+{
 }
 

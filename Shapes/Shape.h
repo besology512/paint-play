@@ -41,7 +41,7 @@ public:
 	//virtual void Move() = 0;		//Move the shape
 
 	virtual void SAVE(ofstream &OutFile) = 0;	//Save the shape parameters to the file
-	//virtual void Load(ifstream &Infile) = 0;	//Load the shape parameters to the file
+	virtual void LOAD(ifstream &Infile) = 0;	//Load the shape parameters to the file
 
 	//virtual void PrintInfo(Output* pOut) = 0;	//print all shape info on the status bar
 };

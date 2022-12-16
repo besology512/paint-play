@@ -1,5 +1,14 @@
 #pragma once
 #include "Shape.h"
+
+#include"../Line.h"
+#include"../Shapes/Triangle.h"
+#include"../Shapes/Square.h"
+#include"../Shapes/Rect.h"
+#include"../Shapes/IrrPolygon.h"
+#include"../Shapes/RegularPolygon.h"
+#include"../Shapes/Circle.h"
+#include"../Shapes/Oval.h"
 #include <fstream>
 #include <vector>
 using namespace std;
