@@ -45,16 +45,22 @@ void opExit::Execute() {
 
 					outfile.close();
 
+					pGr->DeleteShapesAfterExit();
 					exit(0);
 				}
 
-				else if (choice == "No" || choice == "no")
+				else if (choice == "No" || choice == "no") {
+					
+					pGr->DeleteShapesAfterExit();
 					exit(0);
+				}
 				else
 					pUI->PrintMessage("Please enter yes / no");
 			}
 		}
-		else
+		else {
+			pGr->DeleteShapesAfterExit();
 			exit(0);
+		}
 	}
 }

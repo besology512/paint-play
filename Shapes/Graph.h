@@ -35,6 +35,7 @@ public:
 	shape* getselectedshape() const;
 	bool getEmptyVector() const;
 	void setFilled(bool);
+	void DeleteShapesAfterExit();
 
 	void RemoveShape(shape* pShp);
 	void DeleteShape(shape* pShp);			   // Delete a single shape from shape of list	

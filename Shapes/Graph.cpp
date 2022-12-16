@@ -15,7 +15,7 @@ Graph::Graph()
 }
 
 Graph::~Graph()
-{
+{	
 }
 
 //==================================================================================//
@@ -27,6 +27,8 @@ void Graph::Addshape(shape* pShp)
 {
 	//Add a new shape to the shapes vector
 	shapesList.push_back(pShp);
+
+	//delete[] pShp;
 
 }
 ////////////////////////////////////////////////////////////////////////////////////
@@ -42,9 +44,21 @@ bool Graph :: getEmptyVector()const{
 }
 ///////////////////////////////////////////////////////////////////////////////////////
 
+//Delete Shapes After delete 
+void Graph::DeleteShapesAfterExit() {
+
+	for (auto shapePointer : shapesList) {
+		delete shapePointer;
+
+	}
+}
+
 // Remove a shape from list of shapes
 void Graph::RemoveShape(shape* pShp) {
 	shapesList.pop_back(); //this removes the last added shape
+
+	delete pShp;			//delete the pointer allocated dynamically for color pallet
+
 	//next step is to make a function that removes the shape by value in Remove shape feature
 	//remove(shapesList.begin(), shapesList.end(), pShp);
 }
