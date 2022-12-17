@@ -49,7 +49,7 @@ void opStickImage::Execute()
 
 
 	//Create a Line with the above parameters
-	StickImage* I = new StickImage(P1,width, height,ImageGfxInfo);
+	StickImage* I = new StickImage(P1,300, 400,ImageGfxInfo);
 
 
 	//Add the Line to the list of shapes

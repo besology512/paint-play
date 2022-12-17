@@ -585,7 +585,7 @@ void GUI::DrawImage(Point P1, double width, double height,GfxInfo ImageInfo)
 	color DrawingClr;
 	if (ImageInfo.isSelected)	//shape is selected
 		DrawingClr = HighlightColor; //shape should be drawn highlighted
-	pWind->DrawImage("stick.JPG", P1.x, P1.y, width, height);
+	pWind->DrawImage("stick.jpg", P1.x, P1.y, width, height);
 	
 }
 
