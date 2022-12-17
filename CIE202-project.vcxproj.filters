@@ -186,15 +186,12 @@
     <ClCompile Include="operations\opChangeBorderWidth.cpp">
       <Filter>Operations</Filter>
     </ClCompile>
-    <ClCompile Include="operations\opDelete.cpp">
-      <Filter>Operations</Filter>
-    </ClCompile>
-    <ClCompile Include="operations\OpSwitch.cpp">
-      <Filter>Operations</Filter>
-    </ClCompile>
-    <ClCompile Include="opSave.cpp">
-      <Filter>Operations</Filter>
-    </ClCompile>
+    <ClCompile Include="operations\opDelete.cpp" />
+    <ClCompile Include="operations\opExit.cpp" />
+    <ClCompile Include="operations\opSave.cpp" />
+    <ClCompile Include="operations\OpSwitch.cpp" />
+    <ClCompile Include="operations\opStart.cpp" />
+    <ClCompile Include="operations\opRestart.cpp" />
     <ClCompile Include="opLoad.cpp">
       <Filter>Operations</Filter>
     </ClCompile>
@@ -347,15 +344,12 @@
     <ClInclude Include="operations\opChangeBorderWidth.h">
       <Filter>Operations</Filter>
     </ClInclude>
-    <ClInclude Include="operations\opDelete.h">
-      <Filter>Operations</Filter>
-    </ClInclude>
-    <ClInclude Include="operations\OpSwitch.h">
-      <Filter>Operations</Filter>
-    </ClInclude>
-    <ClInclude Include="opSave.h">
-      <Filter>Operations</Filter>
-    </ClInclude>
+    <ClInclude Include="operations\opDelete.h" />
+    <ClInclude Include="operations\opExit.h" />
+    <ClInclude Include="operations\opSave.h" />
+    <ClInclude Include="operations\OpSwitch.h" />
+    <ClInclude Include="operations\opStart.h" />
+    <ClInclude Include="operations\opRestart.h" />
     <ClInclude Include="opLoad.h">
       <Filter>Operations</Filter>
     </ClInclude>

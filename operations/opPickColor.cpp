@@ -45,6 +45,9 @@ void opPickColor::Execute()
 
 
 		pGr->setPickedClr(dRed, dGreen, dBlue);
+
+		//Set the save status is false
+		pGr->isSaved = false;
 	}
 	pGr->RemoveShape(R);
 

@@ -50,6 +50,8 @@ void opAddTriangle::Execute()
 	TriangleGfxInfo.isFilled = pGr->isFilled;	//default is not filled
 	TriangleGfxInfo.isSelected = false;	//defualt is not selected
 
+	//Set the save status is false
+	pGr->isSaved = false;
 
 	//Create a rectangle with the above parameters
 	Triangle* R = new Triangle(P1, P2,P3, TriangleGfxInfo);

@@ -48,6 +48,8 @@ void opAddRect::Execute()
 	//Create a rectangle with the above parameters
 	Rect *R=new Rect(P1, P2, RectGfxInfo);
 
+	//Set the save status is false
+	pGr->isSaved = false;
 
 	//Add the rectangle to the list of shapes
 	pGr->Addshape(R);

@@ -17,6 +17,9 @@ void opChangeBorderClr::Execute() {
 	if (pGr->getSelectedShape()) {
 		//change the border color of the selected shape
 		pGr->getSelectedShape()->ChngDrawClr(pGr->getPickedClr());
+
+		//Set the save status is false
+		pGr->isSaved = false;
 	}
 	else {
 		//change the general border color of the next drawings or shapes

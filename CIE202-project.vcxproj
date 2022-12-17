@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -180,11 +180,15 @@
     <ClCompile Include="operations\opChangeBorderWidth.cpp" />
     <ClCompile Include="operations\opChangeFill.cpp" />
     <ClCompile Include="operations\opDelete.cpp" />
+    <ClCompile Include="operations\opExit.cpp" />
+    <ClCompile Include="operations\opRestart.cpp" />
+    <ClCompile Include="operations\opSave.cpp" />
     <ClCompile Include="operations\opSelectUnselect.cpp" />
     <ClCompile Include="operations\opPickColor.cpp" />
+    <ClCompile Include="operations\opStart.cpp" />
     <ClCompile Include="operations\OpSwitch.cpp" />
     <ClCompile Include="opSave.cpp" />
-    <ClCompile Include="opStickImage.cpp" />
+    <ClCompile Include="opStickImage.cpp" />]
     <ClCompile Include="Shapes\Circle.cpp" />
     <ClCompile Include="Shapes\ColorPallet.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
@@ -228,6 +232,10 @@
     <ClInclude Include="operations\opChangeBorderWidth.h" />
     <ClInclude Include="operations\opChangeFill.h" />
     <ClInclude Include="operations\opDelete.h" />
+    <ClInclude Include="operations\opExit.h" />
+    <ClInclude Include="operations\opRestart.h" />
+    <ClInclude Include="operations\opSave.h" />
+    <ClInclude Include="operations\opStart.h" />
     <ClInclude Include="operations\OpSwitch.h" />
     <ClInclude Include="opSave.h" />
     <ClInclude Include="opStickImage.h" />

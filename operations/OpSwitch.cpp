@@ -17,7 +17,9 @@ void opSwitch::Execute() {
 	
 	pUI->ClearToolBar();
 
-	pUI->ClearDrawArea();
+	//pUI->ClearDrawArea();
+
+	pUI->ClearStatusBar();
 	
 	pUI->CreatePlayToolBar();
 }

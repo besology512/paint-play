@@ -1,8 +1,9 @@
 #include "opSave.h"
-#include "Shapes/Graph.h"
-#include "operations/operation.h"
-#include "GUI/GUI.h"
-#include "controller.h"
+#include"..\Shapes\Graph.h"
+#include"..\operations\operation.h"
+#include"..\GUI\GUI.h"
+#include"..\controller.h"
+
 
 
 opSave::opSave(controller* pCont): operation(pCont)
@@ -21,6 +22,7 @@ void opSave::Execute()
 	pUI->PrintMessage("Enter File Name");
 
 	string fileName = pUI->GetSrting();
+
 
 	outfile.open( fileName + ".txt"); // open file and store it in folder in working directory 
 

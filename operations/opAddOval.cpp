@@ -44,6 +44,8 @@ void opAddOval::Execute()
 	OvalGfxInfo.isFilled = pGr->isFilled;	//default is not filled
 	OvalGfxInfo.isSelected = false;	//defualt is not selected
 
+	//Set the save status is false
+	pGr->isSaved = false;
 
 	//Create a oval with the above parameters
 	Oval* O = new Oval(P1, P2, OvalGfxInfo);
