@@ -31,7 +31,7 @@ void opStickImage::Execute()
 	pUI->PrintMessage("Click at the top left of selected shape");
 
 	pUI->GetPointClicked(P1.x, P1.y);
-
+	
 	
 	pUI->ClearStatusBar();
 

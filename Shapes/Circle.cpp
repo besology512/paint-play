@@ -52,7 +52,7 @@ void Circle::LOAD(ifstream& Infile)
 
 double Circle::getWidth()
 {
-	double width = sqrt(pow(Center.x - PointOnCircle.x, 2) + pow(Center.y - PointOnCircle.y, 2));;
+	double width = sqrt(pow(Center.x - PointOnCircle.x, 2) + pow(Center.y - PointOnCircle.y, 2));
 	return width;
 	
 }
