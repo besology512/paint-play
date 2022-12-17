@@ -15,7 +15,7 @@
 #include"operations/opChangeFill.h"
 #include"operations/opChangeBorderClr.h"
 #include"operations/opChangeBorderWidth.h"
-#include "opLoad.h"
+#include ".//operations/opLoad.h"
 #include "opStickImage.h"
 #include"operations/opExit.h"
 #include"operations/opRestart.h"
