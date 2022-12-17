@@ -73,3 +73,14 @@ string IrrPolygon::shapeInfo()
 void IrrPolygon::LOAD(ifstream& Infile)
 {
 }
+
+double IrrPolygon::getWidth()
+{
+	return 0.0;
+}
+
+double IrrPolygon::getHeight()
+{
+	return 0.0;
+}
+

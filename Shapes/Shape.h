@@ -27,6 +27,8 @@ public:
 	void ChngFillClr(color Fclr);	//changes the shape's filling color
 	void setIsfilled(bool);
 	void ChngBorderWidth(int);
+	virtual double getWidth() = 0;
+	virtual double getHeight() = 0;
 
 
 

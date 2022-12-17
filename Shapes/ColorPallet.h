@@ -13,4 +13,6 @@ public:
 	virtual string shapeInfo();					// give some info about the shape
 	void SAVE(ofstream& OutFile);
 	void LOAD(ifstream& Infile);
+	double getWidth();
+	double getHeight();
 };

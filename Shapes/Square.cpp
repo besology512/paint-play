@@ -86,3 +86,16 @@ string Square::shapeInfo()
 	msg = "The Square Area is " + to_string(area) + " The center is at (" + to_string(center.x) + "," + to_string(center.y) + ")";
 	return msg;
 }
+
+double Square::getWidth()
+{
+	double width = sqrt((pow(corner1.x - corner2.x, 2)) + pow(corner1.y - corner2.y, 2))-10;
+	return width;
+}
+
+double Square::getHeight()
+{
+	double height = sqrt((pow(corner1.x - corner2.x, 2)) + pow(corner1.y - corner2.y, 2))-10;
+	return height;
+}
+

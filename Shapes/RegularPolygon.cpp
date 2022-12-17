@@ -86,3 +86,18 @@ string RegularPolygon::shapeInfo()
 void RegularPolygon::LOAD(ifstream& Infile)
 {
 }
+
+double RegularPolygon::getWidth()
+{
+	// [l2n]/[4tan(180/n)]
+	double area = (pow(radius, 2) * numOfVertices) / (4 * (tan(3.1415926 / numOfVertices)));
+	double width = sqrt(area)-30;
+	return width;
+}
+
+double RegularPolygon::getHeight()
+{
+	double area = (pow(radius, 2) * numOfVertices) / (4 * (tan(3.1415926 / numOfVertices)));
+	double height = sqrt(area)-50;
+	return height;
+}

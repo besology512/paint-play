@@ -63,3 +63,14 @@ string Line::shapeInfo()
 void Line::LOAD(ifstream& Infile)
 {
 }
+
+double Line::getWidth()
+{
+	return 0.0;
+}
+
+double Line::getHeight()
+{
+	return 0.0;
+}
+

@@ -187,6 +187,8 @@
     <ClCompile Include="operations\opPickColor.cpp" />
     <ClCompile Include="operations\opStart.cpp" />
     <ClCompile Include="operations\OpSwitch.cpp" />
+    <ClCompile Include="opSave.cpp" />
+    <ClCompile Include="opStickImage.cpp" />]
     <ClCompile Include="Shapes\Circle.cpp" />
     <ClCompile Include="Shapes\ColorPallet.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
@@ -198,6 +200,7 @@
     <ClCompile Include="Shapes\Source.cpp" />
     <ClCompile Include="Shapes\Square.cpp" />
     <ClCompile Include="Shapes\Triangle.cpp" />
+    <ClCompile Include="StickImage.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h" />
@@ -234,6 +237,8 @@
     <ClInclude Include="operations\opSave.h" />
     <ClInclude Include="operations\opStart.h" />
     <ClInclude Include="operations\OpSwitch.h" />
+    <ClInclude Include="opSave.h" />
+    <ClInclude Include="opStickImage.h" />
     <ClInclude Include="Shapes\Square.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="opAddLine.h" />
@@ -256,6 +261,7 @@
     <ClInclude Include="Shapes\Shape.h" />
     <ClInclude Include="Shapes\Rect.h" />
     <ClInclude Include="Shapes\Triangle.h" />
+    <ClInclude Include="StickImage.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="CIE202-project.rc" />

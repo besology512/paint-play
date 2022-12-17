@@ -1,19 +1,17 @@
 #pragma once
-
-#include "../Shapes/Shape.h"
+#include "Shapes/Shape.h"
 #include <fstream>
-
-
-class RegularPolygon : public shape
+class StickImage : public shape
 {
 private:
-	Point center;
-	double numOfVertices;
-	double radius;
+	image picture;
+	Point point1;
+	double width,height;
+
 
 public:
-	RegularPolygon(Point, double, double, GfxInfo shapeGfxInfo);
-	virtual ~RegularPolygon();
+	StickImage(Point p1, double Width, double Height, GfxInfo shapeGfxInfo);
+	virtual ~StickImage();
 	virtual void Draw(GUI* pUI) const;
 	void SAVE(ofstream& OutFile);
 	virtual bool inShape(int, int) const;		 //check whether a point in the shape or not
@@ -22,3 +20,4 @@ public:
 	double getWidth();
 	double getHeight();
 };
+

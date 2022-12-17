@@ -77,3 +77,21 @@ string Triangle::shapeInfo()
 void Triangle::LOAD(ifstream& Infile)
 {
 }
+
+double Triangle::getWidth()
+{
+
+	double midpoint = sqrt(pow(Corner1.x - Corner2.x, 2) + pow(Corner1.y - Corner2.y, 2))/2; // get half distance of side
+	double width = midpoint * sqrt(3) / 2; // get side length of inscribed square 
+
+	return width;
+}
+
+double Triangle::getHeight()
+{
+	double midpoint = sqrt(pow(Corner1.x - Corner2.x, 2) + pow(Corner1.y - Corner2.y, 2)) / 2; // get half distance of side
+	double height = midpoint * sqrt(3) / 2; // get side length of inscribed square 
+	return height;
+
+}
+

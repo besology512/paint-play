@@ -138,12 +138,13 @@ operationType GUI::GetUseroperation() const
 			case ICON_LINE: return DRAW_LINE;
 			case ICON_SAVE: return SAVE;
 			case ICON_LOAD: return LOAD;
+			case ICON_STICKIMAGE: return STICK_IMAGE;
 			case ICON_PICKER: return PICK_COLOR;
 			case ICON_FILL: return CHNG_FILL_CLR;
 			case ICON_BORDER_CLR: return CHNG_BORDER_CLR;
 			case ICON_BORDER_WIDTH: return CHNG_BORDER_WIDTH;
-      case ICON_DELETE: return DEL;
-      case ICON_SWITCH: return SWITCH;
+			case ICON_DELETE: return DEL;
+			case ICON_SWITCH: return SWITCH;
 			case ICON_EXIT: return EXIT;
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
@@ -260,6 +261,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_DELETE] = "images\\MenuIcons\\Menu_Delete.jpg";
 	MenuIconImages[ICON_SAVE] = "images\\MenuIcons\\Menu_Save.jpg";
 	MenuIconImages[ICON_LOAD] = "images\\MenuIcons\\Menu_Load.jpg";
+	MenuIconImages[ICON_STICKIMAGE] = "images\\MenuIcons\\Menu_StickImage.jpg";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 	
 
@@ -549,6 +551,8 @@ void GUI::DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const
 
   pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
   }
+
+
   
 void GUI::DrawIrrPolygon(vector<Point> allPoints, int verticies, GfxInfo IrrPolGfxInfo) const
 {
@@ -578,6 +582,14 @@ void GUI::DrawIrrPolygon(vector<Point> allPoints, int verticies, GfxInfo IrrPolG
 	int *yPoints = &yPointsV[0];
 	pWind->DrawPolygon(xPoints, yPoints, verticies, style);
 
+}
+void GUI::DrawImage(Point P1, double width, double height,GfxInfo ImageInfo)
+{
+	color DrawingClr;
+	if (ImageInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	pWind->DrawImage("stick.jpg", P1.x, P1.y, width, height);
+	
 }
 
 GUI::~GUI()

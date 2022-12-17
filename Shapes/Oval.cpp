@@ -85,3 +85,21 @@ void Oval::LOAD(ifstream& Infile)
 {
 }
 
+double Oval::getWidth()
+{
+	Point Corner3;
+	Corner3.x = (Corner1.x + Corner2.x) / 2;
+	Corner3.y = (Corner1.y + Corner2.y) / 2;
+	double width = sqrt(pow(Corner3.x - Corner1.x, 2) + pow(Corner3.y - Corner1.y, 2)) - 10;
+	return width;
+}
+
+double Oval::getHeight()
+{
+	Point Corner3;
+	Corner3.x = Corner2.x;
+	Corner3.y = Corner1.y;
+	double height = sqrt(pow(Corner3.x - Corner2.x, 2) + pow(Corner3.y - Corner2.y, 2)) - 30;
+	return height;
+}
+

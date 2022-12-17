@@ -118,7 +118,6 @@ void Graph::Save(ofstream& outfile)
 }
 void Graph::load(ifstream& inputfile)
 {
-	string s;
 	int size;
 	string shapeName;
 	shape* newShape;
