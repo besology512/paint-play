@@ -66,6 +66,8 @@ void opAddIrrPolygon::Execute()
 	IrrPolGfxInfo.isFilled = pGr->isFilled;	//default is not filled
 	IrrPolGfxInfo.isSelected = false;	//defualt is not selected
 
+	//Set the save status is false
+	pGr->isSaved = false;
 
 	//Create a Polygon with the above parameters
 	IrrPolygon* R = new IrrPolygon(allPoints,verticies, IrrPolGfxInfo);

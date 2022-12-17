@@ -28,6 +28,9 @@ void opChangeBorderWidth::Execute() {
 		
 		pUI->ClearStatusBar();
 		pGr->getSelectedShape()->ChngBorderWidth(int(w) - 48);
+
+		//Set the save status is false
+		pGr->isSaved = false;
 	}
 	else {
 		//change the general border width of the next drawings or shapes

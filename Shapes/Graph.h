@@ -35,13 +35,16 @@ public:
 	bool isFilled = false;
 	Graph();
 	~Graph();
+	bool isSaved = false;		//boolean to check save & unsave shapes
 	void Addshape(shape* pFig); //Adds a new shape to the shapesList
 	shape* getSelectedShape() const;
 	void Draw(GUI* pUI) const;			//Draw the graph (draw all shapes)
 	void UnselectAll();          // Unselect all the shapes
 	string getShapeInfo();
 	shape* getselectedshape() const;
+	bool getEmptyVector() const;
 	void setFilled(bool);
+	void DeleteShapesAfterExit();
 
 	void RemoveShape(shape* pShp);
 	void DeleteShape(shape* pShp);			   // Delete a single shape from shape of list	

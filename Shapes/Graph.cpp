@@ -11,7 +11,7 @@ Graph::Graph()
 }
 
 Graph::~Graph()
-{
+{	
 }
 
 //==================================================================================//
@@ -24,15 +24,37 @@ void Graph::Addshape(shape* pShp)
 	//Add a new shape to the shapes vector
 	shapesList.push_back(pShp);
 
+	//delete[] pShp;
+
 }
 ////////////////////////////////////////////////////////////////////////////////////
 // get slected shape
 shape* Graph::getselectedshape()const {
 	return selectedShape;
 }
+////////////////////////////////////////////////////////////////////////////////////////////
+
+//check if the vector is empty for the first time
+bool Graph :: getEmptyVector()const{
+	return shapesList.empty();
+}
+///////////////////////////////////////////////////////////////////////////////////////
+
+//Delete Shapes After delete 
+void Graph::DeleteShapesAfterExit() {
+
+	for (auto shapePointer : shapesList) {
+		delete shapePointer;
+
+	}
+}
+
 // Remove a shape from list of shapes
 void Graph::RemoveShape(shape* pShp) {
 	shapesList.pop_back(); //this removes the last added shape
+
+	delete pShp;			//delete the pointer allocated dynamically for color pallet
+
 	//next step is to make a function that removes the shape by value in Remove shape feature
 	//remove(shapesList.begin(), shapesList.end(), pShp);
 }
@@ -91,6 +113,7 @@ void Graph::Save(ofstream& outfile)
 		
 
 		shapesList->SAVE(outfile);
+		isSaved = true;
 	}
 }
 void Graph::load(ifstream& inputfile)

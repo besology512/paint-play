@@ -47,6 +47,8 @@ void opAddCircle::Execute()
 	CirclGfxInfo.isFilled = pGr->isFilled;	//default is not filled
 	CirclGfxInfo.isSelected = false;	//defualt is not selected
 
+	//Set the save status is false
+	pGr->isSaved = false;
 
 	//Create a Circle with the above parameters
 	Circle* R = new Circle(P1, P2, CirclGfxInfo);

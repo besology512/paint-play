@@ -59,6 +59,7 @@ GUI::GUI()
 
 		CreatePlayToolBar();
 		CreateStatusBar();
+		
 	}
 	
 }
@@ -176,6 +177,7 @@ operationType GUI::GetUseroperation() const
 			
 			case ICON_START: return START;
 			case ICON_RESTART: return RESTART;
+			case ICON_EXIT_PLAYMODE: return EXIT;
 			
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
@@ -281,6 +283,7 @@ void GUI::CreatePlayToolBar()
 	string MenuIconImages[PLAY_ICON_COUNT];
 	MenuIconImages[ICON_START] = "images\\MenuIcons\\Menu_Start.jpg";
 	MenuIconImages[ICON_RESTART] = "images\\MenuIcons\\Menu_Restart.jpg";
+	MenuIconImages[ICON_EXIT_PLAYMODE] = "images\\MenuIcons\\Menu_Exit.jpg";
 	/// TODO: write code to create Play mode menu
 
 	for (int i = 0; i < PLAY_ICON_COUNT; i++)

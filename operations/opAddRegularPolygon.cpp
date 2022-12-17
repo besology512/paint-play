@@ -70,6 +70,8 @@ void opAddRegularPolygon::Execute()
 	RegularPolygonGfxInfo.isFilled = pGr->isFilled;	//default is not filled
 	RegularPolygonGfxInfo.isSelected = false;	//defualt is not selected
 
+	//Set the save status is false
+	pGr->isSaved = false;
 
 	//Create a regular polygon with the above parameters
 	RegularPolygon* RP = new RegularPolygon(center, int((int(numOfVertices) - 48)), int((int(radius) - 48)) * 15, RegularPolygonGfxInfo); //Multiplied the radius to make it bigger

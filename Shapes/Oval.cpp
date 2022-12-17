@@ -1,4 +1,5 @@
 #include "Oval.h"
+#include"..\operations\opAddOval.h"
 
 Oval::Oval(Point P1, Point P2, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 {

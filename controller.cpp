@@ -8,7 +8,7 @@
 #include"operations/opAddRegularPolygon.h"
 #include"operations/opSelectUnselect.h"
 #include "opAddLine.h"
-#include "opSave.h"
+#include "operations/opSave.h"
 #include "operations/opPickColor.h"
 #include"operations/OpSwitch.h"
 #include"operations/opDelete.h"
@@ -16,6 +16,9 @@
 #include"operations/opChangeBorderClr.h"
 #include"operations/opChangeBorderWidth.h"
 #include "opLoad.h"
+#include"operations/opExit.h"
+#include"operations/opRestart.h"
+#include"operations/opstart.h"
 
 
 
@@ -98,9 +101,15 @@ operation* controller::createOperation(operationType OpType)
 		case CHNG_BORDER_WIDTH:
 			pOp = new opChangeBorderWidth(this);
 			break;
+		case START:
+			pOp = new opStart(this);
+			break;
+		case RESTART:
+			pOp = new opRestart(this);
+			break;
       
 		case EXIT:
-			///create Exitoperation here
+			pOp = new opExit(this);										///create Exitoperation here
 			
 			break;
 
@@ -114,6 +123,7 @@ operation* controller::createOperation(operationType OpType)
 	}
 
 	return pOp;
+	delete pOp;
 	
 }
 //==================================================================================//
@@ -167,8 +177,8 @@ void controller::Run()
 		if (pOpr)
 		{
 			pOpr->Execute();//Execute
-			delete pOpr;	//operation is not needed any more ==> delete it
-			pOpr = nullptr;
+			//delete pOpr;	//operation is not needed any more ==> delete it
+			//pOpr = nullptr;
 		}
 
 		//Update the interface

@@ -46,9 +46,7 @@ void Square::SAVE(ofstream& OutFile)
 	OutFile << ShpGfxInfo.BorderWdth << "\n";//color ; // Put data into file
 }
 
-void Square::LOAD(ifstream& Infile)
-{
-}
+void Square::LOAD(ifstream& Infile){}
 
 bool Square::inShape(int x, int y) const 
 {

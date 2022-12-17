@@ -21,6 +21,7 @@ struct GfxInfo // Graphical info common for all shapes (you may add more members
 	bool isFilled;	 // shape Filled or not
 	int BorderWdth;	 // Width of shape borders
 	bool isSelected; // true if the shape is selected.
+	//bool isSaved = false;
 };
 
 
@@ -69,7 +70,7 @@ class GUI
 		ICON_START,
 		ICON_RESTART,
 		// TODO: Add more icons names here
-		//ICON_EXIT,
+		ICON_EXIT_PLAYMODE,
 		
 
 		PLAY_ICON_COUNT // no. of menu icons ==> This should be the last line in this enum
