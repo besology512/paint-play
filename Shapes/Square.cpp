@@ -91,13 +91,13 @@ string Square::shapeInfo()
 
 double Square::getWidth()
 {
-	double width = sqrt((pow(corner1.x - corner2.x, 2)) + pow(corner1.y - corner2.y, 2));
+	double width = sqrt((pow(corner1.x - corner2.x, 2)) + pow(corner1.y - corner2.y, 2))-10;
 	return width;
 }
 
 double Square::getHeight()
 {
-	double height = sqrt((pow(corner1.x - corner2.x, 2)) + pow(corner1.y - corner2.y, 2));
+	double height = sqrt((pow(corner1.x - corner2.x, 2)) + pow(corner1.y - corner2.y, 2))-10;
 	return height;
 }
 
