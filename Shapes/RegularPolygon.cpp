@@ -86,3 +86,13 @@ string RegularPolygon::shapeInfo()
 void RegularPolygon::LOAD(ifstream& Infile)
 {
 }
+
+double RegularPolygon::getWidth()
+{
+	return 0.0;
+}
+
+double RegularPolygon::getHeight()
+{
+	return 0.0;
+}

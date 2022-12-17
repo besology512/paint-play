@@ -16,7 +16,7 @@
 #include"operations/opChangeBorderClr.h"
 #include"operations/opChangeBorderWidth.h"
 #include "opLoad.h"
-
+#include "opStickImage.h"
 
 
 
@@ -98,7 +98,10 @@ operation* controller::createOperation(operationType OpType)
 		case CHNG_BORDER_WIDTH:
 			pOp = new opChangeBorderWidth(this);
 			break;
-      
+		case STICK_IMAGE:
+			pOp = new opStickImage(this);
+			break;
+
 		case EXIT:
 			///create Exitoperation here
 			

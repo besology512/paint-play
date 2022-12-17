@@ -84,3 +84,13 @@ void Oval::LOAD(ifstream& Infile)
 {
 }
 
+double Oval::getWidth()
+{
+	return 0.0;
+}
+
+double Oval::getHeight()
+{
+	return 0.0;
+}
+

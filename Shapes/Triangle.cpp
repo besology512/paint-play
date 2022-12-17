@@ -77,3 +77,14 @@ string Triangle::shapeInfo()
 void Triangle::LOAD(ifstream& Infile)
 {
 }
+
+double Triangle::getWidth()
+{
+	return 0.0;
+}
+
+double Triangle::getHeight()
+{
+	return 0.0;
+}
+

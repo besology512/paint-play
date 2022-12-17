@@ -18,5 +18,6 @@ public:
 	double getArea(int,int,int,int,int,int) const;						// Get the area of the triagnle 
 	virtual string shapeInfo();					// give some info about the shape
 	void LOAD(ifstream& Infile);
-
+	double getWidth();
+	double getHeight();
 };

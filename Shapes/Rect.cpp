@@ -93,4 +93,15 @@ string Rect::shapeInfo()
 	return msg;
 }
 
+double Rect::getWidth()
+{
+	return 0.0;
+}
+
+double Rect::getHeight()
+{
+	return 0.0;
+}
+
+
 

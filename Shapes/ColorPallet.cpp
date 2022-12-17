@@ -26,3 +26,13 @@ void ColorPallet::SAVE(ofstream& OutFile)
 void ColorPallet::LOAD(ifstream& Infile)
 {
 }
+double ColorPallet::getWidth()
+{
+	return 0.0;
+}
+
+double ColorPallet::getHeight()
+{
+	return 0.0;
+}
+

@@ -50,6 +50,19 @@ void Circle::LOAD(ifstream& Infile)
 
 }
 
+double Circle::getWidth()
+{
+	double width = Center.x - PointOnCircle.x;
+	return width;
+	
+}
+
+double Circle::getHeight()
+{
+	double height = Center.y - PointOnCircle.y;
+	return height;
+}
+
 
 
 

@@ -19,4 +19,6 @@ public:
 	double getTriangleArea(int,int,int,int,int,int) const;
 	void SAVE(ofstream& OutFile);
 	void LOAD(ifstream& Infile);
+	double getWidth();
+	double getHeight();
 };

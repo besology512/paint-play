@@ -17,5 +17,7 @@ public:
 	virtual bool inShape(int, int) const;
 	virtual string shapeInfo();					// give some info about the shape
 	void LOAD(ifstream& Infile);
+	double getWidth();
+	double getHeight();
 
 };
