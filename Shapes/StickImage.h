@@ -1,5 +1,5 @@
 #pragma once
-#include "Shapes/Shape.h"
+#include "../Shapes/Shape.h"
 #include <fstream>
 class StickImage : public shape
 {

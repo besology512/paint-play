@@ -170,7 +170,6 @@
     <ClCompile Include="opAddLine.cpp" />
     <ClCompile Include="operations\opAddCircle.cpp" />
     <ClCompile Include="operations\opAddIrrPolygon.cpp" />
-    <ClCompile Include="operations\opAddLine.cpp" />
     <ClCompile Include="operations\opAddOval.cpp" />
     <ClCompile Include="operations\opAddRect.cpp" />
     <ClCompile Include="operations\opAddSquare.cpp" />
@@ -179,28 +178,18 @@
     <ClCompile Include="operations\opChangeBorderClr.cpp" />
     <ClCompile Include="operations\opChangeBorderWidth.cpp" />
     <ClCompile Include="operations\opChangeFill.cpp" />
-    <ClCompile Include="operations\opDelete.cpp" />
-    <ClCompile Include="operations\opExit.cpp" />
-    <ClCompile Include="operations\opLoad.cpp" />
-    <ClCompile Include="operations\opRestart.cpp" />
-    <ClCompile Include="operations\opSave.cpp" />
     <ClCompile Include="operations\opSelectUnselect.cpp" />
     <ClCompile Include="operations\opPickColor.cpp" />
-    <ClCompile Include="operations\opStart.cpp" />
-    <ClCompile Include="operations\opStickImage.cpp" />
-    <ClCompile Include="operations\OpSwitch.cpp" />
     <ClCompile Include="Shapes\Circle.cpp" />
     <ClCompile Include="Shapes\ColorPallet.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
     <ClCompile Include="Shapes\IrrPolygon.cpp" />
-    <ClCompile Include="Shapes\Line.cpp" />
     <ClCompile Include="Shapes\Oval.cpp" />
     <ClCompile Include="Shapes\RegularPolygon.cpp" />
     <ClCompile Include="Shapes\Shape.cpp" />
     <ClCompile Include="Shapes\Rect.cpp" />
     <ClCompile Include="Shapes\Source.cpp" />
     <ClCompile Include="Shapes\Square.cpp" />
-    <ClCompile Include="Shapes\StickImage.cpp" />
     <ClCompile Include="Shapes\Triangle.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -227,20 +216,10 @@
     <ClInclude Include="GUI\GUI.h" />
     <ClInclude Include="controller.h" />
     <ClInclude Include="DEFS.h" />
-    <ClInclude Include="operations\opAddLine.h" />
     <ClInclude Include="operations\opAddSquare.h" />
     <ClInclude Include="operations\opChangeBorderClr.h" />
     <ClInclude Include="operations\opChangeBorderWidth.h" />
     <ClInclude Include="operations\opChangeFill.h" />
-    <ClInclude Include="operations\opDelete.h" />
-    <ClInclude Include="operations\opExit.h" />
-    <ClInclude Include="operations\opLoad.h" />
-    <ClInclude Include="operations\opRestart.h" />
-    <ClInclude Include="operations\opSave.h" />
-    <ClInclude Include="operations\opStart.h" />
-    <ClInclude Include="operations\opStickImage.h" />
-    <ClInclude Include="operations\OpSwitch.h" />
-    <ClInclude Include="Shapes\Line.h" />
     <ClInclude Include="Shapes\Square.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="opAddLine.h" />
@@ -262,7 +241,6 @@
     <ClInclude Include="Shapes\RegularPolygon.h" />
     <ClInclude Include="Shapes\Shape.h" />
     <ClInclude Include="Shapes\Rect.h" />
-    <ClInclude Include="Shapes\StickImage.h" />
     <ClInclude Include="Shapes\Triangle.h" />
   </ItemGroup>
   <ItemGroup>
@@ -270,7 +248,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
-    <None Include="operations\CIE202-project.vcxproj" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

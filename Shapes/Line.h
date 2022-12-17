@@ -1,6 +1,6 @@
 #pragma once
 
-#include ".//Shapes/Shape.h"
+#include "../Shapes/Shape.h"
 #include <fstream>
 
 class Line : public shape 
