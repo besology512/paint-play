@@ -113,6 +113,11 @@ double Rect::getHeight()
 	return height;
 }
 
+Point Rect::getUpperLeftPoint()
+{
+	return Point();
+}
+
 
 
 

@@ -21,6 +21,7 @@ class Line : public shape
 		void LOAD(ifstream& Infile);
 		double getWidth();
 		double getHeight();
+		Point getUpperLeftPoint();
 
 
 };

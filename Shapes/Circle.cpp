@@ -63,6 +63,13 @@ double Circle::getHeight()
 	return height;
 }
 
+Point Circle::getUpperLeftPoint()
+{
+	return Point();
+}
+
+
+
 
 
 

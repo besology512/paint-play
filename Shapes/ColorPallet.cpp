@@ -36,3 +36,10 @@ double ColorPallet::getHeight()
 	return 0.0;
 }
 
+Point ColorPallet::getUpperLeftPoint()
+{
+	return Point();
+}
+
+
+

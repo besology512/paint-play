@@ -48,3 +48,8 @@ double StickImage::getHeight()
 {
 	return 0.0;
 }
+
+Point StickImage::getUpperLeftPoint()
+{
+	return Point();
+}

@@ -84,3 +84,8 @@ double IrrPolygon::getHeight()
 	return 0.0;
 }
 
+Point IrrPolygon::getUpperLeftPoint()
+{
+	return Point();
+}
+

@@ -95,3 +95,8 @@ double Triangle::getHeight()
 
 }
 
+Point Triangle::getUpperLeftPoint()
+{
+	return Point();
+}
+

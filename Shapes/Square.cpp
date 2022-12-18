@@ -99,3 +99,8 @@ double Square::getHeight()
 	return height;
 }
 
+Point Square::getUpperLeftPoint()
+{
+	return Point();
+}
+

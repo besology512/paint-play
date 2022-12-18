@@ -74,3 +74,8 @@ double Line::getHeight()
 	return 0.0;
 }
 
+Point Line::getUpperLeftPoint()
+{
+	return Point();
+}
+

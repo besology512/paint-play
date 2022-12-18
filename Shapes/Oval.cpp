@@ -103,3 +103,8 @@ double Oval::getHeight()
 	return height;
 }
 
+Point Oval::getUpperLeftPoint()
+{
+	return Point();
+}
+

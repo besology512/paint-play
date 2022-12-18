@@ -29,6 +29,7 @@ public:
 	void ChngBorderWidth(int);
 	virtual double getWidth() = 0;
 	virtual double getHeight() = 0;
+	virtual Point getUpperLeftPoint() = 0;
 
 
 
