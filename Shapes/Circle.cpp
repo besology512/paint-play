@@ -65,13 +65,12 @@ double Circle::getHeight()
 
 Point Circle::getUpperLeftPoint()
 {
-	return Point();
+	double radius = sqrt(pow(Center.x - PointOnCircle.x, 2) + pow(Center.y - PointOnCircle.y, 2));
+	Point upperLeftPoint;
+	upperLeftPoint.x = (Center.x - (sqrt(2) / 2) * radius) + 5;
+	upperLeftPoint.y = (Center.y - (sqrt(2) / 2) * radius) ;
+	return upperLeftPoint;
 }
-
-
-
-
-
 
 bool Circle::inShape(int x, int y) const
 {
