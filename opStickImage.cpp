@@ -28,9 +28,9 @@ void opStickImage::Execute()
 		double width = pGr->getSelectedShape()->getWidth();
 		double height = pGr->getSelectedShape()->getHeight();
 
-		pUI->PrintMessage("Click at the top left of selected shape");
+		//pUI->PrintMessage("Click at the top left of selected shape");
 
-		pUI->GetPointClicked(P1.x, P1.y);
+		Point P1 = pGr->getSelectedShape()->getUpperLeftPoint();
 
 
 		pUI->ClearStatusBar();

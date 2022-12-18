@@ -115,7 +115,16 @@ double Rect::getHeight()
 
 Point Rect::getUpperLeftPoint()
 {
-	return Point();
+	Point upperLeftPoint;
+
+	//center.x = sqrt(pow(Corner1.x - Corner2.x, 2)) / 2;
+	//center.y = sqrt(pow(Corner1.y - Corner2.y, 2)) / 2;
+	//upperLeftPoint.x = 
+	//upperLeftPoint.y = center.y * 2;
+	upperLeftPoint.x = Corner1.x + 5;
+	upperLeftPoint.y = Corner1.y + 5;
+
+	return upperLeftPoint;
 }
 
 
