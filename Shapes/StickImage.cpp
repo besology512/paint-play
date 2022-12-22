@@ -1,4 +1,4 @@
-#include "StickImage.h"
+#include "../Shapes/StickImage.h"
 
 
 StickImage::StickImage(Point p1, double Width, double Height, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)

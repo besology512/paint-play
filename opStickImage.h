@@ -2,7 +2,7 @@
 #include "operations/operation.h"
 #include "controller.h"
 #include "GUI/GUI.h"
-#include "StickImage.h"
+#include ".//Shapes/StickImage.h"
 
 class opStickImage : public operation
 {
