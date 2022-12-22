@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-#include "../opAddLine.h"
+#include "..//operations/opAddLine.h"
 
 #include "../Shapes/Line.h"
 

@@ -7,7 +7,7 @@
 #include"operations/opAddIrrPolygon.h"
 #include"operations/opAddRegularPolygon.h"
 #include"operations/opSelectUnselect.h"
-#include "opAddLine.h"
+#include "operations/opAddLine.h"
 #include "operations/opSave.h"
 #include "operations/opPickColor.h"
 #include"operations/OpSwitch.h"
