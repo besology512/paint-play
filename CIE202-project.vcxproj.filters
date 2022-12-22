@@ -219,6 +219,9 @@
     <ClCompile Include="Shapes\StickImage.cpp">
       <Filter>Shapes&amp;Graph</Filter>
     </ClCompile>
+    <ClCompile Include="Operations\opResize.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -395,6 +398,7 @@
     <ClInclude Include="Shapes\StickImage.h">
       <Filter>Shapes&amp;Graph</Filter>
     </ClInclude>
+    <ClInclude Include="Operations\opResize.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Operations">

@@ -101,6 +101,8 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case CHNG_BORDER_WIDTH:
 			pOp = new opChangeBorderWidth(this);
+		case RESIZE:
+			break;
 			break;
 		case STICK_IMAGE:
 			pOp = new opStickImage(this);
