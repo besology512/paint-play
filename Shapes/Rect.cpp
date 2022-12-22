@@ -113,6 +113,6 @@ double Rect::getHeight()
 	return height;
 }
 
+void Rect::resize(int factor) {
 
-
-
+}

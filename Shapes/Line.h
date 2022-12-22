@@ -20,7 +20,7 @@ class Line : public shape
 		virtual string shapeInfo();					// give some info about the shape
 		void LOAD(ifstream& Infile);
 		double getWidth();
-		void Resize();
+		void resize(int factor) override;
 		double getHeight();
 };
 

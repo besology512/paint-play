@@ -19,7 +19,6 @@ public:
 	void LOAD(ifstream& Infile);
 	double getWidth();
 	double getHeight();
-
-
+	void resize(int factor) override;
 };
 

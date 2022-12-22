@@ -63,7 +63,9 @@ double Circle::getHeight()
 	return height;
 }
 
-
+void Circle::resize(int factor){
+	
+}
 
 
 bool Circle::inShape(int x, int y) const

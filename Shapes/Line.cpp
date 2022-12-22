@@ -74,3 +74,6 @@ double Line::getHeight()
 	return 0.0;
 }
 
+void Line::resize(int factor) {
+
+}

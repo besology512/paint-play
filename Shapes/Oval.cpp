@@ -103,3 +103,6 @@ double Oval::getHeight()
 	return height;
 }
 
+void Oval::resize(int factor) {
+
+}

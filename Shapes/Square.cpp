@@ -99,3 +99,6 @@ double Square::getHeight()
 	return height;
 }
 
+void Square::resize(int factor) {
+
+}
