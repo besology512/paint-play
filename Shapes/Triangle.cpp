@@ -1,5 +1,5 @@
 #include ".//Triangle.h"
-
+#include<iostream>
 Triangle::Triangle(Point P1, Point P2, Point P3, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 {
 	Corner1 = P1;
@@ -51,8 +51,50 @@ double Triangle::getArea(int x1, int y1, int x2, int y2, int x3, int y3) const
 	return area;
 }
 
-void Triangle::resize(int factor) {
-
+void Triangle::resize(float factor) {
+	if (factor == 0.5) {
+		//first line of the triangle
+		Corner2.x = (Corner1.x + Corner2.x) / 2;
+		Corner2.y = (Corner1.y + Corner2.y) / 2;
+		//second line of the triangle
+		Corner3.x = (Corner1.x + Corner3.x) / 2;
+		Corner3.y = (Corner1.y + Corner3.y) / 2;
+	}
+	if (factor == 0.25) {
+		//first line of the triangle
+		Corner2.x = (Corner1.x + Corner2.x) / 2;
+		Corner2.y = (Corner1.y + Corner2.y) / 2;
+		//second line of the triangle
+		Corner3.x = (Corner1.x + Corner3.x) / 2;
+		Corner3.y = (Corner1.y + Corner3.y) / 2;
+		//and then again
+		//first line of the triangle
+		Corner2.x = (Corner1.x + Corner2.x) / 2;
+		Corner2.y = (Corner1.y + Corner2.y) / 2;
+		//second line of the triangle
+		Corner3.x = (Corner1.x + Corner3.x) / 2;
+		Corner3.y = (Corner1.y + Corner3.y) / 2;
+	}
+	if (factor == 2) {
+		Corner2.x = 2 * Corner2.x - Corner1.x;
+		Corner2.y = 2 * Corner2.y - Corner1.y;
+		//the second line
+		Corner3.x = 2 * Corner3.x - Corner1.x;
+		Corner3.y = 2 * Corner3.y - Corner1.y;
+	}
+	if (factor == 4) {
+		Corner2.x = 2 * Corner2.x - Corner1.x;
+		Corner2.y = 2 * Corner2.y - Corner1.y;
+		//the second line
+		Corner3.x = 2 * Corner3.x - Corner1.x;
+		Corner3.y = 2 * Corner3.y - Corner1.y;
+		//then do it again to both lines
+		Corner2.x = 2 * Corner2.x - Corner1.x;
+		Corner2.y = 2 * Corner2.y - Corner1.y;
+		//the second line
+		Corner3.x = 2 * Corner3.x - Corner1.x;
+		Corner3.y = 2 * Corner3.y - Corner1.y;
+	}
 }
 
 bool Triangle::inShape(int x, int y) const

@@ -75,11 +75,6 @@ double Line::getHeight()
 }
 
 void Line::resize(float factor) {
-	//// get length of the line
-	//int length = sqrt(pow(point1.x - point2.x, 2) + pow(point1.y - point2.y, 2));
-	//point2.x *= factor;
-	//point2.y *= factor;
-	std::cout << factor;
 	if (factor == 0.5)
 	{
 		point2.x = (point1.x + point2.x) / 2;
