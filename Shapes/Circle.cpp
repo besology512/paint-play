@@ -63,7 +63,7 @@ double Circle::getHeight()
 	return height;
 }
 
-void Circle::resize(int factor){
+void Circle::resize(float factor){
 	
 }
 

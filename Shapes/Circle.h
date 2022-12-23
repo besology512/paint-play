@@ -9,6 +9,7 @@ class Circle: public shape
 private:
 	Point Center;
 	Point PointOnCircle;
+	int sizeFactor = 1;
 public:
 	Circle(Point,Point, GfxInfo shapeGfxInfo);
 	virtual ~Circle();
@@ -19,5 +20,5 @@ public:
 	void LOAD(ifstream& Infile);
 	double getWidth();
 	double getHeight();
-	void resize(int factor) override;
+	void resize(float factor) override;
 };

@@ -9,7 +9,7 @@ class Line : public shape
 	private:
 		Point point1;
 		Point point2;
-	
+
 
 	public:
 		Line(Point p1, Point p2, GfxInfo shapeGfxInfo);
@@ -20,7 +20,7 @@ class Line : public shape
 		virtual string shapeInfo();					// give some info about the shape
 		void LOAD(ifstream& Infile);
 		double getWidth();
-		void resize(int factor) override;
+		void resize(float factor) override;
 		double getHeight();
 };
 

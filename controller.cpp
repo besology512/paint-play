@@ -20,7 +20,7 @@
 #include"operations/opExit.h"
 #include"operations/opRestart.h"
 #include"operations/opstart.h"
-
+#include"operations/opResize.h"
 
 
 
@@ -102,7 +102,7 @@ operation* controller::createOperation(operationType OpType)
 		case CHNG_BORDER_WIDTH:
 			pOp = new opChangeBorderWidth(this);
 		case RESIZE:
-			break;
+			pOp = new opResize(this);
 			break;
 		case STICK_IMAGE:
 			pOp = new opStickImage(this);

@@ -9,6 +9,7 @@ private:
 	Point Corner1;	
 	Point Corner2;
 	string isFilled;
+	int sizeFactor = 1;
 public:
 	Rect(Point , Point, GfxInfo shapeGfxInfo );
 	virtual ~Rect();
@@ -19,6 +20,6 @@ public:
 	void LOAD(ifstream& Infile);
 	double getWidth();
 	double getHeight();
-	void resize(int factor) override;
+	void resize(float factor) override;
 };
 

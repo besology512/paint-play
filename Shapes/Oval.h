@@ -8,6 +8,7 @@ class Oval : public shape
 private:
 	Point Corner1;
 	Point Corner2;
+	int sizeFactor = 1;
 
 public:
 	Oval(Point, Point, GfxInfo shapeGfxInfo);
@@ -19,5 +20,5 @@ public:
 	void LOAD(ifstream& Infile);
 	double getWidth();
 	double getHeight();
-	void resize(int factor) override;
+	void resize(float factor) override;
 };

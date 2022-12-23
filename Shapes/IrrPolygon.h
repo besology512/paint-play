@@ -9,6 +9,7 @@ private:
 	int verticies;
 	std::vector<Point> allPoints;
 	int counter;
+	int sizeFactor = 1;
 public:
 	IrrPolygon(std::vector<Point> allPoints,int verticies, GfxInfo shapeGfxInfo);
 	virtual ~IrrPolygon();
@@ -20,5 +21,5 @@ public:
 	void LOAD(ifstream& Infile);
 	double getWidth();
 	double getHeight();
-	void resize(int factor) override;
+	void resize(float factor) override;
 };
