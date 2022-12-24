@@ -1,0 +1,28 @@
+255 0 0 0 255 0 3
+3
+Rect  3 141 145 313 278 255 0 0 NO_FILL 3
+RegularPolygon  5 549 239 5 75 255 0 0 NO_FILL 3
+Square  2 716 219 918 211 255 0 0 NO_FILL 3			int ID;
+			int x, y, z, a, b, c;
+			bool k;
+			Point P1, P2;
+			GfxInfo LineGfxInfo;
+			inputfile >> ID >> P1.x >> P1.y >> P2.x >> P2.y >> x >> y >> z ;
+			LineGfxInfo.DrawClr.ucBlue = x;
+			LineGfxInfo.DrawClr.ucGreen = y;
+			LineGfxInfo.DrawClr.ucRed = z;
+			inputfile >> LineGfxInfo.BorderWdth;
+			newShape = new Line();//a3ml defult constructor 
+			//newShape->LOAD(inputfile);
+			Addshape(newShape);
+
+
+	//int ID;
+	//int x, y, z, a, b, c;
+	//bool k;
+	//GfxInfo LineGfxInfo;
+	//Infile >> ID >> point1.x >> point1.y >> point2.x >> point2.y >> x >> y >> z ;
+	//LineGfxInfo.DrawClr.ucBlue = x;
+	//LineGfxInfo.DrawClr.ucGreen = y;
+	//LineGfxInfo.DrawClr.ucRed = z;
+	//Infile >> LineGfxInfo.BorderWdth;
