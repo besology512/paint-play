@@ -1,4 +1,0 @@
-255 0 0 0 255 0 3
-2
-RegularPolygon  5 313 141 5 75 255 0 0 NO_FILL 3
-RegularPolygon  5 548 220 6 90 255 0 0 NO_FILL 3
