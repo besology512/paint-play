@@ -64,7 +64,30 @@ double Circle::getHeight()
 }
 
 void Circle::resize(float factor){
-	
+	if (factor == 0.25)
+	{
+		PointOnCircle.x = (PointOnCircle.x + Center.x) / 2;
+		PointOnCircle.y = (PointOnCircle.y + Center.y) / 2;
+		PointOnCircle.x = (PointOnCircle.x + Center.x) / 2;
+		PointOnCircle.y = (PointOnCircle.y + Center.y) / 2;
+	}
+	if (factor  == 0.5)
+	{
+		PointOnCircle.x = (PointOnCircle.x + Center.x) / 2;
+		PointOnCircle.y = (PointOnCircle.y + Center.y) / 2;
+	}
+	if (factor == 2)
+	{
+		PointOnCircle.x = 2 * PointOnCircle.x - Center.x;
+		PointOnCircle.y = 2 * PointOnCircle.y - Center.y;
+	}
+	if (factor == 4)
+	{
+		PointOnCircle.x = 2 * PointOnCircle.x - Center.x;
+		PointOnCircle.y = 2 * PointOnCircle.y - Center.y;
+		PointOnCircle.x = 2 * PointOnCircle.x - Center.x;
+		PointOnCircle.y = 2 * PointOnCircle.y - Center.y;
+	}
 }
 
 
