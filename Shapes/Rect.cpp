@@ -113,6 +113,28 @@ double Rect::getHeight()
 	return height;
 }
 
-void Rect::resize(int factor) {
-
+void Rect::resize(float factor) {
+		if (factor == 0.5)
+		{
+			Corner2.x = (Corner1.x + Corner2.x) / 2;
+			Corner2.y = (Corner1.y + Corner2.y) / 2;
+		}
+		if (factor == 0.25) {
+			Corner2.x = (Corner1.x + Corner2.x) / 2;
+			Corner2.y = (Corner1.y + Corner2.y) / 2;
+			//then again
+			Corner2.x = (Corner1.x + Corner2.x) / 2;
+			Corner2.y = (Corner1.y + Corner2.y) / 2;
+		}
+		if (factor == 2) {
+			Corner2.x = 2 * Corner2.x - Corner1.x;
+			Corner2.y = 2 * Corner2.y - Corner1.y;
+		}
+		if (factor == 4) {
+			Corner2.x = 2 * Corner2.x - Corner1.x;
+			Corner2.y = 2 * Corner2.y - Corner1.y;
+			//then again
+			Corner2.x = 2 * Corner2.x - Corner1.x;
+			Corner2.y = 2 * Corner2.y - Corner1.y;
+		}
 }
