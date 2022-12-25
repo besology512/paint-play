@@ -103,6 +103,28 @@ double Oval::getHeight()
 	return height;
 }
 
-void Oval::resize(int factor) {
-
+void Oval::resize(float factor) {
+	if (factor == 0.5)
+	{
+		Corner2.x = (Corner2.x + Corner1.x) / 2;
+		Corner2.y = (Corner2.y + Corner1.y) / 2;
+	}
+	if (factor == 0.25) {
+		Corner2.x = (Corner2.x + Corner1.x) / 2;
+		Corner2.y = (Corner2.y + Corner1.y) / 2;
+		//then again
+		Corner2.x = (Corner2.x + Corner1.x) / 2;
+		Corner2.y = (Corner2.y + Corner1.y) / 2;
+	}
+	if (factor == 2) {
+		Corner2.x = 2 * Corner2.x - Corner1.x;
+		Corner2.y = 2 * Corner2.y - Corner1.y;
+	}
+	if (factor == 4) {
+		Corner2.x = 2 * Corner2.x - Corner1.x;
+		Corner2.y = 2 * Corner2.y - Corner1.y;
+		//then again
+		Corner2.x = 2 * Corner2.x - Corner1.x;
+		Corner2.y = 2 * Corner2.y - Corner1.y;
+	}
 }
