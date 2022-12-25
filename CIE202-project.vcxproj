@@ -182,6 +182,7 @@
     <ClCompile Include="operations\opLoad.cpp" />
     <ClCompile Include="Operations\opResize.cpp" />
     <ClCompile Include="operations\opRestart.cpp" />
+    <ClCompile Include="operations\opRotate.cpp" />
     <ClCompile Include="operations\opSave.cpp" />
     <ClCompile Include="operations\opSelectUnselect.cpp" />
     <ClCompile Include="operations\opPickColor.cpp" />
@@ -236,6 +237,7 @@
     <ClInclude Include="operations\opLoad.h" />
     <ClInclude Include="Operations\opResize.h" />
     <ClInclude Include="operations\opRestart.h" />
+    <ClInclude Include="operations\opRotate.h" />
     <ClInclude Include="operations\opSave.h" />
     <ClInclude Include="operations\opStart.h" />
     <ClInclude Include="operations\opStickImage.h" />

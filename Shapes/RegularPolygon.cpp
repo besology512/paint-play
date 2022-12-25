@@ -105,3 +105,18 @@ double RegularPolygon::getHeight()
 void RegularPolygon::resize(float factor) {
 	radius *= factor;
 }
+
+void RegularPolygon:: Rotate(){
+	//create the points again
+	//Point Center;
+	//Center.x = (P4.x + corner1.x) / 2;
+	//Center.y = (P4.y + corner1.y) / 2;
+	//int tempP1X = corner1.x;
+	//int tempP1Y = corner1.y;
+	//int tempP2X = corner2.x;
+	//int tempP2Y = corner2.y;
+	//corner1.x = -tempP1Y + Center.y + Center.x;
+	//corner1.y = tempP1X - Center.x + Center.y;
+	//corner2.x = -tempP2Y + Center.y + Center.x;
+	//corner2.y = tempP2X - Center.x + Center.y;
+}

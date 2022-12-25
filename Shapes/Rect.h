@@ -21,5 +21,6 @@ public:
 	double getWidth();
 	double getHeight();
 	void resize(float factor) override;
+	void Rotate() override;
 };
 

@@ -128,3 +128,17 @@ void Oval::resize(float factor) {
 		Corner2.y = 2 * Corner2.y - Corner1.y;
 	}
 }
+
+void Oval::Rotate() {
+	Point Center;
+	Center.x = (Corner1.x + Corner2.x) / 2;
+	Center.y = (Corner1.y + Corner2.y) / 2;
+	int tempP1X = Corner1.x;
+	int tempP1Y = Corner1.y;
+	int tempP2X = Corner2.x;
+	int tempP2Y = Corner2.y;
+	Corner1.x = -tempP1Y + Center.y + Center.x;
+	Corner1.y = tempP1X - Center.x + Center.y;
+	Corner2.x = -tempP2Y + Center.y + Center.x;
+	Corner2.y = tempP2X - Center.x + Center.y;
+}

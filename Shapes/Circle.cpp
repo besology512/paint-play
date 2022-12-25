@@ -110,3 +110,7 @@ string Circle::shapeInfo()
 
 	return msg ;
 }
+
+void Circle::Rotate(){
+	//no function needed, the circle will be the same
+}

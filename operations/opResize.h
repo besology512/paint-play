@@ -3,7 +3,7 @@
 #include "operation.h"
 
 
-class opResize : public operation
+class opResize: public operation
 {
 public:
 	opResize(controller* pCont);

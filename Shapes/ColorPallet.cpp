@@ -36,6 +36,5 @@ double ColorPallet::getHeight()
 	return 0.0;
 }
 
-void ColorPallet::resize(float factor) {
-
-}
+void ColorPallet::resize(float factor) {}
+void ColorPallet::Rotate(){}
