@@ -102,6 +102,6 @@ double RegularPolygon::getHeight()
 	return height;
 }
 
-void RegularPolygon::resize(int factor) {
-
+void RegularPolygon::resize(float factor) {
+	radius *= factor;
 }

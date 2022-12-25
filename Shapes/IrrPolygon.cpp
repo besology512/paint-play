@@ -84,6 +84,6 @@ double IrrPolygon::getHeight()
 	return 0.0;
 }
 
-void IrrPolygon::resize(int factor) {
+void IrrPolygon::resize(float factor) {
 
 }
