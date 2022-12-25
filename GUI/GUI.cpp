@@ -144,6 +144,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_BORDER_CLR: return CHNG_BORDER_CLR;
 			case ICON_BORDER_WIDTH: return CHNG_BORDER_WIDTH;
 			case ICON_RESIZE: return RESIZE;
+			case ICON_ROTATE: return ROTATE;
 			case ICON_DELETE: return DEL;
 			case ICON_SWITCH: return SWITCH;
 			case ICON_EXIT: return EXIT;
@@ -259,6 +260,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_BORDER_CLR] = "images\\MenuIcons\\Menu_changePenColor.jpg";
 	MenuIconImages[ICON_BORDER_WIDTH] = "images\\MenuIcons\\Menu_ChangeBorderWidth.jpg";
 	MenuIconImages[ICON_RESIZE] = "images\\MenuIcons\\Menu_Resize.jpg";
+	MenuIconImages[ICON_ROTATE] = "images\\MenuIcons\\Menu_Rotate.jpg";
 	MenuIconImages[ICON_SWITCH] = "images\\MenuIcons\\Menu_Switch.jpg";
 	MenuIconImages[ICON_DELETE] = "images\\MenuIcons\\Menu_Delete.jpg";
 	MenuIconImages[ICON_SAVE] = "images\\MenuIcons\\Menu_Save.jpg";

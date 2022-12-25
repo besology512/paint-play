@@ -138,3 +138,5 @@ void Rect::resize(float factor) {
 			Corner2.y = 2 * Corner2.y - Corner1.y;
 		}
 }
+
+void Rect::Rotate() {}

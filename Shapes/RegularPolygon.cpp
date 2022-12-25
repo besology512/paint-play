@@ -105,3 +105,5 @@ double RegularPolygon::getHeight()
 void RegularPolygon::resize(float factor) {
 	radius *= factor;
 }
+
+void RegularPolygon:: Rotate(){}

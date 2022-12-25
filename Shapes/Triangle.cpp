@@ -141,3 +141,4 @@ double Triangle::getHeight()
 
 }
 
+void Triangle::Rotate(){}

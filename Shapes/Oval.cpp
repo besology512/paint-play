@@ -128,3 +128,5 @@ void Oval::resize(float factor) {
 		Corner2.y = 2 * Corner2.y - Corner1.y;
 	}
 }
+
+void Oval::Rotate() {}

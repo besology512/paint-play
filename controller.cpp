@@ -21,7 +21,7 @@
 #include"operations/opRestart.h"
 #include"operations/opstart.h"
 #include"operations/opResize.h"
-
+#include"operations/opRotate.h"
 
 
 //Constructor
@@ -104,6 +104,9 @@ operation* controller::createOperation(operationType OpType)
 		case RESIZE:
 			pOp = new opResize(this);
 			break;
+		case ROTATE:
+			pOp = new opRotate(this);
+			break;
 		case STICK_IMAGE:
 			pOp = new opStickImage(this);
 			break;
@@ -115,7 +118,6 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case EXIT:
 			pOp = new opExit(this);										///create Exitoperation here
-			
 			break;
 
 		case DRAWING_AREA:

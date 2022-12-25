@@ -124,3 +124,23 @@ void Square::resize(float factor) {
 		corner2.y = 2 * corner2.y - corner1.y;
 	}
 }
+
+void Square::Rotate() {
+	int diffx = corner1.x - corner2.x;
+	int diffy = corner1.y - corner2.y;
+	Point P3;
+	P3.x = (corner1.x + corner2.x) / 2;
+	P3.y = (corner1.y+corner2.y)/2;
+	P3.y = corner2.y - diffx;
+	Point Center;
+	Center.x = P3.x;
+	Center.y = P3.y;
+	int tempP1X = corner1.x;
+	int tempP1Y = corner1.y;
+	int tempP2X = corner2.x;
+	int tempP2Y = corner2.y;
+	corner1.x = -tempP1Y + Center.y + Center.x;
+	corner1.y = tempP1X - Center.x + Center.y;
+	corner2.x = -tempP2Y + Center.y + Center.x;
+	corner2.y = tempP2X - Center.x + Center.y;
+}

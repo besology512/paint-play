@@ -21,6 +21,7 @@ class Line : public shape
 		void LOAD(ifstream& Infile);
 		double getWidth();
 		void resize(float factor) override;
+		void Rotate() override;
 		double getHeight();
 };
 
