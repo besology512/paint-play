@@ -101,3 +101,7 @@ double RegularPolygon::getHeight()
 	double height = sqrt(area)-50;
 	return height;
 }
+
+void RegularPolygon::resize(float factor) {
+	radius *= factor;
+}

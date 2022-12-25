@@ -99,3 +99,28 @@ double Square::getHeight()
 	return height;
 }
 
+void Square::resize(float factor) {
+	if (factor == 0.5)
+	{
+		corner2.x = (corner1.x + corner2.x) / 2;
+		corner2.y = (corner1.y + corner2.y) / 2;
+	}
+	if (factor == 0.25) {
+		corner2.x = (corner1.x + corner2.x) / 2;
+		corner2.y = (corner1.y + corner2.y) / 2;
+		//then again
+		corner2.x = (corner1.x + corner2.x) / 2;
+		corner2.y = (corner1.y + corner2.y) / 2;
+	}
+	if (factor == 2) {
+		corner2.x = 2 * corner2.x - corner1.x;
+		corner2.y = 2 * corner2.y - corner1.y;
+	}
+	if (factor == 4) {
+		corner2.x = 2 * corner2.x - corner1.x;
+		corner2.y = 2 * corner2.y - corner1.y;
+		//then again
+		corner2.x = 2 * corner2.x - corner1.x;
+		corner2.y = 2 * corner2.y - corner1.y;
+	}
+}

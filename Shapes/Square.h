@@ -9,7 +9,7 @@ private:
 
 	Point corner1;
 	Point corner2;
-
+	int sizeFactor = 1;
 public:
 	Square(Point, Point, GfxInfo shapeGfxInfo);
 	virtual ~Square();
@@ -21,4 +21,5 @@ public:
 	void LOAD(ifstream& Infile);
 	double getWidth();
 	double getHeight();
+	void resize(float factor) override;
 };

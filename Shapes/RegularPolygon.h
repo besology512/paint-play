@@ -10,7 +10,7 @@ private:
 	Point center;
 	double numOfVertices;
 	double radius;
-
+	int sizeFactor = 1;
 public:
 	RegularPolygon(Point, double, double, GfxInfo shapeGfxInfo);
 	virtual ~RegularPolygon();
@@ -21,4 +21,5 @@ public:
 	void LOAD(ifstream& Infile);
 	double getWidth();
 	double getHeight();
+	void resize(float factor) override;
 };

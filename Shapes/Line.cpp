@@ -1,5 +1,5 @@
 #include "Line.h"
-
+#include<iostream>
 Line::Line(Point p1, Point p2, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 {
 	point1 = p1;
@@ -74,3 +74,28 @@ double Line::getHeight()
 	return 0.0;
 }
 
+void Line::resize(float factor) {
+	if (factor == 0.5)
+	{
+		point2.x = (point1.x + point2.x) / 2;
+		point2.y = (point1.y + point2.y) / 2;
+	}
+	if (factor == 0.25) {
+		point2.x = (point1.x + point2.x) / 2;
+		point2.y = (point1.y + point2.y) / 2;
+		//then again
+		point2.x = (point1.x + point2.x) / 2;
+		point2.y = (point1.y + point2.y) / 2;
+	}
+	if (factor == 2) {
+		point2.x = 2 * point2.x - point1.x;
+		point2.y = 2 * point2.y - point1.y;
+	}	
+	if (factor == 4) {
+		point2.x = 2 * point2.x - point1.x;
+		point2.y = 2 * point2.y - point1.y;
+		//then again
+		point2.x = 2 * point2.x - point1.x;
+		point2.y = 2 * point2.y - point1.y;
+	}
+}

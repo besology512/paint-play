@@ -29,7 +29,7 @@ public:
 	void ChngBorderWidth(int);
 	virtual double getWidth() = 0;
 	virtual double getHeight() = 0;
-
+	virtual void resize(float factor) = 0;
 
 
 	///The following functions should be supported by the shape class

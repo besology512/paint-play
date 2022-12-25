@@ -48,3 +48,6 @@ double StickImage::getHeight()
 {
 	return 0.0;
 }
+void StickImage::resize(float factor) {
+
+}
