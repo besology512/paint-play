@@ -55,3 +55,4 @@ void opAddRect::Execute()
 	pGr->Addshape(R);
 
 }
+void opAddRect::Undo() {}

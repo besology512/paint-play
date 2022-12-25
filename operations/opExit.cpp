@@ -69,3 +69,5 @@ void opExit::Execute() {
 		}
 	}
 }
+
+void opExit::Undo() {}

@@ -38,3 +38,5 @@ void opResize::Execute() {
 		pUI->PrintMessage("Select the shape you want to resize first!");
 	}
 }
+
+void opResize::Undo() {}

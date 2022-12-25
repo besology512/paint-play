@@ -52,3 +52,5 @@ void opPickColor::Execute()
 	pGr->RemoveShape(R);
 
 }
+
+void opPickColor::Undo() {}

@@ -76,3 +76,5 @@ void opAddIrrPolygon::Execute()
 	pGr->Addshape(R);
 
 }
+
+void opAddIrrPolygon::Undo() {}

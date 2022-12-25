@@ -13,4 +13,5 @@ public:
 	// Exit operation 
 	virtual void Execute();
 	//ofstream outfile;
+	virtual void Undo() override;
 };

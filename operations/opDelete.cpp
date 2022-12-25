@@ -50,3 +50,5 @@ void opDelete::Execute() {
 	//	pUI->ClearStatusBar();
 	//}
 }
+
+void opDelete::Undo() {}

@@ -11,5 +11,5 @@ public:
 
 	//Add IrrPolygon to the controller
 	virtual void Execute();
-
+	virtual void Undo() override;
 };

@@ -36,3 +36,5 @@ void opSelectUnselect::Execute()
 		pUI->ClearStatusBar();
 	}
 }
+
+void opSelectUnselect::Undo() {}

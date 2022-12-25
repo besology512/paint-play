@@ -26,3 +26,5 @@ void opChangeBorderClr::Execute() {
 		pUI->setDrawColor(pGr->getPickedClr());
 	}
 }
+
+void opChangeBorderClr::Undo() {}

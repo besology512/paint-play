@@ -101,6 +101,7 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case CHNG_BORDER_WIDTH:
 			pOp = new opChangeBorderWidth(this);
+			break;
 		case RESIZE:
 			pOp = new opResize(this);
 			break;

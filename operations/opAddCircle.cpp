@@ -58,3 +58,5 @@ void opAddCircle::Execute()
 	pGr->Addshape(R);
 
 }
+
+void opAddCircle:: Undo(){}

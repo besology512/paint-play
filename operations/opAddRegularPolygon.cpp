@@ -80,3 +80,5 @@ void opAddRegularPolygon::Execute()
 	pGr->Addshape(RP);
 
 }
+
+void opAddRegularPolygon::Undo() {}

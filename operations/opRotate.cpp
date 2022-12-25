@@ -20,3 +20,5 @@ void opRotate::Execute() {
 		pUI->PrintMessage("Select the shape you want to rotate first");
 	}
 }
+
+void opRotate::Undo() {}

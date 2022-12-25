@@ -61,3 +61,5 @@ void opAddTriangle::Execute()
 	pGr->Addshape(R);
 
 }
+
+void opAddTriangle::Undo() {}

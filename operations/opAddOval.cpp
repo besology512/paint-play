@@ -55,3 +55,4 @@ void opAddOval::Execute()
 	pGr->Addshape(O);
 
 }
+void opAddOval::Undo() {}

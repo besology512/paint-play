@@ -37,16 +37,9 @@ void opSave::Execute()
 			<< (int)pUI->getCrntFillColor().ucGreen << " "
 			<< (int)pUI->getCrntFillColor().ucRed << " "
 			<< pUI->getCrntPenWidth() << "\n";
-
 	pGr->Save(outfile);
-
-
 	outfile.close();
-
-	pUI->PrintMessage("Saved Succussfully");
-	
-	
-
-	
+	pUI->PrintMessage("Saved Succussfully");	
 }
 
+void opSave::Undo() {}

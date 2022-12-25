@@ -56,3 +56,5 @@ void opAddSquare::Execute() {
 	pGr->Addshape(S);
 
 }
+
+void opAddSquare::Undo() {}
