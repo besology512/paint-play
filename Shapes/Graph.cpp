@@ -394,3 +394,10 @@ void Graph::FromUndotoShapesList() {
 		UndoneShapesList.erase(UndoneShapesList.end() - 1);
 	}
 }
+
+shape* Graph::getLastShape() const {
+	return *(shapesList.end() - 1);
+}
+shape* Graph::getLastRedoShape() const {
+	return *(UndoneShapesList.end() - 1);
+}

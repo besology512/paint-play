@@ -42,6 +42,8 @@ public:
 	void Draw(GUI* pUI) const;			//Draw the graph (draw all shapes)
 	void UnselectAll();          // Unselect all the shapes
 	string getShapeInfo();
+	shape* getLastShape() const;
+	shape* getLastRedoShape() const;
 	shape* getselectedshape() const;
 	bool getEmptyVector() const;
 	void setFilled(bool);

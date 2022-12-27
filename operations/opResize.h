@@ -6,6 +6,7 @@
 class opResize: public operation
 {
 public:
+	float Factor;
 	opResize(controller* pCont);
 	virtual ~opResize();
 	virtual void Execute();
