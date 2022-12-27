@@ -55,5 +55,11 @@ void opAddOval::Execute()
 	pGr->Addshape(O);
 
 }
-void opAddOval::Undo() {}
-void opAddOval::Redo() {}
+void opAddOval::Undo() {
+	Graph* pGr = pControl->getGraph();
+	pGr->PutInUndoShapes();
+}
+void opAddOval::Redo() {
+	Graph* pGr = pControl->getGraph();
+	pGr->FromUndotoShapesList();
+}

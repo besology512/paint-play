@@ -81,5 +81,11 @@ void opAddRegularPolygon::Execute()
 
 }
 
-void opAddRegularPolygon::Undo() {}
-void opAddRegularPolygon::Redo() {}
+void opAddRegularPolygon::Undo() {
+	Graph* pGr = pControl->getGraph();
+	pGr->PutInUndoShapes();
+}
+void opAddRegularPolygon::Redo() {
+	Graph* pGr = pControl->getGraph();
+	pGr->FromUndotoShapesList();
+}

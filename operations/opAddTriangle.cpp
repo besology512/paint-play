@@ -62,5 +62,11 @@ void opAddTriangle::Execute()
 
 }
 
-void opAddTriangle::Undo() {}
-void opAddTriangle::Redo() {}
+void opAddTriangle::Undo() {
+	Graph* pGr = pControl->getGraph();
+	pGr->PutInUndoShapes();
+}
+void opAddTriangle::Redo() {
+	Graph* pGr = pControl->getGraph();
+	pGr->FromUndotoShapesList();
+}

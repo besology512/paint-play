@@ -57,5 +57,11 @@ void opAddSquare::Execute() {
 
 }
 
-void opAddSquare::Undo() {}
-void opAddSquare::Redo() {}
+void opAddSquare::Undo() {
+	Graph* pGr = pControl->getGraph();
+	pGr->PutInUndoShapes();
+}
+void opAddSquare::Redo() {
+	Graph* pGr = pControl->getGraph();
+	pGr->FromUndotoShapesList();
+}

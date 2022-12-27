@@ -27,5 +27,11 @@ void opChangeBorderClr::Execute() {
 	}
 }
 
-void opChangeBorderClr::Undo() {}
-void opChangeBorderClr::Redo() {}
+void opChangeBorderClr::Undo() {
+	Graph* pGr = pControl->getGraph();
+	pGr->PutInUndoShapes();
+}
+void opChangeBorderClr::Redo() {
+	Graph* pGr = pControl->getGraph();
+	pGr->FromUndotoShapesList();
+}

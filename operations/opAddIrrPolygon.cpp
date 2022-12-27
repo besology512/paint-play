@@ -77,5 +77,11 @@ void opAddIrrPolygon::Execute()
 
 }
 
-void opAddIrrPolygon::Undo() {}
-void opAddIrrPolygon::Redo() {}
+void opAddIrrPolygon::Undo() {
+	Graph* pGr = pControl->getGraph();
+	pGr->PutInUndoShapes();
+}
+void opAddIrrPolygon::Redo() {
+	Graph* pGr = pControl->getGraph();
+	pGr->FromUndotoShapesList();
+}
