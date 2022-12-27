@@ -21,5 +21,11 @@ void opRotate::Execute() {
 	}
 }
 
-void opRotate::Undo() {}
-void opRotate::Redo() {}
+void opRotate::Undo() {
+	Graph* pGr = pControl->getGraph();
+	pGr->getLastShape()->Rotate();
+}
+void opRotate::Redo() {
+	Graph* pGr = pControl->getGraph();
+	pGr->getLastShape()->Rotate();
+}
