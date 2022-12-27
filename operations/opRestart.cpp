@@ -17,3 +17,6 @@ void opRestart::Execute() {
 
 	pUI->PrintMessage("You clicked on restart button");
 }
+
+void opRestart::Undo() {}
+void opRestart::Redo() {}

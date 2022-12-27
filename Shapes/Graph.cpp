@@ -47,6 +47,9 @@ void Graph::DeleteShapesAfterExit() {
 		delete shapePointer;
 
 	}
+	for (auto shapePointer : UndoneShapesList) {
+		delete shapePointer;
+	}
 }
 
 // Remove a shape from list of shapes
@@ -63,12 +66,9 @@ void Graph::RemoveShape(shape* pShp) {
 // Delete a single shape from list of shape
 void Graph::DeleteShape(shape* pShp) {
 	std::vector<shape*>::iterator it;
-	// std::find function call
 	it = std::find(shapesList.begin(), shapesList.end(), pShp);
+	UndoneShapesList.push_back(it[0]);
 	shapesList.erase(it);
-
-	
-
 }
 
 //Draw all shapes on the user interface
@@ -377,3 +377,27 @@ void Graph::setFilled(bool a)
 	isFilled = a;
 }
 
+void Graph::PutInUndoShapes() {
+	if (shapesList[shapesList.size() - 1])
+	{
+		UndoneShapesList.push_back(shapesList[shapesList.size() - 1]);
+		shapesList.erase(shapesList.end() - 1);
+		cout << "put it undo shapes is working";
+	}
+}
+
+void Graph::FromUndotoShapesList() {
+	if (UndoneShapesList[UndoneShapesList.size() - 1])
+	{
+		shapesList.push_back(UndoneShapesList[UndoneShapesList.size() - 1]);
+		cout << "From undo to shapes List is working";
+		UndoneShapesList.erase(UndoneShapesList.end() - 1);
+	}
+}
+
+shape* Graph::getLastShape() const {
+	return *(shapesList.end() - 1);
+}
+shape* Graph::getLastRedoShape() const {
+	return *(UndoneShapesList.end() - 1);
+}

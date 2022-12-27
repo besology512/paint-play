@@ -58,3 +58,6 @@ void opStickImage::Execute()
 		pUI->PrintMessage("You Should Select Shape");
 	}
 }
+
+void opStickImage::Undo() {}
+void opStickImage::Redo() {}

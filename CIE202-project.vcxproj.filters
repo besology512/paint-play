@@ -222,6 +222,8 @@
     <ClCompile Include="operations\opRotate.cpp">
       <Filter>Operations</Filter>
     </ClCompile>
+    <ClCompile Include="operations\opUndo.cpp" />
+    <ClCompile Include="operations\opRedo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -396,6 +398,8 @@
     <ClInclude Include="operations\opRotate.h">
       <Filter>Operations</Filter>
     </ClInclude>
+    <ClInclude Include="operations\opUndo.h" />
+    <ClInclude Include="operations\opRedo.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Operations">

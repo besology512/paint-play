@@ -20,3 +20,12 @@ void opRotate::Execute() {
 		pUI->PrintMessage("Select the shape you want to rotate first");
 	}
 }
+
+void opRotate::Undo() {
+	Graph* pGr = pControl->getGraph();
+	pGr->getLastShape()->Rotate();
+}
+void opRotate::Redo() {
+	Graph* pGr = pControl->getGraph();
+	pGr->getLastShape()->Rotate();
+}

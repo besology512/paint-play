@@ -23,3 +23,6 @@ void opSwitch::Execute() {
 	
 	pUI->CreatePlayToolBar();
 }
+
+void opSwitch::Undo() {}
+void opSwitch::Redo() {}

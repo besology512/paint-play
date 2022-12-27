@@ -180,6 +180,7 @@
     <ClCompile Include="operations\opDelete.cpp" />
     <ClCompile Include="operations\opExit.cpp" />
     <ClCompile Include="operations\opLoad.cpp" />
+    <ClCompile Include="operations\opRedo.cpp" />
     <ClCompile Include="Operations\opResize.cpp" />
     <ClCompile Include="operations\opRestart.cpp" />
     <ClCompile Include="operations\opRotate.cpp" />
@@ -189,6 +190,7 @@
     <ClCompile Include="operations\opStart.cpp" />
     <ClCompile Include="operations\opStickImage.cpp" />
     <ClCompile Include="operations\OpSwitch.cpp" />
+    <ClCompile Include="operations\opUndo.cpp" />
     <ClCompile Include="Shapes\Circle.cpp" />
     <ClCompile Include="Shapes\ColorPallet.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
@@ -235,6 +237,7 @@
     <ClInclude Include="operations\opDelete.h" />
     <ClInclude Include="operations\opExit.h" />
     <ClInclude Include="operations\opLoad.h" />
+    <ClInclude Include="operations\opRedo.h" />
     <ClInclude Include="Operations\opResize.h" />
     <ClInclude Include="operations\opRestart.h" />
     <ClInclude Include="operations\opRotate.h" />
@@ -242,6 +245,7 @@
     <ClInclude Include="operations\opStart.h" />
     <ClInclude Include="operations\opStickImage.h" />
     <ClInclude Include="operations\OpSwitch.h" />
+    <ClInclude Include="operations\opUndo.h" />
     <ClInclude Include="Shapes\Line.h" />
     <ClInclude Include="Shapes\Square.h" />
     <ClInclude Include="operations\opAddCircle.h" />

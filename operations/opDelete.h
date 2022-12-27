@@ -9,4 +9,6 @@ public:
 	virtual ~opDelete();
 	// Delete a single shape 
 	virtual void Execute();
+	virtual void Undo() override;
+	virtual void Redo() override;
 };

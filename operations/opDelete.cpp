@@ -34,19 +34,13 @@ void opDelete::Execute() {
 	else {
 		pUI->PrintMessage("Please select a shape to delete it");
 	}
-	
+}
 
-	////If there is a shape in the selected point
-	//if (pGr->Getshape(P.x, P.y))
-	//{
-	//	pGr->UnselectAll(); 							//unselect everything 
-	//	shape* pShp= pGr->Getshape(P.x, P.y);		//make this shape is selected
-	//	pGr->DeleteShape(pShp);
-	//	//pUI->PrintMessage(pGr->Getshape(P.x, P.y)->shapeInfo()); //Update the status bar with the shape info	
-	//}
-	//else
-	//{
-	//	pGr->UnselectAll();
-	//	pUI->ClearStatusBar();
-	//}
+void opDelete::Undo() {
+	Graph* pGr = pControl->getGraph();
+	pGr->FromUndotoShapesList();
+}
+void opDelete::Redo() {
+	Graph* pGr = pControl->getGraph();
+	pGr->PutInUndoShapes();
 }

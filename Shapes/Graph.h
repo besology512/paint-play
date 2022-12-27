@@ -27,7 +27,8 @@ class Graph
 {
 private:
 	PickedColor pickedClr;
-	vector <shape*> shapesList; //a container to hold all shapes							   
+	vector <shape*> shapesList; //a container to hold all shapes
+	vector <shape*> UndoneShapesList;
 	shape* selectedShape;	//pointer to the currently selected shape
 public:
 	//bool counting = true;
@@ -41,11 +42,14 @@ public:
 	void Draw(GUI* pUI) const;			//Draw the graph (draw all shapes)
 	void UnselectAll();          // Unselect all the shapes
 	string getShapeInfo();
+	shape* getLastShape() const;
+	shape* getLastRedoShape() const;
 	shape* getselectedshape() const;
 	bool getEmptyVector() const;
 	void setFilled(bool);
 	void DeleteShapesAfterExit();
-
+	void PutInUndoShapes();
+	void FromUndotoShapesList();
 	void RemoveShape(shape* pShp);
 	void DeleteShape(shape* pShp);			   // Delete a single shape from shape of list	
 	shape* Getshape(int x, int y); //Search for a shape given a point inside the shape

@@ -13,6 +13,7 @@ class opLoad : public operation
 
 		//Add Save to the controller
 		virtual void Execute();
-
+		virtual void Undo() override;
+		virtual void Redo() override;
 };
 
