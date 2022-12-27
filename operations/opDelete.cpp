@@ -52,3 +52,4 @@ void opDelete::Execute() {
 }
 
 void opDelete::Undo() {}
+void opDelete::Redo() {}

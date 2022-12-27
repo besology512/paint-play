@@ -56,3 +56,4 @@ void opAddRect::Execute()
 
 }
 void opAddRect::Undo() {}
+void opAddRect::Redo() {}

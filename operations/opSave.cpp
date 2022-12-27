@@ -43,3 +43,4 @@ void opSave::Execute()
 }
 
 void opSave::Undo() {}
+void opSave::Redo() {}

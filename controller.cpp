@@ -22,6 +22,8 @@
 #include"operations/opstart.h"
 #include"operations/opResize.h"
 #include"operations/opRotate.h"
+#include"operations/opUndo.h"
+#include"operations/opRedo.h"
 
 
 //Constructor
@@ -48,35 +50,49 @@ operation* controller::createOperation(operationType OpType)
 	//According to operation Type, create the corresponding operation object
 	switch (OpType)
 	{
+		case UNDO:
+			pOp = new opUndo(this);
+			break;
+		case REDO:
+			pOp = new opRedo(this);
+			break;
 		case DRAW_RECT:
 			pOp = new opAddRect(this);
+			addToCurrentOperation(pOp);
 			break;
 
 		case DRAW_LINE:
 			pOp = new opAddLine(this);
+			addToCurrentOperation(pOp);
 			break;
 
 		case DRAW_TRI:
 			pOp = new opAddTriangle(this);
+			addToCurrentOperation(pOp);
 			break;
 
 		case DRAW_CIRC:
 			pOp = new opAddCircle(this);
+			addToCurrentOperation(pOp);
 			break;
 
 		case DRAW_OVAL:
 			pOp = new opAddOval(this);
+			addToCurrentOperation(pOp);
 			break;
 		case DRAW_SQUARE:
 			pOp = new opAddSquare(this);
+			addToCurrentOperation(pOp);
 			break;
 
 		case DRAW_IRR_POLYGON:
 			pOp = new opAddIrrPolygon(this);
+			addToCurrentOperation(pOp);
 			break;
       
 		case DRAW_REGULAR_POLYGON:
 			pOp = new opAddRegularPolygon(this);
+			addToCurrentOperation(pOp);
 			break;
 		case SAVE:
 			pOp = new opSave(this);
@@ -92,21 +108,27 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case DEL:
 			pOp = new opDelete(this);
+			addToCurrentOperation(pOp);
 			break;
 		case CHNG_FILL_CLR:
 			pOp = new opChangeFill(this);
+			addToCurrentOperation(pOp);
 			break;
 		case CHNG_BORDER_CLR:
 			pOp = new opChangeBorderClr(this);
+			addToCurrentOperation(pOp);
 			break;
 		case CHNG_BORDER_WIDTH:
 			pOp = new opChangeBorderWidth(this);
+			addToCurrentOperation(pOp);
 			break;
 		case RESIZE:
 			pOp = new opResize(this);
+			addToCurrentOperation(pOp);
 			break;
 		case ROTATE:
 			pOp = new opRotate(this);
+			addToCurrentOperation(pOp);
 			break;
 		case STICK_IMAGE:
 			pOp = new opStickImage(this);
@@ -194,4 +216,47 @@ void controller::Run()
 
 	} while (OpType != EXIT);
 
+}
+
+void controller::addToCurrentOperation(operation* newOperation) {
+	if (newOperation) {
+		Operations.emplace(newOperation);
+	}
+}
+
+operation* controller::getLastOperation() {
+	if (!Operations.empty())
+	{
+		return Operations.top();
+	}
+	else {
+		pGUI->PrintMessage("There is no operations to be undone");
+		return nullptr;
+	}
+}
+operation* controller::getUndoneOperation() {
+	if (!UndoneOperations.empty())
+	{
+		return UndoneOperations.top();
+	}
+	else {
+		pGUI->PrintMessage("There is no operation to be redone");
+		return nullptr;
+	}
+}
+
+void controller::UndoOperation() {
+	if (getLastOperation())
+	{
+		UndoneOperations.emplace(getLastOperation());
+		Operations.pop();
+	}
+}
+
+void controller::RedoOperation() {
+	if (getUndoneOperation())
+	{
+		Operations.emplace(getUndoneOperation());
+		UndoneOperations.pop();
+	}
 }

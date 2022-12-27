@@ -86,4 +86,11 @@ void opAddLine::Execute()
 //	pUI->PrintMessage("Saved Succussfully");
 //	//sfa
 //}
-void opAddLine::Undo() {}
+void opAddLine::Undo() {
+	Graph* pGr = pControl->getGraph();
+	pGr->PutInUndoShapes();
+}
+void opAddLine::Redo() {
+	Graph* pGr = pControl->getGraph();
+	pGr->FromUndotoShapesList();
+}

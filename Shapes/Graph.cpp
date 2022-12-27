@@ -377,3 +377,20 @@ void Graph::setFilled(bool a)
 	isFilled = a;
 }
 
+void Graph::PutInUndoShapes() {
+	if (shapesList[shapesList.size() - 1])
+	{
+		UndoneShapesList.push_back(shapesList[shapesList.size() - 1]);
+		shapesList.erase(shapesList.end()-1);
+		cout << "put it undo shapes is working";
+	}
+}
+
+void Graph::FromUndotoShapesList() {
+	if (UndoneShapesList[UndoneShapesList.size() - 1])
+	{
+		shapesList.push_back(UndoneShapesList[UndoneShapesList.size() - 1]);
+		UndoneShapesList.erase(shapesList.end()-1);
+		cout << "From undo to shapes List is working";
+	}
+}

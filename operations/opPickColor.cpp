@@ -54,3 +54,4 @@ void opPickColor::Execute()
 }
 
 void opPickColor::Undo() {}
+void opPickColor::Redo() {}

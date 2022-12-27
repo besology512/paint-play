@@ -63,3 +63,4 @@ void opAddTriangle::Execute()
 }
 
 void opAddTriangle::Undo() {}
+void opAddTriangle::Redo() {}

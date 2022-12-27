@@ -53,3 +53,4 @@ void opLoad::Execute()
 }
 
 void opLoad::Undo() {/*it must delete all selected*/}
+void opLoad::Redo() {/*it must delete all selected*/}

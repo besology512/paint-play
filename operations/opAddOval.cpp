@@ -56,3 +56,4 @@ void opAddOval::Execute()
 
 }
 void opAddOval::Undo() {}
+void opAddOval::Redo() {}

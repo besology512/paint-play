@@ -25,3 +25,4 @@ void opSwitch::Execute() {
 }
 
 void opSwitch::Undo() {}
+void opSwitch::Redo() {}

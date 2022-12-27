@@ -78,3 +78,4 @@ void opAddIrrPolygon::Execute()
 }
 
 void opAddIrrPolygon::Undo() {}
+void opAddIrrPolygon::Redo() {}

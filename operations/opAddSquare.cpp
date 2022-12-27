@@ -58,3 +58,4 @@ void opAddSquare::Execute() {
 }
 
 void opAddSquare::Undo() {}
+void opAddSquare::Redo() {}

@@ -38,3 +38,4 @@ void opSelectUnselect::Execute()
 }
 
 void opSelectUnselect::Undo() {}
+void opSelectUnselect::Redo() {}

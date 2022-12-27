@@ -3,11 +3,11 @@
 #include "operation.h"
 
 
-class opRotate : public operation
+class opRedo : public operation
 {
 public:
-	opRotate(controller* pCont);
-	virtual ~opRotate();
+	opRedo(controller* pCont);
+	virtual ~opRedo();
 	virtual void Execute();
 	virtual void Undo() override;
 	virtual void Redo() override;

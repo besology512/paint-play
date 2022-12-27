@@ -14,4 +14,5 @@ public:
 	virtual void Execute();
 	//ofstream outfile;
 	virtual void Undo() override;
+	virtual void Redo() override;
 };

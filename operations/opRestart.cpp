@@ -19,3 +19,4 @@ void opRestart::Execute() {
 }
 
 void opRestart::Undo() {}
+void opRestart::Redo() {}

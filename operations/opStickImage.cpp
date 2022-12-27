@@ -60,3 +60,4 @@ void opStickImage::Execute()
 }
 
 void opStickImage::Undo() {}
+void opStickImage::Redo() {}

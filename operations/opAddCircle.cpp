@@ -60,3 +60,4 @@ void opAddCircle::Execute()
 }
 
 void opAddCircle:: Undo(){}
+void opAddCircle:: Redo(){}

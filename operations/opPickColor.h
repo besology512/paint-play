@@ -9,4 +9,5 @@ public:
 	// pick the color and return it back in a pointer
 	virtual void Execute();
 	virtual void Undo() override;
+	virtual void Redo() override;
 };

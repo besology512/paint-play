@@ -52,3 +52,4 @@ void opChangeBorderWidth::Execute() {
 }
 
 void opChangeBorderWidth::Undo() {}
+void opChangeBorderWidth::Redo() {}

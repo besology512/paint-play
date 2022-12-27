@@ -30,3 +30,4 @@ void opChangeFill::Execute() {
 }
 
 void opChangeFill::Undo() {}
+void opChangeFill::Redo() {}

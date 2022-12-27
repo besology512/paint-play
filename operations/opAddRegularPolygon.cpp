@@ -82,3 +82,4 @@ void opAddRegularPolygon::Execute()
 }
 
 void opAddRegularPolygon::Undo() {}
+void opAddRegularPolygon::Redo() {}

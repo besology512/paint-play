@@ -18,3 +18,4 @@ void opStart::Execute() {
 	pUI->PrintMessage("You clicked on start button");
 }
 void opStart::Undo() {}
+void opStart::Redo() {}

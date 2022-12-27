@@ -22,3 +22,4 @@ void opRotate::Execute() {
 }
 
 void opRotate::Undo() {}
+void opRotate::Redo() {}

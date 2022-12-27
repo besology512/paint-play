@@ -28,3 +28,4 @@ void opChangeBorderClr::Execute() {
 }
 
 void opChangeBorderClr::Undo() {}
+void opChangeBorderClr::Redo() {}
