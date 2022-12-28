@@ -177,29 +177,8 @@ void Graph::load(ifstream& inputfile)
 		}
 		if (shapeName == "Oval")
 		{
-			string isFilled;
-			int ID;
-			int x, y, z, a, b, c;
-			bool k;
-			Point P1, P2;
-			GfxInfo OvalGfxInfo;
-			inputfile >> ID >> P1.x >> P1.y >> P2.x >> P2.y >> x >> y >> z >> isFilled;
-			OvalGfxInfo.DrawClr.ucBlue = x;
-			OvalGfxInfo.DrawClr.ucGreen = y;
-			OvalGfxInfo.DrawClr.ucRed = z;
-			if (isFilled == "FILL")
-			{
-				inputfile >> a >> b >> c;
-				OvalGfxInfo.FillClr.ucBlue = a;
-				OvalGfxInfo.FillClr.ucGreen = b;
-				OvalGfxInfo.FillClr.ucRed = c;
-			}
-			else
-			{
-				OvalGfxInfo.isFilled = 0;
-			}
-			inputfile >> OvalGfxInfo.BorderWdth;
-			newShape = new Oval(P1, P2, OvalGfxInfo);
+			newShape = new Oval(P1, P2, ShpGfxInfo);
+			newShape->LOAD(inputfile);
 			Addshape(newShape);
 		}
 
