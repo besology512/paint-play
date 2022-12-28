@@ -50,3 +50,6 @@ void opChangeBorderWidth::Execute() {
 		pUI->setBorderWidth(int(w) - 48);
 	}
 }
+
+void opChangeBorderWidth::Undo() {}
+void opChangeBorderWidth::Redo() {}

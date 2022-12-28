@@ -15,5 +15,7 @@ public:
 
 	//Add Image to the controller
 	virtual void Execute();
+	virtual void Undo() override;
+	virtual void Redo() override;
 };
 

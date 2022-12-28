@@ -3,12 +3,11 @@
 #include "operation.h"
 
 
-class opResize: public operation
+class opUndo : public operation
 {
 public:
-	float Factor;
-	opResize(controller* pCont);
-	virtual ~opResize();
+	opUndo(controller* pCont);
+	virtual ~opUndo();
 	virtual void Execute();
 	virtual void Undo() override;
 	virtual void Redo() override;

@@ -37,6 +37,8 @@ class GUI
 	{
 		// Note: Icons are ordered here as they appear in menu
 		// If you want to change the menu icons order, change the order here
+		ICON_UNDO,
+		ICON_REDO,
 		ICON_LINE,
 		ICON_SQUARE,	//Square icon in menu
 		ICON_RECT, // Recangle icon in menu
@@ -50,6 +52,7 @@ class GUI
 		ICON_BORDER_CLR,
 		ICON_BORDER_WIDTH,
 		ICON_RESIZE,
+		ICON_ROTATE,
 		ICON_DELETE,
 		ICON_SAVE,
 		ICON_LOAD,

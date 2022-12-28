@@ -1,3 +1,4 @@
+
 #include "Line.h"
 #include<iostream>
 Line::Line(Point p1, Point p2, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
@@ -98,4 +99,30 @@ void Line::resize(float factor) {
 		point2.x = 2 * point2.x - point1.x;
 		point2.y = 2 * point2.y - point1.y;
 	}
+}
+
+void Line:: Rotate() {
+	Point Center;
+	Center.x = (point1.x + point2.x) / 2;
+	Center.y = (point1.y + point2.y) / 2;
+	int tempP1X = point1.x;
+	int tempP1Y = point1.y;
+	int tempP2X = point2.x;
+	int tempP2Y = point2.y;
+	point1.x = -tempP1Y + Center.y + Center.x;
+	point1.y = tempP1X - Center.x + Center.y;
+	point2.x = -tempP2Y + Center.y + Center.x;
+	point2.y = tempP2X - Center.x + Center.y;
+}
+
+shape* Line::clone(){
+	shape* pCloned = new Line(*this);
+	return pCloned;
+}
+
+void Line::Move(int x,int y){
+	int diffX = x - point1.x;
+	int diffY = y - point1.y;
+	point1.x = x;	point1.y = y;
+	point2.x += diffX;	point2.y += diffY;
 }

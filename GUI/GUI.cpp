@@ -9,8 +9,8 @@ GUI::GUI()
 	InterfaceMode = MODE_DRAW;
 	//InterfaceMode = MODE_DRAW
 	if (InterfaceMode == MODE_DRAW) {
-		width = 1200;
-		height = 600;
+		width = 1500;
+		height = 700;
 		wx = 5;
 		wy = 5;
 
@@ -112,6 +112,30 @@ string GUI::GetSrting() const
 // This function reads the position where the user clicks to determine the desired operation
 operationType GUI::GetUseroperation() const
 {
+	// put the shortcuts here
+	while (GetKeyState(VK_LCONTROL) < 0)
+	{
+		PrintMessage("L CTRL + ...");
+		cout << "working" << endl;
+		char CharAfterControl;
+		GetKeyClicked(CharAfterControl);
+		if (CharAfterControl == 'c')
+		{
+			cout << "Call Copy"<<endl;
+			PrintMessage("Copy");
+			return COPY;
+		}
+		else if (CharAfterControl == 'v') {
+			cout << "Call Paste" << endl;
+			PrintMessage("Paste");
+			return PASTE;
+		}
+		else if (CharAfterControl == 'x') {
+			cout << "Call Cut" << endl;
+			PrintMessage("Cut");
+			return CUT;
+		}
+	}
 	int x, y;
 	pWind->WaitMouseClick(x, y); // Get the coordinates of the user click
 
@@ -128,6 +152,8 @@ operationType GUI::GetUseroperation() const
 
 			switch (ClickedIconOrder)
 			{
+			case ICON_UNDO: return UNDO;
+			case ICON_REDO: return REDO;
 			case ICON_RECT: return DRAW_RECT;
 			case ICON_CIRC: return DRAW_CIRC;
 			case ICON_TRIANGLE: return DRAW_TRI;
@@ -144,6 +170,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_BORDER_CLR: return CHNG_BORDER_CLR;
 			case ICON_BORDER_WIDTH: return CHNG_BORDER_WIDTH;
 			case ICON_RESIZE: return RESIZE;
+			case ICON_ROTATE: return ROTATE;
 			case ICON_DELETE: return DEL;
 			case ICON_SWITCH: return SWITCH;
 			case ICON_EXIT: return EXIT;
@@ -245,6 +272,8 @@ void GUI::CreateDrawToolBar()
 	// To control the order of these images in the menu,
 	// reoder them in UI_Info.h ==> enum DrawMenuIcon
 	string MenuIconImages[DRAW_ICON_COUNT];
+	MenuIconImages[ICON_REDO] = "images\\MenuIcons\\Menu_Redo.jpg";
+	MenuIconImages[ICON_UNDO] = "images\\MenuIcons\\Menu_Undo.jpg";
 	MenuIconImages[ICON_LINE] = "images\\MenuIcons\\Menu_Line.jpg";
 	MenuIconImages[ICON_SQUARE] = "images\\MenuIcons\\Menu_Square.jpg";
 	MenuIconImages[ICON_RECT] = "images\\MenuIcons\\Menu_Rect.jpg";
@@ -259,6 +288,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_BORDER_CLR] = "images\\MenuIcons\\Menu_changePenColor.jpg";
 	MenuIconImages[ICON_BORDER_WIDTH] = "images\\MenuIcons\\Menu_ChangeBorderWidth.jpg";
 	MenuIconImages[ICON_RESIZE] = "images\\MenuIcons\\Menu_Resize.jpg";
+	MenuIconImages[ICON_ROTATE] = "images\\MenuIcons\\Menu_Rotate.jpg";
 	MenuIconImages[ICON_SWITCH] = "images\\MenuIcons\\Menu_Switch.jpg";
 	MenuIconImages[ICON_DELETE] = "images\\MenuIcons\\Menu_Delete.jpg";
 	MenuIconImages[ICON_SAVE] = "images\\MenuIcons\\Menu_Save.jpg";

@@ -30,6 +30,7 @@ void opResize::Execute() {
 			factor = 2;
 		if (input == "4")
 			factor = 4;
+		Factor = factor;
 		pGr->getSelectedShape()->resize(factor);
 		//Set the save status is false
 		pGr->isSaved = false;
@@ -37,4 +38,13 @@ void opResize::Execute() {
 	else {
 		pUI->PrintMessage("Select the shape you want to resize first!");
 	}
+}
+
+void opResize::Undo() {
+	Graph* pGr = pControl->getGraph();
+	pGr->getLastShape()->resize(1 / Factor);
+}
+void opResize::Redo() {
+	Graph* pGr = pControl->getGraph();
+	pGr->getLastShape()->resize(Factor);
 }

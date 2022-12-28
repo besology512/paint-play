@@ -26,3 +26,12 @@ void opChangeBorderClr::Execute() {
 		pUI->setDrawColor(pGr->getPickedClr());
 	}
 }
+
+void opChangeBorderClr::Undo() {
+	Graph* pGr = pControl->getGraph();
+	pGr->PutInUndoShapes();
+}
+void opChangeBorderClr::Redo() {
+	Graph* pGr = pControl->getGraph();
+	pGr->FromUndotoShapesList();
+}

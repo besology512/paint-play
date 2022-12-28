@@ -3,12 +3,11 @@
 #include "operation.h"
 
 
-class opResize: public operation
+class opRotate : public operation
 {
 public:
-	float Factor;
-	opResize(controller* pCont);
-	virtual ~opResize();
+	opRotate(controller* pCont);
+	virtual ~opRotate();
 	virtual void Execute();
 	virtual void Undo() override;
 	virtual void Redo() override;

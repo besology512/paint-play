@@ -219,6 +219,14 @@
     <ClCompile Include="operations\opAddLine.cpp">
       <Filter>Operations</Filter>
     </ClCompile>
+    <ClCompile Include="operations\opRotate.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="operations\opUndo.cpp" />
+    <ClCompile Include="operations\opRedo.cpp" />
+    <ClCompile Include="operations\opCopy.cpp" />
+    <ClCompile Include="operations\opPaste.cpp" />
+    <ClCompile Include="operations\opCut.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -390,6 +398,14 @@
     <ClInclude Include="operations\opAddLine.h">
       <Filter>Operations</Filter>
     </ClInclude>
+    <ClInclude Include="operations\opRotate.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="operations\opUndo.h" />
+    <ClInclude Include="operations\opRedo.h" />
+    <ClInclude Include="operations\opCopy.h" />
+    <ClInclude Include="operations\opPaste.h" />
+    <ClInclude Include="operations\opCut.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Operations">

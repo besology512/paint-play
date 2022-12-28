@@ -1,8 +1,9 @@
 #pragma once
-
+#include "operations/operation.h"
 #include "DEFS.h"
 #include "Shapes\Graph.h"
 #include "GUI\GUI.h"
+#include <stack>
 
 class operation; //forward declaration
 
@@ -12,9 +13,9 @@ class controller
 
 	Graph* pGraph;	//pointer to the graph
 	GUI* pGUI;		//Pointer to UI class
-	
-
-public:	
+	stack<operation*> Operations;
+	stack<operation*> UndoneOperations;
+public:
 	controller(); 
 	~controller();
 	
@@ -29,6 +30,10 @@ public:
 	// -- Interface Management Functions
 	GUI *GetUI() const; //Return pointer to the UI
 	void UpdateInterface() const;	//Redraws all the drawing window	
-
+	operation* getLastOperation();
+	void addToCurrentOperation(operation* newOperation);
+	operation* getUndoneOperation();
+	void UndoOperation();
+	void RedoOperation();
 };
 

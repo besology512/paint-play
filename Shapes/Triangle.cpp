@@ -141,3 +141,33 @@ double Triangle::getHeight()
 
 }
 
+void Triangle::Rotate() {
+	Point Center;
+	Center.x = (Corner1.x + Corner2.x + Corner3.x) / 3;
+	Center.y = (Corner1.y + Corner2.y+Corner3.y) / 3;
+	int tempP1X = Corner1.x;
+	int tempP1Y = Corner1.y;
+	int tempP2X = Corner2.x;
+	int tempP2Y = Corner2.y;
+	int tempP3X = Corner3.x;
+	int tempP3Y = Corner3.y;
+	Corner1.x = -tempP1Y + Center.y + Center.x;
+	Corner1.y = tempP1X - Center.x + Center.y;
+	Corner2.x = -tempP2Y + Center.y + Center.x;
+	Corner2.y = tempP2X - Center.x + Center.y;
+	Corner3.x = -tempP3Y + Center.y + Center.x;
+	Corner3.y = tempP3X - Center.x + Center.y;
+}
+
+shape* Triangle::clone(){
+	shape* pCloned = new Triangle(*this);
+	return pCloned;
+}
+
+void Triangle::Move(int x,int y){
+	int diffX = x - Corner1.x;
+	int diffY = y - Corner1.y;
+	Corner1.x = x;	Corner1.y = y;
+	Corner2.x += diffX;	Corner2.y += diffY;
+	Corner3.x += diffX;	Corner3.y += diffY;
+}

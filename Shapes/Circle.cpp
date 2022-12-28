@@ -110,3 +110,21 @@ string Circle::shapeInfo()
 
 	return msg ;
 }
+
+void Circle::Rotate(){
+	//no function needed, the circle will be the same
+}
+
+shape* Circle::clone(){
+	shape* pCloned = new Circle(*this);
+	return pCloned;
+}
+
+void Circle::Move(int x,int y){
+int diffX = x - Center.x;
+int diffY = y - Center.y;
+Center.x = x;
+Center.y = y;
+PointOnCircle.x += diffX;
+PointOnCircle.y += diffY;
+}

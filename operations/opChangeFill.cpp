@@ -28,3 +28,6 @@ void opChangeFill::Execute() {
 		pUI->setFillcolor(pGr->getPickedClr());
 	}
 }
+
+void opChangeFill::Undo() {}
+void opChangeFill::Redo() {}
