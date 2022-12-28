@@ -137,9 +137,10 @@ void Graph::load(ifstream& inputfile)
 
 		if (shapeName == "IrrPolygon")
 		{
-			newShape = new IrrPolygon(allPoints, verticies, ShpGfxInfo);
+			continue;
+			/*newShape = new IrrPolygon(allPoints, verticies, ShpGfxInfo);
 			newShape->LOAD(inputfile);
-			Addshape(newShape);
+			Addshape(newShape);*/
 		}
 		if (shapeName == "RegularPolygon")
 		{
