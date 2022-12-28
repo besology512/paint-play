@@ -50,3 +50,5 @@ double StickImage::getHeight()
 }
 void StickImage::resize(float factor) {}
 void StickImage::Rotate(){}
+shape* StickImage::clone(){return nullptr;}
+void StickImage::Move(int x, int y){}

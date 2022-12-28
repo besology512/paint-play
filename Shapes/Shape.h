@@ -31,16 +31,8 @@ public:
 	virtual double getHeight() = 0;
 	virtual void resize(float factor) = 0;
 	virtual void Rotate() = 0;
-
-	///The following functions should be supported by the shape class
-	///It should be overridden by each inherited shape
-
-	///Decide the parameters that you should pass to each function	
-
-
-	//virtual void Rotate() = 0;	//Rotate the shape
-	//virtual void Resize() = 0;	//Resize the shape
-	//virtual void Move() = 0;		//Move the shape
+	virtual shape* clone() = 0;
+	virtual void Move(int x,int y) = 0;		//Move the shape
 
 	virtual void SAVE(ofstream &OutFile) = 0;	//Save the shape parameters to the file
 	virtual void LOAD(ifstream &Infile) = 0;	//Load the shape parameters to the file

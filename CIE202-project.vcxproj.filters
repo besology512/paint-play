@@ -224,6 +224,9 @@
     </ClCompile>
     <ClCompile Include="operations\opUndo.cpp" />
     <ClCompile Include="operations\opRedo.cpp" />
+    <ClCompile Include="operations\opCopy.cpp" />
+    <ClCompile Include="operations\opPaste.cpp" />
+    <ClCompile Include="operations\opCut.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -400,6 +403,9 @@
     </ClInclude>
     <ClInclude Include="operations\opUndo.h" />
     <ClInclude Include="operations\opRedo.h" />
+    <ClInclude Include="operations\opCopy.h" />
+    <ClInclude Include="operations\opPaste.h" />
+    <ClInclude Include="operations\opCut.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Operations">

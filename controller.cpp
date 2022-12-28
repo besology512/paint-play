@@ -24,6 +24,9 @@
 #include"operations/opRotate.h"
 #include"operations/opUndo.h"
 #include"operations/opRedo.h"
+#include"operations/opCopy.h"
+#include"operations/opPaste.h"
+#include"operations/opCut.h"
 
 
 //Constructor
@@ -105,6 +108,15 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case SWITCH:
 			pOp = new opSwitch(this);
+			break;
+		case COPY:
+			pOp = new opCopy(this);
+			break;
+		case PASTE:
+			pOp = new opPaste(this);
+			break;
+		case CUT:
+			pOp = new opCut(this);
 			break;
 		case DEL:
 			pOp = new opDelete(this);

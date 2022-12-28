@@ -114,3 +114,15 @@ void Line:: Rotate() {
 	point2.x = -tempP2Y + Center.y + Center.x;
 	point2.y = tempP2X - Center.x + Center.y;
 }
+
+shape* Line::clone(){
+	shape* pCloned = new Line(*this);
+	return pCloned;
+}
+
+void Line::Move(int x,int y){
+	int diffX = x - point1.x;
+	int diffY = y - point1.y;
+	point1.x = x;	point1.y = y;
+	point2.x += diffX;	point2.y += diffY;
+}

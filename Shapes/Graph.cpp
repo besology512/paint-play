@@ -401,3 +401,18 @@ shape* Graph::getLastShape() const {
 shape* Graph::getLastRedoShape() const {
 	return *(UndoneShapesList.end() - 1);
 }
+
+void Graph::addToCloned(shape* pShp) {
+	if (pShp)
+	{
+		ClonedShapes.push_back(pShp);
+	}
+}
+
+vector <shape*> Graph::getClonedShapes() {
+	return ClonedShapes;
+}
+
+void Graph::ClearClipboard(){
+	ClonedShapes.clear();
+}

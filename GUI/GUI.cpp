@@ -9,8 +9,8 @@ GUI::GUI()
 	InterfaceMode = MODE_DRAW;
 	//InterfaceMode = MODE_DRAW
 	if (InterfaceMode == MODE_DRAW) {
-		width = 1200;
-		height = 600;
+		width = 1500;
+		height = 700;
 		wx = 5;
 		wy = 5;
 
@@ -112,6 +112,30 @@ string GUI::GetSrting() const
 // This function reads the position where the user clicks to determine the desired operation
 operationType GUI::GetUseroperation() const
 {
+	// put the shortcuts here
+	while (GetKeyState(VK_LCONTROL) < 0)
+	{
+		PrintMessage("L CTRL + ...");
+		cout << "working" << endl;
+		char CharAfterControl;
+		GetKeyClicked(CharAfterControl);
+		if (CharAfterControl == 'c')
+		{
+			cout << "Call Copy"<<endl;
+			PrintMessage("Copy");
+			return COPY;
+		}
+		else if (CharAfterControl == 'v') {
+			cout << "Call Paste" << endl;
+			PrintMessage("Paste");
+			return PASTE;
+		}
+		else if (CharAfterControl == 'x') {
+			cout << "Call Cut" << endl;
+			PrintMessage("Cut");
+			return CUT;
+		}
+	}
 	int x, y;
 	pWind->WaitMouseClick(x, y); // Get the coordinates of the user click
 

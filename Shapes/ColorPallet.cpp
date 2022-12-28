@@ -38,3 +38,5 @@ double ColorPallet::getHeight()
 
 void ColorPallet::resize(float factor) {}
 void ColorPallet::Rotate(){}
+shape* ColorPallet::clone(){return nullptr;}
+void ColorPallet::Move(int x,int y){}

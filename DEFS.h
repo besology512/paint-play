@@ -20,6 +20,9 @@ enum operationType //The operations supported (you can add more if needed)
 	CHNG_BORDER_CLR,	//Change the border color
 	CHNG_BORDER_WIDTH,  //Change the border width
 	PICK_COLOR,
+	COPY,
+	PASTE,
+	CUT,
 	DEL,			//Delete a shape(s)
 	MOVE,			//Move a shape(s)
 	RESIZE,			//Resize a shape(s)

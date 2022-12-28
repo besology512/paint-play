@@ -29,6 +29,7 @@ private:
 	PickedColor pickedClr;
 	vector <shape*> shapesList; //a container to hold all shapes
 	vector <shape*> UndoneShapesList;
+	vector <shape*> ClonedShapes;
 	shape* selectedShape;	//pointer to the currently selected shape
 public:
 	//bool counting = true;
@@ -53,11 +54,12 @@ public:
 	void RemoveShape(shape* pShp);
 	void DeleteShape(shape* pShp);			   // Delete a single shape from shape of list	
 	shape* Getshape(int x, int y); //Search for a shape given a point inside the shape
-
-
+	void addToCloned(shape* pShp);
+	vector <shape*> getClonedShapes();
 	void Save(ofstream& outfile);	//Save all shapes to a file
 	void load(ifstream& inputfile);	//Load all shapes from a file
 	color getPickedClr(); //get the current color
 	void setPickedClr(double&,double&,double&); //set color using color picker
+	void ClearClipboard();
 
 };
