@@ -114,29 +114,30 @@ void Graph::load(ifstream& inputfile)
 		}
 		if (shapeName == "Triangle")
 		{
-			string isFilled;
-			int ID;
-			int x, y, z, a, b, c;
-			bool k;
-			Point P1, P2, P3;
+			//string isFilled;
+			//int ID;
+			//int x, y, z, a, b, c;
+			//bool k;
+			Point P1{}, P2{}, P3{};
 			GfxInfo TriangleGfxInfo;
-			inputfile >> ID >> P1.x >> P1.y >> P2.x >> P2.y >>P3.x >> P3.y >> x >> y >> z >> isFilled;
-			TriangleGfxInfo.DrawClr.ucBlue = x;
-			TriangleGfxInfo.DrawClr.ucGreen = y;
-			TriangleGfxInfo.DrawClr.ucRed = z;
-			if (isFilled == "FILL")
-			{
-				inputfile >> a >> b >> c;
-				TriangleGfxInfo.FillClr.ucBlue = a;
-				TriangleGfxInfo.FillClr.ucGreen = b;
-				TriangleGfxInfo.FillClr.ucRed = c;
-			}
-			else
-			{
-				TriangleGfxInfo.isFilled = 0;
-			}
-			inputfile >> TriangleGfxInfo.BorderWdth;
+			//inputfile >> ID >> P1.x >> P1.y >> P2.x >> P2.y >>P3.x >> P3.y >> x >> y >> z >> isFilled;
+			//TriangleGfxInfo.DrawClr.ucBlue = x;
+			//TriangleGfxInfo.DrawClr.ucGreen = y;
+			//TriangleGfxInfo.DrawClr.ucRed = z;
+			//if (isFilled == "FILL")
+			//{
+			//	inputfile >> a >> b >> c;
+			//	TriangleGfxInfo.FillClr.ucBlue = a;
+			//	TriangleGfxInfo.FillClr.ucGreen = b;
+			//	TriangleGfxInfo.FillClr.ucRed = c;
+			//}
+			//else
+			//{
+			//	TriangleGfxInfo.isFilled = 0;
+			//}
+			//inputfile >> TriangleGfxInfo.BorderWdth;
 			newShape = new Triangle(P1, P2, P3, TriangleGfxInfo);
+			newShape->LOAD(inputfile);
 			Addshape(newShape);
 		}
 
