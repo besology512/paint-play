@@ -1,7 +1,5 @@
 #include"opCopy.h"
-
 #include"../controller.h"
-
 #include"../GUI/GUI.h"
 #include<iostream>
 opCopy::opCopy(controller* pCont) :operation(pCont) {}

@@ -153,3 +153,8 @@ void Oval::Move(int x,int y){
 	Corner1.x = x;	Corner1.y = y;
 	Corner2.x += diffX;	Corner2.y += diffY;
 }
+Point Oval::getUpperLeftPoint()
+{
+	return Point();
+}
+

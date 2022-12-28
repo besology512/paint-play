@@ -158,3 +158,8 @@ void Square::Move(int x,int y){
 	corner1.x = x;	corner1.y = y;
 	corner2.x += diffX;	corner2.y += diffY;
 }
+Point Square::getUpperLeftPoint()
+{
+	return Point();
+}
+

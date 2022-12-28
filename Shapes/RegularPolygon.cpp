@@ -128,3 +128,7 @@ shape* RegularPolygon::clone(){
 void RegularPolygon::Move(int x,int y){
 	center.x = x;	center.y = y;
 }
+Point RegularPolygon::getUpperLeftPoint()
+{
+	return Point();
+}

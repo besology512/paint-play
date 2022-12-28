@@ -40,3 +40,7 @@ void ColorPallet::resize(float factor) {}
 void ColorPallet::Rotate(){}
 shape* ColorPallet::clone(){return nullptr;}
 void ColorPallet::Move(int x,int y){}
+Point ColorPallet::getUpperLeftPoint(){return Point();}
+
+
+

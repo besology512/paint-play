@@ -271,8 +271,8 @@ void Graph::load(ifstream& inputfile)
 			int x, y, z, a, b, c;
 			bool k;
 			Point center;
-			char numOfVertices;
-			char radius;
+			int numOfVertices;
+			double radius;
 			GfxInfo RegularPolygonGfxInfo;
 			inputfile >> ID >> center.x >> center.y >> numOfVertices >> radius >> x >> y >> z >> isFilled;
 			RegularPolygonGfxInfo.DrawClr.ucBlue = x;
@@ -290,7 +290,7 @@ void Graph::load(ifstream& inputfile)
 				RegularPolygonGfxInfo.isFilled = 0;
 			}
 			inputfile >> RegularPolygonGfxInfo.BorderWdth;
-			newShape = new RegularPolygon(center, int((int(numOfVertices) - 48)), int((int(radius) - 48)) * 15, RegularPolygonGfxInfo);
+			newShape = new RegularPolygon(center, int(numOfVertices), int(radius), RegularPolygonGfxInfo);
 			Addshape(newShape);
 		}
 		if (shapeName == "Circle")

@@ -126,3 +126,8 @@ void Line::Move(int x,int y){
 	point1.x = x;	point1.y = y;
 	point2.x += diffX;	point2.y += diffY;
 }
+Point Line::getUpperLeftPoint()
+{
+	return Point();
+}
+

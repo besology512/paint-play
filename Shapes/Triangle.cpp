@@ -171,3 +171,5 @@ void Triangle::Move(int x,int y){
 	Corner2.x += diffX;	Corner2.y += diffY;
 	Corner3.x += diffX;	Corner3.y += diffY;
 }
+Point Triangle::getUpperLeftPoint(){return Point();}
+

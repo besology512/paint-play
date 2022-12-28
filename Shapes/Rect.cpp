@@ -138,6 +138,14 @@ void Rect::resize(float factor) {
 			Corner2.y = 2 * Corner2.y - Corner1.y;
 		}
 }
+Point Rect::getUpperLeftPoint()
+{
+	Point upperLeftPoint;
+	upperLeftPoint.x = Corner1.x + 5;
+	upperLeftPoint.y = Corner1.y + 5;
+	return upperLeftPoint;
+}
+
 
 void Rect::Rotate() {
 	Point Center;

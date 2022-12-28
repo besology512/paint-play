@@ -1,6 +1,5 @@
 #pragma once
 #include "Shape.h"
-
 #include"../Shapes/Line.h"
 #include"../Shapes/Triangle.h"
 #include"../Shapes/Square.h"
