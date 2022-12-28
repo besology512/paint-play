@@ -121,6 +121,10 @@ shape* Circle::clone(){
 }
 
 void Circle::Move(int x,int y){
+int diffX = x - Center.x;
+int diffY = y - Center.y;
 Center.x = x;
 Center.y = y;
+PointOnCircle.x += diffX;
+PointOnCircle.y += diffY;
 }

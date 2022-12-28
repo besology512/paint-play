@@ -177,9 +177,12 @@
     <ClCompile Include="operations\opChangeBorderClr.cpp" />
     <ClCompile Include="operations\opChangeBorderWidth.cpp" />
     <ClCompile Include="operations\opChangeFill.cpp" />
+    <ClCompile Include="operations\opCopy.cpp" />
+    <ClCompile Include="operations\opCut.cpp" />
     <ClCompile Include="operations\opDelete.cpp" />
     <ClCompile Include="operations\opExit.cpp" />
     <ClCompile Include="operations\opLoad.cpp" />
+    <ClCompile Include="operations\opPaste.cpp" />
     <ClCompile Include="operations\opRedo.cpp" />
     <ClCompile Include="Operations\opResize.cpp" />
     <ClCompile Include="operations\opRestart.cpp" />
@@ -234,9 +237,12 @@
     <ClInclude Include="operations\opChangeBorderClr.h" />
     <ClInclude Include="operations\opChangeBorderWidth.h" />
     <ClInclude Include="operations\opChangeFill.h" />
+    <ClInclude Include="operations\opCopy.h" />
+    <ClInclude Include="operations\opCut.h" />
     <ClInclude Include="operations\opDelete.h" />
     <ClInclude Include="operations\opExit.h" />
     <ClInclude Include="operations\opLoad.h" />
+    <ClInclude Include="operations\opPaste.h" />
     <ClInclude Include="operations\opRedo.h" />
     <ClInclude Include="Operations\opResize.h" />
     <ClInclude Include="operations\opRestart.h" />

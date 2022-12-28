@@ -412,3 +412,7 @@ void Graph::addToCloned(shape* pShp) {
 vector <shape*> Graph::getClonedShapes() {
 	return ClonedShapes;
 }
+
+void Graph::ClearClipboard(){
+	ClonedShapes.clear();
+}
