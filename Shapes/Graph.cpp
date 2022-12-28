@@ -103,76 +103,42 @@ void Graph::load(ifstream& inputfile)
 	
 	while(inputfile)
 	{
+		int verticies{};
+		GfxInfo ShpGfxInfo;
+		Point P1{}, P2{}, P3{};
+		vector<Point> allPoints;
 		inputfile >> shapeName;
 		if (shapeName == "Line")
 		{
-			GfxInfo LineGfxInfo;
-			Point P1{}, P2{};
-			newShape = new Line(P1,P2,LineGfxInfo);
+			newShape = new Line(P1,P2, ShpGfxInfo);
 			newShape->LOAD(inputfile);
 			Addshape(newShape);
 		}
 		if (shapeName == "Triangle")
 		{
-			Point P1{}, P2{}, P3{}; // {} this bracket to intilize points
-			GfxInfo TriangleGfxInfo;
-			newShape = new Triangle(P1, P2, P3, TriangleGfxInfo);
+			newShape = new Triangle(P1, P2, P3, ShpGfxInfo);
 			newShape->LOAD(inputfile);
 			Addshape(newShape);
 		}
 
 		if (shapeName == "Square")
 		{
-			GfxInfo SquareGfxInfo;
-			Point P1{}, P2{};
-			newShape = new Square(P1, P2, SquareGfxInfo);
+			newShape = new Square(P1, P2, ShpGfxInfo);
 			newShape->LOAD(inputfile);
 			Addshape(newShape);
 		}
 
 		if (shapeName == "Rect")
 		{
-			Point P1{}, P2{};
-			GfxInfo RectGfxInfo;
-			newShape = new Rect(P1, P2, RectGfxInfo);
+			newShape = new Rect(P1, P2, ShpGfxInfo);
 			newShape->LOAD(inputfile);
 			Addshape(newShape);
 		}
 
 		if (shapeName == "IrrPolygon")
 		{
-			string isFilled;
-			int ID;
-			int x, y, z, a, b, c;
-			bool k;
-			vector<Point> allPoints;
-			int verticies;
-			GfxInfo IrrPolygonGfxInfo;
-			inputfile >> ID >> verticies;
-			for (unsigned i = 0; i <= verticies; ++i)
-			{
-				inputfile >> allPoints[i].x
-					>> allPoints[i].y ;
-
-			}
-			
-			inputfile >> x >> y >> z >> isFilled;
-			IrrPolygonGfxInfo.DrawClr.ucBlue = x;
-			IrrPolygonGfxInfo.DrawClr.ucGreen = y;
-			IrrPolygonGfxInfo.DrawClr.ucRed = z;
-			if (isFilled == "FILL")
-			{
-				inputfile >> a >> b >> c;
-				IrrPolygonGfxInfo.FillClr.ucBlue = a;
-				IrrPolygonGfxInfo.FillClr.ucGreen = b;
-				IrrPolygonGfxInfo.FillClr.ucRed = c;
-			}
-			else
-			{
-				IrrPolygonGfxInfo.isFilled = 0;
-			}
-			inputfile >> IrrPolygonGfxInfo.BorderWdth;
-			newShape = new IrrPolygon(allPoints, verticies, IrrPolygonGfxInfo);
+			newShape = new IrrPolygon(allPoints, verticies, ShpGfxInfo);
+			newShape->LOAD(inputfile);
 			Addshape(newShape);
 		}
 		if (shapeName == "RegularPolygon")
@@ -180,10 +146,9 @@ void Graph::load(ifstream& inputfile)
 			string isFilled;
 			int ID;
 			int x, y, z, a, b, c;
-			bool k;
 			Point center;
-			char numOfVertices;
-			char radius;
+			double numOfVertices;
+			int radius;
 			GfxInfo RegularPolygonGfxInfo;
 			inputfile >> ID >> center.x >> center.y >> numOfVertices >> radius >> x >> y >> z >> isFilled;
 			RegularPolygonGfxInfo.DrawClr.ucBlue = x;
@@ -201,7 +166,7 @@ void Graph::load(ifstream& inputfile)
 				RegularPolygonGfxInfo.isFilled = 0;
 			}
 			inputfile >> RegularPolygonGfxInfo.BorderWdth;
-			newShape = new RegularPolygon(center, int((int(numOfVertices) - 48)), int((int(radius) - 48)) * 15, RegularPolygonGfxInfo);
+			newShape = new RegularPolygon(center, numOfVertices, radius, RegularPolygonGfxInfo);
 			Addshape(newShape);
 		}
 		if (shapeName == "Circle")
