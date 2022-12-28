@@ -146,3 +146,8 @@ void Square::Rotate() {
 	corner2.x = -tempP2Y + Center.y + Center.x;
 	corner2.y = tempP2X - Center.x + Center.y;
 }
+
+shape* Square::clone(){
+	shape* pCloned = new Square(*this);
+	return pCloned;
+}

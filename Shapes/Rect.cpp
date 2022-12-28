@@ -152,3 +152,8 @@ void Rect::Rotate() {
 	Corner2.x = -tempP2Y + Center.y + Center.x;
 	Corner2.y = tempP2X - Center.x + Center.y;
 }
+
+shape* Rect::clone(){
+	shape* pCloned = new Rect(*this);
+	return pCloned;
+}

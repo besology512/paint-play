@@ -86,3 +86,7 @@ double IrrPolygon::getHeight()
 
 void IrrPolygon::resize(float factor) {}
 void IrrPolygon::Rotate(){}
+shape* IrrPolygon::clone(){
+	shape* pCloned = new IrrPolygon(*this);
+	return pCloned;
+}

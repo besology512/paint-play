@@ -114,3 +114,8 @@ string Circle::shapeInfo()
 void Circle::Rotate(){
 	//no function needed, the circle will be the same
 }
+
+shape* Circle::clone(){
+	shape* pCloned = new Circle(*this);
+	return pCloned;
+}

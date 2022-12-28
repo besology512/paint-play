@@ -22,5 +22,6 @@ public:
 	double getHeight();
 	void resize(float factor) override;
 	void Rotate() override;
+	shape* clone() override;
 };
 

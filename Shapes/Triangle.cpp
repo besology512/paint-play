@@ -158,3 +158,8 @@ void Triangle::Rotate() {
 	Corner3.x = -tempP3Y + Center.y + Center.x;
 	Corner3.y = tempP3X - Center.x + Center.y;
 }
+
+shape* Triangle::clone(){
+	shape* pCloned = new Triangle(*this);
+	return pCloned;
+}

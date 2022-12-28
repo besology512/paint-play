@@ -142,3 +142,7 @@ void Oval::Rotate() {
 	Corner2.x = -tempP2Y + Center.y + Center.x;
 	Corner2.y = tempP2X - Center.x + Center.y;
 }
+shape* Oval::clone(){
+	shape* pCloned = new Oval(*this);
+	return pCloned;
+}

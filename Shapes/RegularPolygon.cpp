@@ -120,3 +120,8 @@ void RegularPolygon:: Rotate(){
 	//corner2.x = -tempP2Y + Center.y + Center.x;
 	//corner2.y = tempP2X - Center.x + Center.y;
 }
+
+shape* RegularPolygon::clone(){
+	shape* pCloned = new RegularPolygon(*this);
+	return pCloned;
+}

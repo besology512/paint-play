@@ -114,3 +114,8 @@ void Line:: Rotate() {
 	point2.x = -tempP2Y + Center.y + Center.x;
 	point2.y = tempP2X - Center.x + Center.y;
 }
+
+shape* Line::clone(){
+	shape* pCloned = new Line(*this);
+	return pCloned;
+}
