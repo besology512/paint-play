@@ -48,6 +48,25 @@ void Square::SAVE(ofstream& OutFile)
 
 void Square::LOAD(ifstream& Infile)
 {
+	string isFilled;
+	int ID;
+	int x, y, z;
+	Infile >> ID >> corner1.x >> corner1.y >> corner2.x >> corner2.y >> x >> y >> z >> isFilled;
+	ShpGfxInfo.DrawClr.ucBlue = x;
+	ShpGfxInfo.DrawClr.ucGreen = y;
+	ShpGfxInfo.DrawClr.ucRed = z;
+	if (isFilled == "FILL")
+	{
+		Infile >> x >> y >> z;
+		ShpGfxInfo.FillClr.ucBlue = x;
+		ShpGfxInfo.FillClr.ucGreen = y;
+		ShpGfxInfo.FillClr.ucRed = z;
+	}
+	else
+	{
+		ShpGfxInfo.isFilled = 0;
+	}
+	Infile >> ShpGfxInfo.BorderWdth;
 }
 
 bool Square::inShape(int x, int y) const 

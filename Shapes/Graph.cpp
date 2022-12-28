@@ -114,28 +114,8 @@ void Graph::load(ifstream& inputfile)
 		}
 		if (shapeName == "Triangle")
 		{
-			//string isFilled;
-			//int ID;
-			//int x, y, z, a, b, c;
-			//bool k;
-			Point P1{}, P2{}, P3{};
+			Point P1{}, P2{}, P3{}; // {} this bracket to intilize points
 			GfxInfo TriangleGfxInfo;
-			//inputfile >> ID >> P1.x >> P1.y >> P2.x >> P2.y >>P3.x >> P3.y >> x >> y >> z >> isFilled;
-			//TriangleGfxInfo.DrawClr.ucBlue = x;
-			//TriangleGfxInfo.DrawClr.ucGreen = y;
-			//TriangleGfxInfo.DrawClr.ucRed = z;
-			//if (isFilled == "FILL")
-			//{
-			//	inputfile >> a >> b >> c;
-			//	TriangleGfxInfo.FillClr.ucBlue = a;
-			//	TriangleGfxInfo.FillClr.ucGreen = b;
-			//	TriangleGfxInfo.FillClr.ucRed = c;
-			//}
-			//else
-			//{
-			//	TriangleGfxInfo.isFilled = 0;
-			//}
-			//inputfile >> TriangleGfxInfo.BorderWdth;
 			newShape = new Triangle(P1, P2, P3, TriangleGfxInfo);
 			newShape->LOAD(inputfile);
 			Addshape(newShape);
@@ -143,29 +123,10 @@ void Graph::load(ifstream& inputfile)
 
 		if (shapeName == "Square")
 		{
-			string isFilled;
-			int ID;
-			int x, y, z, a, b, c;
-			bool k;
-			Point P1, P2;
 			GfxInfo SquareGfxInfo;
-			inputfile >> ID >> P1.x >> P1.y >> P2.x >> P2.y >> x >> y >> z >> isFilled;
-			SquareGfxInfo.DrawClr.ucBlue = x;
-			SquareGfxInfo.DrawClr.ucGreen = y;
-			SquareGfxInfo.DrawClr.ucRed = z;
-			if (isFilled == "FILL")
-			{
-				inputfile >> a >> b >> c;
-				SquareGfxInfo.FillClr.ucBlue = a;
-				SquareGfxInfo.FillClr.ucGreen = b;
-				SquareGfxInfo.FillClr.ucRed = c;
-			}
-			else
-			{
-				SquareGfxInfo.isFilled = 0;
-			}
-			inputfile >> SquareGfxInfo.BorderWdth;
+			Point P1{}, P2{};
 			newShape = new Square(P1, P2, SquareGfxInfo);
+			newShape->LOAD(inputfile);
 			Addshape(newShape);
 		}
 
