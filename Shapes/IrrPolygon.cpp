@@ -90,3 +90,13 @@ shape* IrrPolygon::clone(){
 	shape* pCloned = new IrrPolygon(*this);
 	return pCloned;
 }
+void IrrPolygon::Move(int x,int y){
+	int diffX = x - allPoints[0].x;
+	int diffY = y - allPoints[0].y;
+	for (int i = 0; i < allPoints.size(); i++)
+	{
+		allPoints[i].x = allPoints[i].x + diffX;
+		allPoints[i].y = allPoints[i].y + diffY;
+	}
+	
+}

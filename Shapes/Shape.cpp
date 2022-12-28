@@ -30,7 +30,3 @@ void shape::setIsfilled(bool a) {
 	ShpGfxInfo.isFilled = a;
 }
 
-//void shape::Sve(ofstream& OutFile)
-//{
-//}
-

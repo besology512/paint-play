@@ -163,3 +163,11 @@ shape* Triangle::clone(){
 	shape* pCloned = new Triangle(*this);
 	return pCloned;
 }
+
+void Triangle::Move(int x,int y){
+	int diffX = x - Corner1.x;
+	int diffY = y - Corner1.y;
+	Corner1.x = x;	Corner1.y = y;
+	Corner2.x += diffX;	Corner2.y += diffY;
+	Corner3.x += diffX;	Corner3.y += diffY;
+}

@@ -24,5 +24,6 @@ public:
 	void Rotate() override;
 	double getHeight();
 	shape* clone() override;
+	void Move(int x,int y) override;
 };
 

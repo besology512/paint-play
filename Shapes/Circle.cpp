@@ -119,3 +119,8 @@ shape* Circle::clone(){
 	shape* pCloned = new Circle(*this);
 	return pCloned;
 }
+
+void Circle::Move(int x,int y){
+Center.x = x;
+Center.y = y;
+}

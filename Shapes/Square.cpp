@@ -151,3 +151,10 @@ shape* Square::clone(){
 	shape* pCloned = new Square(*this);
 	return pCloned;
 }
+
+void Square::Move(int x,int y){
+	int diffX = x - corner1.x;
+	int diffY = y - corner2.y;
+	corner1.x = x;	corner1.y = y;
+	corner2.x += diffX;	corner2.y += diffY;
+}

@@ -125,3 +125,6 @@ shape* RegularPolygon::clone(){
 	shape* pCloned = new RegularPolygon(*this);
 	return pCloned;
 }
+void RegularPolygon::Move(int x,int y){
+	center.x = x;	center.y = y;
+}

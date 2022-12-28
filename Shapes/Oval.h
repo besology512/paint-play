@@ -23,4 +23,5 @@ public:
 	void resize(float factor) override;
 	void Rotate() override;
 	shape* clone() override;
+	void Move(int x,int y) override;
 };

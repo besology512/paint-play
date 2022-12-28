@@ -146,3 +146,10 @@ shape* Oval::clone(){
 	shape* pCloned = new Oval(*this);
 	return pCloned;
 }
+
+void Oval::Move(int x,int y){
+	int diffX = x - Corner1.x;
+	int diffY = y - Corner1.y;
+	Corner1.x = x;	Corner1.y = y;
+	Corner2.x += diffX;	Corner2.y += diffY;
+}
