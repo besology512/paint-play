@@ -171,29 +171,8 @@ void Graph::load(ifstream& inputfile)
 		}
 		if (shapeName == "Circle")
 		{
-			string isFilled;
-			int ID;
-			int x, y, z, a, b, c;
-			bool k;
-			Point P1, P2;
-			GfxInfo CircleGfxInfo;
-			inputfile >> ID >> P1.x >> P1.y >> P2.x >> P2.y >> x >> y >> z >> isFilled;
-			CircleGfxInfo.DrawClr.ucBlue = x;
-			CircleGfxInfo.DrawClr.ucGreen = y;
-			CircleGfxInfo.DrawClr.ucRed = z;
-			if (isFilled == "FILL")
-			{
-				inputfile >> a >> b >> c;
-				CircleGfxInfo.FillClr.ucBlue = a;
-				CircleGfxInfo.FillClr.ucGreen = b;
-				CircleGfxInfo.FillClr.ucRed = c;
-			}
-			else
-			{
-				CircleGfxInfo.isFilled = 0;
-			}
-			inputfile >> CircleGfxInfo.BorderWdth;
-			newShape = new Circle(P1, P2, CircleGfxInfo);
+			newShape = new Circle(P1, P2, ShpGfxInfo);
+			newShape->LOAD(inputfile);
 			Addshape(newShape);
 		}
 		if (shapeName == "Oval")
