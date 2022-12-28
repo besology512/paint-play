@@ -156,20 +156,9 @@ operation* controller::createOperation(operationType OpType)
 			break;
 
 		case DRAWING_AREA:
-			//select and unselect operation here//
-			//pOp = new opSelectUnselect(this);
 
-			if (GetKeyState(VK_LCONTROL) & 0x8000)
-			{
+
 				pOp = new opSelectUnselect(this);
-
-				// for example I will make multiple selection is true
-			}
-			else {
-				// else here we will have single selection as before
-				//pOp = new opSelectUnselect(this);
-
-			}
 
 
 			break;
