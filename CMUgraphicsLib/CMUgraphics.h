@@ -201,6 +201,7 @@ class window {
 	// event in the queue.  As a result it will wait until
 	// there is one
 	keytype WaitKeyPress(char &cKey);
+	keytype WaitKeyPress2(char &cKey);
 
     // These two functions flush all waiting input out of the
     // mouse and keyboard input queues.  This is necessary

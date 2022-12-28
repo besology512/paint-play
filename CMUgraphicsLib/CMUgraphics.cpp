@@ -578,6 +578,32 @@ keytype window::WaitKeyPress(char &cKey) {
 	}
 }
 
+
+keytype window::WaitKeyPress2(char& cKey) {
+
+	kqueuenode* kqueTmp;
+	keytype ktTmp;
+
+	for (int i = 0; i < 1;) {
+		if (GetKeyState(VK_LCONTROL) & 0x8000)
+		{
+			ProcessMessage(); // Kludge
+
+			kqueTmp = kqueInput.Remove();
+			if (kqueTmp != NULL) {
+				cKey = kqueTmp->cValue;
+				ktTmp = kqueTmp->ktInfo;
+
+				delete kqueTmp;
+				return ktTmp;
+			}
+		}
+	}
+}
+
+
+
+
 void window::FlushKeyQueue() {
 
     ProcessMessage(); // Kludge

@@ -156,8 +156,11 @@ operation* controller::createOperation(operationType OpType)
 			break;
 
 		case DRAWING_AREA:
-			//select and unselect operation here//
-			pOp = new opSelectUnselect(this);
+
+
+				pOp = new opSelectUnselect(this);
+
+
 			break;
 		
 		case STATUS:	//a click on the status bar ==> no operation
