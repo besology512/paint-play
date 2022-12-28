@@ -132,32 +132,10 @@ void Graph::load(ifstream& inputfile)
 
 		if (shapeName == "Rect")
 		{
-			string isFilled;
-			int ID;
-			int x, y, z, a, b, c;
-			bool k;
-			Point P1, P2;
+			Point P1{}, P2{};
 			GfxInfo RectGfxInfo;
-			inputfile >> ID >> P1.x >> P1.y >> P2.x >> P2.y >> x >> y >> z >> isFilled;
-			RectGfxInfo.DrawClr.ucBlue = x;
-			RectGfxInfo.DrawClr.ucGreen = y;
-			RectGfxInfo.DrawClr.ucRed = z;
-			//cout << P1.x << " " << P1.y << " " << P2.x << " " << P2.y << " " << x << " " << y << " " << z << " " << isFilled << " ";
-			if (isFilled == "FILL")
-			{
-				inputfile >> a >> b >> c;
-				RectGfxInfo.FillClr.ucBlue = a;
-				RectGfxInfo.FillClr.ucGreen = b;
-				RectGfxInfo.FillClr.ucRed = c;
-			}
-			else
-			{
-				RectGfxInfo.isFilled = 0;
-			}
-			inputfile >> RectGfxInfo.BorderWdth;
-			//cout << RectGfxInfo.BorderWdth;
 			newShape = new Rect(P1, P2, RectGfxInfo);
-			//newShape->LOAD(inputfile);
+			newShape->LOAD(inputfile);
 			Addshape(newShape);
 		}
 

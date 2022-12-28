@@ -44,17 +44,25 @@ void Rect::SAVE(ofstream& OutFile)
 }
 void Rect::LOAD(ifstream& Infile)
 {
-	/*Infile >> Corner1.x >> Corner1.y >> Corner2.x >> Corner2.y
-		>> ShpGfxInfo.DrawClr.ucBlue >> ShpGfxInfo.DrawClr.ucGreen >> ShpGfxInfo.DrawClr.ucRed >> isFilled;
-	if(isFilled == "FILL")
+	string isFilled;
+	int ID;
+	int x, y, z;
+	Infile >> ID >> Corner1.x >> Corner1.y >> Corner2.x >> Corner2.y >> x >> y >> z >> isFilled;
+	ShpGfxInfo.DrawClr.ucBlue = x;
+	ShpGfxInfo.DrawClr.ucGreen = y;
+	ShpGfxInfo.DrawClr.ucRed = z;
+	if (isFilled == "FILL")
 	{
-		Infile >> ShpGfxInfo.FillClr.ucBlue >> ShpGfxInfo.FillClr.ucGreen >> ShpGfxInfo.FillClr.ucRed;
+		Infile >> x >> y >> z;
+		ShpGfxInfo.FillClr.ucBlue = x;
+		ShpGfxInfo.FillClr.ucGreen = y;
+		ShpGfxInfo.FillClr.ucRed = z;
 	}
 	else
 	{
-		Infile >> isFilled;
-	}*/
-	
+		ShpGfxInfo.isFilled = 0;
+	}
+	Infile >> ShpGfxInfo.BorderWdth;
 }
 
 bool Rect::inShape(int x, int y) const
