@@ -157,9 +157,7 @@ operation* controller::createOperation(operationType OpType)
 
 		case DRAWING_AREA:
 
-
-				pOp = new opSelectUnselect(this);
-
+			pOp = new opSelectUnselect(this);
 
 			break;
 		
