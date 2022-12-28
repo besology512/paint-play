@@ -23,18 +23,37 @@ void opSelectUnselect::Execute()
 
 	pUI->GetMousCoord(P.x, P.y);
 
-	//If there is a shape in the selected point
-	if (pGr->Getshape(P.x, P.y))
+	if (GetKeyState(VK_RCONTROL) & 0x8000) // multiple selection feature
 	{
-		pGr->UnselectAll(); 							//unselect everything 
-		pGr->Getshape(P.x, P.y)->SetSelected(true);		//make this shape is selected
-		pUI->PrintMessage(pGr->Getshape(P.x,P.y)->shapeInfo()); //Update the status bar with the shape info	
+		if (pGr->Getshape(P.x, P.y))
+		{
+			//pGr->UnselectAll(); 							//unselect everything 
+			pGr->Getshape(P.x, P.y)->SetSelected(true);		//make this shape is selected
+			pUI->PrintMessage(pGr->Getshape(P.x, P.y)->shapeInfo()); //Update the status bar with the shapes info	
+		}
+		else
+		{
+			pGr->UnselectAll();
+			pUI->ClearStatusBar();
+		}
 	}
-	else
+	else // single selection feature
 	{
-		pGr->UnselectAll();
-		pUI->ClearStatusBar();
+
+		if (pGr->Getshape(P.x, P.y))
+		{
+			pGr->UnselectAll(); 							//unselect everything 
+			pGr->Getshape(P.x, P.y)->SetSelected(true);		//make this shape is selected
+			pUI->PrintMessage(pGr->Getshape(P.x, P.y)->shapeInfo()); //Update the status bar with the shape info	
+		}
+		else
+		{
+			pGr->UnselectAll();
+			pUI->ClearStatusBar();
+		}
+
 	}
+
 }
 
 void opSelectUnselect::Undo() {}
