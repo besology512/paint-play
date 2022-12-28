@@ -67,7 +67,7 @@ void Square::LOAD(ifstream& Infile)
 		ShpGfxInfo.isFilled = 0;
 	}
 	Infile >> ShpGfxInfo.BorderWdth;
-	ShpGfxInfo.isSelected = 0;
+
 }
 
 bool Square::inShape(int x, int y) const 
