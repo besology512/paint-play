@@ -106,17 +106,10 @@ void Graph::load(ifstream& inputfile)
 		inputfile >> shapeName;
 		if (shapeName == "Line")
 		{
-			int ID;
-			int x, y, z, a, b, c;
-			bool k;
-			Point P1, P2;
 			GfxInfo LineGfxInfo;
-			inputfile >> ID >> P1.x >> P1.y >> P2.x >> P2.y >> x >> y >> z ;
-			LineGfxInfo.DrawClr.ucBlue = x;
-			LineGfxInfo.DrawClr.ucGreen = y;
-			LineGfxInfo.DrawClr.ucRed = z;
-			inputfile >> LineGfxInfo.BorderWdth;
-			newShape = new Line(P1, P2, LineGfxInfo);
+			Point P1{}, P2{};
+			newShape = new Line(P1,P2,LineGfxInfo);
+			newShape->LOAD(inputfile);
 			Addshape(newShape);
 		}
 		if (shapeName == "Triangle")

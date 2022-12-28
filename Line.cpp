@@ -1,5 +1,7 @@
 #include "Line.h"
 
+
+
 Line::Line(Point p1, Point p2, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 {
 	point1 = p1;
@@ -62,4 +64,9 @@ string Line::shapeInfo()
 
 void Line::LOAD(ifstream& Infile)
 {
+	int x, y, z;
+	Infile >> ID >> point1.x >> point1.y >> point2.x >> point2.y >> x >> y >> z >> ShpGfxInfo.BorderWdth;
+	ShpGfxInfo.DrawClr.ucBlue = x;
+	ShpGfxInfo.DrawClr.ucGreen = y;
+	ShpGfxInfo.DrawClr.ucRed = z;
 }
