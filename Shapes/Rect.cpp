@@ -63,7 +63,6 @@ void Rect::LOAD(ifstream& Infile)
 		ShpGfxInfo.isFilled = 0;
 	}
 	Infile >> ShpGfxInfo.BorderWdth;
-	ShpGfxInfo.isSelected = 0;
 }
 
 bool Rect::inShape(int x, int y) const
