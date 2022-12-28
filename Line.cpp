@@ -69,5 +69,5 @@ void Line::LOAD(ifstream& Infile)
 	ShpGfxInfo.DrawClr.ucBlue = x;
 	ShpGfxInfo.DrawClr.ucGreen = y;
 	ShpGfxInfo.DrawClr.ucRed = z;
-	ShpGfxInfo.isSelected = 0;
+
 }
