@@ -18,7 +18,7 @@ public:
 	virtual ~shape() {}
 	void SetSelected(bool s);	//select/unselect the shape
 	bool IsSelected() const;	//check whether fig is selected
-	bool isSticked;
+	bool isSticked = false;
 	virtual bool inShape(int, int) const = 0;		 //check whether a point in the shape or not
 	virtual string shapeInfo() = 0;						//give some info about the shape
 
