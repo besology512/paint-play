@@ -146,6 +146,10 @@ Point Rect::getUpperLeftPoint()
 	return upperLeftPoint;
 }
 
+void Rect::stickImage(image, GUI* pUI)
+{
+}
+
 
 void Rect::Rotate() {
 	Point Center;

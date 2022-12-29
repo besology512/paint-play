@@ -615,12 +615,12 @@ void GUI::DrawIrrPolygon(vector<Point> allPoints, int verticies, GfxInfo IrrPolG
 	pWind->DrawPolygon(xPoints, yPoints, verticies, style);
 
 }
-void GUI::DrawImage(Point P1, double width, double height,GfxInfo ImageInfo)
+void GUI::DrawImage(image I,Point P1, double width, double height)//,GfxInfo ImageInfo)
 {
-	color DrawingClr;
-	if (ImageInfo.isSelected)	//shape is selected
-		DrawingClr = HighlightColor; //shape should be drawn highlighted
-	pWind->DrawImage("images\\Sticking Images\\stick.jpg", P1.x, P1.y, width, height);
+	//color DrawingClr;
+	//if (ImageInfo.isSelected)	//shape is selected
+	//	DrawingClr = HighlightColor; //shape should be drawn highlighted
+	pWind->DrawImage(I, P1.x, P1.y, width, height);
 	
 }
 

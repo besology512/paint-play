@@ -132,3 +132,7 @@ Point RegularPolygon::getUpperLeftPoint()
 {
 	return Point();
 }
+
+void RegularPolygon::stickImage(image, GUI* pUI)
+{
+}

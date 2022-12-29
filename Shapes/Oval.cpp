@@ -158,3 +158,7 @@ Point Oval::getUpperLeftPoint()
 	return Point();
 }
 
+void Oval::stickImage(image, GUI* pUI)
+{
+}
+

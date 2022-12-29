@@ -30,6 +30,7 @@ private:
 	vector <shape*> UndoneShapesList;
 	vector <shape*> ClonedShapes;
 	shape* selectedShape;	//pointer to the currently selected shape
+	
 public:
 	//bool counting = true;
 	//int counter = 0;

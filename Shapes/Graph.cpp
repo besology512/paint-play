@@ -74,9 +74,19 @@ void Graph::DeleteShape(shape* pShp) {
 //Draw all shapes on the user interface
 void Graph::Draw(GUI* pUI) const
 {
+	image i = "images\\Sticking Images\\stick.jpg";
 	pUI->ClearDrawArea();
 	for (auto shapePointer : shapesList)
+	{
 		shapePointer->Draw(pUI);
+		if (shapePointer->isSticked)
+		{
+			shapePointer->stickImage(i, pUI);
+		}
+
+	}
+		
+
 }
 
 //Unselect all the shapes in the shapelist

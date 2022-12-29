@@ -23,30 +23,32 @@ void opStickImage::Execute()
 
 	if (pGr->getSelectedShape())
 	{
-		double width = pGr->getSelectedShape()->getWidth();
-		double height = pGr->getSelectedShape()->getHeight();
-		Point P1 = pGr->getSelectedShape()->getUpperLeftPoint();
-		pUI->ClearStatusBar();
+		pGr->getSelectedShape()->isSticked = true;
+		pGr->Draw(pUI);
+		//double width = pGr->getSelectedShape()->getWidth();
+		//double height = pGr->getSelectedShape()->getHeight();
+		//Point P1 = pGr->getSelectedShape()->getUpperLeftPoint();
+		//pUI->ClearStatusBar();
 
 		//Preapre all Line parameters
-		GfxInfo ImageGfxInfo;
+		//GfxInfo ImageGfxInfo;
 
-		//get drawing, filling colors and pen width from the interface
-		ImageGfxInfo.DrawClr = pUI->getCrntDrawColor();
-		ImageGfxInfo.FillClr = pUI->getCrntFillColor();
-		ImageGfxInfo.BorderWdth = pUI->getCrntPenWidth();
+		////get drawing, filling colors and pen width from the interface
+		//ImageGfxInfo.DrawClr = pUI->getCrntDrawColor();
+		//ImageGfxInfo.FillClr = pUI->getCrntFillColor();
+		//ImageGfxInfo.BorderWdth = pUI->getCrntPenWidth();
 
 
-		ImageGfxInfo.isFilled = false;	//default is not filled
-		ImageGfxInfo.isSelected = false;	//defualt is not selected
+		//ImageGfxInfo.isFilled = false;	//default is not filled
+		//ImageGfxInfo.isSelected = false;	//defualt is not selected
 
 
 		//Create a Line with the above parameters
-		StickImage* I = new StickImage(P1, width, height, ImageGfxInfo);
+		//StickImage* I = new StickImage(P1, width, height, ImageGfxInfo);
 
 
 		//Add the Line to the list of shapes
-		pGr->Addshape(I);
+		//pGr->Addshape(I);
 	}
 	else
 	{

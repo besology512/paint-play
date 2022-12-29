@@ -163,3 +163,7 @@ Point Square::getUpperLeftPoint()
 	return Point();
 }
 
+void Square::stickImage(image, GUI* pUI)
+{
+}
+

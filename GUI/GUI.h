@@ -140,7 +140,7 @@ public:
 	void DrawRegularPolygon(Point center, double numOfVertices, double radius, GfxInfo RegularPolygonGfxInfo) const; // Draw a regular Polygon
 	void DrawIrrPolygon(vector<Point> allPoints, int vericies, GfxInfo IrrPolGfxInfo) const; //Draw Irregular Polygon
 	void DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const;  // Draw a Line 
-	void DrawImage(Point P1, double width, double height,GfxInfo ImageInfo);
+	void DrawImage(image I, Point P1, double width, double height);//, GfxInfo ImageInfo);
 	//DrawImage(const image *imgThis, const int iX, const int iY, const int iWidth, const int iHeight)
 	
 	
