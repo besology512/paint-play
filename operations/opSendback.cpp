@@ -22,8 +22,9 @@ void opSendback::Execute() {
 	Graph* pGr = pControl->getGraph();
 
 	if (pGr->getselectedshape()) {
+		pGr->DeleteShape(pGr->getselectedshape());
 		pGr->SendbackShape(pGr->getselectedshape());
-
+		pGr->UnselectAll();
 		
 		//Set the save status is false
 		pGr->isSaved = false;
@@ -34,10 +35,6 @@ void opSendback::Execute() {
 }
 
 void opSendback::Undo() {
-	Graph* pGr = pControl->getGraph();
-	pGr->FromUndotoShapesList();
 }
 void opSendback::Redo() {
-	Graph* pGr = pControl->getGraph();
-	pGr->PutInUndoShapes();
 }

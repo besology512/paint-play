@@ -75,6 +75,7 @@ void Graph::DeleteShape(shape* pShp) {
 //Send back a single shape to the last indec in the vector
 void Graph::SendbackShape(shape* pShp) {
 	shapesList.insert(shapesList.begin(), pShp);
+
 }
 
 //Draw all shapes on the user interface
