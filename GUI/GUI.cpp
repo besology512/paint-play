@@ -9,8 +9,8 @@ GUI::GUI()
 	InterfaceMode = MODE_DRAW;
 	//InterfaceMode = MODE_DRAW
 	if (InterfaceMode == MODE_DRAW) {
-		width = 1200;
-		height = 600;
+		width = 1500;
+		height = 700;
 		wx = 5;
 		wy = 5;
 
@@ -169,6 +169,8 @@ operationType GUI::GetUseroperation() const
 			case ICON_FILL: return CHNG_FILL_CLR;
 			case ICON_BORDER_CLR: return CHNG_BORDER_CLR;
 			case ICON_BORDER_WIDTH: return CHNG_BORDER_WIDTH;
+			case ICON_ZOOM_IN: return ZOOM_IN;
+			case ICON_ZOOM_OUT: return ZOOM_OUT;
 			case ICON_RESIZE: return RESIZE;
 			case ICON_ROTATE: return ROTATE;
 			case ICON_DELETE: return DEL;
@@ -287,6 +289,8 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_FILL] = "images\\MenuIcons\\Menu_Fill.jpg";
 	MenuIconImages[ICON_BORDER_CLR] = "images\\MenuIcons\\Menu_changePenColor.jpg";
 	MenuIconImages[ICON_BORDER_WIDTH] = "images\\MenuIcons\\Menu_ChangeBorderWidth.jpg";
+	MenuIconImages[ICON_ZOOM_IN] = "images\\MenuIcons\\Menu_zoomin.jpg";
+	MenuIconImages[ICON_ZOOM_OUT] = "images\\MenuIcons\\Menu_zoomout.jpg";
 	MenuIconImages[ICON_RESIZE] = "images\\MenuIcons\\Menu_Resize.jpg";
 	MenuIconImages[ICON_ROTATE] = "images\\MenuIcons\\Menu_Rotate.jpg";
 	MenuIconImages[ICON_SWITCH] = "images\\MenuIcons\\Menu_Switch.jpg";
