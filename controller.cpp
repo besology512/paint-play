@@ -27,6 +27,7 @@
 #include"operations/opCopy.h"
 #include"operations/opPaste.h"
 #include"operations/opCut.h"
+#include"operations/opSendback.h"
 
 
 //Constructor
@@ -97,6 +98,9 @@ operation* controller::createOperation(operationType OpType)
 			pOp = new opAddRegularPolygon(this);
 			addToCurrentOperation(pOp);
 			break;
+		case SEND_BACK:
+			pOp = new opSendback(this);
+			break;
 		case SAVE:
 			pOp = new opSave(this);
 			break;
@@ -157,9 +161,7 @@ operation* controller::createOperation(operationType OpType)
 
 		case DRAWING_AREA:
 
-
-				pOp = new opSelectUnselect(this);
-
+			pOp = new opSelectUnselect(this);
 
 			break;
 		
