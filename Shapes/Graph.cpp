@@ -70,6 +70,13 @@ void Graph::DeleteShape(shape* pShp) {
 	UndoneShapesList.push_back(it[0]);
 	shapesList.erase(it);
 }
+///////////////////////////////////////////////////////////////////////////////////
+
+//Send back a single shape to the last indec in the vector
+void Graph::SendbackShape(shape* pShp) {
+	shapesList.insert(shapesList.begin(), pShp);
+
+}
 
 //Draw all shapes on the user interface
 void Graph::Draw(GUI* pUI) const

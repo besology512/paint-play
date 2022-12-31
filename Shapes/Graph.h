@@ -52,6 +52,7 @@ public:
 	void FromUndotoShapesList();
 	void RemoveShape(shape* pShp);
 	void DeleteShape(shape* pShp);			   // Delete a single shape from shape of list	
+	void SendbackShape(shape* pShp);           // Send a single shpe to the last indes in the vector
 	shape* Getshape(int x, int y); //Search for a shape given a point inside the shape
 	void addToCloned(shape* pShp);
 	vector <shape*> getClonedShapes();
