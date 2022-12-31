@@ -30,6 +30,7 @@ private:
 	vector <shape*> UndoneShapesList;
 	vector <shape*> ClonedShapes;
 	shape* selectedShape;	//pointer to the currently selected shape
+	vector <shape*> selectedShapes;
 public:
 	//bool counting = true;
 	//int counter = 0;
@@ -38,6 +39,8 @@ public:
 	~Graph();
 	bool isSaved = false;		//boolean to check save & unsave shapes
 	void Addshape(shape* pFig); //Adds a new shape to the shapesList
+	void addSelectedShape(shape* pFig);
+	void deleteSelectedShapes();
 	shape* getSelectedShape() const;
 	void Draw(GUI* pUI) const;			//Draw the graph (draw all shapes)
 	void UnselectAll();          // Unselect all the shapes

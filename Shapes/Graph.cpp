@@ -28,6 +28,15 @@ void Graph::Addshape(shape* pShp)
 
 }
 ////////////////////////////////////////////////////////////////////////////////////
+//Add selected Shapes
+void Graph::addSelectedShape(shape* pShp)
+{
+	selectedShapes.push_back(pShp);
+}
+
+
+ 
+// 
 // get slected shape
 shape* Graph::getselectedshape()const {
 	return selectedShape;
@@ -78,6 +87,18 @@ void Graph::SendbackShape(shape* pShp) {
 
 }
 
+void Graph::deleteSelectedShapes() {
+
+	for (auto shapePointer : selectedShapes) {
+		std::vector<shape*>::iterator it;
+		it = std::find(shapesList.begin(), shapesList.end(), shapePointer);
+		UndoneShapesList.push_back(it[0]);
+		shapesList.erase(it);
+	}
+	
+}
+
+
 //Draw all shapes on the user interface
 void Graph::Draw(GUI* pUI) const
 {
@@ -92,6 +113,7 @@ void Graph::UnselectAll()
 	for (auto shapePointer : shapesList)
 		shapePointer->SetSelected(false);
 	selectedShape = nullptr;
+	selectedShapes.clear();
 }
 
 
