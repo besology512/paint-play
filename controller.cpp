@@ -27,6 +27,7 @@
 #include"operations/opCopy.h"
 #include"operations/opPaste.h"
 #include"operations/opCut.h"
+#include "operations/opZoomin.h"
 
 
 //Constructor
@@ -132,6 +133,10 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case CHNG_BORDER_WIDTH:
 			pOp = new opChangeBorderWidth(this);
+			//addToCurrentOperation(pOp);
+			break;
+		case ZOOM_IN:
+			pOp = new opZoomin(this);
 			//addToCurrentOperation(pOp);
 			break;
 		case RESIZE:
