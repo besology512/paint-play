@@ -130,9 +130,13 @@ void RegularPolygon::Move(int x,int y){
 }
 Point RegularPolygon::getUpperLeftPoint()
 {
-	return Point();
+	Point upperLeftPoint;
+	upperLeftPoint.x = center.x - radius;
+	upperLeftPoint.y = center.y - radius;
+	return upperLeftPoint;
 }
 
-void RegularPolygon::stickImage(image, GUI* pUI)
+void RegularPolygon::stickImage(image I, GUI* pUI)
 {
+	pUI->DrawImage(I, getUpperLeftPoint(), getWidth(), getHeight());
 }
