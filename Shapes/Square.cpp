@@ -160,10 +160,18 @@ void Square::Move(int x,int y){
 }
 Point Square::getUpperLeftPoint()
 {
-	return Point();
+	Point upperLeftPoint, center, corner3;
+
+	center.x = sqrt(pow(corner1.x - corner2.x, 2)) / 2;
+	center.y = sqrt(pow(corner1.y - corner2.y, 2)) / 2;
+	double side = sqrt(pow(corner1.x - corner2.x, 2) + pow(corner1.y - corner2.y, 2));
+	upperLeftPoint.x = center.x + (side / 2);
+	upperLeftPoint.y = center.y + (side / 2);
+	return upperLeftPoint;
 }
 
-void Square::stickImage(image, GUI* pUI)
+void Square::stickImage(image I, GUI* pUI)
 {
+	pUI->DrawImage(I, getUpperLeftPoint(), getWidth(), getHeight());
 }
 
