@@ -31,6 +31,7 @@ private:
 	vector <shape*> ClonedShapes;
 	shape* selectedShape;	//pointer to the currently selected shape
 	vector <shape*> selectedShapes;
+main
 public:
 	//bool counting = true;
 	//int counter = 0;

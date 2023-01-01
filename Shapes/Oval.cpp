@@ -155,6 +155,38 @@ void Oval::Move(int x,int y){
 }
 Point Oval::getUpperLeftPoint()
 {
-	return Point();
+	Point upperLeftPoint;
+	//Getting the center of the oval (h,k)
+	double h = (Corner1.x + Corner2.x) / 2;
+	double k = (Corner1.y + Corner2.y) / 2;
+
+	//Getting the semi major axis a and semi minor axis b of the oval
+	double semiMajor, semiMinor;
+	double a = (Corner1.y - Corner2.y) / 2; //to ensure the number is positive
+	double b = (Corner1.x - Corner2.x) / 2;//to ensure the number is positive
+	if (a > b)
+	{
+		semiMajor = a;
+		semiMinor = b;
+		double c = sqrt(pow(b, 2) - pow(a, 2));// oval maflt7a 
+		upperLeftPoint.x = h - c+50;
+		upperLeftPoint.y = k + (b/5);
+
+	}
+	else
+	{
+		semiMajor = b;
+		semiMinor = a;
+		double c = sqrt(pow(a, 2) - pow(b, 2));// oval baydwya 
+		upperLeftPoint.x = h - c;
+		upperLeftPoint.y = k + b;
+	}
+
+	return upperLeftPoint;
+}
+
+void Oval::stickImage(image I, GUI* pUI)
+{
+	pUI->DrawImage(I, getUpperLeftPoint(), getWidth(), getHeight());
 }
 

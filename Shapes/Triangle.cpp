@@ -171,5 +171,17 @@ void Triangle::Move(int x,int y){
 	Corner2.x += diffX;	Corner2.y += diffY;
 	Corner3.x += diffX;	Corner3.y += diffY;
 }
-Point Triangle::getUpperLeftPoint(){return Point();}
+Point Triangle::getUpperLeftPoint()
+{
+	Point upperLeftPoint, center;
+	center.x = (Corner1.x + Corner2.x + Corner3.x) / 3;
+	center.y = (Corner1.y + Corner2.y + Corner3.y) / 3;
+	upperLeftPoint = center;
+	return upperLeftPoint;
+}
+
+void Triangle::stickImage(image I, GUI* pUI)
+{
+	pUI->DrawImage(I, getUpperLeftPoint(), getWidth(), getHeight());
+}
 

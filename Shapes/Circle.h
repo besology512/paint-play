@@ -1,5 +1,4 @@
 #pragma once
-
 #include "../Shapes/Shape.h"
 #include <fstream>
 
@@ -25,4 +24,5 @@ public:
 	shape* clone() override;
 	void Move(int x,int y) override;
 	Point getUpperLeftPoint();
+	void stickImage(image,GUI* pUI) override;
 };

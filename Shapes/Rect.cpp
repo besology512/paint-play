@@ -141,9 +141,27 @@ void Rect::resize(float factor) {
 Point Rect::getUpperLeftPoint()
 {
 	Point upperLeftPoint;
+	//Point center;
+	//Point Corner3;
+	//Corner3.x = Corner2.x;
+	//Corner3.y = Corner1.y;
+	//center.x = sqrt(pow(Corner1.x - Corner2.x, 2)) / 2;
+	//center.y = sqrt(pow(Corner1.y - Corner2.y, 2)) / 2;
+	//double y = sqrt(pow(Corner2.x - Corner3.x, 2) + pow(Corner2.y - Corner3.y, 2));
+	//double x = sqrt(pow(Corner1.x - Corner3.x, 2) + pow(Corner1.y - Corner3.y, 2));
+	//upperLeftPoint.x = center.x + (x/2);
+	//upperLeftPoint.y = center.y + (y/2);
+
 	upperLeftPoint.x = Corner1.x + 5;
 	upperLeftPoint.y = Corner1.y + 5;
 	return upperLeftPoint;
+}
+
+void Rect::stickImage(image I, GUI* pUI)
+{
+	pUI->DrawImage(I, getUpperLeftPoint(), getWidth(), getHeight());
+
+
 }
 
 

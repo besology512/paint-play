@@ -99,6 +99,11 @@ Point Circle::getUpperLeftPoint()
 	return upperLeftPoint;
 }
 
+void Circle::stickImage(image I, GUI* pUI)
+{
+	pUI->DrawImage(I, getUpperLeftPoint(), getWidth(), getHeight());
+}
+
 bool Circle::inShape(int x, int y) const
 {
 	double radius = sqrt(pow(Center.x - PointOnCircle.x,2) + pow(Center.y - PointOnCircle.y,2));
