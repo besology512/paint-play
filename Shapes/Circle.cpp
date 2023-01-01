@@ -99,6 +99,10 @@ Point Circle::getUpperLeftPoint()
 	return upperLeftPoint;
 }
 
+void Circle::SCRAMBLE()
+{
+}
+
 bool Circle::inShape(int x, int y) const
 {
 	double radius = sqrt(pow(Center.x - PointOnCircle.x,2) + pow(Center.y - PointOnCircle.y,2));

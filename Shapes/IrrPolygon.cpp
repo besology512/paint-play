@@ -102,3 +102,7 @@ void IrrPolygon::Move(int x,int y){
 }
 Point IrrPolygon::getUpperLeftPoint(){return Point();}
 
+void IrrPolygon::SCRAMBLE()
+{
+}
+

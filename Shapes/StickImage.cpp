@@ -57,3 +57,7 @@ Point StickImage::getUpperLeftPoint()
 {
 	return Point();
 }
+
+void StickImage::SCRAMBLE()
+{
+}

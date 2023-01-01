@@ -131,3 +131,7 @@ Point Line::getUpperLeftPoint()
 	return Point();
 }
 
+void Line::SCRAMBLE()
+{
+}
+

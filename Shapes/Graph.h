@@ -57,6 +57,7 @@ public:
 	vector <shape*> getClonedShapes();
 	void Save(ofstream& outfile);	//Save all shapes to a file
 	void load(ifstream& inputfile);	//Load all shapes from a file
+	void scramble();				// scramble function to pass on all shapes
 	color getPickedClr(); //get the current color
 	void setPickedClr(double&,double&,double&); //set color using color picker
 	void ClearClipboard();

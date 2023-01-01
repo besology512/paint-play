@@ -173,3 +173,7 @@ void Triangle::Move(int x,int y){
 }
 Point Triangle::getUpperLeftPoint(){return Point();}
 
+void Triangle::SCRAMBLE()
+{
+}
+

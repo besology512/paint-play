@@ -16,6 +16,11 @@ void Rect::Draw(GUI* pUI) const
 	pUI->DrawRect(Corner1, Corner2, ShpGfxInfo);
 }
 
+void Rect::SCRAMBLE()
+{
+	//val = M + rand() % (N - M + 1)
+
+}
 
 void Rect::SAVE(ofstream& OutFile)
 {
@@ -56,6 +61,8 @@ void Rect::LOAD(ifstream& Infile)
 	}*/
 	
 }
+
+
 
 bool Rect::inShape(int x, int y) const
 {
