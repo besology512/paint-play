@@ -4,7 +4,8 @@ Rect::Rect(Point P1, Point P2, GfxInfo shapeGfxInfo):shape(shapeGfxInfo)
 {
 	Corner1 = P1;
 	Corner2 = P2;
-
+	Corner3.x = Corner2.x;
+	Corner3.y = Corner1.y;
 }
 
 Rect::~Rect()
@@ -18,7 +19,10 @@ void Rect::Draw(GUI* pUI) const
 
 void Rect::SCRAMBLE()
 {
-	//val = M + rand() % (N - M + 1)
+
+	int x = 5 + rand() % (1200 - 5 + 1);
+	int y = 5 + rand() % (600 - 5 + 1);
+	Move(x, y);
 
 }
 

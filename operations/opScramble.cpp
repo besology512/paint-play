@@ -12,8 +12,9 @@ void opScramble::Execute()
 {
 	// Get User input
 	GUI* pUI = pControl->GetUI();
-
-	pUI->PrintMessage("Enter File Name");
+	Graph* pGr = pControl->getGraph();
+	pGr->scramble();
+	pUI->PrintMessage("Scramble Succussfully");
 
 }
 

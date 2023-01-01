@@ -7,6 +7,7 @@ class Rect : public shape
 private:
 	Point Corner1;	
 	Point Corner2;
+	Point Corner3;
 	string isFilled;
 	int sizeFactor = 1;
 public:
