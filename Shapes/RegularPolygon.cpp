@@ -85,6 +85,24 @@ string RegularPolygon::shapeInfo()
 
 void RegularPolygon::LOAD(ifstream& Infile)
 {
+	string isFilled;
+	int x, y, z;
+	Infile >> ID >> center.x >> center.y >> numOfVertices >> radius >> x >> y >> z >> isFilled;
+	ShpGfxInfo.DrawClr.ucBlue = x;
+	ShpGfxInfo.DrawClr.ucGreen = y;
+	ShpGfxInfo.DrawClr.ucRed = z;
+	if (isFilled == "FILL")
+	{
+		Infile >> x >> y >> z;
+		ShpGfxInfo.FillClr.ucBlue = x;
+		ShpGfxInfo.FillClr.ucGreen = y;
+		ShpGfxInfo.FillClr.ucRed = z;
+	}
+	else
+	{
+		ShpGfxInfo.isFilled = 0;
+	}
+	Infile >> ShpGfxInfo.BorderWdth;
 }
 
 double RegularPolygon::getWidth()

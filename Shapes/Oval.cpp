@@ -83,6 +83,24 @@ string Oval::shapeInfo()
 
 void Oval::LOAD(ifstream& Infile)
 {
+	string isFilled;
+	int x, y, z;
+	Infile >> ID >> Corner1.x >> Corner1.y >> Corner2.x >> Corner2.y >> x >> y >> z >> isFilled;
+	ShpGfxInfo.DrawClr.ucBlue = x;
+	ShpGfxInfo.DrawClr.ucGreen = y;
+	ShpGfxInfo.DrawClr.ucRed = z;
+	if (isFilled == "FILL")
+	{
+		Infile >> x >> y >> z;
+		ShpGfxInfo.FillClr.ucBlue = x;
+		ShpGfxInfo.FillClr.ucGreen = y;
+		ShpGfxInfo.FillClr.ucRed = z;
+	}
+	else
+	{
+		ShpGfxInfo.isFilled = 0;
+	}
+	Infile >> ShpGfxInfo.BorderWdth;
 }
 
 double Oval::getWidth()

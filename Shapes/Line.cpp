@@ -63,6 +63,12 @@ string Line::shapeInfo()
 
 void Line::LOAD(ifstream& Infile)
 {
+	int x, y, z;
+	Infile >> ID >> point1.x >> point1.y >> point2.x >> point2.y >> x >> y >> z >> ShpGfxInfo.BorderWdth;
+	ShpGfxInfo.DrawClr.ucBlue = x;
+	ShpGfxInfo.DrawClr.ucGreen = y;
+	ShpGfxInfo.DrawClr.ucRed = z;
+
 }
 
 double Line::getWidth()

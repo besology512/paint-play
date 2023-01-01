@@ -45,7 +45,24 @@ void Circle::SAVE(ofstream& OutFile)
 
 void Circle::LOAD(ifstream& Infile)
 {
-	//Infile >> Center.x;
+	string isFilled;
+	int x, y, z;
+	Infile >> ID >> Center.x >> Center.y >> PointOnCircle.x >> PointOnCircle.y >> x >> y >> z >> isFilled;
+	ShpGfxInfo.DrawClr.ucBlue = x;
+	ShpGfxInfo.DrawClr.ucGreen = y;
+	ShpGfxInfo.DrawClr.ucRed = z;
+	if (isFilled == "FILL")
+	{
+		Infile >> x >> y >> z;
+		ShpGfxInfo.FillClr.ucBlue = x;
+		ShpGfxInfo.FillClr.ucGreen = y;
+		ShpGfxInfo.FillClr.ucRed = z;
+	}
+	else
+	{
+		ShpGfxInfo.isFilled = 0;
+	}
+	Infile >> ShpGfxInfo.BorderWdth;
 
 
 }
@@ -98,7 +115,6 @@ Point Circle::getUpperLeftPoint()
 	upperLeftPoint.y = (Center.y - (sqrt(2) / 2) * radius) ;
 	return upperLeftPoint;
 }
-
 bool Circle::inShape(int x, int y) const
 {
 	double radius = sqrt(pow(Center.x - PointOnCircle.x,2) + pow(Center.y - PointOnCircle.y,2));
