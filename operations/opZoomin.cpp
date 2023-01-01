@@ -14,11 +14,10 @@ void opZoomin::Execute() {
 	Graph* pGr = pControl->getGraph();
 	float factor = 2;
 	if (pGr->getSelectedShape()) {
-		for (int i = 1; i < 3; i++) {
-			Factor = i * factor;
-			pGr->getSelectedShape()->resize(Factor);
+		
+			pGr->getSelectedShape()->resize(2);
 			
-		}
+		
 		
 			
 		
