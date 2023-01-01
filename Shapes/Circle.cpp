@@ -101,6 +101,9 @@ Point Circle::getUpperLeftPoint()
 
 void Circle::SCRAMBLE()
 {
+	int x = 5 + rand() % (1200 - 5 + 1);
+	int y = 5 + rand() % (600 - 5 + 1);
+	Move(x, y);
 }
 
 bool Circle::inShape(int x, int y) const
