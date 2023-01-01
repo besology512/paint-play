@@ -50,6 +50,7 @@ public:
 	void DeleteShapesAfterExit();
 	void PutInUndoShapes();
 	void FromUndotoShapesList();
+	void ZOOMIN(float scale, int x, int y);
 	void RemoveShape(shape* pShp);
 	void DeleteShape(shape* pShp);			   // Delete a single shape from shape of list	
 	shape* Getshape(int x, int y); //Search for a shape given a point inside the shape

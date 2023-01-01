@@ -5,7 +5,7 @@
 
 class opZoomin :public operation {
 public:
-	float Factor;
+	//float Factor;
 	opZoomin(controller* pCont);
 	virtual ~opZoomin();
 	// Zoom the shape in 

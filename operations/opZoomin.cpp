@@ -12,19 +12,15 @@ void opZoomin::Execute() {
 
 	GUI* pUI = pControl->GetUI();
 	Graph* pGr = pControl->getGraph();
-	float factor = 2;
-	if (pGr->getSelectedShape()) {
-		
-			pGr->getSelectedShape()->resize(2);
-			
-		
-		
-			
-		
-	}
-	else {
-		pUI->PrintMessage("Select the shape you want to zoom in first!");
-	}
+	int x, y;
+	pUI->ClearStatusBar();
+	pUI->CreateDrawToolBar();
+	pUI->GetPointClicked(x,y);
+	pUI->ClearStatusBar();
+
+
+
+	
 }
 
 void opZoomin::Undo() {}
