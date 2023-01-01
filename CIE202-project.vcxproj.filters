@@ -227,6 +227,7 @@
     <ClCompile Include="operations\opCopy.cpp" />
     <ClCompile Include="operations\opPaste.cpp" />
     <ClCompile Include="operations\opCut.cpp" />
+    <ClCompile Include="operations\opScramble.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -406,6 +407,7 @@
     <ClInclude Include="operations\opCopy.h" />
     <ClInclude Include="operations\opPaste.h" />
     <ClInclude Include="operations\opCut.h" />
+    <ClInclude Include="operations\opScramble.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Operations">

@@ -172,8 +172,10 @@ operationType GUI::GetUseroperation() const
 			case ICON_RESIZE: return RESIZE;
 			case ICON_ROTATE: return ROTATE;
 			case ICON_DELETE: return DEL;
+			case ICON_SCRAMBLE: return SCRAMBLE;
 			case ICON_SWITCH: return SWITCH;
 			case ICON_EXIT: return EXIT;
+			
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
@@ -294,7 +296,10 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_SAVE] = "images\\MenuIcons\\Menu_Save.jpg";
 	MenuIconImages[ICON_LOAD] = "images\\MenuIcons\\Menu_Load.jpg";
 	MenuIconImages[ICON_STICKIMAGE] = "images\\MenuIcons\\Menu_StickImage.jpg";
+	MenuIconImages[ICON_SCRAMBLE] = "images\\MenuIcons\\Menu_Scramble.jpg";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
+	
+
 	
 
 	// TODO: Prepare images for each menu icon and add it to the list

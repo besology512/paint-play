@@ -57,7 +57,9 @@ class GUI
 		ICON_SAVE,
 		ICON_LOAD,
 		ICON_STICKIMAGE,
+		ICON_SCRAMBLE,
 		ICON_SWITCH,
+		
 
 		//TODO: Add more icons names here
 
