@@ -137,3 +137,7 @@ Point Line::getUpperLeftPoint()
 	return Point();
 }
 
+void Line::stickImage(image, GUI* pUI)
+{
+}
+

@@ -171,6 +171,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_BORDER_WIDTH: return CHNG_BORDER_WIDTH;
 			case ICON_RESIZE: return RESIZE;
 			case ICON_ROTATE: return ROTATE;
+			case ICON_SENDBACK: return SEND_BACK;
 			case ICON_DELETE: return DEL;
 			case ICON_SWITCH: return SWITCH;
 			case ICON_EXIT: return EXIT;
@@ -290,6 +291,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_RESIZE] = "images\\MenuIcons\\Menu_Resize.jpg";
 	MenuIconImages[ICON_ROTATE] = "images\\MenuIcons\\Menu_Rotate.jpg";
 	MenuIconImages[ICON_SWITCH] = "images\\MenuIcons\\Menu_Switch.jpg";
+	MenuIconImages[ICON_SENDBACK] = "images\\MenuIcons\\Menu_SendBack.jpg";
 	MenuIconImages[ICON_DELETE] = "images\\MenuIcons\\Menu_Delete.jpg";
 	MenuIconImages[ICON_SAVE] = "images\\MenuIcons\\Menu_Save.jpg";
 	MenuIconImages[ICON_LOAD] = "images\\MenuIcons\\Menu_Load.jpg";
@@ -615,12 +617,12 @@ void GUI::DrawIrrPolygon(vector<Point> allPoints, int verticies, GfxInfo IrrPolG
 	pWind->DrawPolygon(xPoints, yPoints, verticies, style);
 
 }
-void GUI::DrawImage(Point P1, double width, double height,GfxInfo ImageInfo)
+void GUI::DrawImage(image I,Point P1, double width, double height)//,GfxInfo ImageInfo)
 {
-	color DrawingClr;
-	if (ImageInfo.isSelected)	//shape is selected
-		DrawingClr = HighlightColor; //shape should be drawn highlighted
-	pWind->DrawImage("images\\Sticking Images\\stick.jpg", P1.x, P1.y, width, height);
+	//color DrawingClr;
+	//if (ImageInfo.isSelected)	//shape is selected
+	//	DrawingClr = HighlightColor; //shape should be drawn highlighted
+	pWind->DrawImage(I, P1.x, P1.y, width, height);
 	
 }
 

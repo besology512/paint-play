@@ -25,9 +25,12 @@ void opDelete::Execute() {
 	Graph* pGr = pControl->getGraph();
 	
 	if (pGr->getselectedshape()) {
-		pGr->DeleteShape(pGr->getselectedshape());
+
+		pGr->deleteSelectedShapes();
+		
+		//if (pGr->getselectedshape()) { pGr->DeleteShape(pGr->getselectedshape()); }
 		pGr->UnselectAll();
-		pUI->PrintMessage("The Shape has been deleted sucessfully"); 
+		pUI->PrintMessage("The Shape/s has been deleted sucessfully"); 
 		//Set the save status is false
 		pGr->isSaved = false;
 	}

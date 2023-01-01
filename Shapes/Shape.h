@@ -10,6 +10,7 @@ protected:
 	int ID;		//Each shape has an ID
 	GfxInfo ShpGfxInfo;	//shape graphis info
 	
+	
 	/// Add more parameters if needed.
 
 public:
@@ -17,6 +18,7 @@ public:
 	virtual ~shape() {}
 	void SetSelected(bool s);	//select/unselect the shape
 	bool IsSelected() const;	//check whether fig is selected
+	bool isSticked = false;
 	virtual bool inShape(int, int) const = 0;		 //check whether a point in the shape or not
 	virtual string shapeInfo() = 0;						//give some info about the shape
 
@@ -34,6 +36,7 @@ public:
 	virtual shape* clone() = 0;
 	virtual void Move(int x,int y) = 0;		//Move the shape
 	virtual Point getUpperLeftPoint() = 0;
+	virtual void stickImage(image, GUI* pUI) = 0;
 
 
 
