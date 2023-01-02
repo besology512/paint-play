@@ -141,3 +141,12 @@ void Line::stickImage(image, GUI* pUI)
 {
 }
 
+int Line::getDuplicateID()
+{
+	return duplicateID;
+}
+void Line::setDuplicateID(int i)
+{
+	duplicateID = i;
+}
+

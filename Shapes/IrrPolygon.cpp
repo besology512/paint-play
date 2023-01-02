@@ -131,3 +131,12 @@ void IrrPolygon::stickImage(image, GUI* pUI)
 {
 }
 
+
+int IrrPolygon::getDuplicateID()
+{
+	return duplicateID;
+}
+void IrrPolygon::setDuplicateID(int i)
+{
+	duplicateID = i;
+}

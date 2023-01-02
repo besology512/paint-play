@@ -311,8 +311,11 @@ void Graph::ClearClipboard(){
 }
 
 void Graph::duplicateShapes() {
-	for (auto shapePointer : shapesList) {
+	int c = 0;
+	for (auto shapePointer : shapesList){
+		shapePointer->setDuplicateID(c);
 		addToCloned(shapePointer->clone());
+		c++;
 	}
 
 	for (int i = 0; i < getClonedShapes().size(); i++)
@@ -326,3 +329,4 @@ void Graph::duplicateShapes() {
 	}
 	ClearClipboard();
 }
+

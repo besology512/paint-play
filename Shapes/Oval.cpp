@@ -208,3 +208,12 @@ void Oval::stickImage(image I, GUI* pUI)
 	pUI->DrawImage(I, getUpperLeftPoint(), getWidth(), getHeight());
 }
 
+
+int Oval::getDuplicateID()
+{
+	return duplicateID;
+}
+void Oval::setDuplicateID(int i)
+{
+	duplicateID = i;
+}

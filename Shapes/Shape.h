@@ -37,6 +37,8 @@ public:
 	virtual void Move(int x,int y) = 0;		//Move the shape
 	virtual Point getUpperLeftPoint() = 0;
 	virtual void stickImage(image, GUI* pUI) = 0;
+	virtual int getDuplicateID() = 0; 
+	virtual void setDuplicateID(int) = 0;
 
 
 

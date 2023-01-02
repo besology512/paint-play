@@ -7,6 +7,7 @@ class Line : public shape
 {
 
 private:
+	int duplicateID;
 	Point point1;
 	Point point2;
 
@@ -27,5 +28,7 @@ public:
 	void Move(int x,int y) override;
 	Point getUpperLeftPoint();
 	void stickImage(image, GUI* pUI) override;
+	int getDuplicateID();
+	void setDuplicateID(int);
 };
 

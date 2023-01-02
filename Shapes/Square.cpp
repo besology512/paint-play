@@ -196,3 +196,11 @@ void Square::stickImage(image I, GUI* pUI)
 	pUI->DrawImage(I, getUpperLeftPoint(), getWidth(), getHeight());
 }
 
+int Square::getDuplicateID()
+{
+	return duplicateID;
+}
+void Square::setDuplicateID(int i)
+{
+	duplicateID = i;
+}
