@@ -9,14 +9,14 @@ GUI::GUI()
 	InterfaceMode = MODE_DRAW;
 	//InterfaceMode = MODE_DRAW
 	if (InterfaceMode == MODE_DRAW) {
-		width = 1500;
-		height = 700;
+		width = 1430;
+		height = 600;
 		wx = 5;
 		wy = 5;
 
 		StatusBarHeight = 50;
 		ToolBarHeight = 50;
-		MenuIconWidth = 50;
+		MenuIconWidth = 45;
 
 		DrawColor = BLUE;		  // default Drawing color
 		FillColor = GREEN;		  // default Filling color
