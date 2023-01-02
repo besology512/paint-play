@@ -11,6 +11,11 @@ void shape::SetSelected(bool s)
 bool shape::IsSelected() const
 {	return ShpGfxInfo.isSelected; }
 
+//bool shape::isSticked()
+//{
+//	return false;
+//}
+
 void shape::ChngDrawClr(color Dclr)
 {	ShpGfxInfo.DrawClr = Dclr; }
 

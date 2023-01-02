@@ -37,6 +37,7 @@ enum operationType //The operations supported (you can add more if needed)
 	START,			//start the play mode
 	RESTART,		//restart the play mode
 	SWITCH,			//switch the two modes
+	DUPLICATE_GRAPH,		//duplicate the graph
 	EXIT,			//Exit the application
 
 	DRAWING_AREA,			//A click on the drawing area

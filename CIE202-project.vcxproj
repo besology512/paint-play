@@ -180,6 +180,7 @@
     <ClCompile Include="operations\opCopy.cpp" />
     <ClCompile Include="operations\opCut.cpp" />
     <ClCompile Include="operations\opDelete.cpp" />
+    <ClCompile Include="operations\opDuplicateGraph.cpp" />
     <ClCompile Include="operations\opExit.cpp" />
     <ClCompile Include="operations\opLoad.cpp" />
     <ClCompile Include="operations\opPaste.cpp" />
@@ -190,6 +191,7 @@
     <ClCompile Include="operations\opSave.cpp" />
     <ClCompile Include="operations\opSelectUnselect.cpp" />
     <ClCompile Include="operations\opPickColor.cpp" />
+    <ClCompile Include="operations\opSendback.cpp" />
     <ClCompile Include="operations\opStart.cpp" />
     <ClCompile Include="operations\opStickImage.cpp" />
     <ClCompile Include="operations\OpSwitch.cpp" />
@@ -242,6 +244,7 @@
     <ClInclude Include="operations\opCopy.h" />
     <ClInclude Include="operations\opCut.h" />
     <ClInclude Include="operations\opDelete.h" />
+    <ClInclude Include="operations\opDuplicateGraph.h" />
     <ClInclude Include="operations\opExit.h" />
     <ClInclude Include="operations\opLoad.h" />
     <ClInclude Include="operations\opPaste.h" />
@@ -250,6 +253,7 @@
     <ClInclude Include="operations\opRestart.h" />
     <ClInclude Include="operations\opRotate.h" />
     <ClInclude Include="operations\opSave.h" />
+    <ClInclude Include="operations\opSendback.h" />
     <ClInclude Include="operations\opStart.h" />
     <ClInclude Include="operations\opStickImage.h" />
     <ClInclude Include="operations\OpSwitch.h" />
