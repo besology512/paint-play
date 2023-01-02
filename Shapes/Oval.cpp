@@ -147,6 +147,14 @@ void Oval::resize(float factor) {
 	}
 }
 
+void Oval::zoom(double scale, int x, int y) {
+
+	Corner1.x = (Corner1.x * scale) - (scale * x) + x;
+	Corner1.y = (Corner1.y * scale) - (scale * y) + y;
+	Corner2.x = (Corner2.x * scale) - (scale * x) + x;
+	Corner2.y = (Corner2.y * scale) - (scale * y) + y;
+}
+
 void Oval::Rotate() {
 	Point Center;
 	Center.x = (Corner1.x + Corner2.x) / 2;

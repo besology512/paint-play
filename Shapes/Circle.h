@@ -24,6 +24,7 @@ public:
 	void Rotate() override;
 	shape* clone() override;
 	void Move(int x,int y) override;
+	void zoom(double scale, int x, int y) override;		// Zoom the shape in
 	Point getUpperLeftPoint();
 	void stickImage(image,GUI* pUI) override;
 	int getDuplicateID();

@@ -36,9 +36,11 @@ public:
 	virtual shape* clone() = 0;
 	virtual void Move(int x,int y) = 0;		//Move the shape
 	virtual Point getUpperLeftPoint() = 0;
+	virtual void zoom(double scale, int x, int y) = 0;		//Zoom the shape(s) in
 	virtual void stickImage(image, GUI* pUI) = 0;
 	virtual int getDuplicateID() = 0; 
 	virtual void setDuplicateID(int) = 0;
+
 
 
 

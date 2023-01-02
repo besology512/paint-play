@@ -126,6 +126,12 @@ void Graph::UnselectAll()
 	selectedShapes.clear();
 }
 
+//Zoom the whole shapes in
+void Graph::ZOOMING(double scale, int x, int y) {
+	for (auto shapePointer : shapesList)
+		shapePointer->zoom(scale, x, y);
+}
+
 
 shape* Graph::Getshape(int x, int y) 
 {

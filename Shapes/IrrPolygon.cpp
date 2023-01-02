@@ -110,6 +110,15 @@ double IrrPolygon::getHeight()
 }
 
 void IrrPolygon::resize(float factor) {}
+
+void IrrPolygon::zoom(double scale, int x, int y) {
+	for (int i = 0; i < allPoints.size(); i++)
+	{
+		allPoints[i].x = (allPoints[i].x * scale) - (scale * x) + x;
+		allPoints[i].y = (allPoints[i].y * scale) - (scale * y) + y;
+	}
+}
+
 void IrrPolygon::Rotate(){}
 shape* IrrPolygon::clone(){
 	shape* pCloned = new IrrPolygon(*this);

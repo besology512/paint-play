@@ -107,6 +107,14 @@ void Line::resize(float factor) {
 	}
 }
 
+void Line::zoom(double scale, int x, int y) {
+
+	point1.x = (point1.x * scale) - (scale * x) + x;
+	point1.y = (point1.y * scale) - (scale * y) + y;
+	point2.x = (point2.x * scale) - (scale * x) + x;
+	point2.y = (point2.y * scale) - (scale * y) + y;
+}
+
 void Line:: Rotate() {
 	Point Center;
 	Center.x = (point1.x + point2.x) / 2;
