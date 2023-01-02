@@ -17,7 +17,7 @@ void opZoomin::Execute() {
 	pUI->CreateDrawToolBar();
 	pUI->GetPointClicked(x,y);
 	pUI->ClearStatusBar();
-
+	pGr->ZOOMING(1.5, x, y);
 
 
 	

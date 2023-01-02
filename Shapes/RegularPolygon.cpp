@@ -106,6 +106,14 @@ void RegularPolygon::resize(float factor) {
 	radius *= factor;
 }
 
+void RegularPolygon::zoom(double scale, int x, int y) {
+	center.x = (center.x * scale) - (scale * x) + x;
+	center.y = (center.y * scale) - (scale * y) + y;
+	radius *= scale;
+
+
+}
+
 void RegularPolygon:: Rotate(){
 	//create the points again
 	//Point Center;

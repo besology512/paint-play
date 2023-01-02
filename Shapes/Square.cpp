@@ -125,6 +125,14 @@ void Square::resize(float factor) {
 	}
 }
 
+void Square::zoom(double scale, int x, int y) {
+
+	corner1.x = (corner1.x * scale) - (scale * x) + x;
+	corner1.y = (corner1.y * scale) - (scale * y) + y;
+	corner2.x = (corner2.x * scale) - (scale * x) + x;
+	corner2.y = (corner2.y * scale) - (scale * y) + y;
+}
+
 void Square::Rotate() {
 	int diffx = corner1.x - corner2.x;						//get difference between X coordinates
 	int diffy = corner1.y - corner2.y;						//get difference between Y coordinates

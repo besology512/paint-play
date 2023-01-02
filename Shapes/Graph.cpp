@@ -88,9 +88,9 @@ void Graph::UnselectAll()
 }
 
 //Zoom the whole shapes in
-void Graph::ZOOMIN(float scale, int x, int y) {
+void Graph::ZOOMING(double scale, int x, int y) {
 	for (auto shapePointer : shapesList)
-		shapePointer->zoomin(scale, x, y);
+		shapePointer->zoom(scale, x, y);
 }
 
 

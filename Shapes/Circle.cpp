@@ -90,6 +90,16 @@ void Circle::resize(float factor){
 	}
 }
 
+void Circle::zoom(double scale, int x, int y) {
+	PointOnCircle.x = (PointOnCircle.x * scale) - (scale * x) + x;
+	PointOnCircle.y = (PointOnCircle.y * scale) - (scale * y) + y;
+	Center.x = (Center.x * scale) - (scale * x) + x;
+	Center.y = (Center.y * scale) - (scale * y) + y;
+
+
+
+}
+
 Point Circle::getUpperLeftPoint()
 {
 	double radius = sqrt(pow(Center.x - PointOnCircle.x, 2) + pow(Center.y - PointOnCircle.y, 2));

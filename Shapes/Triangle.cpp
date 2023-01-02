@@ -97,7 +97,7 @@ void Triangle::resize(float factor) {
 	}
 }
 
-void Triangle::zoomin(float scale, int x, int y) {
+void Triangle::zoom(double scale, int x, int y) {
 	
 	Corner1.x = (Corner1.x * scale) - (scale * x) + x;
 	Corner1.y = (Corner1.y * scale) - (scale * y) + y;
