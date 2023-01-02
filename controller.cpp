@@ -28,6 +28,8 @@
 #include"operations/opPaste.h"
 #include"operations/opCut.h"
 #include "operations/opZoomin.h"
+#include "operations/opZoomout.h"
+
 
 
 //Constructor
@@ -137,6 +139,10 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case ZOOM_IN:
 			pOp = new opZoomin(this);
+			//addToCurrentOperation(pOp);
+			break;
+		case ZOOM_OUT:
+			pOp = new opZoomout(this);
 			//addToCurrentOperation(pOp);
 			break;
 		case RESIZE:
