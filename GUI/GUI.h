@@ -59,6 +59,7 @@ class GUI
 		ICON_LOAD,
 		ICON_STICKIMAGE,
 		ICON_SWITCH,
+		ICON_DUPLICATE,
 
 		//TODO: Add more icons names here
 
