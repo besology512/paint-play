@@ -158,3 +158,12 @@ void RegularPolygon::stickImage(image I, GUI* pUI)
 {
 	pUI->DrawImage(I, getUpperLeftPoint(), getWidth(), getHeight());
 }
+
+int RegularPolygon::getDuplicateID()
+{
+	return duplicateID;
+}
+void RegularPolygon::setDuplicateID(int i)
+{
+	duplicateID = i;
+}

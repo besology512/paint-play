@@ -6,6 +6,7 @@
 class Oval : public shape
 {
 private:
+	int duplicateID;
 	Point Corner1;
 	Point Corner2;
 	int sizeFactor = 1;
@@ -26,4 +27,6 @@ public:
 	void Move(int x,int y) override;
 	Point getUpperLeftPoint();
 	void stickImage(image, GUI* pUI) override;
+	int getDuplicateID();
+	void setDuplicateID(int);
 };

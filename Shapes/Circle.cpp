@@ -158,3 +158,13 @@ Center.y = y;
 PointOnCircle.x += diffX;
 PointOnCircle.y += diffY;
 }
+
+int Circle::getDuplicateID()
+{
+	return duplicateID;
+}
+void Circle::setDuplicateID(int i)
+{
+	duplicateID = i;
+}
+

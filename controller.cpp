@@ -28,6 +28,7 @@
 #include"operations/opPaste.h"
 #include"operations/opCut.h"
 #include"operations/opSendback.h"
+#include"operations/opDuplicateGraph.h"
 
 
 //Constructor
@@ -154,6 +155,9 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case RESTART:
 			pOp = new opRestart(this);
+			break;
+		case DUPLICATE_GRAPH:
+			pOp = new opDuplicateGraph(this);
 			break;
 		case EXIT:
 			pOp = new opExit(this);										///create Exitoperation here

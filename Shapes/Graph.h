@@ -64,5 +64,6 @@ public:
 	color getPickedClr(); //get the current color
 	void setPickedClr(double&,double&,double&); //set color using color picker
 	void ClearClipboard();
+	void duplicateShapes();
 
 };

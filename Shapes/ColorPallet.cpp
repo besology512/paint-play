@@ -45,6 +45,8 @@ Point ColorPallet::getUpperLeftPoint(){return Point();}
 void ColorPallet::stickImage(image, GUI* pUI)
 {
 }
+int ColorPallet::getDuplicateID() { return 0; }
+void ColorPallet::setDuplicateID(int i){}
 
 
 

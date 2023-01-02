@@ -309,3 +309,24 @@ vector <shape*> Graph::getClonedShapes() {
 void Graph::ClearClipboard(){
 	ClonedShapes.clear();
 }
+
+void Graph::duplicateShapes() {
+	int c = 0;
+	for (auto shapePointer : shapesList){
+		shapePointer->setDuplicateID(c);
+		addToCloned(shapePointer->clone());
+		c++;
+	}
+
+	for (int i = 0; i < getClonedShapes().size(); i++)
+	{
+		int xPoint = getClonedShapes()[i]->getUpperLeftPoint().x;
+		int yPoint = getClonedShapes()[i]->getUpperLeftPoint().y;
+
+		getClonedShapes()[i]->Move(xPoint+20, yPoint+20);
+		Addshape(getClonedShapes()[i]);
+		//clear clipboard here
+	}
+	ClearClipboard();
+}
+

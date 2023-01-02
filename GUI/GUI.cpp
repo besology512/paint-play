@@ -9,7 +9,7 @@ GUI::GUI()
 	InterfaceMode = MODE_DRAW;
 	//InterfaceMode = MODE_DRAW
 	if (InterfaceMode == MODE_DRAW) {
-		width = 1200;
+		width = 1400;
 		height = 600;
 		wx = 5;
 		wy = 5;
@@ -174,6 +174,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_SENDBACK: return SEND_BACK;
 			case ICON_DELETE: return DEL;
 			case ICON_SWITCH: return SWITCH;
+			case ICON_DUPLICATE: return DUPLICATE_GRAPH;
 			case ICON_EXIT: return EXIT;
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
@@ -291,6 +292,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_RESIZE] = "images\\MenuIcons\\Menu_Resize.jpg";
 	MenuIconImages[ICON_ROTATE] = "images\\MenuIcons\\Menu_Rotate.jpg";
 	MenuIconImages[ICON_SWITCH] = "images\\MenuIcons\\Menu_Switch.jpg";
+	MenuIconImages[ICON_DUPLICATE] = "images\\MenuIcons\\Duplicate_Graph.jpg";
 	MenuIconImages[ICON_SENDBACK] = "images\\MenuIcons\\Menu_SendBack.jpg";
 	MenuIconImages[ICON_DELETE] = "images\\MenuIcons\\Menu_Delete.jpg";
 	MenuIconImages[ICON_SAVE] = "images\\MenuIcons\\Menu_Save.jpg";

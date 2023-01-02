@@ -198,3 +198,12 @@ void Rect::Move(int x,int y){
 	Corner1.x = x;	Corner1.y = y;
 	Corner2.x += diffX;	Corner2.y += diffY;
 }
+
+int Rect::getDuplicateID()
+{
+	return duplicateID;
+}
+void Rect::setDuplicateID(int i)
+{
+	duplicateID = i;
+}
