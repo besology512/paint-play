@@ -16,11 +16,6 @@ protected:
 public:
 	shape(GfxInfo shapeGfxInfo);
 	virtual ~shape() {}
-	void SetSelected(bool s);							 // select/unselect the shape
-	bool IsSelected() const;							// check whether fig is selected
-	virtual bool inShape(int, int) const = 0;			// check whether a point in the shape or not
-	virtual string shapeInfo() = 0;						// give some info about the shape
-
 	void SetSelected(bool s);	//select/unselect the shape
 	bool IsSelected() const;	//check whether fig is selected
 	bool isSticked = false;

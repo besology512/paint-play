@@ -111,16 +111,16 @@ void Graph::Draw(GUI* pUI) const
 		{
 			shapePointer->scramble();
 		}*/
-	}
+		// bracket removed
 		if (shapePointer->isSticked)
 		{
 			shapePointer->stickImage(i, pUI);
 		}
 
 	}
-		
 
 }
+
 		
 
 //Unselect all the shapes in the shapelist

@@ -150,7 +150,7 @@ void Line::SCRAMBLE()
 	int x = 5 + rand() % (1200 - 5 + 1);
 	int y = 5 + rand() % (600 - 5 + 1);
 	Move(x, y);
-
+}
 void Line::stickImage(image, GUI* pUI)
 {
 }
