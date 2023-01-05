@@ -6,6 +6,7 @@
 class IrrPolygon : public shape
 {
 private:
+	int duplicateID;
 	int verticies;
 	std::vector<Point> allPoints;
 	int counter;
@@ -25,6 +26,10 @@ public:
 	void Rotate() override;
 	shape* clone() override;
 	void Move(int x,int y) override;
+	void zoom(double scale, int x, int y) override;		// Zoom the shape in
 	Point getUpperLeftPoint();
 	void SCRAMBLE() override;
+	void stickImage(image, GUI* pUI) override;
+	int getDuplicateID();
+	void setDuplicateID(int);
 };

@@ -63,6 +63,12 @@ string Line::shapeInfo()
 
 void Line::LOAD(ifstream& Infile)
 {
+	int x, y, z;
+	Infile >> ID >> point1.x >> point1.y >> point2.x >> point2.y >> x >> y >> z >> ShpGfxInfo.BorderWdth;
+	ShpGfxInfo.DrawClr.ucBlue = x;
+	ShpGfxInfo.DrawClr.ucGreen = y;
+	ShpGfxInfo.DrawClr.ucRed = z;
+
 }
 
 double Line::getWidth()
@@ -101,6 +107,14 @@ void Line::resize(float factor) {
 	}
 }
 
+void Line::zoom(double scale, int x, int y) {
+
+	point1.x = (point1.x * scale) - (scale * x) + x;
+	point1.y = (point1.y * scale) - (scale * y) + y;
+	point2.x = (point2.x * scale) - (scale * x) + x;
+	point2.y = (point2.y * scale) - (scale * y) + y;
+}
+
 void Line:: Rotate() {
 	Point Center;
 	Center.x = (point1.x + point2.x) / 2;
@@ -136,5 +150,17 @@ void Line::SCRAMBLE()
 	int x = 5 + rand() % (1200 - 5 + 1);
 	int y = 5 + rand() % (600 - 5 + 1);
 	Move(x, y);
+
+void Line::stickImage(image, GUI* pUI)
+{
+}
+
+int Line::getDuplicateID()
+{
+	return duplicateID;
+}
+void Line::setDuplicateID(int i)
+{
+	duplicateID = i;
 }
 

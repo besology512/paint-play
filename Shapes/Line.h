@@ -7,6 +7,7 @@ class Line : public shape
 {
 
 private:
+	int duplicateID;
 	Point point1;
 	Point point2;
 
@@ -25,7 +26,12 @@ public:
 	double getHeight();
 	shape* clone() override;
 	void Move(int x,int y) override;
+	void zoom(double scale, int x, int y) override;		// Zoom the shape in
 	Point getUpperLeftPoint();
 	void SCRAMBLE() override;
+
+	void stickImage(image, GUI* pUI) override;
+	int getDuplicateID();
+	void setDuplicateID(int);
 };
 

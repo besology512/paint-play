@@ -51,15 +51,18 @@ class GUI
 		ICON_FILL,
 		ICON_BORDER_CLR,
 		ICON_BORDER_WIDTH,
+		ICON_ZOOM_IN,
+		ICON_ZOOM_OUT,
 		ICON_RESIZE,
 		ICON_ROTATE,
+		ICON_SENDBACK,
 		ICON_DELETE,
 		ICON_SAVE,
 		ICON_LOAD,
 		ICON_STICKIMAGE,
 		ICON_SCRAMBLE,
 		ICON_SWITCH,
-		
+		ICON_DUPLICATE,
 
 		//TODO: Add more icons names here
 
@@ -142,7 +145,7 @@ public:
 	void DrawRegularPolygon(Point center, double numOfVertices, double radius, GfxInfo RegularPolygonGfxInfo) const; // Draw a regular Polygon
 	void DrawIrrPolygon(vector<Point> allPoints, int vericies, GfxInfo IrrPolGfxInfo) const; //Draw Irregular Polygon
 	void DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const;  // Draw a Line 
-	void DrawImage(Point P1, double width, double height,GfxInfo ImageInfo);
+	void DrawImage(image I, Point P1, double width, double height);//, GfxInfo ImageInfo);
 	//DrawImage(const image *imgThis, const int iX, const int iY, const int iWidth, const int iHeight)
 	
 	

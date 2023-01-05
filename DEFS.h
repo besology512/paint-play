@@ -25,6 +25,8 @@ enum operationType //The operations supported (you can add more if needed)
 	CUT,
 	DEL,			//Delete a shape(s)
 	MOVE,			//Move a shape(s)
+	ZOOM_IN,		//zoom the shape in
+	ZOOM_OUT,		//zoom the shape out
 	RESIZE,			//Resize a shape(s)
 	ROTATE,			//Rotate a shape(s)
 	SEND_BACK,		//Send a shape to the back of all shapes
@@ -36,6 +38,7 @@ enum operationType //The operations supported (you can add more if needed)
 	START,			//start the play mode
 	RESTART,		//restart the play mode
 	SWITCH,			//switch the two modes
+	DUPLICATE_GRAPH,		//duplicate the graph
 	EXIT,			//Exit the application
 	
 

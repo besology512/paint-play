@@ -45,7 +45,24 @@ void Circle::SAVE(ofstream& OutFile)
 
 void Circle::LOAD(ifstream& Infile)
 {
-	//Infile >> Center.x;
+	string isFilled;
+	int x, y, z;
+	Infile >> ID >> Center.x >> Center.y >> PointOnCircle.x >> PointOnCircle.y >> x >> y >> z >> isFilled;
+	ShpGfxInfo.DrawClr.ucBlue = x;
+	ShpGfxInfo.DrawClr.ucGreen = y;
+	ShpGfxInfo.DrawClr.ucRed = z;
+	if (isFilled == "FILL")
+	{
+		Infile >> x >> y >> z;
+		ShpGfxInfo.FillClr.ucBlue = x;
+		ShpGfxInfo.FillClr.ucGreen = y;
+		ShpGfxInfo.FillClr.ucRed = z;
+	}
+	else
+	{
+		ShpGfxInfo.isFilled = 0;
+	}
+	Infile >> ShpGfxInfo.BorderWdth;
 
 
 }
@@ -90,6 +107,16 @@ void Circle::resize(float factor){
 	}
 }
 
+void Circle::zoom(double scale, int x, int y) {
+	PointOnCircle.x = (PointOnCircle.x * scale) - (scale * x) + x;
+	PointOnCircle.y = (PointOnCircle.y * scale) - (scale * y) + y;
+	Center.x = (Center.x * scale) - (scale * x) + x;
+	Center.y = (Center.y * scale) - (scale * y) + y;
+
+
+
+}
+
 Point Circle::getUpperLeftPoint()
 {
 	double radius = sqrt(pow(Center.x - PointOnCircle.x, 2) + pow(Center.y - PointOnCircle.y, 2));
@@ -104,6 +131,9 @@ void Circle::SCRAMBLE()
 	int x = 5 + rand() % (1200 - 5 + 1);
 	int y = 5 + rand() % (600 - 5 + 1);
 	Move(x, y);
+void Circle::stickImage(image I, GUI* pUI)
+{
+	pUI->DrawImage(I, getUpperLeftPoint(), getWidth(), getHeight());
 }
 
 bool Circle::inShape(int x, int y) const
@@ -143,3 +173,13 @@ Center.y = y;
 PointOnCircle.x += diffX;
 PointOnCircle.y += diffY;
 }
+
+int Circle::getDuplicateID()
+{
+	return duplicateID;
+}
+void Circle::setDuplicateID(int i)
+{
+	duplicateID = i;
+}
+

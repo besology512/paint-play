@@ -83,6 +83,24 @@ string Oval::shapeInfo()
 
 void Oval::LOAD(ifstream& Infile)
 {
+	string isFilled;
+	int x, y, z;
+	Infile >> ID >> Corner1.x >> Corner1.y >> Corner2.x >> Corner2.y >> x >> y >> z >> isFilled;
+	ShpGfxInfo.DrawClr.ucBlue = x;
+	ShpGfxInfo.DrawClr.ucGreen = y;
+	ShpGfxInfo.DrawClr.ucRed = z;
+	if (isFilled == "FILL")
+	{
+		Infile >> x >> y >> z;
+		ShpGfxInfo.FillClr.ucBlue = x;
+		ShpGfxInfo.FillClr.ucGreen = y;
+		ShpGfxInfo.FillClr.ucRed = z;
+	}
+	else
+	{
+		ShpGfxInfo.isFilled = 0;
+	}
+	Infile >> ShpGfxInfo.BorderWdth;
 }
 
 double Oval::getWidth()
@@ -129,6 +147,14 @@ void Oval::resize(float factor) {
 	}
 }
 
+void Oval::zoom(double scale, int x, int y) {
+
+	Corner1.x = (Corner1.x * scale) - (scale * x) + x;
+	Corner1.y = (Corner1.y * scale) - (scale * y) + y;
+	Corner2.x = (Corner2.x * scale) - (scale * x) + x;
+	Corner2.y = (Corner2.y * scale) - (scale * y) + y;
+}
+
 void Oval::Rotate() {
 	Point Center;
 	Center.x = (Corner1.x + Corner2.x) / 2;
@@ -155,7 +181,39 @@ void Oval::Move(int x,int y){
 }
 Point Oval::getUpperLeftPoint()
 {
-	return Point();
+	Point upperLeftPoint;
+	//Getting the center of the oval (h,k)
+	double h = (Corner1.x + Corner2.x) / 2;
+	double k = (Corner1.y + Corner2.y) / 2;
+
+	//Getting the semi major axis a and semi minor axis b of the oval
+	double semiMajor, semiMinor;
+	double a = (Corner1.y - Corner2.y) / 2; //to ensure the number is positive
+	double b = (Corner1.x - Corner2.x) / 2;//to ensure the number is positive
+	if (a > b)
+	{
+		semiMajor = a;
+		semiMinor = b;
+		double c = sqrt(pow(b, 2) - pow(a, 2));// oval maflt7a 
+		upperLeftPoint.x = h - c+50;
+		upperLeftPoint.y = k + (b/5);
+
+	}
+	else
+	{
+		semiMajor = b;
+		semiMinor = a;
+		double c = sqrt(pow(a, 2) - pow(b, 2));// oval baydwya 
+		upperLeftPoint.x = h - c;
+		upperLeftPoint.y = k + b;
+	}
+
+	return upperLeftPoint;
+}
+
+void Oval::stickImage(image I, GUI* pUI)
+{
+	pUI->DrawImage(I, getUpperLeftPoint(), getWidth(), getHeight());
 }
 
 void Oval::SCRAMBLE()
@@ -165,3 +223,12 @@ void Oval::SCRAMBLE()
 	Move(x, y);
 }
 
+
+int Oval::getDuplicateID()
+{
+	return duplicateID;
+}
+void Oval::setDuplicateID(int i)
+{
+	duplicateID = i;
+}

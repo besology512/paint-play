@@ -228,6 +228,11 @@
     <ClCompile Include="operations\opPaste.cpp" />
     <ClCompile Include="operations\opCut.cpp" />
     <ClCompile Include="operations\opScramble.cpp" />
+
+    <ClCompile Include="operations\opSendback.cpp" />
+    <ClCompile Include="operations\opDuplicateGraph.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -408,6 +413,12 @@
     <ClInclude Include="operations\opPaste.h" />
     <ClInclude Include="operations\opCut.h" />
     <ClInclude Include="operations\opScramble.h" />
+    <ClInclude Include="operations\opSendback.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="operations\opDuplicateGraph.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Operations">

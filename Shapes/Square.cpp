@@ -46,7 +46,28 @@ void Square::SAVE(ofstream& OutFile)
 	OutFile << ShpGfxInfo.BorderWdth << "\n";//color ; // Put data into file
 }
 
-void Square::LOAD(ifstream& Infile){}
+void Square::LOAD(ifstream& Infile)
+{
+	string isFilled;
+	int ID;
+	int x, y, z;
+	Infile >> ID >> corner1.x >> corner1.y >> corner2.x >> corner2.y >> x >> y >> z >> isFilled;
+	ShpGfxInfo.DrawClr.ucBlue = x;
+	ShpGfxInfo.DrawClr.ucGreen = y;
+	ShpGfxInfo.DrawClr.ucRed = z;
+	if (isFilled == "FILL")
+	{
+		Infile >> x >> y >> z;
+		ShpGfxInfo.FillClr.ucBlue = x;
+		ShpGfxInfo.FillClr.ucGreen = y;
+		ShpGfxInfo.FillClr.ucRed = z;
+	}
+	else
+	{
+		ShpGfxInfo.isFilled = 0;
+	}
+	Infile >> ShpGfxInfo.BorderWdth;
+}
 
 bool Square::inShape(int x, int y) const 
 {
@@ -125,6 +146,14 @@ void Square::resize(float factor) {
 	}
 }
 
+void Square::zoom(double scale, int x, int y) {
+
+	corner1.x = (corner1.x * scale) - (scale * x) + x;
+	corner1.y = (corner1.y * scale) - (scale * y) + y;
+	corner2.x = (corner2.x * scale) - (scale * x) + x;
+	corner2.y = (corner2.y * scale) - (scale * y) + y;
+}
+
 void Square::Rotate() {
 	int diffx = corner1.x - corner2.x;						//get difference between X coordinates
 	int diffy = corner1.y - corner2.y;						//get difference between Y coordinates
@@ -160,7 +189,19 @@ void Square::Move(int x,int y){
 }
 Point Square::getUpperLeftPoint()
 {
-	return Point();
+	Point upperLeftPoint, center, corner3;
+
+	center.x = sqrt(pow(corner1.x - corner2.x, 2)) / 2;
+	center.y = sqrt(pow(corner1.y - corner2.y, 2)) / 2;
+	double side = sqrt(pow(corner1.x - corner2.x, 2) + pow(corner1.y - corner2.y, 2));
+	upperLeftPoint.x = center.x + (side / 2);
+	upperLeftPoint.y = center.y + (side / 2);
+	return upperLeftPoint;
+}
+
+void Square::stickImage(image I, GUI* pUI)
+{
+	pUI->DrawImage(I, getUpperLeftPoint(), getWidth(), getHeight());
 }
 
 void Square::SCRAMBLE()
@@ -170,3 +211,12 @@ void Square::SCRAMBLE()
 	Move(x, y);
 }
 
+
+int Square::getDuplicateID()
+{
+	return duplicateID;
+}
+void Square::setDuplicateID(int i)
+{
+	duplicateID = i;
+}

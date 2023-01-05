@@ -46,5 +46,11 @@ void ColorPallet::SCRAMBLE()
 {
 }
 
+void ColorPallet::stickImage(image, GUI* pUI)
+{
+}
+int ColorPallet::getDuplicateID() { return 0; }
+void ColorPallet::setDuplicateID(int i){}
+void ColorPallet::zoom(double scale, int x, int y) {}
 
 

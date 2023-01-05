@@ -29,6 +29,11 @@
 #include"operations/opCut.h"
 #include "operations/opScramble.h"
 
+#include "operations/opZoomin.h"
+#include "operations/opZoomout.h"
+#include"operations/opSendback.h"
+#include"operations/opDuplicateGraph.h"
+
 
 //Constructor
 controller::controller()
@@ -98,6 +103,9 @@ operation* controller::createOperation(operationType OpType)
 			pOp = new opAddRegularPolygon(this);
 			addToCurrentOperation(pOp);
 			break;
+		case SEND_BACK:
+			pOp = new opSendback(this);
+			break;
 		case SAVE:
 			pOp = new opSave(this);
 			break;
@@ -135,6 +143,14 @@ operation* controller::createOperation(operationType OpType)
 			pOp = new opChangeBorderWidth(this);
 			//addToCurrentOperation(pOp);
 			break;
+		case ZOOM_IN:
+			pOp = new opZoomin(this);
+			//addToCurrentOperation(pOp);
+			break;
+		case ZOOM_OUT:
+			pOp = new opZoomout(this);
+			//addToCurrentOperation(pOp);
+			break;
 		case RESIZE:
 			pOp = new opResize(this);
 			addToCurrentOperation(pOp);
@@ -155,15 +171,16 @@ operation* controller::createOperation(operationType OpType)
 		case RESTART:
 			pOp = new opRestart(this);
 			break;
+		case DUPLICATE_GRAPH:
+			pOp = new opDuplicateGraph(this);
+			break;
 		case EXIT:
 			pOp = new opExit(this);										///create Exitoperation here
 			break;
 
 		case DRAWING_AREA:
 
-
-				pOp = new opSelectUnselect(this);
-
+			pOp = new opSelectUnselect(this);
 
 			break;
 		
