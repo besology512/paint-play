@@ -126,6 +126,11 @@ Point Circle::getUpperLeftPoint()
 	return upperLeftPoint;
 }
 
+void Circle::SCRAMBLE()
+{
+	int x = 5 + rand() % (1200 - 5 + 1);
+	int y = 5 + rand() % (600 - 5 + 1);
+	Move(x, y);
 void Circle::stickImage(image I, GUI* pUI)
 {
 	pUI->DrawImage(I, getUpperLeftPoint(), getWidth(), getHeight());

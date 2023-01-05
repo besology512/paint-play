@@ -4,7 +4,8 @@ Rect::Rect(Point P1, Point P2, GfxInfo shapeGfxInfo):shape(shapeGfxInfo)
 {
 	Corner1 = P1;
 	Corner2 = P2;
-
+	Corner3.x = Corner2.x;
+	Corner3.y = Corner1.y;
 }
 
 Rect::~Rect()
@@ -16,6 +17,14 @@ void Rect::Draw(GUI* pUI) const
 	pUI->DrawRect(Corner1, Corner2, ShpGfxInfo);
 }
 
+void Rect::SCRAMBLE()
+{
+
+	int x = 5 + rand() % (1200 - 5 + 1);
+	int y = 5 + rand() % (600 - 5 + 1);
+	Move(x, y);
+
+}
 
 void Rect::SAVE(ofstream& OutFile)
 {
@@ -64,6 +73,8 @@ void Rect::LOAD(ifstream& Infile)
 	}
 	Infile >> ShpGfxInfo.BorderWdth;
 }
+
+
 
 bool Rect::inShape(int x, int y) const
 {

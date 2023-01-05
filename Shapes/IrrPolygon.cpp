@@ -136,6 +136,14 @@ void IrrPolygon::Move(int x,int y){
 }
 Point IrrPolygon::getUpperLeftPoint(){return Point();}
 
+void IrrPolygon::SCRAMBLE()
+{
+	int x = 5 + rand() % (1200 - 5 + 1);
+	int y = 5 + rand() % (600 - 5 + 1);
+	Move(x, y);
+}
+
+
 void IrrPolygon::stickImage(image, GUI* pUI)
 {
 }

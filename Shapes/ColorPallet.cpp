@@ -42,6 +42,10 @@ shape* ColorPallet::clone(){return nullptr;}
 void ColorPallet::Move(int x,int y){}
 Point ColorPallet::getUpperLeftPoint(){return Point();}
 
+void ColorPallet::SCRAMBLE()
+{
+}
+
 void ColorPallet::stickImage(image, GUI* pUI)
 {
 }

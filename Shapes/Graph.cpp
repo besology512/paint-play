@@ -107,6 +107,11 @@ void Graph::Draw(GUI* pUI) const
 	for (auto shapePointer : shapesList)
 	{
 		shapePointer->Draw(pUI);
+		/*if (shapePointer->isScramble)
+		{
+			shapePointer->scramble();
+		}*/
+	}
 		if (shapePointer->isSticked)
 		{
 			shapePointer->stickImage(i, pUI);
@@ -116,6 +121,7 @@ void Graph::Draw(GUI* pUI) const
 		
 
 }
+		
 
 //Unselect all the shapes in the shapelist
 void Graph::UnselectAll()
@@ -147,6 +153,16 @@ shape* Graph::Getshape(int x, int y)
 	}
 
 	return nullptr;
+}
+
+void Graph::scramble()
+{
+	for (auto shapesList : shapesList) // Loop on each shape in vector list 
+	{
+		shapesList->SCRAMBLE();	//do scramble according each shape 
+	}
+	/*for (int i = 0; i < DRAW_ICON_COUNT; i++)
+		pWind->DrawImage(MenuIconImages[i], i * MenuIconWidth, 0, MenuIconWidth, ToolBarHeight);*/
 }
 
 void Graph::Save(ofstream& outfile)
@@ -251,6 +267,8 @@ void Graph::load(ifstream& inputfile)
 	
 
 }
+
+
 
 
  

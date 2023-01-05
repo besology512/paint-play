@@ -27,6 +27,8 @@
 #include"operations/opCopy.h"
 #include"operations/opPaste.h"
 #include"operations/opCut.h"
+#include "operations/opScramble.h"
+
 #include "operations/opZoomin.h"
 #include "operations/opZoomout.h"
 #include"operations/opSendback.h"
@@ -159,6 +161,9 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case STICK_IMAGE:
 			pOp = new opStickImage(this);
+			break;
+		case SCRAMBLE:
+			pOp = new opScramble(this);
 			break;
 		case START:
 			pOp = new opStart(this);
