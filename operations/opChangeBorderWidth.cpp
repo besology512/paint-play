@@ -61,12 +61,9 @@ void opChangeBorderWidth::Undo() {
 		pShape->undoBorderWidth.push(pShape->prevBorderWidth.top());
 		pShape->prevBorderWidth.pop(); //deletes the last width from the stack
 		pShape->ChngBorderWidth(pShape->prevBorderWidth.top()); //changes the border width to the top of the stack
-		cout << "changed the width of the shape to" << pShape->prevBorderWidth.top();
 		pGr->undolastEdited.push(pShape);
 		pGr->lastEdited.pop();
 	}
-	cout << "the size of the stack is " << pGr->getLastShape()->prevBorderWidth.size() <<endl;
-	cout << "In undo";
 }
 void opChangeBorderWidth::Redo() {
 	Graph* pGr = pControl->getGraph();
@@ -75,10 +72,8 @@ void opChangeBorderWidth::Redo() {
 	{
 		pShape->prevBorderWidth.push(pShape->undoBorderWidth.top()); //puts the redo to the undo
 		pShape->ChngBorderWidth(pShape->undoBorderWidth.top()); //changes the border width to the top of the stack
-		cout << "In redo changed the width of the shape to" << pShape->undoBorderWidth.top();
 		pShape->undoBorderWidth.pop(); //deletes the last width from the stack
 		pGr->lastEdited.push(pShape);
 		pGr->undolastEdited.pop();
 	}
-	cout << "In undo";
 }
