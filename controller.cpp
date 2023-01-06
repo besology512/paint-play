@@ -33,6 +33,7 @@
 #include "operations/opZoomout.h"
 #include"operations/opSendback.h"
 #include"operations/opDuplicateGraph.h"
+#include"operations/matchShapes.h"
 
 
 //Constructor
@@ -179,8 +180,13 @@ operation* controller::createOperation(operationType OpType)
 			break;
 
 		case DRAWING_AREA:
-
 			pOp = new opSelectUnselect(this);
+			break;
+
+		case PLAYING_AREA:
+			//pOp = new opSelectUnselect(this);
+			//pGraph->matchShapes();
+			pOp = new matchShapes(this);
 
 			break;
 		
