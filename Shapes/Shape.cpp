@@ -3,6 +3,8 @@
 shape::shape(GfxInfo shapeGfxInfo)
 { 
 	ShpGfxInfo = shapeGfxInfo;	//Default status is non-filled.
+	prevBorderWidth.push(3); //default border width
+	undoBorderWidth.push(3); //default border width
 }
  
 void shape::SetSelected(bool s)

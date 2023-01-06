@@ -116,22 +116,18 @@ operationType GUI::GetUseroperation() const
 	while (GetKeyState(VK_LCONTROL) < 0)
 	{
 		PrintMessage("L CTRL + ...");
-		cout << "working" << endl;
 		char CharAfterControl;
 		GetKeyClicked(CharAfterControl);
 		if (CharAfterControl == 'c')
 		{
-			cout << "Call Copy"<<endl;
 			PrintMessage("Copy");
 			return COPY;
 		}
 		else if (CharAfterControl == 'v') {
-			cout << "Call Paste" << endl;
 			PrintMessage("Paste");
 			return PASTE;
 		}
 		else if (CharAfterControl == 'x') {
-			cout << "Call Cut" << endl;
 			PrintMessage("Cut");
 			return CUT;
 		}

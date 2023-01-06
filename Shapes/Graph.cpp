@@ -299,7 +299,6 @@ void Graph::PutInUndoShapes() {
 	{
 		UndoneShapesList.push_back(shapesList[shapesList.size() - 1]);
 		shapesList.erase(shapesList.end() - 1);
-		cout << "put it undo shapes is working";
 	}
 }
 
@@ -307,7 +306,6 @@ void Graph::FromUndotoShapesList() {
 	if (UndoneShapesList[UndoneShapesList.size() - 1])
 	{
 		shapesList.push_back(UndoneShapesList[UndoneShapesList.size() - 1]);
-		cout << "From undo to shapes List is working";
 		UndoneShapesList.erase(UndoneShapesList.end() - 1);
 	}
 }

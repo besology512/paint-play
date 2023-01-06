@@ -141,7 +141,7 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case CHNG_BORDER_WIDTH:
 			pOp = new opChangeBorderWidth(this);
-			//addToCurrentOperation(pOp);
+			addToCurrentOperation(pOp);
 			break;
 		case ZOOM_IN:
 			pOp = new opZoomin(this);
