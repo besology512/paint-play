@@ -10,6 +10,7 @@ private:
 	Point Center;
 	Point PointOnCircle;
 	int sizeFactor = 1;
+	double raduis;
 public:
 	Circle(Point,Point, GfxInfo shapeGfxInfo);
 	virtual ~Circle();

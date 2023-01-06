@@ -168,6 +168,7 @@ void Rect::zoom(double scale, int x, int y) {
 }
 
 
+
 Point Rect::getUpperLeftPoint()
 {
 	Point upperLeftPoint;

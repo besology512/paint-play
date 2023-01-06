@@ -25,6 +25,7 @@ public:
 	void Move(int x,int y) override;
 	Point getUpperLeftPoint();
 	void SCRAMBLE() override;
+
 };
 
 //#pragma once

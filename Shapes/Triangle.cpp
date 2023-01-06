@@ -108,6 +108,8 @@ void Triangle::zoom(double scale, int x, int y) {
 
 }
 
+
+
 bool Triangle::inShape(int x, int y) const
 {
 	// Get the area of our Triangle 

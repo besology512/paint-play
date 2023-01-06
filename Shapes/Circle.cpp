@@ -4,6 +4,7 @@ Circle::Circle(Point P1, Point P2, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 {
 	Center = P1;
 	PointOnCircle = P2;
+	raduis = abs(P2.x - P1.x);
 }
 
 Circle::~Circle()

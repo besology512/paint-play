@@ -21,6 +21,7 @@ void opSendback::Execute() {
 	//Get a pointer to the graph
 	Graph* pGr = pControl->getGraph();
 
+
 	if (pGr->getselectedshape()) {
 		pGr->DeleteShape(pGr->getselectedshape());
 		pGr->SendbackShape(pGr->getselectedshape());

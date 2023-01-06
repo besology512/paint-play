@@ -21,7 +21,7 @@ struct GfxInfo // Graphical info common for all shapes (you may add more members
 	bool isFilled;	 // shape Filled or not
 	int BorderWdth;	 // Width of shape borders
 	bool isSelected; // true if the shape is selected.
-	//bool isSaved = false;
+	bool isHidden = false; 
 };
 
 
@@ -80,6 +80,8 @@ class GUI
 
 		ICON_START,
 		ICON_RESTART,
+		ICON_HIDE,
+		ICON_UNHIDE,
 		// TODO: Add more icons names here
 		ICON_EXIT_PLAYMODE,
 		
@@ -138,6 +140,7 @@ public:
 	// -- shapes Drawing functions
 
 	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const;  //Draw a rectangle
+	void DrawRectHidden(Point P1, Point P2, GfxInfo RectGfxInfo) const;  //Draw a rectangle to hide the shapes
 	void DrawTriangle(Point P1, Point P2,Point P3 ,GfxInfo TriaGfxInfo) const;
 	void DrawCircle(Point P1, Point P2,GfxInfo CirclGfxInfo) const;
 	void DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const;  //Draw an Oval

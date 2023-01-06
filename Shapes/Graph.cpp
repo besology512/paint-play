@@ -121,7 +121,22 @@ void Graph::Draw(GUI* pUI) const
 
 }
 
-		
+//Hide shapes when switch to play mode
+void Graph::Hideing(GUI* pUI) {
+	
+	for (auto shapePointer : shapesList) {
+		shapePointer->setisHidden(true);
+	}
+	Draw(pUI);
+}
+
+void Graph::Unhideing(GUI* pUI) {
+
+	for (auto shapePointer : shapesList) {
+		shapePointer->setisHidden(false);
+	}
+	Draw(pUI);
+}
 
 //Unselect all the shapes in the shapelist
 void Graph::UnselectAll()

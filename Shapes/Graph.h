@@ -57,6 +57,9 @@ public:
 	void PutInUndoShapes();
 	void FromUndotoShapesList();
 	void ZOOMING(double scale, int x, int y);
+	void Hideing(GUI* pUI);							//to hide shapes when switch to play mode
+	void Unhideing(GUI* pUI);							//to hide shapes when switch to play mode
+
 	void RemoveShape(shape* pShp);
 	void DeleteShape(shape* pShp);			   // Delete a single shape from shape of list	
 	void SendbackShape(shape* pShp);           // Send a single shpe to the last indes in the vector

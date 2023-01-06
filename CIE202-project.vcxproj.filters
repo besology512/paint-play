@@ -234,6 +234,7 @@
     </ClCompile>
     <ClCompile Include="operations\opZoomin.cpp" />
     <ClCompile Include="operations\opZoomout.cpp" />
+    <ClCompile Include="operations\opHide.cpp">
     <ClCompile Include="operations\matchShapes.cpp">
       <Filter>Operations</Filter>
     </ClCompile>
@@ -425,6 +426,7 @@
     </ClInclude>
     <ClInclude Include="operations\opZoomin.h" />
     <ClInclude Include="operations\opZoomout.h" />
+    <ClInclude Include="operations\opHide.h">
     <ClInclude Include="operations\matchShapes.h">
       <Filter>Operations</Filter>
     </ClInclude>
