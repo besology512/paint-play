@@ -10,6 +10,7 @@
 #include"../Shapes/Oval.h"
 #include <fstream>
 #include <vector>
+#include<stack>
 using namespace std;
 
 //forward decl
@@ -31,9 +32,11 @@ private:
 	vector <shape*> ClonedShapes;
 	shape* selectedShape;	//pointer to the currently selected shape
 	vector <shape*> selectedShapes;
+	vector <shape*> matchedShapes;
 public:
-	//bool counting = true;
-	//int counter = 0;
+	stack<shape*> lastEdited;
+	stack<shape*> undolastEdited;
+	stack<shape*> UndolastEdited;
 	bool isFilled = false;
 	Graph();
 	~Graph();
@@ -63,6 +66,7 @@ public:
 	shape* Getshape(int x, int y); //Search for a shape given a point inside the shape
 	void addToCloned(shape* pShp);
 	vector <shape*> getClonedShapes();
+	vector <shape*> getMatchedShapes();
 	void Save(ofstream& outfile);	//Save all shapes to a file
 	void load(ifstream& inputfile);	//Load all shapes from a file
 	void scramble();				// scramble function to pass on all shapes
@@ -70,5 +74,7 @@ public:
 	void setPickedClr(double&,double&,double&); //set color using color picker
 	void ClearClipboard();
 	void duplicateShapes();
+	void addMatchedShape(shape*);
+	void clearMatchedShapes();
 
 };

@@ -2,7 +2,8 @@
 #include "..\defs.h"
 #include "..\GUI\GUI.h"
 #include <cstdlib>
-
+#include"../CMUgraphicsLib/colors.h"
+#include<stack>
 //Base class for all shapes
 class shape
 {
@@ -14,6 +15,12 @@ protected:
 	/// Add more parameters if needed.
 
 public:
+	stack<color> prevFillClrs; //all fill colors for all shapes types
+	stack<color> undoFillCLrs;
+	stack<color> prevBorderClrs;// all border color for all shapes types
+	stack<color> undoBorderClrs;
+	stack<int> undoBorderWidth;
+	stack<int> prevBorderWidth; // all border widths for all shapes types
 	shape(GfxInfo shapeGfxInfo);
 	virtual ~shape() {}
 	void SetSelected(bool s);	//select/unselect the shape

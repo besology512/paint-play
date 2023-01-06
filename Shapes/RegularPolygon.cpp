@@ -1,4 +1,4 @@
-#include ".//RegularPolygon.h"
+#include"RegularPolygon.h"
 
 RegularPolygon::RegularPolygon(Point c, double v, double r, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 {
@@ -12,7 +12,7 @@ RegularPolygon::~RegularPolygon(){}
 void RegularPolygon::Draw(GUI* pUI) const
 {
 	//Call Output::Draw Triangle to draw a Triangle on the screen	
-	pUI->DrawRegularPolygon(center, numOfVertices, radius, ShpGfxInfo);
+	pUI->DrawRegularPolygon(regularPolygonPoints, numOfVertices,ShpGfxInfo);
 }
 
 
@@ -131,12 +131,18 @@ void RegularPolygon::zoom(double scale, int x, int y) {
 
 
 }
-
+#include<iostream>
 void RegularPolygon:: Rotate(){
-	//create the points again
-	//Point Center;
-	//Center.x = (P4.x + corner1.x) / 2;
-	//Center.y = (P4.y + corner1.y) / 2;
+	std::cout << "In rotate";
+	for (int i = 0; i < int(numOfVertices); i++)
+	{
+		int tempX = regularPolygonPoints[i].x;
+		int tempY = regularPolygonPoints[i].y;
+		std::cout << tempX << std::endl;
+		regularPolygonPoints[i].x = -tempY+ center.y + center.x;
+		regularPolygonPoints[i].y = tempX - center.x + center.y;
+		std::cout << regularPolygonPoints[i].x << std::endl;
+	}
 	//int tempP1X = corner1.x;
 	//int tempP1Y = corner1.y;
 	//int tempP2X = corner2.x;
@@ -181,4 +187,9 @@ void RegularPolygon::SCRAMBLE()
 	int x = 5 + rand() % (1200 - 5 + 1);
 	int y = 5 + rand() % (600 - 5 + 1);
 	Move(x, y);
+}
+
+void RegularPolygon::addPoint(Point p)
+{
+	regularPolygonPoints.push_back(p);
 }

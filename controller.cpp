@@ -34,7 +34,7 @@
 #include"operations/opSendback.h"
 #include"operations/opDuplicateGraph.h"
 #include"operations/opHide.h"
-
+#include"operations/matchShapes.h"
 
 
 //Constructor
@@ -135,15 +135,15 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case CHNG_FILL_CLR:
 			pOp = new opChangeFill(this);
-			//addToCurrentOperation(pOp);
+			addToCurrentOperation(pOp);
 			break;
 		case CHNG_BORDER_CLR:
 			pOp = new opChangeBorderClr(this);
-			//addToCurrentOperation(pOp);
+			addToCurrentOperation(pOp);
 			break;
 		case CHNG_BORDER_WIDTH:
 			pOp = new opChangeBorderWidth(this);
-			//addToCurrentOperation(pOp);
+			addToCurrentOperation(pOp);
 			break;
 		case ZOOM_IN:
 			pOp = new opZoomin(this);
@@ -184,8 +184,13 @@ operation* controller::createOperation(operationType OpType)
 			break;
 
 		case DRAWING_AREA:
-
 			pOp = new opSelectUnselect(this);
+			break;
+
+		case PLAYING_AREA:
+			//pOp = new opSelectUnselect(this);
+			//pGraph->matchShapes();
+			pOp = new matchShapes(this);
 
 			break;
 		

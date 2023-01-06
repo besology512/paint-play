@@ -76,6 +76,20 @@ void opAddRegularPolygon::Execute()
 	//Create a regular polygon with the above parameters
 	RegularPolygon* RP = new RegularPolygon(center, int((int(numOfVertices) - 48)), int((int(radius) - 48)) * 15, RegularPolygonGfxInfo); //Multiplied the radius to make it bigger
 
+	//Adding its points to a vector in the regular polygon
+	const double PI = 3.141592653589;			//Defining constant PI
+	double angle = (2 * PI) / numOfVertices;	//Defining the angle between two vertices
+
+	for (int i = 0; i < int(numOfVertices); i++)
+	{
+		int x = center.x + radius * sin(i * angle);
+		int y = center.y + radius * cos(i * angle);
+
+		Point point; point.x = x; point.y = y;
+
+		RP->addPoint(point);
+	}
+
 	//Add the rectangle to the list of shapes
 	pGr->Addshape(RP);
 
