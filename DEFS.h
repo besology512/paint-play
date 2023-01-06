@@ -39,6 +39,9 @@ enum operationType //The operations supported (you can add more if needed)
 	RESTART,		//restart the play mode
 	SWITCH,			//switch the two modes
 	DUPLICATE_GRAPH,		//duplicate the graph
+	MULTICOPY,
+	MULTICUT,
+	MULTIPASTE,
 	EXIT,			//Exit the application
 	
 

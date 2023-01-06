@@ -63,6 +63,10 @@ class GUI
 		ICON_SCRAMBLE,
 		ICON_SWITCH,
 		ICON_DUPLICATE,
+		ICON_MULTICOPY,
+		ICON_MULTICUT,
+		ICON_MULTIPASTE,
+
 
 		//TODO: Add more icons names here
 

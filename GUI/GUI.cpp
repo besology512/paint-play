@@ -178,6 +178,11 @@ operationType GUI::GetUseroperation() const
 			case ICON_SCRAMBLE: return SCRAMBLE;
 			case ICON_SWITCH: return SWITCH;
 			case ICON_DUPLICATE: return DUPLICATE_GRAPH;
+			case ICON_MULTICOPY: return MULTICOPY;
+			case ICON_MULTICUT: return MULTICUT;
+			case ICON_MULTIPASTE: return MULTIPASTE;
+
+
 			case ICON_EXIT: return EXIT;
 			
 
@@ -305,6 +310,9 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_LOAD] = "images\\MenuIcons\\Menu_Load.jpg";
 	MenuIconImages[ICON_STICKIMAGE] = "images\\MenuIcons\\Menu_StickImage.jpg";
 	MenuIconImages[ICON_SCRAMBLE] = "images\\MenuIcons\\Menu_Scramble.jpg";
+	MenuIconImages[ICON_MULTICOPY] = "images\\MenuIcons\\Menu_MultiCopy.jpg";
+	MenuIconImages[ICON_MULTICUT] = "images\\MenuIcons\\Menu_MultiCut.jpg";
+	MenuIconImages[ICON_MULTIPASTE] = "images\\MenuIcons\\Menu_MultiPaste.jpg";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 	
 
