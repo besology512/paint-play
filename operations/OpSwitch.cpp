@@ -14,10 +14,13 @@ void opSwitch::Execute() {
 
 	//Get a Pointer to the Input / Output Interfaces
 	GUI* pUI = pControl->GetUI();
+	Graph* pGr = pControl->getGraph();
+
 	
 	pUI->ClearToolBar();
 
 	//pUI->ClearDrawArea();
+	pGr->UnselectAll();
 
 	pUI->ClearStatusBar();
 	

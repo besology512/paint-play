@@ -353,4 +353,17 @@ void Graph::duplicateShapes() {
 	}
 	ClearClipboard();
 }
+vector <shape*> Graph::getMatchedShapes()
+{
+	return matchedShapes;
+}
 
+void Graph::addMatchedShape(shape* s)
+{
+	matchedShapes.push_back(s);
+}
+
+void Graph::clearMatchedShapes()
+{
+	matchedShapes.clear();
+}

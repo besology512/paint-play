@@ -21,6 +21,7 @@ GUI* pUI = pControl->GetUI();
 //Get a pointer to the graph
 Graph* pGr = pControl->getGraph();
 
+
 pUI->GetMousCoord(P.x, P.y);
 
 if (GetKeyState(VK_RCONTROL) & 0x8000) // multiple selection feature
