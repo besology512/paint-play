@@ -432,23 +432,35 @@ void GUI::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const
 		style = FRAME;
 
 	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
+
+	if (RectGfxInfo.isHidden == true) {
+		drawstyle styleRect;
+		styleRect = FILLED;
+		/*Point cr1, cr2;
+		cr1.x = min(P1.x, P2.x) - 2;
+		cr1.y = min(P1.y, P2.y) - 2;
+		cr2.x = max(P1.x, P2.x) + 2;
+		cr2.y = max(P1.y, P2.y) + 2;*/
+
+		pWind->DrawRectangle(P1.x-9, P1.y-9, P2.x+9, P2.y+9, styleRect);
+	}
 }
 
-void GUI::DrawRectHidden(Point P1, Point P2, GfxInfo RectGfxInfo) const
-{
-	color DrawingClr;
-	if (RectGfxInfo.isSelected)		 // shape is selected
-		DrawingClr = HighlightColor; // shape should be drawn highlighted
-	else
-		DrawingClr = RectGfxInfo.DrawClr;
-
-	pWind->SetPen(DrawingClr, RectGfxInfo.BorderWdth); // Set Drawing color & width
-
-	drawstyle style;
-	style = FILLED;
-		
-	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
-}
+//void GUI::DrawRectHidden(Point P1, Point P2, GfxInfo RectGfxInfo) const
+//{
+//	color DrawingClr;
+//	if (RectGfxInfo.isSelected)		 // shape is selected
+//		DrawingClr = HighlightColor; // shape should be drawn highlighted
+//	else
+//		DrawingClr = RectGfxInfo.DrawClr;
+//
+//	pWind->SetPen(DrawingClr, RectGfxInfo.BorderWdth); // Set Drawing color & width
+//
+//	drawstyle style;
+//	style = FILLED;
+//		
+//	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
+//}
 
 
 void GUI::DrawTriangle(Point P1, Point P2, Point P3, GfxInfo TriaGfxInfo) const
@@ -471,9 +483,17 @@ void GUI::DrawTriangle(Point P1, Point P2, Point P3, GfxInfo TriaGfxInfo) const
 		style = FRAME;
 
 	pWind->DrawTriangle(P1.x, P1.y, P2.x, P2.y, P3.x, P3.y, style);
-	//if (ishidden = true) {
+	if (TriaGfxInfo.isHidden == true) {
+		drawstyle styleTriangle;
+		styleTriangle = FILLED;
+		Point cr1, cr2;
+		cr1.x = max(P1.x, P2.x);
+		cr1.y = max(P1.y, P2.y);
+		cr2.x = min(P1.x, P2.x);
+		cr2.y = min(P1.y, P2.y);
 
-	//}
+		pWind->DrawRectangle(cr1.x, cr1.y, cr2.x, cr2.y, styleTriangle);
+	}
 }
 
 void GUI::DrawCircle(Point P1, Point P2, GfxInfo CirclGfxInfo) const
@@ -500,15 +520,15 @@ void GUI::DrawCircle(Point P1, Point P2, GfxInfo CirclGfxInfo) const
 	pWind->DrawCircle(P1.x, P1.y, radius, style);
 	
 	if (CirclGfxInfo.isHidden == true) {
-		drawstyle styleRect;
-		styleRect = FILLED;
+		drawstyle styleCircle;
+		styleCircle = FILLED;
 		Point cr1, cr2;
 		cr1.x = P1.x - radius + 1;
 		cr1.y = P1.y - radius;
 		cr2.x = P2.x + radius + 1;
 		cr2.y = P2.y + radius;
 
-		pWind->DrawRectangle(cr1.x, cr1.y, cr2.x, cr2.y, styleRect);
+		pWind->DrawRectangle(cr1.x, cr1.y, cr2.x, cr2.y, styleCircle);
 	}
 }
 
@@ -532,6 +552,18 @@ void GUI::DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const
 		style = FRAME;
 
 	pWind->DrawEllipse(P1.x, P1.y, P2.x, P2.y, style);
+
+	if (OvalGfxInfo.isHidden == true) {
+		drawstyle styleOval;
+		styleOval = FILLED;
+		Point cr1, cr2;
+		cr1.x = min(P1.x,P2.x);
+		cr1.y = min(P1.y, P2.y);
+		cr2.x = max(P1.x, P2.x);
+		cr2.y = max(P1.y, P2.y);
+
+		pWind->DrawRectangle(cr1.x, cr1.y, cr2.x, cr2.y, styleOval);
+	}
 }
 
 void GUI::DrawSquare(Point P1, Point P2, GfxInfo SquareGfxInfo) const {
@@ -571,6 +603,18 @@ void GUI::DrawSquare(Point P1, Point P2, GfxInfo SquareGfxInfo) const {
 	int yPoints[] = {P1.y,P3.y,P4.y,P2.y};
 
 	pWind->DrawPolygon(xPoints, yPoints, 4, style);
+
+	if (SquareGfxInfo.isHidden == true) {
+		drawstyle styleSquare;
+		styleSquare = FILLED;
+		Point cr1, cr2;
+		cr1.x = max(P1.x, P2.x) - diffx-90;
+		cr1.y = max(P1.y, P2.y) ;
+		cr2.x = min(P1.x, P2.x) ;
+		cr2.y = min(P1.y, P2.y) + diffy+90;
+
+		pWind->DrawRectangle(cr1.x, cr1.y, cr2.x, cr2.y, styleSquare);
+	}
 
 }
 
@@ -634,6 +678,18 @@ void GUI::DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const
 		style = FRAME;
 
   pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
+
+  if (LineGfcInfo.isHidden == true) {
+	  drawstyle styleLine;
+	  styleLine = FILLED;
+	  Point cr1, cr2;
+	  cr1.x = min(P1.x, P2.x)-2;
+	  cr1.y = min(P1.y, P2.y)-2;
+	  cr2.x = max(P1.x, P2.x)+2;
+	  cr2.y = max(P1.y, P2.y)+2;
+
+	  pWind->DrawRectangle(cr1.x, cr1.y, cr2.x, cr2.y, styleLine);
+  }
   }
 
 
