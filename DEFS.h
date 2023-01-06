@@ -37,6 +37,8 @@ enum operationType //The operations supported (you can add more if needed)
 	SCRAMBLE,
 	START,			//start the play mode
 	RESTART,		//restart the play mode
+	HIDE,			// Hide the shape in play mode
+	UNHIDE,			// unhide the shape in play mode
 	SWITCH,			//switch the two modes
 	DUPLICATE_GRAPH,		//duplicate the graph
 	EXIT,			//Exit the application

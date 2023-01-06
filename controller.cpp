@@ -33,6 +33,8 @@
 #include "operations/opZoomout.h"
 #include"operations/opSendback.h"
 #include"operations/opDuplicateGraph.h"
+#include"operations/opHide.h"
+
 
 
 //Constructor
@@ -167,6 +169,9 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case START:
 			pOp = new opStart(this);
+			break;
+		case HIDE:
+			pOp = new opHide(this);
 			break;
 		case RESTART:
 			pOp = new opRestart(this);

@@ -155,6 +155,7 @@ void Oval::zoom(double scale, int x, int y) {
 	Corner2.y = (Corner2.y * scale) - (scale * y) + y;
 }
 
+
 void Oval::Rotate() {
 	Point Center;
 	Center.x = (Corner1.x + Corner2.x) / 2;

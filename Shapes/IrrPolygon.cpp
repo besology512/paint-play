@@ -119,6 +119,7 @@ void IrrPolygon::zoom(double scale, int x, int y) {
 	}
 }
 
+
 void IrrPolygon::Rotate(){}
 shape* IrrPolygon::clone(){
 	shape* pCloned = new IrrPolygon(*this);

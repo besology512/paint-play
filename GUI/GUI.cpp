@@ -213,6 +213,10 @@ operationType GUI::GetUseroperation() const
 			case ICON_START: return START;
 			case ICON_RESTART: return RESTART;
 			case ICON_EXIT_PLAYMODE: return EXIT;
+			case ICON_HIDE: return HIDE;
+			case ICON_UNHIDE: return UNHIDE;
+
+
 			
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
@@ -331,6 +335,9 @@ void GUI::CreatePlayToolBar()
 	MenuIconImages[ICON_START] = "images\\MenuIcons\\Menu_Start.jpg";
 	MenuIconImages[ICON_RESTART] = "images\\MenuIcons\\Menu_Restart.jpg";
 	MenuIconImages[ICON_EXIT_PLAYMODE] = "images\\MenuIcons\\Menu_Exit.jpg";
+	MenuIconImages[ICON_HIDE] = "images\\MenuIcons\\Menu_Hide.jpg";
+	MenuIconImages[ICON_UNHIDE] = "images\\MenuIcons\\Menu_Unhide.jpg";
+
 	/// TODO: write code to create Play mode menu
 
 	for (int i = 0; i < PLAY_ICON_COUNT; i++)
@@ -427,6 +434,23 @@ void GUI::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const
 	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
 }
 
+void GUI::DrawRectHidden(Point P1, Point P2, GfxInfo RectGfxInfo) const
+{
+	color DrawingClr;
+	if (RectGfxInfo.isSelected)		 // shape is selected
+		DrawingClr = HighlightColor; // shape should be drawn highlighted
+	else
+		DrawingClr = RectGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, RectGfxInfo.BorderWdth); // Set Drawing color & width
+
+	drawstyle style;
+	style = FILLED;
+		
+	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
+}
+
+
 void GUI::DrawTriangle(Point P1, Point P2, Point P3, GfxInfo TriaGfxInfo) const
 {
 	color DrawingClr;
@@ -447,6 +471,9 @@ void GUI::DrawTriangle(Point P1, Point P2, Point P3, GfxInfo TriaGfxInfo) const
 		style = FRAME;
 
 	pWind->DrawTriangle(P1.x, P1.y, P2.x, P2.y, P3.x, P3.y, style);
+	//if (ishidden = true) {
+
+	//}
 }
 
 void GUI::DrawCircle(Point P1, Point P2, GfxInfo CirclGfxInfo) const
@@ -471,6 +498,18 @@ void GUI::DrawCircle(Point P1, Point P2, GfxInfo CirclGfxInfo) const
 	int radius = sqrt(pow(P1.x - P2.x, 2) + pow(P1.y - P2.y, 2));
 
 	pWind->DrawCircle(P1.x, P1.y, radius, style);
+	
+	if (CirclGfxInfo.isHidden == true) {
+		drawstyle styleRect;
+		styleRect = FILLED;
+		Point cr1, cr2;
+		cr1.x = P1.x - radius + 1;
+		cr1.y = P1.y - radius;
+		cr2.x = P2.x + radius + 1;
+		cr2.y = P2.y + radius;
+
+		pWind->DrawRectangle(cr1.x, cr1.y, cr2.x, cr2.y, styleRect);
+	}
 }
 
 void GUI::DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const

@@ -24,7 +24,8 @@ public:
 
 
 	virtual void Draw(GUI* pUI) const  = 0 ;		//Draw the shape
-	
+	void setisHidden(bool h);
+	bool getisHidden();
 	void ChngDrawClr(color Dclr);	//changes the shape's drawing color
 	void ChngFillClr(color Fclr);	//changes the shape's filling color
 	void setIsfilled(bool);
@@ -37,7 +38,7 @@ public:
 	virtual void Move(int x,int y) = 0;		//Move the shape
 	virtual Point getUpperLeftPoint() = 0;
 	
-
+	
 	virtual void zoom(double scale, int x, int y) = 0;		//Zoom the shape(s) in
 	virtual void stickImage(image, GUI* pUI) = 0;
 	virtual int getDuplicateID() = 0; 
