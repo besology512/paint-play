@@ -25,7 +25,7 @@ public:
 
 	virtual void Draw(GUI* pUI) const  = 0 ;		//Draw the shape
 	void setisHidden(bool h);						//use it to make the flag of hidden is true/false
-	bool getisHidden();
+	//bool getisHidden();
 	void ChngDrawClr(color Dclr);	//changes the shape's drawing color
 	void ChngFillClr(color Fclr);	//changes the shape's filling color
 	void setIsfilled(bool);

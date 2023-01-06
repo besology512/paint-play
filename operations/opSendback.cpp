@@ -20,20 +20,19 @@ void opSendback::Execute() {
 
 	//Get a pointer to the graph
 	Graph* pGr = pControl->getGraph();
-	pGr->Unhideing(pUI);
 
 
-	//if (pGr->getselectedshape()) {
-	//	pGr->DeleteShape(pGr->getselectedshape());
-	//	pGr->SendbackShape(pGr->getselectedshape());
-	//	pGr->UnselectAll();
-	//	
-	//	//Set the save status is false
-	//	pGr->isSaved = false;
-	//}
-	//else {
-	//	pUI->PrintMessage("Please select a shape to send it back");
-	//}
+	if (pGr->getselectedshape()) {
+		pGr->DeleteShape(pGr->getselectedshape());
+		pGr->SendbackShape(pGr->getselectedshape());
+		pGr->UnselectAll();
+		
+		//Set the save status is false
+		pGr->isSaved = false;
+	}
+	else {
+		pUI->PrintMessage("Please select a shape to send it back");
+	}
 }
 
 void opSendback::Undo() {
