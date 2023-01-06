@@ -531,7 +531,7 @@ void GUI::DrawSquare(Point P1, Point P2, GfxInfo SquareGfxInfo) const {
 
 }
 
-void GUI::DrawRegularPolygon(Point center, double numOfVertices, double radius, GfxInfo RegularPolygonGfxInfo) const
+void GUI::DrawRegularPolygon(std::vector<Point> regularPolygonPoints, double numOfVertices, GfxInfo RegularPolygonGfxInfo) const
 {
 	color DrawingClr;
 	if (RegularPolygonGfxInfo.isSelected)	//shape is selected
@@ -554,14 +554,15 @@ void GUI::DrawRegularPolygon(Point center, double numOfVertices, double radius, 
 		std::vector<int> xPointsV;
 		std::vector<int> yPointsV;
 
-		const double PI = 3.141592653589;			//Defining constant PI
-		double angle = (2 * PI) / numOfVertices;	//Defining the angle between two vertices
+		//const double PI = 3.141592653589;			//Defining constant PI
+		//double angle = (2 * PI) / numOfVertices;	//Defining the angle between two vertices
 
-		for (int i = 0; i < int(numOfVertices); i++)
+		for (int i = 0; i <int(numOfVertices); i++)
 		{
-			int x = center.x + radius * sin(i * angle);
-			int y = center.y + radius * cos(i * angle);
-
+		//	int x = center.x + radius * sin(i * angle);
+		//	int y = center.y + radius * cos(i * angle);
+			int x = regularPolygonPoints[i].x;
+			int y = regularPolygonPoints[i].y;
 			xPointsV.push_back(x);
 			yPointsV.push_back(y);
 		}

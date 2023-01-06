@@ -142,7 +142,7 @@ public:
 	void DrawCircle(Point P1, Point P2,GfxInfo CirclGfxInfo) const;
 	void DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const;  //Draw an Oval
 	void DrawSquare(Point P1, Point P2, GfxInfo SquareGfxInfo) const;  //Draw a Square
-	void DrawRegularPolygon(Point center, double numOfVertices, double radius, GfxInfo RegularPolygonGfxInfo) const; // Draw a regular Polygon
+	void DrawRegularPolygon(std::vector<Point> regularPolygonPoints,double, GfxInfo RegularPolygonGfxInfo) const; // Draw a regular Polygon
 	void DrawIrrPolygon(vector<Point> allPoints, int vericies, GfxInfo IrrPolGfxInfo) const; //Draw Irregular Polygon
 	void DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const;  // Draw a Line 
 	void DrawImage(image I, Point P1, double width, double height);//, GfxInfo ImageInfo);
