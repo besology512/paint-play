@@ -549,27 +549,20 @@ void GUI::DrawRegularPolygon(std::vector<Point> regularPolygonPoints, double num
 	}
 	else
 		style = FRAME;
-
-
 		std::vector<int> xPointsV;
 		std::vector<int> yPointsV;
-
-		//const double PI = 3.141592653589;			//Defining constant PI
-		//double angle = (2 * PI) / numOfVertices;	//Defining the angle between two vertices
-
 		for (int i = 0; i <int(numOfVertices); i++)
 		{
-		//	int x = center.x + radius * sin(i * angle);
-		//	int y = center.y + radius * cos(i * angle);
+			//cout << "point " << i << "Is at " << regularPolygonPoints[i].x << endl;
 			int x = regularPolygonPoints[i].x;
 			int y = regularPolygonPoints[i].y;
-			xPointsV.push_back(x);
-			yPointsV.push_back(y);
+			cout << "point " << i << "Is at " << x << endl;
+			xPointsV.push_back(regularPolygonPoints[i].x);
+			yPointsV.push_back(regularPolygonPoints[i].y);
+			cout << "point " << i << " Assigned to at " << xPointsV[i] << endl;
 		}
-
 		int* xPoints = &xPointsV[0];
 		int* yPoints = &yPointsV[0];
-
 		pWind->DrawPolygon(xPoints, yPoints, int(numOfVertices), style);
 }
 
@@ -625,13 +618,9 @@ void GUI::DrawIrrPolygon(vector<Point> allPoints, int verticies, GfxInfo IrrPolG
 	pWind->DrawPolygon(xPoints, yPoints, verticies, style);
 
 }
-void GUI::DrawImage(image I,Point P1, double width, double height)//,GfxInfo ImageInfo)
+void GUI::DrawImage(image I,Point P1, double width, double height)
 {
-	//color DrawingClr;
-	//if (ImageInfo.isSelected)	//shape is selected
-	//	DrawingClr = HighlightColor; //shape should be drawn highlighted
 	pWind->DrawImage(I, P1.x, P1.y, width, height);
-	
 }
 
 GUI::~GUI()
