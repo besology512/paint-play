@@ -10,6 +10,7 @@
 #include"../Shapes/Oval.h"
 #include <fstream>
 #include <vector>
+#include<stack>
 using namespace std;
 
 //forward decl
@@ -33,8 +34,9 @@ private:
 	vector <shape*> selectedShapes;
 	vector <shape*> matchedShapes;
 public:
-	//bool counting = true;
-	//int counter = 0;
+	stack<shape*> lastEdited;
+	stack<shape*> undolastEdited;
+	stack<shape*> UndolastEdited;
 	bool isFilled = false;
 	Graph();
 	~Graph();
