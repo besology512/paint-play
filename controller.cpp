@@ -133,11 +133,11 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case CHNG_FILL_CLR:
 			pOp = new opChangeFill(this);
-			//addToCurrentOperation(pOp);
+			addToCurrentOperation(pOp);
 			break;
 		case CHNG_BORDER_CLR:
 			pOp = new opChangeBorderClr(this);
-			//addToCurrentOperation(pOp);
+			addToCurrentOperation(pOp);
 			break;
 		case CHNG_BORDER_WIDTH:
 			pOp = new opChangeBorderWidth(this);

@@ -16,7 +16,9 @@ protected:
 
 public:
 	stack<color> prevFillClrs; //all fill colors for all shapes types
+	stack<color> undoFillCLrs;
 	stack<color> prevBorderClrs;// all border color for all shapes types
+	stack<color> undoBorderClrs;
 	stack<int> undoBorderWidth;
 	stack<int> prevBorderWidth; // all border widths for all shapes types
 	shape(GfxInfo shapeGfxInfo);

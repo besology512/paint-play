@@ -74,9 +74,9 @@ void opChangeBorderWidth::Redo() {
 	if ((pShape->undoBorderWidth.size() != 1) && pShape)
 	{
 		pShape->prevBorderWidth.push(pShape->undoBorderWidth.top()); //puts the redo to the undo
-		pShape->undoBorderWidth.pop(); //deletes the last width from the stack
 		pShape->ChngBorderWidth(pShape->undoBorderWidth.top()); //changes the border width to the top of the stack
 		cout << "In redo changed the width of the shape to" << pShape->undoBorderWidth.top();
+		pShape->undoBorderWidth.pop(); //deletes the last width from the stack
 		pGr->lastEdited.push(pShape);
 		pGr->undolastEdited.pop();
 	}
