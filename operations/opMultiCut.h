@@ -6,12 +6,12 @@
 
 
 
-class opScramble : public operation
+class opMultiCut : public operation
 {
-	
+
 public:
-	opScramble(controller* pCont);
-	virtual ~opScramble();
+	opMultiCut(controller* pCont);
+	virtual ~opMultiCut();
 
 	//Add Save to the controller
 	virtual void Execute();

@@ -6,12 +6,12 @@
 
 
 
-class opScramble : public operation
+class opMultiPaste : public operation
 {
-	
+
 public:
-	opScramble(controller* pCont);
-	virtual ~opScramble();
+	opMultiPaste(controller* pCont);
+	virtual ~opMultiPaste();
 
 	//Add Save to the controller
 	virtual void Execute();

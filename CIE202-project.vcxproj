@@ -183,6 +183,9 @@
     <ClCompile Include="operations\opDuplicateGraph.cpp" />
     <ClCompile Include="operations\opExit.cpp" />
     <ClCompile Include="operations\opLoad.cpp" />
+    <ClCompile Include="operations\opMultiCopy.cpp" />
+    <ClCompile Include="operations\opMultiCut.cpp" />
+    <ClCompile Include="operations\opMultiPaste.cpp" />
     <ClCompile Include="operations\opPaste.cpp" />
     <ClCompile Include="operations\opRedo.cpp" />
     <ClCompile Include="Operations\opResize.cpp" />
@@ -248,6 +251,9 @@
     <ClInclude Include="operations\opDuplicateGraph.h" />
     <ClInclude Include="operations\opExit.h" />
     <ClInclude Include="operations\opLoad.h" />
+    <ClInclude Include="operations\opMultiCopy.h" />
+    <ClInclude Include="operations\opMultiCut.h" />
+    <ClInclude Include="operations\opMultiPaste.h" />
     <ClInclude Include="operations\opPaste.h" />
     <ClInclude Include="operations\opRedo.h" />
     <ClInclude Include="Operations\opResize.h" />

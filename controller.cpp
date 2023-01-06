@@ -28,6 +28,9 @@
 #include"operations/opPaste.h"
 #include"operations/opCut.h"
 #include "operations/opScramble.h"
+#include "operations/opMultiCopy.h"
+#include "operations/opMultiCut.h"
+#include "operations/opMultiPaste.h"
 
 #include "operations/opZoomin.h"
 #include "operations/opZoomout.h"
@@ -164,6 +167,15 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case SCRAMBLE:
 			pOp = new opScramble(this);
+			break;
+		case MULTICOPY:
+			pOp = new opMultiCopy(this);
+			break;
+		case MULTICUT:
+			pOp = new opMultiCut(this);
+			break;
+		case MULTIPASTE:
+			pOp = new opMultiPaste(this);
 			break;
 		case START:
 			pOp = new opStart(this);

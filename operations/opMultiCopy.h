@@ -5,13 +5,13 @@
 #include"..\controller.h"
 
 
-
-class opScramble : public operation
+//Add Save operation class
+class opMultiCopy : public operation
 {
-	
+
 public:
-	opScramble(controller* pCont);
-	virtual ~opScramble();
+	opMultiCopy(controller* pCont);
+	virtual ~opMultiCopy();
 
 	//Add Save to the controller
 	virtual void Execute();

@@ -228,11 +228,15 @@
     <ClCompile Include="operations\opPaste.cpp" />
     <ClCompile Include="operations\opCut.cpp" />
     <ClCompile Include="operations\opScramble.cpp" />
-
     <ClCompile Include="operations\opSendback.cpp" />
     <ClCompile Include="operations\opDuplicateGraph.cpp">
       <Filter>Operations</Filter>
     </ClCompile>
+    <ClCompile Include="operations\opZoomin.cpp" />
+    <ClCompile Include="operations\opZoomout.cpp" />
+    <ClCompile Include="operations\opMultiCopy.cpp" />
+    <ClCompile Include="operations\opMultiPaste.cpp" />
+    <ClCompile Include="operations\opMultiCut.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -419,6 +423,11 @@
     <ClInclude Include="operations\opDuplicateGraph.h">
       <Filter>Operations</Filter>
     </ClInclude>
+    <ClInclude Include="operations\opZoomin.h" />
+    <ClInclude Include="operations\opZoomout.h" />
+    <ClInclude Include="operations\opMultiCopy.h" />
+    <ClInclude Include="operations\opMultiCut.h" />
+    <ClInclude Include="operations\opMultiPaste.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Operations">
