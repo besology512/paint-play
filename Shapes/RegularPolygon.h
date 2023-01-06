@@ -12,6 +12,8 @@ private:
 	double numOfVertices;
 	double radius;
 	int sizeFactor = 1;
+	std::vector<Point> regularPolygonPoints;
+
 
 public:
 	RegularPolygon(Point, double, double, GfxInfo shapeGfxInfo);
@@ -33,4 +35,5 @@ public:
 	void stickImage(image, GUI* pUI) override;
 	int getDuplicateID();
 	void setDuplicateID(int);
+	void addPoint(Point);
 };
