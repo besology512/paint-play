@@ -11,14 +11,16 @@ opRotate::~opRotate() {}
 void opRotate::Execute() {
 	GUI* pUI = pControl->GetUI();
 	Graph* pGr = pControl->getGraph();
-	if (pGr->getSelectedShape())
-	{
-		pGr->getSelectedShape()->Rotate();
-		//Set the save status is false
-		pGr->isSaved = false;
-	}else{
-		pUI->PrintMessage("Select the shape you want to rotate first");
-	}
+	pGr->Hideing(pUI);
+
+	//if (pGr->getSelectedShape())
+	//{
+	//	pGr->getSelectedShape()->Rotate();
+	//	//Set the save status is false
+	//	pGr->isSaved = false;
+	//}else{
+	//	pUI->PrintMessage("Select the shape you want to rotate first");
+	//}
 }
 
 void opRotate::Undo() {

@@ -442,6 +442,9 @@ void GUI::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const
 		cr2.x = max(P1.x, P2.x) + 2;
 		cr2.y = max(P1.y, P2.y) + 2;*/
 
+		pWind->SetBrush(GREEN);
+		pWind->SetPen(GREEN, 1);
+
 		pWind->DrawRectangle(P1.x-9, P1.y-9, P2.x+9, P2.y+9, styleRect);
 	}
 }
@@ -486,13 +489,29 @@ void GUI::DrawTriangle(Point P1, Point P2, Point P3, GfxInfo TriaGfxInfo) const
 	if (TriaGfxInfo.isHidden == true) {
 		drawstyle styleTriangle;
 		styleTriangle = FILLED;
-		Point cr1, cr2;
-		cr1.x = max(P1.x, P2.x);
-		cr1.y = max(P1.y, P2.y);
-		cr2.x = min(P1.x, P2.x);
-		cr2.y = min(P1.y, P2.y);
-
-		pWind->DrawRectangle(cr1.x, cr1.y, cr2.x, cr2.y, styleTriangle);
+		int arrayX[3] = { P1.x, P2.x, P3.x };
+		int arrayY[3] = { P1.y, P2.y, P3.y };
+		int max_X = arrayX[0];
+		int max_Y = arrayY[0];
+		int min_X = arrayX[0];
+		int min_Y = arrayY[0];
+		for (int i = 0; i < 3; i++) {
+			if (arrayX[i] > max_X) {
+				max_X = arrayX[i];
+			}
+			if (arrayY[i] > max_Y) {
+				max_Y = arrayY[i];
+			}
+			if (arrayX[i] < min_X) {
+				min_X = arrayX[i];
+			}
+			if (arrayY[i] < min_Y) {
+				min_Y = arrayY[i];
+			}
+		}
+		pWind->SetBrush(GREEN);
+		pWind->SetPen(GREEN, 1);
+		pWind->DrawRectangle(max_X+5, max_Y+5, min_X-2, min_Y-2, styleTriangle);
 	}
 }
 
@@ -528,6 +547,8 @@ void GUI::DrawCircle(Point P1, Point P2, GfxInfo CirclGfxInfo) const
 		cr2.x = P2.x + radius + 1;
 		cr2.y = P2.y + radius;
 
+		pWind->SetBrush(GREEN);
+		pWind->SetPen(GREEN, 1);
 		pWind->DrawRectangle(cr1.x, cr1.y, cr2.x, cr2.y, styleCircle);
 	}
 }
@@ -562,6 +583,8 @@ void GUI::DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const
 		cr2.x = max(P1.x, P2.x);
 		cr2.y = max(P1.y, P2.y);
 
+		pWind->SetBrush(GREEN);
+		pWind->SetPen(GREEN, 1);
 		pWind->DrawRectangle(cr1.x, cr1.y, cr2.x, cr2.y, styleOval);
 	}
 }
@@ -601,21 +624,34 @@ void GUI::DrawSquare(Point P1, Point P2, GfxInfo SquareGfxInfo) const {
 
 	int xPoints[] = {P1.x,P3.x,P4.x,P2.x};
 	int yPoints[] = {P1.y,P3.y,P4.y,P2.y};
+	int max_X = xPoints[0];
+	int max_Y = yPoints[0];
+	int min_X = xPoints[0];
+	int min_Y = yPoints[0];
 
 	pWind->DrawPolygon(xPoints, yPoints, 4, style);
-
 	if (SquareGfxInfo.isHidden == true) {
 		drawstyle styleSquare;
 		styleSquare = FILLED;
-		Point cr1, cr2;
-		cr1.x = max(P1.x, P2.x) - diffx-90;
-		cr1.y = max(P1.y, P2.y) ;
-		cr2.x = min(P1.x, P2.x) ;
-		cr2.y = min(P1.y, P2.y) + diffy+90;
+		for (int i = 0; i < 3; i++) {
+			if (xPoints[i] > max_X) {
+				max_X = xPoints[i];
+			}
+			if (yPoints[i] > max_Y) {
+				max_Y = yPoints[i];
+			}
+			if (xPoints[i] < min_X) {
+				min_X = xPoints[i];
+			}
+			if (yPoints[i] < min_Y) {
+				min_Y = yPoints[i];
+			}
+		}
 
-		pWind->DrawRectangle(cr1.x, cr1.y, cr2.x, cr2.y, styleSquare);
+		pWind->SetBrush(GREEN);
+		pWind->SetPen(GREEN, 5);
+		pWind->DrawRectangle(max_X + 90, max_Y+90, min_X-5, min_Y-5, styleSquare);
 	}
-
 }
 
 void GUI::DrawRegularPolygon(Point center, double numOfVertices, double radius, GfxInfo RegularPolygonGfxInfo) const
@@ -657,6 +693,20 @@ void GUI::DrawRegularPolygon(Point center, double numOfVertices, double radius, 
 		int* yPoints = &yPointsV[0];
 
 		pWind->DrawPolygon(xPoints, yPoints, int(numOfVertices), style);
+
+		if (RegularPolygonGfxInfo.isHidden == true) {
+			drawstyle styleRegularPolygon;
+			styleRegularPolygon = FILLED;
+			Point cr1, cr2;
+			cr1.x = center.x - radius  -4;
+			cr1.y = center.y - radius -2;
+			cr2.x = center.x + radius + 3;
+			cr2.y = center.y + radius +2;
+
+			pWind->SetBrush(GREEN);
+			pWind->SetPen(GREEN, 1);
+			pWind->DrawRectangle(cr1.x, cr1.y, cr2.x, cr2.y, styleRegularPolygon);
+		}
 }
 
 void GUI::DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const
@@ -688,6 +738,8 @@ void GUI::DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const
 	  cr2.x = max(P1.x, P2.x)+2;
 	  cr2.y = max(P1.y, P2.y)+2;
 
+	  pWind->SetBrush(GREEN);
+	  pWind->SetPen(GREEN, 1);
 	  pWind->DrawRectangle(cr1.x, cr1.y, cr2.x, cr2.y, styleLine);
   }
   }
@@ -721,6 +773,36 @@ void GUI::DrawIrrPolygon(vector<Point> allPoints, int verticies, GfxInfo IrrPolG
 	int *xPoints = &xPointsV[0];
 	int *yPoints = &yPointsV[0];
 	pWind->DrawPolygon(xPoints, yPoints, verticies, style);
+
+	if (IrrPolGfxInfo.isHidden == true) {
+		drawstyle styleIrregular;
+		styleIrregular = FILLED;
+		
+		int max_X = xPointsV[0];
+		int max_Y = yPointsV[0];
+		int min_X = xPointsV[0];
+		int min_Y = yPointsV[0];
+
+		for (int i = 0; i < verticies; i++)
+		{
+			if (xPointsV[i] > max_X) {
+				max_X = xPointsV[i];
+			}
+			if (yPointsV[i] > max_Y) {
+				max_Y = yPointsV[i];
+			}
+			if (xPointsV[i] < min_X) {
+				min_X = xPointsV[i];
+			}
+			if (yPointsV[i] < min_Y) {
+				min_Y = yPointsV[i];
+			}
+		}
+
+		pWind->SetBrush(GREEN);
+		pWind->SetPen(GREEN, 1);
+		pWind->DrawRectangle(max_X+3, max_Y+3, min_X, min_Y, styleIrregular);
+	}
 
 }
 void GUI::DrawImage(image I,Point P1, double width, double height)//,GfxInfo ImageInfo)
