@@ -182,3 +182,8 @@ void RegularPolygon::SCRAMBLE()
 	int y = 5 + rand() % (600 - 5 + 1);
 	Move(x, y);
 }
+
+void RegularPolygon::addPoint(Point p)
+{
+	regularPolygonPoints.push_back(p);
+}
