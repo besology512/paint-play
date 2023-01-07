@@ -41,7 +41,27 @@ void shape::setIsfilled(bool a) {
 	ShpGfxInfo.isFilled = a;
 }
 
+
+//void shape::fillArray()
+//{
+//	for (int i = 0; i < 10; i++)
+//	{
+//		if (i < 5)
+//		{
+//			arrayPoints[i].x = i * 240;
+//			arrayPoints[i].y = 50;
+//		}
+//		else
+//		{
+//			arrayPoints[i].x = (i-5) * 240;
+//			arrayPoints[i].y = 250;
+//		}
+//		
+//	}
+//}
+
 void shape::setisHidden(bool h) {
 	ShpGfxInfo.isHidden = h;
 }
+
 

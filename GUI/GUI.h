@@ -120,6 +120,8 @@ public:
 	void GetKeyClicked(char& cKey) const; //Get the keyboard buttons where user clicks
 	string GetSrting() const;	 //Returns a string entered by the user
 	operationType GetUseroperation() const; //Read the user click and map to an operation
+	int getWidth(); // get width of window to use in scramble
+	int getHeight(); // get height of window to use in scramble
   
 	// Output Functions  ---------------------------
 	window *CreateWind(int, int, int, int) const; // creates the application window

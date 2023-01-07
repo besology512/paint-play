@@ -31,8 +31,10 @@ private:
 	vector <shape*> UndoneShapesList;
 	vector <shape*> ClonedShapes;
 	shape* selectedShape;	//pointer to the currently selected shape
+	vector <Point> vectorPoints; // vector has grid of points 
 	vector <shape*> selectedShapes;
 	vector <shape*> matchedShapes;
+
 public:
 	stack<shape*> lastEdited;
 	stack<shape*> undolastEdited;
@@ -73,6 +75,7 @@ public:
 	color getPickedClr(); //get the current color
 	void setPickedClr(double&,double&,double&); //set color using color picker
 	void ClearClipboard();
+	void fillArray(); //fill array with point to use in scramble 
 	void duplicateShapes();
 	void addMatchedShape(shape*);
 	void clearMatchedShapes();
