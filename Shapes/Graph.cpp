@@ -367,6 +367,7 @@ void Graph::fillArray()
 		}
 
 	}
+}
 
 void Graph::duplicateShapes() {
 	int c = 0;

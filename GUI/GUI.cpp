@@ -693,19 +693,19 @@ void GUI::DrawRegularPolygon(std::vector<Point> regularPolygonPoints, double num
 		int* yPoints = &yPointsV[0];
 		pWind->DrawPolygon(xPoints, yPoints, int(numOfVertices), style);
 
-		if (RegularPolygonGfxInfo.isHidden == true) {
-			drawstyle styleRegularPolygon;
-			styleRegularPolygon = FILLED;
-			Point cr1, cr2;
-			cr1.x = center.x - radius  -4;
-			cr1.y = center.y - radius -2;
-			cr2.x = center.x + radius + 3;
-			cr2.y = center.y + radius +2;
+		//if (RegularPolygonGfxInfo.isHidden == true) {
+		//	drawstyle styleRegularPolygon;
+		//	styleRegularPolygon = FILLED;
+		//	Point cr1, cr2;
+		//	cr1.x = center.x - radius  -4;
+		//	cr1.y = center.y - radius -2;
+		//	cr2.x = center.x + radius + 3;
+		//	cr2.y = center.y + radius +2;
 
-			pWind->SetBrush(GREEN);
-			pWind->SetPen(GREEN, 1);
-			pWind->DrawRectangle(cr1.x, cr1.y, cr2.x, cr2.y, styleRegularPolygon);
-		}
+		//	pWind->SetBrush(GREEN);
+		//	pWind->SetPen(GREEN, 1);
+		//	pWind->DrawRectangle(cr1.x, cr1.y, cr2.x, cr2.y, styleRegularPolygon);
+		//}
 }
 
 void GUI::DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const
