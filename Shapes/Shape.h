@@ -2,6 +2,7 @@
 #include "..\defs.h"
 #include "..\GUI\GUI.h"
 #include <cstdlib>
+#include <vector>
 
 //Base class for all shapes
 class shape
@@ -9,6 +10,9 @@ class shape
 protected:
 	int ID;		//Each shape has an ID
 	GfxInfo ShpGfxInfo;	//shape graphis info
+	GUI* pUI;
+	//Point arrayPoints[10];
+	
 	
 	/// Add more parameters if needed.
 
@@ -35,6 +39,7 @@ public:
 	virtual void Move(int x,int y) = 0;		//Move the shape
 	virtual Point getUpperLeftPoint() = 0;
 	
+	
 
 
 
@@ -50,7 +55,7 @@ public:
 
 	virtual void SAVE(ofstream &OutFile) = 0;	//Save the shape parameters to the file
 	virtual void LOAD(ifstream &Infile) = 0;	//Load the shape parameters to the file
-	virtual void SCRAMBLE() = 0;				//scramble function according each shape 
+	virtual void SCRAMBLE(vector <Point> v1) = 0;				//scramble function according each shape 
 
 	//virtual void PrintInfo(Output* pOut) = 0;	//print all shape info on the status bar
 };

@@ -173,7 +173,7 @@ void Triangle::Move(int x,int y){
 }
 Point Triangle::getUpperLeftPoint(){return Point();}
 
-void Triangle::SCRAMBLE()
+void Triangle::SCRAMBLE(vector <Point> v1)
 {
 	int x = 5 + rand() % (1200 - 5 + 1);
 	int y = 5 + rand() % (600 - 5 + 1);

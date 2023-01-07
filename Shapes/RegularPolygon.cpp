@@ -133,7 +133,7 @@ Point RegularPolygon::getUpperLeftPoint()
 	return Point();
 }
 
-void RegularPolygon::SCRAMBLE()
+void RegularPolygon::SCRAMBLE(vector <Point> v1)
 {
 	int x = 5 + rand() % (1200 - 5 + 1);
 	int y = 5 + rand() % (600 - 5 + 1);

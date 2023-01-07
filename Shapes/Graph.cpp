@@ -115,7 +115,7 @@ void Graph::scramble()
 {
 	for (auto shapesList : shapesList) // Loop on each shape in vector list 
 	{
-		shapesList->SCRAMBLE();	//do scramble according each shape 
+		shapesList->SCRAMBLE(vectorPoints);	//do scramble according each shape 
 	}
 	/*for (int i = 0; i < DRAW_ICON_COUNT; i++)
 		pWind->DrawImage(MenuIconImages[i], i * MenuIconWidth, 0, MenuIconWidth, ToolBarHeight);*/
@@ -434,4 +434,26 @@ vector <shape*> Graph::getClonedShapes() {
 
 void Graph::ClearClipboard(){
 	ClonedShapes.clear();
+}
+
+void Graph::fillArray()
+{
+	Point p1;
+	for (int i = 0; i < 10; i++)
+	{
+		if (i < 5)
+		{
+			p1.x = i * 240;
+			p1.y = 50;
+			vectorPoints.push_back(p1);
+
+		}
+		else
+		{
+			p1.x = (i - 5) * 240;
+			p1.y = 250;
+			vectorPoints.push_back(p1);
+		}
+
+	}
 }

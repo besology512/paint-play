@@ -17,11 +17,27 @@ void Rect::Draw(GUI* pUI) const
 	pUI->DrawRect(Corner1, Corner2, ShpGfxInfo);
 }
 
-void Rect::SCRAMBLE()
+void Rect::SCRAMBLE(vector <Point> v1)
 {
 
-	int x = 5 + rand() % (1200 - 5 + 1);
-	int y = 5 + rand() % (600 - 5 + 1);
+	/*GUI* pUI = nullptr;*/
+	/*int width = pUI->getWidth();
+	int height = pUI->getHeight();*/
+	//int x = 10 + rand() % (1200 - 10 + 1);// when width = 1200
+	//int y = 50 + rand() % (500 - 50 + 1); // when height = 600
+	int random = rand() % (10 +1);
+	//fillArray();
+	//Point randomPoint = arrayPoints[random];
+
+	Point randomPoint = v1[random];
+	int x = randomPoint.x;
+	int y = randomPoint.y;
+	v1.erase(v1.begin()+random);
+	int area = sqrt(pow(Corner1.x - Corner2.x, 2)) * sqrt(pow(Corner1.y - Corner2.y, 2));
+	/*if (area < 60000)
+	{
+		resize()
+	}*/
 	Move(x, y);
 
 }

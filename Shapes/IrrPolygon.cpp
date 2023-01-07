@@ -102,10 +102,11 @@ void IrrPolygon::Move(int x,int y){
 }
 Point IrrPolygon::getUpperLeftPoint(){return Point();}
 
-void IrrPolygon::SCRAMBLE()
-{
-	int x = 5 + rand() % (1200 - 5 + 1);
-	int y = 5 + rand() % (600 - 5 + 1);
+void IrrPolygon::SCRAMBLE(vector <Point> v1)
+{  
+	
+	int x = 10 + rand() % (1200 - 10 + 1);
+	int y = 50 + rand() % (500 - 50 + 1);
 	Move(x, y);
 }
 

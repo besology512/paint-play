@@ -223,6 +223,15 @@ operationType GUI::GetUseroperation() const
 		return TO_PLAY; // just for now. This should be updated
 	}
 }
+int GUI::getWidth()
+{
+	int h = width;
+	return h;
+}
+int GUI::getHeight()
+{
+	return height-100;
+}
 ////////////////////////////////////////////////////
 
 //======================================================================================//

@@ -58,6 +58,6 @@ Point StickImage::getUpperLeftPoint()
 	return Point();
 }
 
-void StickImage::SCRAMBLE()
+void StickImage::SCRAMBLE(vector <Point> v1)
 {
 }

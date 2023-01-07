@@ -30,6 +30,8 @@ private:
 	vector <shape*> UndoneShapesList;
 	vector <shape*> ClonedShapes;
 	shape* selectedShape;	//pointer to the currently selected shape
+	vector <Point> vectorPoints; // vector has grid of points 
+
 public:
 	//bool counting = true;
 	//int counter = 0;
@@ -61,5 +63,6 @@ public:
 	color getPickedClr(); //get the current color
 	void setPickedClr(double&,double&,double&); //set color using color picker
 	void ClearClipboard();
+	void fillArray(); //fill array with point to use in scramble 
 
 };

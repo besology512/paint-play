@@ -25,6 +25,6 @@ public:
 	shape* clone() override;
 	void Move(int x,int y) override;
 	Point getUpperLeftPoint();
-	void SCRAMBLE() override;
+	void SCRAMBLE(vector <Point> v1) override;
 };
 
