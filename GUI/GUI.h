@@ -21,7 +21,7 @@ struct GfxInfo // Graphical info common for all shapes (you may add more members
 	bool isFilled;	 // shape Filled or not
 	int BorderWdth;	 // Width of shape borders
 	bool isSelected; // true if the shape is selected.
-	//bool isSaved = false;
+	bool isHidden = false; 
 };
 
 
@@ -51,15 +51,18 @@ class GUI
 		ICON_FILL,
 		ICON_BORDER_CLR,
 		ICON_BORDER_WIDTH,
+		ICON_ZOOM_IN,
+		ICON_ZOOM_OUT,
 		ICON_RESIZE,
 		ICON_ROTATE,
+		ICON_SENDBACK,
 		ICON_DELETE,
 		ICON_SAVE,
 		ICON_LOAD,
 		ICON_STICKIMAGE,
 		ICON_SCRAMBLE,
 		ICON_SWITCH,
-		
+		ICON_DUPLICATE,
 
 		//TODO: Add more icons names here
 
@@ -77,6 +80,8 @@ class GUI
 
 		ICON_START,
 		ICON_RESTART,
+		ICON_HIDE,
+		ICON_UNHIDE,
 		// TODO: Add more icons names here
 		ICON_EXIT_PLAYMODE,
 		
@@ -137,14 +142,15 @@ public:
 	// -- shapes Drawing functions
 
 	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const;  //Draw a rectangle
+	void DrawRectHidden(Point P1, Point P2, GfxInfo RectGfxInfo) const;  //Draw a rectangle to hide the shapes
 	void DrawTriangle(Point P1, Point P2,Point P3 ,GfxInfo TriaGfxInfo) const;
 	void DrawCircle(Point P1, Point P2,GfxInfo CirclGfxInfo) const;
 	void DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const;  //Draw an Oval
 	void DrawSquare(Point P1, Point P2, GfxInfo SquareGfxInfo) const;  //Draw a Square
-	void DrawRegularPolygon(Point center, double numOfVertices, double radius, GfxInfo RegularPolygonGfxInfo) const; // Draw a regular Polygon
+	void DrawRegularPolygon(std::vector<Point> regularPolygonPoints,double, GfxInfo RegularPolygonGfxInfo) const; // Draw a regular Polygon
 	void DrawIrrPolygon(vector<Point> allPoints, int vericies, GfxInfo IrrPolGfxInfo) const; //Draw Irregular Polygon
 	void DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const;  // Draw a Line 
-	void DrawImage(Point P1, double width, double height,GfxInfo ImageInfo);
+	void DrawImage(image I, Point P1, double width, double height);//, GfxInfo ImageInfo);
 	//DrawImage(const image *imgThis, const int iX, const int iY, const int iWidth, const int iHeight)
 	
 	

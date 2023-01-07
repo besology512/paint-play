@@ -11,6 +11,7 @@ opRotate::~opRotate() {}
 void opRotate::Execute() {
 	GUI* pUI = pControl->GetUI();
 	Graph* pGr = pControl->getGraph();
+
 	if (pGr->getSelectedShape())
 	{
 		pGr->getSelectedShape()->Rotate();

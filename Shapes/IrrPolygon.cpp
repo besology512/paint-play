@@ -72,6 +72,31 @@ string IrrPolygon::shapeInfo()
 
 void IrrPolygon::LOAD(ifstream& Infile)
 {
+	string isFilled;
+	int x, y, z;
+	Infile >> ID >> verticies;
+	for (unsigned i = 0; i <= verticies; i++)
+	{
+		Infile >> allPoints[i].x
+			>> allPoints[i].y;
+
+	}
+	Infile >> x >> y >> z >> isFilled;
+	ShpGfxInfo.DrawClr.ucBlue = x;
+	ShpGfxInfo.DrawClr.ucGreen = y;
+	ShpGfxInfo.DrawClr.ucRed = z;
+	if (isFilled == "FILL")
+	{
+		Infile >> x >> y >> z;
+		ShpGfxInfo.FillClr.ucBlue = x;
+		ShpGfxInfo.FillClr.ucGreen = y;
+		ShpGfxInfo.FillClr.ucRed = z;
+	}
+	else
+	{
+		ShpGfxInfo.isFilled = 0;
+	}
+	Infile >> ShpGfxInfo.BorderWdth;
 }
 
 double IrrPolygon::getWidth()
@@ -85,6 +110,16 @@ double IrrPolygon::getHeight()
 }
 
 void IrrPolygon::resize(float factor) {}
+
+void IrrPolygon::zoom(double scale, int x, int y) {
+	for (int i = 0; i < allPoints.size(); i++)
+	{
+		allPoints[i].x = (allPoints[i].x * scale) - (scale * x) + x;
+		allPoints[i].y = (allPoints[i].y * scale) - (scale * y) + y;
+	}
+}
+
+
 void IrrPolygon::Rotate(){}
 shape* IrrPolygon::clone(){
 	shape* pCloned = new IrrPolygon(*this);
@@ -112,3 +147,17 @@ void IrrPolygon::SCRAMBLE(vector <Point> v1)
 	Move(x, y);
 }
 
+
+void IrrPolygon::stickImage(image, GUI* pUI)
+{
+}
+
+
+int IrrPolygon::getDuplicateID()
+{
+	return duplicateID;
+}
+void IrrPolygon::setDuplicateID(int i)
+{
+	duplicateID = i;
+}

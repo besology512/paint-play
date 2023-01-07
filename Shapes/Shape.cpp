@@ -3,6 +3,12 @@
 shape::shape(GfxInfo shapeGfxInfo)
 { 
 	ShpGfxInfo = shapeGfxInfo;	//Default status is non-filled.
+	prevBorderWidth.push(3); //default border width
+	undoBorderWidth.push(3); //default border width
+	prevBorderClrs.push(color(0, 0, 225));
+	undoBorderClrs.push(color(0, 0, 225));
+	prevFillClrs.push(color(225, 225, 225));
+	undoFillCLrs.push(color(225, 225, 225));
 }
  
 void shape::SetSelected(bool s)
@@ -10,6 +16,11 @@ void shape::SetSelected(bool s)
 
 bool shape::IsSelected() const
 {	return ShpGfxInfo.isSelected; }
+
+//bool shape::isSticked()
+//{
+//	return false;
+//}
 
 void shape::ChngDrawClr(color Dclr)
 {	ShpGfxInfo.DrawClr = Dclr; }
@@ -30,6 +41,7 @@ void shape::setIsfilled(bool a) {
 	ShpGfxInfo.isFilled = a;
 }
 
+
 //void shape::fillArray()
 //{
 //	for (int i = 0; i < 10; i++)
@@ -47,4 +59,9 @@ void shape::setIsfilled(bool a) {
 //		
 //	}
 //}
+
+void shape::setisHidden(bool h) {
+	ShpGfxInfo.isHidden = h;
+}
+
 

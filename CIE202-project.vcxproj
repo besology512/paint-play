@@ -166,6 +166,7 @@
     <ClCompile Include="GUI\GUI.cpp" />
     <ClCompile Include="controller.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="operations\matchShapes.cpp" />
     <ClCompile Include="operations\opAddCircle.cpp" />
     <ClCompile Include="operations\opAddIrrPolygon.cpp" />
     <ClCompile Include="operations\opAddLine.cpp" />
@@ -180,7 +181,9 @@
     <ClCompile Include="operations\opCopy.cpp" />
     <ClCompile Include="operations\opCut.cpp" />
     <ClCompile Include="operations\opDelete.cpp" />
+    <ClCompile Include="operations\opDuplicateGraph.cpp" />
     <ClCompile Include="operations\opExit.cpp" />
+    <ClCompile Include="operations\opHide.cpp" />
     <ClCompile Include="operations\opLoad.cpp" />
     <ClCompile Include="operations\opPaste.cpp" />
     <ClCompile Include="operations\opRedo.cpp" />
@@ -191,10 +194,13 @@
     <ClCompile Include="operations\opScramble.cpp" />
     <ClCompile Include="operations\opSelectUnselect.cpp" />
     <ClCompile Include="operations\opPickColor.cpp" />
+    <ClCompile Include="operations\opSendback.cpp" />
     <ClCompile Include="operations\opStart.cpp" />
     <ClCompile Include="operations\opStickImage.cpp" />
     <ClCompile Include="operations\OpSwitch.cpp" />
     <ClCompile Include="operations\opUndo.cpp" />
+    <ClCompile Include="operations\opZoomin.cpp" />
+    <ClCompile Include="operations\opZoomout.cpp" />
     <ClCompile Include="Shapes\Circle.cpp" />
     <ClCompile Include="Shapes\ColorPallet.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
@@ -233,6 +239,7 @@
     <ClInclude Include="GUI\GUI.h" />
     <ClInclude Include="controller.h" />
     <ClInclude Include="DEFS.h" />
+    <ClInclude Include="operations\matchShapes.h" />
     <ClInclude Include="operations\opAddLine.h" />
     <ClInclude Include="operations\opAddSquare.h" />
     <ClInclude Include="operations\opChangeBorderClr.h" />
@@ -241,7 +248,9 @@
     <ClInclude Include="operations\opCopy.h" />
     <ClInclude Include="operations\opCut.h" />
     <ClInclude Include="operations\opDelete.h" />
+    <ClInclude Include="operations\opDuplicateGraph.h" />
     <ClInclude Include="operations\opExit.h" />
+    <ClInclude Include="operations\opHide.h" />
     <ClInclude Include="operations\opLoad.h" />
     <ClInclude Include="operations\opPaste.h" />
     <ClInclude Include="operations\opRedo.h" />
@@ -250,10 +259,13 @@
     <ClInclude Include="operations\opRotate.h" />
     <ClInclude Include="operations\opSave.h" />
     <ClInclude Include="operations\opScramble.h" />
+    <ClInclude Include="operations\opSendback.h" />
     <ClInclude Include="operations\opStart.h" />
     <ClInclude Include="operations\opStickImage.h" />
     <ClInclude Include="operations\OpSwitch.h" />
     <ClInclude Include="operations\opUndo.h" />
+    <ClInclude Include="operations\opZoomin.h" />
+    <ClInclude Include="operations\opZoomout.h" />
     <ClInclude Include="Shapes\Line.h" />
     <ClInclude Include="Shapes\Square.h" />
     <ClInclude Include="operations\opAddCircle.h" />

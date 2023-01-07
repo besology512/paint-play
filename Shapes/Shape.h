@@ -4,6 +4,8 @@
 #include <cstdlib>
 #include <vector>
 
+#include"../CMUgraphicsLib/colors.h"
+#include<stack>
 //Base class for all shapes
 class shape
 {
@@ -14,19 +16,28 @@ protected:
 	//Point arrayPoints[10];
 	
 	
+	
 	/// Add more parameters if needed.
 
 public:
+	stack<color> prevFillClrs; //all fill colors for all shapes types
+	stack<color> undoFillCLrs;
+	stack<color> prevBorderClrs;// all border color for all shapes types
+	stack<color> undoBorderClrs;
+	stack<int> undoBorderWidth;
+	stack<int> prevBorderWidth; // all border widths for all shapes types
 	shape(GfxInfo shapeGfxInfo);
 	virtual ~shape() {}
-	void SetSelected(bool s);							 // select/unselect the shape
-	bool IsSelected() const;							// check whether fig is selected
-	virtual bool inShape(int, int) const = 0;			// check whether a point in the shape or not
-	virtual string shapeInfo() = 0;						// give some info about the shape
+	void SetSelected(bool s);	//select/unselect the shape
+	bool IsSelected() const;	//check whether fig is selected
+	bool isSticked = false;
+	virtual bool inShape(int, int) const = 0;		 //check whether a point in the shape or not
+	virtual string shapeInfo() = 0;						//give some info about the shape
 
 
 	virtual void Draw(GUI* pUI) const  = 0 ;		//Draw the shape
-	
+	void setisHidden(bool h);						//use it to make the flag of hidden is true/false
+	//bool getisHidden();
 	void ChngDrawClr(color Dclr);	//changes the shape's drawing color
 	void ChngFillClr(color Fclr);	//changes the shape's filling color
 	void setIsfilled(bool);
@@ -40,6 +51,13 @@ public:
 	virtual Point getUpperLeftPoint() = 0;
 	
 	
+
+	virtual void zoom(double scale, int x, int y) = 0;		//Zoom the shape(s) in
+	virtual void stickImage(image, GUI* pUI) = 0;
+	virtual int getDuplicateID() = 0; 
+	virtual void setDuplicateID(int) = 0;
+
+
 
 
 

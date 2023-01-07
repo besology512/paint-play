@@ -29,6 +29,13 @@
 #include"operations/opCut.h"
 #include "operations/opScramble.h"
 
+#include "operations/opZoomin.h"
+#include "operations/opZoomout.h"
+#include"operations/opSendback.h"
+#include"operations/opDuplicateGraph.h"
+#include"operations/opHide.h"
+#include"operations/matchShapes.h"
+
 
 //Constructor
 controller::controller()
@@ -98,6 +105,9 @@ operation* controller::createOperation(operationType OpType)
 			pOp = new opAddRegularPolygon(this);
 			addToCurrentOperation(pOp);
 			break;
+		case SEND_BACK:
+			pOp = new opSendback(this);
+			break;
 		case SAVE:
 			pOp = new opSave(this);
 			break;
@@ -125,14 +135,22 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case CHNG_FILL_CLR:
 			pOp = new opChangeFill(this);
-			//addToCurrentOperation(pOp);
+			addToCurrentOperation(pOp);
 			break;
 		case CHNG_BORDER_CLR:
 			pOp = new opChangeBorderClr(this);
-			//addToCurrentOperation(pOp);
+			addToCurrentOperation(pOp);
 			break;
 		case CHNG_BORDER_WIDTH:
 			pOp = new opChangeBorderWidth(this);
+			addToCurrentOperation(pOp);
+			break;
+		case ZOOM_IN:
+			pOp = new opZoomin(this);
+			//addToCurrentOperation(pOp);
+			break;
+		case ZOOM_OUT:
+			pOp = new opZoomout(this);
 			//addToCurrentOperation(pOp);
 			break;
 		case RESIZE:
@@ -152,18 +170,27 @@ operation* controller::createOperation(operationType OpType)
 		case START:
 			pOp = new opStart(this);
 			break;
+		case HIDE:
+			pOp = new opHide(this);
+			break;
 		case RESTART:
 			pOp = new opRestart(this);
+			break;
+		case DUPLICATE_GRAPH:
+			pOp = new opDuplicateGraph(this);
 			break;
 		case EXIT:
 			pOp = new opExit(this);										///create Exitoperation here
 			break;
 
 		case DRAWING_AREA:
+			pOp = new opSelectUnselect(this);
+			break;
 
-
-				pOp = new opSelectUnselect(this);
-
+		case PLAYING_AREA:
+			//pOp = new opSelectUnselect(this);
+			//pGraph->matchShapes();
+			pOp = new matchShapes(this);
 
 			break;
 		

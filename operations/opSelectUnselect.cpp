@@ -21,6 +21,7 @@ GUI* pUI = pControl->GetUI();
 //Get a pointer to the graph
 Graph* pGr = pControl->getGraph();
 
+
 pUI->GetMousCoord(P.x, P.y);
 
 if (GetKeyState(VK_RCONTROL) & 0x8000) // multiple selection feature
@@ -30,6 +31,7 @@ if (GetKeyState(VK_RCONTROL) & 0x8000) // multiple selection feature
 		//pGr->UnselectAll(); 							//unselect everything
 		pGr->Getshape(P.x, P.y)->SetSelected(true);		//make this shape is selected
 		pUI->PrintMessage(pGr->Getshape(P.x, P.y)->shapeInfo()); //Update the status bar with the shapes info
+		pGr->addSelectedShape(pGr->Getshape(P.x, P.y));
 	}
 	else
 	{
@@ -45,6 +47,8 @@ else // single selection feature
 		pGr->UnselectAll(); 							//unselect everything
 		pGr->Getshape(P.x, P.y)->SetSelected(true);		//make this shape is selected
 		pUI->PrintMessage(pGr->Getshape(P.x, P.y)->shapeInfo()); //Update the status bar with the shape info
+		pGr->addSelectedShape(pGr->Getshape(P.x, P.y));
+
 	}
 	else
 	{

@@ -54,17 +54,25 @@ void Rect::SAVE(ofstream& OutFile)
 }
 void Rect::LOAD(ifstream& Infile)
 {
-	/*Infile >> Corner1.x >> Corner1.y >> Corner2.x >> Corner2.y
-		>> ShpGfxInfo.DrawClr.ucBlue >> ShpGfxInfo.DrawClr.ucGreen >> ShpGfxInfo.DrawClr.ucRed >> isFilled;
-	if(isFilled == "FILL")
+	string isFilled;
+	int ID;
+	int x, y, z;
+	Infile >> ID >> Corner1.x >> Corner1.y >> Corner2.x >> Corner2.y >> x >> y >> z >> isFilled;
+	ShpGfxInfo.DrawClr.ucBlue = x;
+	ShpGfxInfo.DrawClr.ucGreen = y;
+	ShpGfxInfo.DrawClr.ucRed = z;
+	if (isFilled == "FILL")
 	{
-		Infile >> ShpGfxInfo.FillClr.ucBlue >> ShpGfxInfo.FillClr.ucGreen >> ShpGfxInfo.FillClr.ucRed;
+		Infile >> x >> y >> z;
+		ShpGfxInfo.FillClr.ucBlue = x;
+		ShpGfxInfo.FillClr.ucGreen = y;
+		ShpGfxInfo.FillClr.ucRed = z;
 	}
 	else
 	{
-		Infile >> isFilled;
-	}*/
-	
+		ShpGfxInfo.isFilled = 0;
+	}
+	Infile >> ShpGfxInfo.BorderWdth;
 }
 
 
@@ -150,12 +158,42 @@ void Rect::resize(float factor) {
 			Corner2.y = 2 * Corner2.y - Corner1.y;
 		}
 }
+
+void Rect::zoom(double scale, int x, int y) {
+
+	Corner1.x = (Corner1.x * scale) - (scale * x) + x;
+	Corner1.y = (Corner1.y * scale) - (scale * y) + y;
+	Corner2.x = (Corner2.x * scale) - (scale * x) + x;
+	Corner2.y = (Corner2.y * scale) - (scale * y) + y;
+
+}
+
+
+
 Point Rect::getUpperLeftPoint()
 {
 	Point upperLeftPoint;
+	//Point center;
+	//Point Corner3;
+	//Corner3.x = Corner2.x;
+	//Corner3.y = Corner1.y;
+	//center.x = sqrt(pow(Corner1.x - Corner2.x, 2)) / 2;
+	//center.y = sqrt(pow(Corner1.y - Corner2.y, 2)) / 2;
+	//double y = sqrt(pow(Corner2.x - Corner3.x, 2) + pow(Corner2.y - Corner3.y, 2));
+	//double x = sqrt(pow(Corner1.x - Corner3.x, 2) + pow(Corner1.y - Corner3.y, 2));
+	//upperLeftPoint.x = center.x + (x/2);
+	//upperLeftPoint.y = center.y + (y/2);
+
 	upperLeftPoint.x = Corner1.x + 5;
 	upperLeftPoint.y = Corner1.y + 5;
 	return upperLeftPoint;
+}
+
+void Rect::stickImage(image I, GUI* pUI)
+{
+	pUI->DrawImage(I, getUpperLeftPoint(), getWidth(), getHeight());
+
+
 }
 
 
@@ -183,4 +221,13 @@ void Rect::Move(int x,int y){
 	int diffY = y - Corner1.y;
 	Corner1.x = x;	Corner1.y = y;
 	Corner2.x += diffX;	Corner2.y += diffY;
+}
+
+int Rect::getDuplicateID()
+{
+	return duplicateID;
+}
+void Rect::setDuplicateID(int i)
+{
+	duplicateID = i;
 }

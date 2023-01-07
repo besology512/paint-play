@@ -1,4 +1,4 @@
-#include ".//RegularPolygon.h"
+#include"RegularPolygon.h"
 
 RegularPolygon::RegularPolygon(Point c, double v, double r, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 {
@@ -12,7 +12,7 @@ RegularPolygon::~RegularPolygon(){}
 void RegularPolygon::Draw(GUI* pUI) const
 {
 	//Call Output::Draw Triangle to draw a Triangle on the screen	
-	pUI->DrawRegularPolygon(center, numOfVertices, radius, ShpGfxInfo);
+	pUI->DrawRegularPolygon(regularPolygonPoints, numOfVertices,ShpGfxInfo);
 }
 
 
@@ -85,6 +85,24 @@ string RegularPolygon::shapeInfo()
 
 void RegularPolygon::LOAD(ifstream& Infile)
 {
+	string isFilled;
+	int x, y, z;
+	Infile >> ID >> center.x >> center.y >> numOfVertices >> radius >> x >> y >> z >> isFilled;
+	ShpGfxInfo.DrawClr.ucBlue = x;
+	ShpGfxInfo.DrawClr.ucGreen = y;
+	ShpGfxInfo.DrawClr.ucRed = z;
+	if (isFilled == "FILL")
+	{
+		Infile >> x >> y >> z;
+		ShpGfxInfo.FillClr.ucBlue = x;
+		ShpGfxInfo.FillClr.ucGreen = y;
+		ShpGfxInfo.FillClr.ucRed = z;
+	}
+	else
+	{
+		ShpGfxInfo.isFilled = 0;
+	}
+	Infile >> ShpGfxInfo.BorderWdth;
 }
 
 double RegularPolygon::getWidth()
@@ -106,11 +124,25 @@ void RegularPolygon::resize(float factor) {
 	radius *= factor;
 }
 
+void RegularPolygon::zoom(double scale, int x, int y) {
+	center.x = (center.x * scale) - (scale * x) + x;
+	center.y = (center.y * scale) - (scale * y) + y;
+	radius *= scale;
+
+
+}
+#include<iostream>
 void RegularPolygon:: Rotate(){
-	//create the points again
-	//Point Center;
-	//Center.x = (P4.x + corner1.x) / 2;
-	//Center.y = (P4.y + corner1.y) / 2;
+	std::cout << "In rotate";
+	for (int i = 0; i < int(numOfVertices); i++)
+	{
+		int tempX = regularPolygonPoints[i].x;
+		int tempY = regularPolygonPoints[i].y;
+		std::cout << tempX << std::endl;
+		regularPolygonPoints[i].x = -tempY+ center.y + center.x;
+		regularPolygonPoints[i].y = tempX - center.x + center.y;
+		std::cout << regularPolygonPoints[i].x << std::endl;
+	}
 	//int tempP1X = corner1.x;
 	//int tempP1Y = corner1.y;
 	//int tempP2X = corner2.x;
@@ -130,7 +162,24 @@ void RegularPolygon::Move(int x,int y){
 }
 Point RegularPolygon::getUpperLeftPoint()
 {
-	return Point();
+	Point upperLeftPoint;
+	upperLeftPoint.x = center.x - radius;
+	upperLeftPoint.y = center.y - radius;
+	return upperLeftPoint;
+}
+
+void RegularPolygon::stickImage(image I, GUI* pUI)
+{
+	pUI->DrawImage(I, getUpperLeftPoint(), getWidth(), getHeight());
+}
+
+int RegularPolygon::getDuplicateID()
+{
+	return duplicateID;
+}
+void RegularPolygon::setDuplicateID(int i)
+{
+	duplicateID = i;
 }
 
 void RegularPolygon::SCRAMBLE(vector <Point> v1)
@@ -141,4 +190,9 @@ void RegularPolygon::SCRAMBLE(vector <Point> v1)
 	int y = randomPoint.y;
 	v1.erase(v1.begin() + random);
 	Move(x, y);
+}
+
+void RegularPolygon::addPoint(Point p)
+{
+	regularPolygonPoints.push_back(p);
 }
