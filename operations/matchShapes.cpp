@@ -43,10 +43,8 @@ else
 
 if (pGr->getMatchedShapes().size() == 0)
 {
-	//cout << "I am here";
 	if (pGr->getSelectedShape())
 	{
-		//cout << "\nIAm here again";
 		shape* firstSelectedShape = pGr->getSelectedShape();
 		//put the unhide functin here for the first selectedShape
 		pGr->addMatchedShape(firstSelectedShape);

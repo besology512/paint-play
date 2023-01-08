@@ -61,8 +61,6 @@ void opAddRegularPolygon::Execute()
 	RegularPolygonGfxInfo.DrawClr = pUI->getCrntDrawColor();
 	RegularPolygonGfxInfo.FillClr = pUI->getCrntFillColor();
 	RegularPolygonGfxInfo.BorderWdth = pUI->getCrntPenWidth();
-
-
 	RegularPolygonGfxInfo.isFilled = pGr->isFilled;	//default is not filled
 	RegularPolygonGfxInfo.isSelected = false;	//defualt is not selected
 
@@ -84,8 +82,6 @@ void opAddRegularPolygon::Execute()
 		Point point; point.x = x; point.y = y;
 
 		RP->addPoint(point);
-		cout << "In operation point " << i << " x is " << point.x << endl;
-		cout << "In operation point " << i << " y is " << point.y<<endl;
 	}
 
 	//Add the rectangle to the list of shapes

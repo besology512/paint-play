@@ -680,14 +680,10 @@ void GUI::DrawRegularPolygon(std::vector<Point> regularPolygonPoints, double num
 		std::vector<int> yPointsV;
 		for (int i = 0; i <int(numOfVertices); i++)
 		{
-			//cout << "point " << i << "Is at " << regularPolygonPoints[i].x << endl;
 			int x = regularPolygonPoints[i].x;
 			int y = regularPolygonPoints[i].y;
-			//cout << "point " << i << "Is at " << x << endl;
 			xPointsV.push_back(regularPolygonPoints[i].x);
 			yPointsV.push_back(regularPolygonPoints[i].y);
-			cout << "In GUI point " << i << " x is " << regularPolygonPoints[i].x << endl;
-			cout << "In GUI point " << i << " y is " << regularPolygonPoints[i].y << endl;
 		}
 		int* xPoints = &xPointsV[0];
 		int* yPoints = &yPointsV[0];

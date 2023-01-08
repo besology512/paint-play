@@ -13,7 +13,6 @@ void opCopy::Execute() {
     {
         //cloned another shape and then moved to the clipboard {Cloned Shapes}
         pGr->addToCloned(pGr->getselectedshape()->clone());
-        cout << "Copy worked!!!!!!!!!" << endl;
     }else{pUI->PrintMessage("Select the shape you want to copy first");}
 }
 
