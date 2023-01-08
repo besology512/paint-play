@@ -56,6 +56,7 @@ class GUI
 		ICON_BORDER_WIDTH,
 		ICON_ZOOM_IN,
 		ICON_ZOOM_OUT,
+		ICON_DRAG,
 		ICON_RESIZE,
 		ICON_ROTATE,
 		ICON_SENDBACK,
@@ -140,6 +141,7 @@ public:
 	void setFillcolor(color);
 	void setDrawColor(color);
 	void setBorderWidth(int);
+	buttonstate Dragging(int xx, int yy);
 
 
 	// -- shapes Drawing functions

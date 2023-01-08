@@ -169,6 +169,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_BORDER_WIDTH: return CHNG_BORDER_WIDTH;
 			case ICON_ZOOM_IN: return ZOOM_IN;
 			case ICON_ZOOM_OUT: return ZOOM_OUT;
+			case ICON_DRAG: return DRAG;
 			case ICON_RESIZE: return RESIZE;
 			case ICON_ROTATE: return ROTATE;
 			case ICON_SENDBACK: return SEND_BACK;
@@ -309,6 +310,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_BORDER_WIDTH] = "images\\MenuIcons\\Menu_ChangeBorderWidth.jpg";
 	MenuIconImages[ICON_ZOOM_IN] = "images\\MenuIcons\\Menu_zoomin.jpg";
 	MenuIconImages[ICON_ZOOM_OUT] = "images\\MenuIcons\\Menu_zoomout.jpg";
+	MenuIconImages[ICON_DRAG] = "images\\MenuIcons\\Menu_Drag.jpg";
 	MenuIconImages[ICON_RESIZE] = "images\\MenuIcons\\Menu_Resize.jpg";
 	MenuIconImages[ICON_ROTATE] = "images\\MenuIcons\\Menu_Rotate.jpg";
 	MenuIconImages[ICON_SWITCH] = "images\\MenuIcons\\Menu_Switch.jpg";
@@ -418,6 +420,11 @@ void GUI::setBorderWidth(int w)
 	PenWidth = w;
 }
 
+buttonstate GUI::Dragging(int xx, int yy) {
+	pWind->FlushMouseQueue();
+	return pWind->GetButtonState(LEFT_BUTTON,xx,yy);
+}
+
 //======================================================================================//
 //								shapes Drawing Functions								//
 //======================================================================================//
@@ -459,21 +466,6 @@ void GUI::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const
 	}
 }
 
-//void GUI::DrawRectHidden(Point P1, Point P2, GfxInfo RectGfxInfo) const
-//{
-//	color DrawingClr;
-//	if (RectGfxInfo.isSelected)		 // shape is selected
-//		DrawingClr = HighlightColor; // shape should be drawn highlighted
-//	else
-//		DrawingClr = RectGfxInfo.DrawClr;
-//
-//	pWind->SetPen(DrawingClr, RectGfxInfo.BorderWdth); // Set Drawing color & width
-//
-//	drawstyle style;
-//	style = FILLED;
-//		
-//	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
-//}
 
 
 void GUI::DrawTriangle(Point P1, Point P2, Point P3, GfxInfo TriaGfxInfo) const
@@ -554,8 +546,8 @@ void GUI::DrawCircle(Point P1, Point P2, GfxInfo CirclGfxInfo) const
 		Point cr1, cr2;
 		cr1.x = P1.x - radius + 1;
 		cr1.y = P1.y - radius;
-		cr2.x = P2.x + radius + 1;
-		cr2.y = P2.y + radius;
+		cr2.x = P1.x + radius + 9;
+		cr2.y = P1.y + radius + 9;
 
 		pWind->SetBrush(GREEN);
 		pWind->SetPen(GREEN, 1);
@@ -695,19 +687,36 @@ void GUI::DrawRegularPolygon(std::vector<Point> regularPolygonPoints, double num
 		int* yPoints = &yPointsV[0];
 		pWind->DrawPolygon(xPoints, yPoints, int(numOfVertices), style);
 
-		//if (RegularPolygonGfxInfo.isHidden == true) {
-		//	drawstyle styleRegularPolygon;
-		//	styleRegularPolygon = FILLED;
-		//	Point cr1, cr2;
-		//	cr1.x = center.x - radius  -4;
-		//	cr1.y = center.y - radius -2;
-		//	cr2.x = center.x + radius + 3;
-		//	cr2.y = center.y + radius +2;
 
-		//	pWind->SetBrush(GREEN);
-		//	pWind->SetPen(GREEN, 1);
-		//	pWind->DrawRectangle(cr1.x, cr1.y, cr2.x, cr2.y, styleRegularPolygon);
-		//}
+		if (RegularPolygonGfxInfo.isHidden == true) {
+			drawstyle styleRegularpolygon;
+			styleRegularpolygon = FILLED;
+
+			int max_X = xPointsV[0];
+			int max_Y = yPointsV[0];
+			int min_X = xPointsV[0];
+			int min_Y = yPointsV[0];
+
+			for (int i = 0; i < numOfVertices; i++)
+			{
+				if (xPointsV[i] > max_X) {
+					max_X = xPointsV[i];
+				}
+				if (yPointsV[i] > max_Y) {
+					max_Y = yPointsV[i];
+				}
+				if (xPointsV[i] < min_X) {
+					min_X = xPointsV[i];
+				}
+				if (yPointsV[i] < min_Y) {
+					min_Y = yPointsV[i];
+				}
+			}
+
+			pWind->SetBrush(GREEN);
+			pWind->SetPen(GREEN, 1);
+			pWind->DrawRectangle(max_X + 3, max_Y + 3, min_X-3, min_Y-3, styleRegularpolygon);
+		}
 }
 
 void GUI::DrawLine(Point P1, Point P2, GfxInfo LineGfcInfo) const
@@ -802,7 +811,7 @@ void GUI::DrawIrrPolygon(vector<Point> allPoints, int verticies, GfxInfo IrrPolG
 
 		pWind->SetBrush(GREEN);
 		pWind->SetPen(GREEN, 1);
-		pWind->DrawRectangle(max_X+3, max_Y+3, min_X, min_Y, styleIrregular);
+		pWind->DrawRectangle(max_X+3, max_Y+3, min_X-3, min_Y-3, styleIrregular);
 	}
 
 }

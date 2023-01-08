@@ -153,6 +153,9 @@ void Graph::ZOOMING(double scale, int x, int y) {
 		shapePointer->zoom(scale, x, y);
 }
 
+void Graph::DragSingleShape(shape* pShp, int x, int y) {
+	pShp->Move(x, y);
+}
 
 shape* Graph::Getshape(int x, int y) 
 {
