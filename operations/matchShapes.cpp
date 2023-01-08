@@ -50,6 +50,7 @@ void matchShapes::Execute()
 			if (pGr->getSelectedShape())
 			{
 				shape* firstSelectedShape = pGr->getSelectedShape();
+				firstSelectedShape->setisHidden(false);
 				//put the unhide functin here for the first selectedShape
 				pGr->addMatchedShape(firstSelectedShape);
 
@@ -65,6 +66,8 @@ void matchShapes::Execute()
 			{
 				shape* secondSelectedShape = pGr->getSelectedShape();
 				//put the unhide functin here for the second selectedShape
+				secondSelectedShape->setisHidden(false);
+
 				pGr->addMatchedShape(secondSelectedShape);
 				pGr->UnselectAll();
 
@@ -79,6 +82,8 @@ void matchShapes::Execute()
 				else
 				{
 					// Hide the two shapes again
+					pGr->getMatchedShapes()[0]->setisHidden(true);
+					pGr->getMatchedShapes()[1]->setisHidden(true);
 					pGr->clearMatchedShapes();
 					pGr->score += 1;
 					pUI->PrintMessage("Try Agin You Got 1 Point. Your Score : " + to_string(pGr->score) + "");
