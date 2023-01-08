@@ -40,6 +40,8 @@ public:
 	stack<shape*> undolastEdited;
 	stack<shape*> UndolastEdited;
 	bool isFilled = false;
+	bool isplay = false;
+	int score = 0; // score of user during game
 	Graph();
 	~Graph();
 	bool isSaved = false;		//boolean to check save & unsave shapes

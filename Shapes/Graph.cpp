@@ -176,6 +176,7 @@ void Graph::scramble()
 	{
 		shapesList->SCRAMBLE(vectorPoints);	//do scramble according each shape 
 	}
+	
 	/*for (int i = 0; i < DRAW_ICON_COUNT; i++)
 		pWind->DrawImage(MenuIconImages[i], i * MenuIconWidth, 0, MenuIconWidth, ToolBarHeight);*/
 }
