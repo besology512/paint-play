@@ -34,7 +34,9 @@
 #include"operations/opSendback.h"
 #include"operations/opDuplicateGraph.h"
 #include"operations/opHide.h"
+#include"operations/opUnhide.h"
 #include"operations/matchShapes.h"
+#include"operations/opDrag.h"
 
 
 //Constructor
@@ -153,6 +155,9 @@ operation* controller::createOperation(operationType OpType)
 			pOp = new opZoomout(this);
 			//addToCurrentOperation(pOp);
 			break;
+		case DRAG:
+			pOp = new opDrag(this);
+			break;
 		case RESIZE:
 			pOp = new opResize(this);
 			addToCurrentOperation(pOp);
@@ -172,6 +177,9 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case HIDE:
 			pOp = new opHide(this);
+			break;
+		case UNHIDE:
+			pOp = new opUnhide(this);
 			break;
 		case RESTART:
 			pOp = new opRestart(this);
