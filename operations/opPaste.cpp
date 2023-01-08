@@ -18,11 +18,11 @@ void opPaste::Execute() {
 	    pUI->GetPointClicked(x,y);
         int relativeX = 0;
         int relativeY = 0;
-        for (int i = 0; i < pGr->getClonedShapes().size()-1; i++)
+        /*for (int i = 0; i < pGr->getClonedShapes().size()-1; i++)
         {
             relativeX += pGr->getClonedShapes()[i]->getCenter().x;
             relativeY += pGr->getClonedShapes()[i]->getCenter().y;
-        }
+        }*/
         relativeX /= pGr->getClonedShapes().size();
         relativeY /= pGr->getClonedShapes().size();
         int diffX = x- relativeX;
@@ -30,8 +30,8 @@ void opPaste::Execute() {
         //Paste the shape or group of shapes in the other position x , y
         for (int i = 0; i < pGr->getClonedShapes().size(); i++)
         {
-            pGr->getClonedShapes()[i]->Move(pGr->getClonedShapes()[i]->getCenter().x
-                ,relativeY+y-pGr->getClonedShapes()[i]->getCenter().x);
+            pGr->getClonedShapes()[i]->Move(x+pGr->getClonedShapes()[i]->getCenter().x - pGr->getClonedShapes()[0]->getCenter().x
+                , y + pGr->getClonedShapes()[i]->getCenter().y - pGr->getClonedShapes()[0]->getCenter().y);
             pGr->Addshape(pGr->getClonedShapes()[i]);
             //clear clipboard here
         }
