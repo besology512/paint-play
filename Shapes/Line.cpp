@@ -146,14 +146,17 @@ Point Line::getUpperLeftPoint()
 	return Point();
 }
 
-void Line::SCRAMBLE(vector <Point> v1)
+void Line::SCRAMBLE(Point randomPoint)
 {
-	int random = rand() % (10 + 1);
-	Point randomPoint = v1[random];
 	int x = randomPoint.x;
 	int y = randomPoint.y;
-	v1.erase(v1.begin() + random);
 	Move(x, y);
+	int length = sqrt(pow(point1.y - point2.y, 2) + pow(point1.x - point2.x, 2));
+	if (length > 250)
+	{
+		resize(0.5);
+		if (length > 250) { resize(0.5); }
+	}
 }
 void Line::stickImage(image, GUI* pUI)
 {

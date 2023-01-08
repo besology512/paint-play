@@ -204,14 +204,18 @@ void Square::stickImage(image I, GUI* pUI)
 	pUI->DrawImage(I, getUpperLeftPoint(), getWidth(), getHeight());
 }
 
-void Square::SCRAMBLE(vector <Point> v1)
+void Square::SCRAMBLE(Point randomPoint)
 {
-	int random = rand() % (10 + 1);
-	Point randomPoint = v1[random];
 	int x = randomPoint.x;
 	int y = randomPoint.y;
-	v1.erase(v1.begin() + random);
 	Move(x, y);
+	int area  = pow(sqrt(pow(corner1.x - corner2.x, 2) + pow(corner1.y - corner2.y, 2)), 2);
+	if (area > 60000)
+	{
+		resize(0.5);
+		if (area > 60000) { resize(0.5); }
+	}
+
 }
 
 

@@ -137,14 +137,17 @@ void IrrPolygon::Move(int x,int y){
 }
 Point IrrPolygon::getUpperLeftPoint(){return Point();}
 
-void IrrPolygon::SCRAMBLE(vector <Point> v1)
+void IrrPolygon::SCRAMBLE(Point randomPoint)
 {  
-	int random = rand() % (10 + 1);
-	Point randomPoint = v1[random];
 	int x = randomPoint.x;
 	int y = randomPoint.y;
-	v1.erase(v1.begin() + random);
 	Move(x, y);
+	//int area = area = sqrt(pow(Corner1.x - Corner2.x, 2)) * sqrt(pow(Corner1.y - Corner2.y, 2));
+	//if (area > 60000)
+	//{
+	//	resize(0.5);
+	//}
+	resize(0.5);
 }
 
 

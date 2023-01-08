@@ -1,4 +1,6 @@
 #include "Rect.h"
+#include <iostream>
+using namespace std;
 
 Rect::Rect(Point P1, Point P2, GfxInfo shapeGfxInfo):shape(shapeGfxInfo)
 {
@@ -17,15 +19,20 @@ void Rect::Draw(GUI* pUI) const
 	pUI->DrawRect(Corner1, Corner2, ShpGfxInfo);
 }
 
-void Rect::SCRAMBLE(vector <Point> v1)
-{
-	int random = rand() % (10 +1);
-	Point randomPoint = v1[random];
+void Rect::SCRAMBLE(Point randomPoint)
+{	
 	int x = randomPoint.x;
 	int y = randomPoint.y;
-	v1.erase(v1.begin()+random);
 	Move(x, y);
+	int area = sqrt(pow(Corner1.x - Corner2.x, 2)) * sqrt(pow(Corner1.y - Corner2.y, 2));
+	if (area > 60000)
+	{
+		resize(0.5);
+		if (area > 60000) { resize(0.5);}
+	}
 }
+
+
 
 void Rect::SAVE(ofstream& OutFile)
 {

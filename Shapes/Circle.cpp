@@ -127,14 +127,19 @@ Point Circle::getUpperLeftPoint()
 	return upperLeftPoint;
 }
 
-void Circle::SCRAMBLE(vector <Point> v1)
+void Circle::SCRAMBLE(Point randomPoint)
 {
-	int random = rand() % (10 + 1);
-	Point randomPoint = v1[random];
 	int x = randomPoint.x;
 	int y = randomPoint.y;
-	v1.erase(v1.begin() + random);
 	Move(x, y);
+	double radius = sqrt(pow(Center.x - PointOnCircle.x, 2) + pow(Center.y - PointOnCircle.y, 2));
+	int area = 3.14 * radius * radius;
+	if (area > 60000)
+	{
+		resize(0.5);
+		if (area > 60000) { resize(0.5); }
+	}
+
 }
 void Circle::stickImage(image I, GUI* pUI)
 {
