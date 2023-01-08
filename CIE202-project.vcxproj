@@ -181,6 +181,7 @@
     <ClCompile Include="operations\opCopy.cpp" />
     <ClCompile Include="operations\opCut.cpp" />
     <ClCompile Include="operations\opDelete.cpp" />
+    <ClCompile Include="operations\opDrag.cpp" />
     <ClCompile Include="operations\opDuplicateGraph.cpp" />
     <ClCompile Include="operations\opExit.cpp" />
     <ClCompile Include="operations\opHide.cpp" />
@@ -248,6 +249,7 @@
     <ClInclude Include="operations\opCopy.h" />
     <ClInclude Include="operations\opCut.h" />
     <ClInclude Include="operations\opDelete.h" />
+    <ClInclude Include="operations\opDrag.h" />
     <ClInclude Include="operations\opDuplicateGraph.h" />
     <ClInclude Include="operations\opHide.h" />
     <ClInclude Include="operations\opExit.h" />

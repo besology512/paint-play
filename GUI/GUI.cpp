@@ -166,6 +166,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_BORDER_WIDTH: return CHNG_BORDER_WIDTH;
 			case ICON_ZOOM_IN: return ZOOM_IN;
 			case ICON_ZOOM_OUT: return ZOOM_OUT;
+			case ICON_DRAG: return DRAG;
 			case ICON_RESIZE: return RESIZE;
 			case ICON_ROTATE: return ROTATE;
 			case ICON_SENDBACK: return SEND_BACK;
@@ -303,6 +304,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_BORDER_WIDTH] = "images\\MenuIcons\\Menu_ChangeBorderWidth.jpg";
 	MenuIconImages[ICON_ZOOM_IN] = "images\\MenuIcons\\Menu_zoomin.jpg";
 	MenuIconImages[ICON_ZOOM_OUT] = "images\\MenuIcons\\Menu_zoomout.jpg";
+	MenuIconImages[ICON_DRAG] = "images\\MenuIcons\\Menu_Drag.jpg";
 	MenuIconImages[ICON_RESIZE] = "images\\MenuIcons\\Menu_Resize.jpg";
 	MenuIconImages[ICON_ROTATE] = "images\\MenuIcons\\Menu_Rotate.jpg";
 	MenuIconImages[ICON_SWITCH] = "images\\MenuIcons\\Menu_Switch.jpg";
@@ -410,6 +412,11 @@ void GUI::setDrawColor(color newColor)
 void GUI::setBorderWidth(int w)
 {
 	PenWidth = w;
+}
+
+buttonstate GUI::Dragging(int xx, int yy) {
+	pWind->FlushMouseQueue();
+	return pWind->GetButtonState(LEFT_BUTTON,xx,yy);
 }
 
 //======================================================================================//

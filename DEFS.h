@@ -35,6 +35,7 @@ enum operationType //The operations supported (you can add more if needed)
 	LOAD,			//Load a graph from a file
 	STICK_IMAGE,
 	SCRAMBLE,
+	DRAG,			//Drag a single shape
 	START,			//start the play mode
 	RESTART,		//restart the play mode
 	HIDE,			// Hide the shape in play mode

@@ -36,6 +36,7 @@
 #include"operations/opHide.h"
 #include"operations/opUnhide.h"
 #include"operations/matchShapes.h"
+#include"operations/opDrag.h"
 
 
 //Constructor
@@ -153,6 +154,9 @@ operation* controller::createOperation(operationType OpType)
 		case ZOOM_OUT:
 			pOp = new opZoomout(this);
 			//addToCurrentOperation(pOp);
+			break;
+		case DRAG:
+			pOp = new opDrag(this);
 			break;
 		case RESIZE:
 			pOp = new opResize(this);
