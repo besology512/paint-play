@@ -697,10 +697,10 @@ void GUI::DrawRegularPolygon(std::vector<Point> regularPolygonPoints, double num
 			drawstyle styleRegularPolygon;
 			styleRegularPolygon = FILLED;
 			Point cr1, cr2;
-			cr1.x = center.x - radius  -4;
-			cr1.y = center.y - radius -2;
-			cr2.x = center.x + radius + 3;
-			cr2.y = center.y + radius +2;
+			//cr1.x = center.x - radius  -4;
+			//cr1.y = center.y - radius -2;
+			//cr2.x = center.x + radius + 3;
+			//cr2.y = center.y + radius +2;
 
 			pWind->SetBrush(GREEN);
 			pWind->SetPen(GREEN, 1);

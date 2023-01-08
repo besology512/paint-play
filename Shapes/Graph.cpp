@@ -371,7 +371,7 @@ void Graph::fillArray()
 		}
 
 	}
-
+}
 void Graph::duplicateShapes() {
 	int c = 0;
 	for (auto shapePointer : shapesList){
