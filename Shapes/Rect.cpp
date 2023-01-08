@@ -19,17 +19,10 @@ void Rect::Draw(GUI* pUI) const
 	pUI->DrawRect(Corner1, Corner2, ShpGfxInfo);
 }
 
-void Rect::SCRAMBLE(vector <Point> v1,int range)
-{
-	
-	int random = rand() % (range +1);
-	range--;
-	Point randomPoint = v1[random];
+void Rect::SCRAMBLE(Point randomPoint)
+{	
 	int x = randomPoint.x;
 	int y = randomPoint.y;
-	cout << v1.size() << endl;
-	v1.erase(v1.begin()+random-1, v1.begin() + random);
-	cout << v1.size() << endl;
 	Move(x, y);
 	int area = area = sqrt(pow(Corner1.x - Corner2.x, 2)) * sqrt(pow(Corner1.y - Corner2.y, 2));
 	if (area > 60000)

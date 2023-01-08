@@ -58,7 +58,7 @@ Point StickImage::getUpperLeftPoint()
 	return Point();
 }
 
-void StickImage::SCRAMBLE(vector <Point> v1, int range)
+void StickImage::SCRAMBLE(Point randomPoint)
 {
 }
 
