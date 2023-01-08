@@ -199,6 +199,7 @@
     <ClCompile Include="operations\opStickImage.cpp" />
     <ClCompile Include="operations\OpSwitch.cpp" />
     <ClCompile Include="operations\opUndo.cpp" />
+    <ClCompile Include="operations\opUnhide.cpp" />
     <ClCompile Include="operations\opZoomin.cpp" />
     <ClCompile Include="operations\opZoomout.cpp" />
     <ClCompile Include="Shapes\Circle.cpp" />
@@ -264,6 +265,7 @@
     <ClInclude Include="operations\opStickImage.h" />
     <ClInclude Include="operations\OpSwitch.h" />
     <ClInclude Include="operations\opUndo.h" />
+    <ClInclude Include="operations\opUnhide.h" />
     <ClInclude Include="operations\opZoomin.h" />
     <ClInclude Include="operations\opZoomout.h" />
     <ClInclude Include="Shapes\Line.h" />
