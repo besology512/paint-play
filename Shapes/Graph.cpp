@@ -183,6 +183,7 @@ void Graph::scramble()
 		vectorPoints.erase(vectorPoints.begin() + random);
 		range--;
 	}
+	
 	/*for (int i = 0; i < DRAW_ICON_COUNT; i++)
 		pWind->DrawImage(MenuIconImages[i], i * MenuIconWidth, 0, MenuIconWidth, ToolBarHeight);*/
 }
