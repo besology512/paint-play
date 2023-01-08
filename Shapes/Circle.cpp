@@ -127,7 +127,7 @@ Point Circle::getUpperLeftPoint()
 	return upperLeftPoint;
 }
 
-void Circle::SCRAMBLE(vector <Point> v1)
+void Circle::SCRAMBLE(vector <Point> v1, int range) 
 {
 	int random = rand() % (10 + 1);
 	Point randomPoint = v1[random];

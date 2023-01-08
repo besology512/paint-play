@@ -204,7 +204,7 @@ void Square::stickImage(image I, GUI* pUI)
 	pUI->DrawImage(I, getUpperLeftPoint(), getWidth(), getHeight());
 }
 
-void Square::SCRAMBLE(vector <Point> v1)
+void Square::SCRAMBLE(vector <Point> v1, int range)
 {
 	int random = rand() % (10 + 1);
 	Point randomPoint = v1[random];

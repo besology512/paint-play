@@ -146,7 +146,7 @@ Point Line::getUpperLeftPoint()
 	return Point();
 }
 
-void Line::SCRAMBLE(vector <Point> v1)
+void Line::SCRAMBLE(vector <Point> v1, int range)
 {
 	int random = rand() % (10 + 1);
 	Point randomPoint = v1[random];

@@ -28,12 +28,13 @@ public:
 	void zoom(double scale, int x, int y) override;		// Zoom the shape in
 	Point getUpperLeftPoint();
 
-	void SCRAMBLE(vector <Point> v1) override;
+	void SCRAMBLE(vector <Point> v1, int range) override;
 
 
 	void stickImage(image, GUI* pUI) override;
 	int getDuplicateID();
 	void setDuplicateID(int);
+
 
 };
 

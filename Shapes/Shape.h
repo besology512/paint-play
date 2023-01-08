@@ -73,7 +73,7 @@ public:
 
 	virtual void SAVE(ofstream &OutFile) = 0;	//Save the shape parameters to the file
 	virtual void LOAD(ifstream &Infile) = 0;	//Load the shape parameters to the file
-	virtual void SCRAMBLE(vector <Point> v1) = 0;				//scramble function according each shape 
+	virtual void SCRAMBLE(vector <Point> v1,int range) = 0;				//scramble function according each shape 
 
 	//virtual void PrintInfo(Output* pOut) = 0;	//print all shape info on the status bar
 };

@@ -172,9 +172,11 @@ shape* Graph::Getshape(int x, int y)
 
 void Graph::scramble()
 {
+	int range = 10;
 	for (auto shapesList : shapesList) // Loop on each shape in vector list 
 	{
-		shapesList->SCRAMBLE(vectorPoints);	//do scramble according each shape 
+		shapesList->SCRAMBLE(vectorPoints,range);	//do scramble according each shape
+		range--;
 	}
 	/*for (int i = 0; i < DRAW_ICON_COUNT; i++)
 		pWind->DrawImage(MenuIconImages[i], i * MenuIconWidth, 0, MenuIconWidth, ToolBarHeight);*/

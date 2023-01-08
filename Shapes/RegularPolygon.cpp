@@ -182,7 +182,7 @@ void RegularPolygon::setDuplicateID(int i)
 	duplicateID = i;
 }
 
-void RegularPolygon::SCRAMBLE(vector <Point> v1)
+void RegularPolygon::SCRAMBLE(vector <Point> v1, int range)
 {
 	int random = rand() % (10 + 1);
 	Point randomPoint = v1[random];
