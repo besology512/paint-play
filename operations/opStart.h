@@ -1,7 +1,10 @@
 #pragma once
-
+#include "..\controller.h"
+#include "..\GUI\GUI.h"
 #include"..//operations/operation.h"
-
+#include "opScramble.h"
+#include "opDuplicateGraph.h"
+#include "matchShapes.h"
 
 class opStart : public operation
 {
