@@ -138,7 +138,7 @@ public:
 	void setFillcolor(color);
 	void setDrawColor(color);
 	void setBorderWidth(int);
-	buttonstate Dragging(int xx, int yy);
+	buttonstate Dragging(int &xx, int &yy);
 
 
 	// -- shapes Drawing functions

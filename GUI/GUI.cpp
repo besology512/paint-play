@@ -414,9 +414,10 @@ void GUI::setBorderWidth(int w)
 	PenWidth = w;
 }
 
-buttonstate GUI::Dragging(int xx, int yy) {
-	pWind->FlushMouseQueue();
+buttonstate GUI::Dragging(int &xx, int &yy) {
+	 pWind->FlushMouseQueue();
 	return pWind->GetButtonState(LEFT_BUTTON,xx,yy);
+	 
 }
 
 //======================================================================================//
