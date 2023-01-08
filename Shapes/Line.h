@@ -34,7 +34,6 @@ public:
 	void stickImage(image, GUI* pUI) override;
 	int getDuplicateID();
 	void setDuplicateID(int);
-
-
+	Point getCenter() override;
 };
 

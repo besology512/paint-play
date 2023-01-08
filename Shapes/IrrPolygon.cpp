@@ -161,3 +161,4 @@ void IrrPolygon::setDuplicateID(int i)
 {
 	duplicateID = i;
 }
+Point IrrPolygon::getCenter() { return allPoints[0]; }

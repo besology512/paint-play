@@ -218,3 +218,7 @@ void RegularPolygon::addPoint(Point p)
 {
 	regularPolygonPoints.push_back(p);
 }
+
+Point RegularPolygon::getCenter() {
+	return center;
+}

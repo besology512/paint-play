@@ -210,7 +210,6 @@
     <ClCompile Include="Shapes\RegularPolygon.cpp" />
     <ClCompile Include="Shapes\Shape.cpp" />
     <ClCompile Include="Shapes\Rect.cpp" />
-    <ClCompile Include="Shapes\Source.cpp" />
     <ClCompile Include="Shapes\Square.cpp" />
     <ClCompile Include="Shapes\StickImage.cpp" />
     <ClCompile Include="Shapes\Triangle.cpp" />

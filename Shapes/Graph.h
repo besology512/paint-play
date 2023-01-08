@@ -79,5 +79,6 @@ public:
 	void duplicateShapes();
 	void addMatchedShape(shape*);
 	void clearMatchedShapes();
+	vector<shape*>getSelectedShapes();
 
 };

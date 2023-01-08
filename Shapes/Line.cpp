@@ -168,3 +168,11 @@ void Line::setDuplicateID(int i)
 	duplicateID = i;
 }
 
+Point Line::getCenter() {
+	Point center;
+	center.x = (point1.x + point2.x) / 2;
+	center.y = (point1.y + point2.y) / 2;
+	return center;
+}
+
+

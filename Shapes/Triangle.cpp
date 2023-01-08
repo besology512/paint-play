@@ -234,3 +234,10 @@ void Triangle::setDuplicateID(int i)
 {
 	duplicateID = i;
 }
+
+Point Triangle::getCenter() {
+	Point Center;
+	Center.x = (Corner1.x + Corner2.x + Corner3.x) / 3;
+	Center.y = (Corner1.y + Corner2.y + Corner3.y) / 3;
+	return Center;
+}

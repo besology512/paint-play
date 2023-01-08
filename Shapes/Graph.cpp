@@ -402,3 +402,7 @@ void Graph::clearMatchedShapes()
 {
 	matchedShapes.clear();
 }
+
+vector<shape*> Graph::getSelectedShapes() {
+	return selectedShapes;
+}

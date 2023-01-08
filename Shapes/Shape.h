@@ -49,7 +49,7 @@ public:
 	virtual shape* clone() = 0;
 	virtual void Move(int x,int y) = 0;		//Move the shape
 	virtual Point getUpperLeftPoint() = 0;
-	
+	virtual Point getCenter() = 0;
 	
 
 	virtual void zoom(double scale, int x, int y) = 0;		//Zoom the shape(s) in

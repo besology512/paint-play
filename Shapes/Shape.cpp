@@ -63,5 +63,3 @@ void shape::setIsfilled(bool a) {
 void shape::setisHidden(bool h) {
 	ShpGfxInfo.isHidden = h;
 }
-
-

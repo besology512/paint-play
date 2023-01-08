@@ -165,9 +165,6 @@
     <ClCompile Include="Shapes\ColorPallet.cpp">
       <Filter>Shapes&amp;Graph</Filter>
     </ClCompile>
-    <ClCompile Include="Shapes\Source.cpp">
-      <Filter>Shapes&amp;Graph</Filter>
-    </ClCompile>
     <ClCompile Include="Shapes\Circle.cpp">
       <Filter>Shapes&amp;Graph</Filter>
     </ClCompile>
