@@ -414,3 +414,19 @@ void Graph::clearMatchedShapes()
 vector<shape*> Graph::getSelectedShapes() {
 	return selectedShapes;
 }
+
+void Graph::takeCopyOfshapesList()
+{
+	shapesList2.insert(shapesList2.end(),
+		shapesList.begin(), shapesList.end());
+
+}
+void Graph::reDraw(GUI* pUI) const
+{
+	/ pUI->ClearDrawArea(); /
+		for (auto shapePointer : shapesList2)
+		{
+			shapePointer->Draw(pUI);
+		}
+
+}

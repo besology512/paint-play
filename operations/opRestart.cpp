@@ -16,6 +16,11 @@ void opRestart::Execute() {
 	GUI* pUI = pControl->GetUI();
 
 	pUI->PrintMessage("You clicked on restart button");
+
+	Graph* pGr = pControl->getGraph();
+	pGr->reDraw(pUI);
+
+	pUI->PrintMessage("You clicked on restart button");
 }
 
 void opRestart::Undo() {}

@@ -36,6 +36,7 @@ private:
 	vector <shape*> matchedShapes;
 
 public:
+	vector <shape*> shapesList2;
 	stack<shape*> lastEdited;
 	stack<shape*> undolastEdited;
 	stack<shape*> UndolastEdited;
@@ -83,5 +84,7 @@ public:
 	void addMatchedShape(shape*);
 	void clearMatchedShapes();
 	vector<shape*>getSelectedShapes();
+	void takeCopyOfshapesList();
+	void reDraw(GUI* pUI)const;
 
 };
