@@ -423,7 +423,7 @@ void Graph::takeCopyOfshapesList()
 }
 void Graph::reDraw(GUI* pUI) const
 {
-	/ pUI->ClearDrawArea(); /
+	pUI->ClearDrawArea();
 		for (auto shapePointer : shapesList2)
 		{
 			shapePointer->Draw(pUI);
