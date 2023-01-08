@@ -73,6 +73,7 @@ void matchShapes::Execute()
 
 				if (pGr->getMatchedShapes()[0]->getDuplicateID() == pGr->getMatchedShapes()[1]->getDuplicateID())
 				{
+					Sleep(1000);
 					pGr->DeleteShape(pGr->getMatchedShapes()[0]); pGr->DeleteShape(pGr->getMatchedShapes()[1]);
 					pGr->clearMatchedShapes();
 					pGr->score += 3;
@@ -82,6 +83,7 @@ void matchShapes::Execute()
 				else
 				{
 					// Hide the two shapes again
+					Sleep(1000);
 					pGr->getMatchedShapes()[0]->setisHidden(true);
 					pGr->getMatchedShapes()[1]->setisHidden(true);
 					pGr->clearMatchedShapes();
