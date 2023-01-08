@@ -181,6 +181,7 @@
     <ClCompile Include="operations\opCopy.cpp" />
     <ClCompile Include="operations\opCut.cpp" />
     <ClCompile Include="operations\opDelete.cpp" />
+    <ClCompile Include="operations\opDrag.cpp" />
     <ClCompile Include="operations\opDuplicateGraph.cpp" />
     <ClCompile Include="operations\opExit.cpp" />
     <ClCompile Include="operations\opHide.cpp" />
@@ -199,6 +200,7 @@
     <ClCompile Include="operations\opStickImage.cpp" />
     <ClCompile Include="operations\OpSwitch.cpp" />
     <ClCompile Include="operations\opUndo.cpp" />
+    <ClCompile Include="operations\opUnhide.cpp" />
     <ClCompile Include="operations\opZoomin.cpp" />
     <ClCompile Include="operations\opZoomout.cpp" />
     <ClCompile Include="Shapes\Circle.cpp" />
@@ -210,7 +212,6 @@
     <ClCompile Include="Shapes\RegularPolygon.cpp" />
     <ClCompile Include="Shapes\Shape.cpp" />
     <ClCompile Include="Shapes\Rect.cpp" />
-    <ClCompile Include="Shapes\Source.cpp" />
     <ClCompile Include="Shapes\Square.cpp" />
     <ClCompile Include="Shapes\StickImage.cpp" />
     <ClCompile Include="Shapes\Triangle.cpp" />
@@ -239,7 +240,6 @@
     <ClInclude Include="GUI\GUI.h" />
     <ClInclude Include="controller.h" />
     <ClInclude Include="DEFS.h" />
-    <ClInclude Include="operations\matchShapes.h" />
     <ClInclude Include="operations\opAddLine.h" />
     <ClInclude Include="operations\opAddSquare.h" />
     <ClInclude Include="operations\opChangeBorderClr.h" />
@@ -248,9 +248,11 @@
     <ClInclude Include="operations\opCopy.h" />
     <ClInclude Include="operations\opCut.h" />
     <ClInclude Include="operations\opDelete.h" />
+    <ClInclude Include="operations\opDrag.h" />
     <ClInclude Include="operations\opDuplicateGraph.h" />
-    <ClInclude Include="operations\opExit.h" />
     <ClInclude Include="operations\opHide.h" />
+    <ClInclude Include="operations\opExit.h" />
+    <ClInclude Include="operations\matchShapes.h" />
     <ClInclude Include="operations\opLoad.h" />
     <ClInclude Include="operations\opPaste.h" />
     <ClInclude Include="operations\opRedo.h" />
@@ -264,6 +266,7 @@
     <ClInclude Include="operations\opStickImage.h" />
     <ClInclude Include="operations\OpSwitch.h" />
     <ClInclude Include="operations\opUndo.h" />
+    <ClInclude Include="operations\opUnhide.h" />
     <ClInclude Include="operations\opZoomin.h" />
     <ClInclude Include="operations\opZoomout.h" />
     <ClInclude Include="Shapes\Line.h" />

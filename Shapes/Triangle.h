@@ -34,8 +34,5 @@ public:
 	int getDuplicateID();
 	void setDuplicateID(int);
 	void SCRAMBLE(Point randomPoint) override;
-
-
-	
-
+	Point getCenter() override;
 };

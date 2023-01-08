@@ -37,4 +37,5 @@ public:
 	int getDuplicateID();
 	void setDuplicateID(int);
 	void addPoint(Point);
+	Point getCenter() override;
 };

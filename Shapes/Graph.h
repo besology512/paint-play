@@ -60,7 +60,8 @@ public:
 	void FromUndotoShapesList();
 	void ZOOMING(double scale, int x, int y);
 	void Hideing(GUI* pUI);							//to hide shapes when switch to play mode
-	void Unhideing(GUI* pUI);							//to hide shapes when switch to play mode
+	void Unhideing(GUI* pUI);							//to unhide shapes when switch to play mode
+	void DragSingleShape(shape* pShp, int x, int y);
 
 	void RemoveShape(shape* pShp);
 	void DeleteShape(shape* pShp);			   // Delete a single shape from shape of list	
@@ -79,5 +80,6 @@ public:
 	void duplicateShapes();
 	void addMatchedShape(shape*);
 	void clearMatchedShapes();
+	vector<shape*>getSelectedShapes();
 
 };

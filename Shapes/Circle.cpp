@@ -193,3 +193,6 @@ void Circle::setDuplicateID(int i)
 	duplicateID = i;
 }
 
+Point Circle::getCenter() {
+	return Center;
+}

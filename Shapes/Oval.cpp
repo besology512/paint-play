@@ -239,3 +239,7 @@ void Oval::setDuplicateID(int i)
 {
 	duplicateID = i;
 }
+
+Point Oval::getCenter() {
+	return Corner1;
+}

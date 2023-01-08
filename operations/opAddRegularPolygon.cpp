@@ -2,14 +2,12 @@
 #include "../Shapes/RegularPolygon.h"
 
 #include "..\controller.h"
+#include<iostream>
 
 #include "..\GUI\GUI.h"
 
-opAddRegularPolygon::opAddRegularPolygon(controller* pCont) :operation(pCont)
-{}
-opAddRegularPolygon::~opAddRegularPolygon()
-{}
-
+opAddRegularPolygon::opAddRegularPolygon(controller* pCont) :operation(pCont){}
+opAddRegularPolygon::~opAddRegularPolygon(){}
 
 //Execute the operation
 void opAddRegularPolygon::Execute()
@@ -46,9 +44,7 @@ void opAddRegularPolygon::Execute()
 	//Get the radius
 	msg = "Enter the side size in the polygonal";
 	pUI->PrintMessage(msg);
-
 	pUI->GetKeyClicked(radius);
-
 	while ((int(radius) - 48 <= 0) || (int(radius) - 48 > 9))
 	{
 		msg = " Error! Make Sure that the side size is between 1 and 9";
@@ -65,8 +61,6 @@ void opAddRegularPolygon::Execute()
 	RegularPolygonGfxInfo.DrawClr = pUI->getCrntDrawColor();
 	RegularPolygonGfxInfo.FillClr = pUI->getCrntFillColor();
 	RegularPolygonGfxInfo.BorderWdth = pUI->getCrntPenWidth();
-
-
 	RegularPolygonGfxInfo.isFilled = pGr->isFilled;	//default is not filled
 	RegularPolygonGfxInfo.isSelected = false;	//defualt is not selected
 
@@ -78,9 +72,9 @@ void opAddRegularPolygon::Execute()
 
 	//Adding its points to a vector in the regular polygon
 	const double PI = 3.141592653589;			//Defining constant PI
-	double angle = (2 * PI) / numOfVertices;	//Defining the angle between two vertices
+	double angle = (2 * PI) / (numOfVertices -48);	//Defining the angle between two vertices
 
-	for (int i = 0; i < int(numOfVertices); i++)
+	for (int i = 0; i < int(numOfVertices)-48; i++)
 	{
 		int x = center.x + radius * sin(i * angle);
 		int y = center.y + radius * cos(i * angle);

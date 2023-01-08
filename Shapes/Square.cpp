@@ -227,3 +227,7 @@ void Square::setDuplicateID(int i)
 {
 	duplicateID = i;
 }
+
+Point Square::getCenter() {
+	return corner1;
+}

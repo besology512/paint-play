@@ -9,11 +9,21 @@ opCopy::~opCopy() {}
 void opCopy::Execute() {
 	GUI* pUI = pControl->GetUI();
 	Graph* pGr = pControl->getGraph();
+    if (!(pGr->getSelectedShapes().size() == 1 || pGr->getSelectedShapes().size() == 0))
+    {
+        for (int i = 0; i < pGr->getSelectedShapes().size(); i++)
+        {
+            if (pGr->getSelectedShapes()[i])
+            {
+                pGr->addToCloned(pGr->getSelectedShapes()[i]->clone());
+                std::cout << "multiple copy done " << i;
+            }
+        }
+    }
     if (pGr->getselectedshape())
     {
         //cloned another shape and then moved to the clipboard {Cloned Shapes}
         pGr->addToCloned(pGr->getselectedshape()->clone());
-        cout << "Copy worked!!!!!!!!!" << endl;
     }else{pUI->PrintMessage("Select the shape you want to copy first");}
 }
 

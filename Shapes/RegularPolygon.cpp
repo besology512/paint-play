@@ -121,7 +121,32 @@ double RegularPolygon::getHeight()
 }
 
 void RegularPolygon::resize(float factor) {
-	radius *= factor;
+	for (int i = 0; i < regularPolygonPoints.size(); i++)
+	{
+		if (factor == 0.5)
+		{
+			regularPolygonPoints[i].x = (regularPolygonPoints[i].x + center.x) / 2;
+			regularPolygonPoints[i].y = (regularPolygonPoints[i].y + center.y) / 2;
+		}
+		if (factor == 0.25) {
+			regularPolygonPoints[i].x = (regularPolygonPoints[i].x + center.x) / 2;
+			regularPolygonPoints[i].y = (regularPolygonPoints[i].y + center.y) / 2;
+			//then again
+			regularPolygonPoints[i].x = (regularPolygonPoints[i].x + center.x) / 2;
+			regularPolygonPoints[i].y = (regularPolygonPoints[i].y + center.y) / 2;
+		}
+		if (factor == 2) {
+			regularPolygonPoints[i].x = 2 * regularPolygonPoints[i].x - center.x;
+			regularPolygonPoints[i].y = 2 * regularPolygonPoints[i].y - center.y;
+		}
+		if (factor == 4) {
+			regularPolygonPoints[i].x = 2 * regularPolygonPoints[i].x - center.x;
+			regularPolygonPoints[i].y = 2 * regularPolygonPoints[i].y - center.y;
+			//then again
+			regularPolygonPoints[i].x = 2 * regularPolygonPoints[i].x - center.x;
+			regularPolygonPoints[i].y = 2 * regularPolygonPoints[i].y - center.y;
+		}
+	}
 }
 
 void RegularPolygon::zoom(double scale, int x, int y) {
@@ -133,24 +158,13 @@ void RegularPolygon::zoom(double scale, int x, int y) {
 }
 #include<iostream>
 void RegularPolygon:: Rotate(){
-	std::cout << "In rotate";
 	for (int i = 0; i < int(numOfVertices); i++)
 	{
 		int tempX = regularPolygonPoints[i].x;
 		int tempY = regularPolygonPoints[i].y;
-		std::cout << tempX << std::endl;
 		regularPolygonPoints[i].x = -tempY+ center.y + center.x;
 		regularPolygonPoints[i].y = tempX - center.x + center.y;
-		std::cout << regularPolygonPoints[i].x << std::endl;
 	}
-	//int tempP1X = corner1.x;
-	//int tempP1Y = corner1.y;
-	//int tempP2X = corner2.x;
-	//int tempP2Y = corner2.y;
-	//corner1.x = -tempP1Y + Center.y + Center.x;
-	//corner1.y = tempP1X - Center.x + Center.y;
-	//corner2.x = -tempP2Y + Center.y + Center.x;
-	//corner2.y = tempP2X - Center.x + Center.y;
 }
 
 shape* RegularPolygon::clone(){
@@ -158,7 +172,15 @@ shape* RegularPolygon::clone(){
 	return pCloned;
 }
 void RegularPolygon::Move(int x,int y){
-	center.x = x;	center.y = y;
+	int diffX = x - regularPolygonPoints[0].x;
+	int diffY = y - regularPolygonPoints[0].y;
+	regularPolygonPoints[0].x = x;
+	regularPolygonPoints[0].y = y;
+	for (int i = 1; i < regularPolygonPoints.size(); i++)
+	{
+		regularPolygonPoints[i].x += diffX;
+		regularPolygonPoints[i].y += diffY;
+	}
 }
 Point RegularPolygon::getUpperLeftPoint()
 {
@@ -199,4 +221,8 @@ void RegularPolygon::SCRAMBLE(Point randomPoint)
 void RegularPolygon::addPoint(Point p)
 {
 	regularPolygonPoints.push_back(p);
+}
+
+Point RegularPolygon::getCenter() {
+	return center;
 }
