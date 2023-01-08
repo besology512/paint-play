@@ -237,6 +237,15 @@ controller::~controller()
 {
 	delete pGUI;
 	delete pGraph;
+	while (!UndoneOperations.empty())
+	{
+		delete Operations.top();
+		Operations.pop();
+	}
+	while (!Operations.empty()) {
+		delete Operations.top();
+		Operations.pop();
+	}
 	
 }
 

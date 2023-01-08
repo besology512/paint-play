@@ -20,7 +20,7 @@ void opCopy::Execute() {
             }
         }
     }
-    if (pGr->getselectedshape())
+    if (pGr->getselectedshape() && pGr->getSelectedShapes().size() < 2)
     {
         //cloned another shape and then moved to the clipboard {Cloned Shapes}
         pGr->addToCloned(pGr->getselectedshape()->clone());

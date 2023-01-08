@@ -243,5 +243,5 @@ Point Rect::getCenter() {
 	Point Center;
 	Center.x = (Corner1.x + Corner2.x) / 2;
 	Center.y = (Corner1.y + Corner2.y) / 2;
-	return Center;
+	return Corner1;
 }

@@ -12,7 +12,7 @@ void opPaste::Execute() {
     int x,y;
 	GUI* pUI = pControl->GetUI();
 	Graph* pGr = pControl->getGraph();
-    if (!(pGr->getClonedShapes().empty()))
+    if (!(pGr->getClonedShapes().empty()) && ((pGr->getClonedShapes().size()) > 1))
     {
         pUI->PrintMessage("Click Where you want to paste!");
 	    pUI->GetPointClicked(x,y);
@@ -25,17 +25,26 @@ void opPaste::Execute() {
         }
         relativeX /= pGr->getClonedShapes().size();
         relativeY /= pGr->getClonedShapes().size();
+        int diffX = x- relativeX;
+        int diffY = y- relativeY;
         //Paste the shape or group of shapes in the other position x , y
         for (int i = 0; i < pGr->getClonedShapes().size(); i++)
         {
-            pGr->getClonedShapes()[i]->Move(relativeX+x- pGr->getClonedShapes()[i]->getCenter().x
+            pGr->getClonedShapes()[i]->Move(pGr->getClonedShapes()[i]->getCenter().x
                 ,relativeY+y-pGr->getClonedShapes()[i]->getCenter().x);
             pGr->Addshape(pGr->getClonedShapes()[i]);
             //clear clipboard here
         }
         pGr->ClearClipboard();
         cout << "Paste worked!!!!!!!!!" << endl;
-    }else{pUI->PrintMessage("There is nothing in the Clipboard");}
+    }
+    else if ((pGr->getClonedShapes().size()) == 1) {
+    pUI->GetPointClicked(x, y);
+    pGr->getClonedShapes()[0]->Move(x, y);
+    pGr->Addshape(pGr->getClonedShapes()[0]);
+    pGr->ClearClipboard();
+}
+    else{pUI->PrintMessage("There is nothing in the Clipboard");}
 }
 
 void opPaste::Undo() {}
