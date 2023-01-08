@@ -24,10 +24,11 @@ void Rect::SCRAMBLE(Point randomPoint)
 	int x = randomPoint.x;
 	int y = randomPoint.y;
 	Move(x, y);
-	int area = area = sqrt(pow(Corner1.x - Corner2.x, 2)) * sqrt(pow(Corner1.y - Corner2.y, 2));
+	int area = sqrt(pow(Corner1.x - Corner2.x, 2)) * sqrt(pow(Corner1.y - Corner2.y, 2));
 	if (area > 60000)
 	{
 		resize(0.5);
+		if (area > 60000) { resize(0.5);}
 	}
 }
 

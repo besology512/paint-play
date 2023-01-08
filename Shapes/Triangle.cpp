@@ -218,12 +218,15 @@ void Triangle::stickImage(image I, GUI* pUI)
 
 void Triangle::SCRAMBLE(Point randomPoint)
 {
-	/*int random = rand() % (10 + 1);
-	Point randomPoint = v1[random];
 	int x = randomPoint.x;
 	int y = randomPoint.y;
-	v1.erase(v1.begin() + random);
-	Move(x, y);*/
+	Move(x, y);
+	int area = getArea(Corner1.x, Corner1.y, Corner2.x, Corner2.y, Corner3.x, Corner3.y);
+	if (area > 40000)
+	{
+		resize(0.5);
+		if (area > 60000) { resize(0.5); }
+	}
 }
 
 int Triangle::getDuplicateID()

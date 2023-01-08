@@ -177,7 +177,7 @@ void Graph::scramble()
 	{
 		int random = rand() % (range + 1);
 		shapesList->SCRAMBLE(vectorPoints[random]);	//do scramble according each shape
-		vectorPoints.erase(vectorPoints.begin() + random - 1, vectorPoints.begin() + random);
+		vectorPoints.erase(vectorPoints.begin() + random);
 		range--;
 	}
 	/*for (int i = 0; i < DRAW_ICON_COUNT; i++)
