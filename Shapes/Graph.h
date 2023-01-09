@@ -36,6 +36,7 @@ private:
 	vector <shape*> matchedShapes;
 
 public:
+	bool ready = false;
 	vector <shape*> shapesList2;
 	stack<shape*> lastEdited;
 	stack<shape*> undolastEdited;

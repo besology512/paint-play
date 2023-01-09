@@ -196,8 +196,7 @@ operation* controller::createOperation(operationType OpType)
 			break;
 
 		case PLAYING_AREA:
-			//pOp = new opSelectUnselect(this);
-			//pGraph->matchShapes();
+
 			pOp = new matchShapes(this);
 
 			break;

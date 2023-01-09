@@ -58,10 +58,12 @@ void matchShapes::Execute()
 
 			pGr->UnselectAll();
 
-
 		}
-		else if (pGr->getMatchedShapes().size() == 1)
+
+
+		if (pGr->getMatchedShapes().size() == 1)
 		{
+
 			if (pGr->getSelectedShape() && (pGr->getSelectedShape() != pGr->getMatchedShapes()[0]))
 			{
 				shape* secondSelectedShape = pGr->getSelectedShape();
@@ -71,31 +73,48 @@ void matchShapes::Execute()
 				pGr->addMatchedShape(secondSelectedShape);
 				pGr->UnselectAll();
 
-				if (pGr->getMatchedShapes()[0]->getDuplicateID() == pGr->getMatchedShapes()[1]->getDuplicateID())
-				{
-					Sleep(1000);
-					pGr->DeleteShape(pGr->getMatchedShapes()[0]); pGr->DeleteShape(pGr->getMatchedShapes()[1]);
-					pGr->clearMatchedShapes();
-					pGr->score += 3;
-					pUI->PrintMessage("Congratulation You Got 3 Point. Your Score : " + to_string(pGr->score) + "");
-					
-				}
-				else
-				{
-					// Hide the two shapes again
-					Sleep(1000);
-					pGr->getMatchedShapes()[0]->setisHidden(true);
-					pGr->getMatchedShapes()[1]->setisHidden(true);
-					pGr->clearMatchedShapes();
-					pGr->score += 1;
-					pUI->PrintMessage("Try Agin You Got 1 Point. Your Score : " + to_string(pGr->score) + "");
-
-
-				}
+				pGr->ready = true;
+				return;
 			}
+
 			pGr->UnselectAll();
 
 			//pUI->PrintMessage("The End :). Your Score : " + to_string(score) + "");
+		}
+
+
+
+		if (pGr->getMatchedShapes().size() == 2 && pGr->ready == true)
+		{
+			pGr->UnselectAll();
+
+
+			if (pGr->getMatchedShapes()[0]->getDuplicateID() == pGr->getMatchedShapes()[1]->getDuplicateID())
+			{
+				pGr->UnselectAll();
+				Sleep(1000);
+				pGr->DeleteShape(pGr->getMatchedShapes()[0]); pGr->DeleteShape(pGr->getMatchedShapes()[1]);
+				pGr->clearMatchedShapes();
+				pGr->score += 3;
+				pUI->PrintMessage("Congratulation You Got 3 Point. Your Score : " + to_string(pGr->score) + "");
+				pGr->ready = true;
+
+			}
+			else
+			{
+				pGr->UnselectAll();
+				// Hide the two shapes again
+				Sleep(1000);
+				pGr->getMatchedShapes()[0]->setisHidden(true);
+				pGr->getMatchedShapes()[1]->setisHidden(true);
+				pGr->clearMatchedShapes();
+				pGr->score += 1;
+				pUI->PrintMessage("Try Agin You Got 1 Point. Your Score : " + to_string(pGr->score) + "");
+				pGr->ready = true;
+
+
+			}
+
 		}
 	
 
