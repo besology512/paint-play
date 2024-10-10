@@ -16,6 +16,7 @@ The key objectives of the project are:
 - Practice memory management with **pointers**.
 - Create interactive elements using a graphics library.
   
+
 While the project has painting functionalities, it's far from the sophistication of professional tools like Microsoft Paint. The core focus was **learning** rather than producing a product for end users.
 
 ---
@@ -67,7 +68,7 @@ To run the "Paint and Play" project, you'll need the **CMU Graphics Library (200
 
 ## Screenshot of the Project
 
-![Paint and Play GUI](link_to_image)
+![Paint and Play GUI](./images/project.png)
 
 > **Note**: This image represents the simple user interface created using the CMU Graphics Library. As mentioned, the functionality is basic, focusing more on the C++ learning experience rather than the UI/UX.
 
